@@ -1,0 +1,317 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Erp Customer Details selected 
+	in the Change and Create scenario -->
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="fcg.mdg.approvecrv2.view.ERPSupplierDetail">
+	<Page id="erpSupplierPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="erpSupplierObjHeaderDet">
+				<attributes>
+					<ObjectAttribute id="erpSupplObjectKey" />
+					<!-- Extension Point for ERP Supplier Detail header -->
+					<core:ExtensionPoint name="exterpSupplierObjHeaderDet" />
+				</attributes>
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormControlData" layout="ResponsiveGridLayout"
+						labelSpanM="4" labelSpanL="4" minWidth="1024" maxContainerCols="2"
+						columnsL="1">
+						<form:content>
+							<!-- Control data INFORMATIONS -->
+							<core:Title id="SimpleFormCustControlData" text="{i18n>ControlData}" />
+							<Title id="multiassign" text="{i18n>MultiAssign}"
+								visible="{parts:[{path:'/REASON_ID'}, {path : '/STANDARD'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblREASON_ID" text="{i18n>Reason}" />
+							<Text id="REASON_ID"
+								text="{parts:[{path:'/REASON_ID'}, {path : '/REASON_ID__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/REASON_ID',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTANDARD" text="{i18n>Standard}" />
+							<Text id="STANDARD"
+								text="{path:'/STANDARD',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/STANDARD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for multiple assignment -->
+							<core:ExtensionPoint name="extmultiassign" />
+
+							<!-- Administrative Data INFORMATIONS -->
+							<Label></Label>
+							<Title id="AdmineData" text="{i18n>AdministrativeData}"
+								visible="{parts:[{path:'/SP_AssignedSupplierRel/LIFNR'}, {path : '/SP_AssignedSupplierRel/KTOKK'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblLIFNR" text="{i18n>ERP_Vendor}" />
+							<Text id="LIFNR"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/LIFNR'},{path :'/SP_AssignedSupplierRel/LIFNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/SP_AssignedSupplierRel/LIFNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKTOKD" text="{i18n>AccountGroup}" />
+							<Text id="KTOKK"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/KTOKK'},{path:'/SP_AssignedSupplierRel/KTOKK__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/KTOKK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for AdmineData -->
+							<core:ExtensionPoint name="extAdmineData" />
+
+							<!-- Account Control INFORMATIONS -->
+							<Label></Label>
+							<Title id="AccountControl" text="{i18n>AccountControl}"
+								visible="{parts:[{path:'/SP_AssignedSupplierRel/BEGRU'}, {path : '/SP_AssignedSupplierRel/KONZS'},{path : '/SP_AssignedSupplierRel/VBUND'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitle'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblBEGRU" text="{i18n>AuthorizationGroup}" />
+							<Text id="BEGRU" text="{path:'/SP_AssignedSupplierRel/BEGRU'}"
+								visible="{path:'/SP_AssignedSupplierRel/BEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKONZS" text="{i18n>GroupKey}" />
+							<Text id="KONZS" text="{path:'/SP_AssignedSupplierRel/KONZS'}"
+								visible="{path:'/SP_AssignedSupplierRel/KONZS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblVBUND" text="{i18n>TradingPartner}" />
+							<Text id="VBUND"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/VBUND'}, {path : '/SP_AssignedSupplierRel/VBUND__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/VBUND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKUNNR" text="{i18n>Debitor}" />
+							<Text id="KUNNR" text="{path:'/SP_AssignedSupplierRel/KUNNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+								visible="{path:'/SP_AssignedSupplierRel/KUNNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for AccountControl -->
+							<core:ExtensionPoint name="extAccountControl" />
+
+							<!-- Procurement Monitoring INFORMATIONS -->
+							<Label></Label>
+							<Title id="ProcurementMonitoring" text="{i18n>ProcurementMonitoring}"
+								visible="{path:'/SP_AssignedSupplierRel/PLKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblPLKAL" text="{i18n>FCAL}"></Label>
+							<Text id="PLKAL"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/PLKAL'}, {path : '/SP_AssignedSupplierRel/PLKAL__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/PLKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Procurement Monitoring INFORMATIONS -->
+							<core:ExtensionPoint name="extProcurementMonitoring" />
+
+							<core:Title id="SimpleFormReferenceData" text="{i18n>ReferenceData}" />
+							<Label id="lblBAHNS" text="{i18n>TrainStation}" />
+							<Text id="BAHNS" text="{path:'/SP_AssignedSupplierRel/BAHNS'}"
+								visible="{path:'/SP_AssignedSupplierRel/BAHNS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblEMNFR" text="{i18n>ExternalManufacturer}" />
+							<Text id="EMNFR" text="{path:'/SP_AssignedSupplierRel/EMNFR'}"
+								visible="{path:'/SP_AssignedSupplierRel/EMNFR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblPODKZB" text="{i18n>RelevantPOD}" />
+							<Text id="PODKZB"
+								text="{path:'/SP_AssignedSupplierRel/PODKZB__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/PODKZB__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSCACD" text="{i18n>SCAC}" />
+							<Text id="SCACD" text="{path:'/SP_AssignedSupplierRel/SCACD'}"
+								visible="{path:'/SP_AssignedSupplierRel/SCACD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblQSSYS" text="{i18n>ActualQMSystem}" />
+							<Text id="QSSYS" text="{path:'/SP_AssignedSupplierRel/QSSYS__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/QSSYS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSFRGR" text="{i18n>CarrierFreightGroup}" />
+							<Text id="SFRGR"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/SFRGR'},{path:'/SP_AssignedSupplierRel/SFRGR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/SFRGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblDLGRP" text="{i18n>ServiceAgentProcedureGroup}" />
+							<Text id="DLGRP" text="{path:'/SP_AssignedSupplierRel/DLGRP__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/DLGRP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKRAUS" text="{i18n>CreditInformationNumber}" />
+							<Text id="KRAUS" text="{/SP_AssignedSupplierRel/KRAUS}"
+								visible="{path:'/SP_AssignedSupplierRel/KRAUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblREVDB" text="{i18n>LastExternalReview}" />
+							<Text id="REVDB"
+								text="{path:'/SP_AssignedSupplierRel/REVDB',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/SP_AssignedSupplierRel/REVDB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTGDL" text="{i18n>ServiceAgent}" />
+							<Text id="STGDL"
+								text="{path:'/SP_AssignedSupplierRel/STGDL__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/STGDL__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblQSSYSDAT" text="{i18n>QMSystemValidTo}" />
+							<Text id="QSSYSDAT"
+								text="{path:'/SP_AssignedSupplierRel/QSSYSDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/SP_AssignedSupplierRel/QSSYSDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Reference Data -->
+							<core:ExtensionPoint name="extReferenceData" />
+							<!-- Extension Point for reference Data form -->
+							<core:ExtensionPoint name="extSimpleFormReferenceData" />
+
+							<core:Title id="SimpleFormTaxInformation" text="{i18n>TaxInformation}" />
+							<Label id="lblFISKU" text="{i18n>TaxOffice}" />
+							<Text id="FISKU" 
+							    text="{parts:[{path:'/SP_AssignedSupplierRel/FISKU'}, {path:'/SP_AssignedSupplierRel/FISKU__TXT'}] ,formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/FISKU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTENR" text="{i18n>TaxNum}" />
+							<Text id="STENR" text="{path:'/SP_AssignedSupplierRel/STENR'}"
+								visible="{path:'/SP_AssignedSupplierRel/STENR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblFISKN" text="{i18n>FiscalAddress}" />
+							<Text id="FISKN"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/FISKN'}, {path:'/SP_AssignedSupplierRel/FISKN__TXT'}] ,formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/FISKN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblFITYP" text="{i18n>TaxType}" />
+							<Text id="FITYP" text="{path:'/SP_AssignedSupplierRel/FITYP__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/FITYP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblTAXBS" text="{i18n>TaxBase}" />
+							<Text id="TAXBS"
+								text="{path:'/SP_AssignedSupplierRel/TAXBS__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/TAXBS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblJ_1KFTBUS" text="{i18n>TypeofBusiness}" />
+							<Text id="J_1KFTBUS" text="{/SP_AssignedSupplierRel/J_1KFTBUS}"
+								visible="{path:'/SP_AssignedSupplierRel/J_1KFTBUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblJ_1KFREPRE" text="{i18n>NameOfRepresentative}" />
+							<Text id="J_1KFREPRE" text="{/SP_AssignedSupplierRel/J_1KFREPRE}"
+								visible="{path:'/SP_AssignedSupplierRel/J_1KFREPRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTKZU" text="{i18n>LiableforVAT}" />
+							<Text id="STKZU"
+								text="{path:'/SP_AssignedSupplierRel/STKZU',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/STKZU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTKZA" text="{i18n>SalesEqualizatnTax}" />
+							<Text id="STKZA"
+								text="{path:'/SP_AssignedSupplierRel/STKZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/STKZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblIPISP" text="{i18n>TaxSplit}" />
+							<Text id="IPISP"
+								text="{path:'/SP_AssignedSupplierRel/IPISP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/IPISP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblREGSS" text="{i18n>SocialInsurance}" />
+							<Text id="REGSS"
+								text="{path:'/SP_AssignedSupplierRel/REGSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/REGSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblACTSS" text="{i18n>SocialInsuranceCode}" />
+							<Text id="ACTSS"
+								text="{parts:[{path:'/SP_AssignedSupplierRel/ACTSS'}, {path:'/SP_AssignedSupplierRel/ACTSS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/ACTSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblJ_1KFTIND" text="{i18n>TypeofIndustry}" />
+							<Text id="J_1KFTIND" text="{path:'/SP_AssignedSupplierRel/J_1KFTIND'}"
+								visible="{path:'/SP_AssignedSupplierRel/J_1KFTIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Tax Information -->
+							<core:ExtensionPoint name="extTaxInformation" />
+							<!-- Extension Point for TaxInformation form -->
+							<core:ExtensionPoint name="extSimpleFormTaxInformation" />
+
+
+							<core:Title id="SimpleFormPaymentTransac" text="{i18n>PaymentTransactions}" />
+							<!-- Payment Transaction INFORMATIONS -->
+							<Title id="PaymentTransactions" text="{i18n>PaymentTransactions}"
+								visible="{parts:[{path:'/SP_AssignedSupplierRel/DTAMS__TXT'}, {path : '/SP_AssignedSupplierRel/DTAWS'},{path : '/SP_AssignedSupplierRel/ESRNR'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitle'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblDTAMS" text="{i18n>DMEIndicator}" />
+							<Text id="DTAMS" text="{path:'/SP_AssignedSupplierRel/DTAMS__TXT'}"
+								visible="{path:'/SP_AssignedSupplierRel/DTAMS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblDTAWS" text="{i18n>InstructionKey}" />
+							<Text id="DTAWS" text="{/SP_AssignedSupplierRel/DTAWS}"
+								visible="{path:'/SP_AssignedSupplierRel/DTAWS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblESRNR" text="{i18n>ISRNumber}" />
+							<Text id="ESRNR" text="{/SP_AssignedSupplierRel/ESRNR}"
+								visible="{path:'/SP_AssignedSupplierRel/ESRNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for PaymentTransactions -->
+							<core:ExtensionPoint name="extPaymentTransactions" />
+
+							<!-- Alternate Payer INFORMATIONS -->
+							<Label></Label>
+							<Title id="AlternativePayer" text="{i18n>AlternativePayee}"
+								visible="{parts:[{path:'/SP_AssignedSupplierRel/XZEMP'}, {path : '/SP_AssignedSupplierRel/LNRZA'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblXZEMP" text="{i18n>PayeeinDocument}" />
+							<Text id="XZEMP"
+								text="{path:'/SP_AssignedSupplierRel/XZEMP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/XZEMP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblLNRZA" text="{i18n>AlternativePayee}" />
+							<Text id="LNRZA" text="{parts:[{path:'/SP_AssignedSupplierRel/LNRZA'}, {path:'/SP_AssignedSupplierRel/LNRZA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/SP_AssignedSupplierRel/LNRZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for AlternativePayer -->
+							<core:ExtensionPoint name="extAlternativePayer" />
+							<!-- Extension Point for PaymentTransac form -->
+							<core:ExtensionPoint name="extSimpleFormPaymentTransac" />
+
+							<core:Title id="SimpleFormAdditionalPurchasingData"
+								text="{i18n>AdditionalPurchasingData}" />
+							<Title id="ExpClassification" text="{i18n>DataMaintenanceLevels}"
+								visible="{parts:[{path:'/SP_AssignedSupplierRel/WERKR'}, {path : '/SP_AssignedSupplierRel/LTSNA'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblWERKR" text="{i18n>PlantLevelRelevant}" />
+							<Text id="WERKR"
+								text="{path:'/SP_AssignedSupplierRel/WERKR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/WERKR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblLTSNA" text="{i18n>VendorSubRangeRelevant}" />
+							<Text id="LTSNA"
+								text="{path:'/SP_AssignedSupplierRel/LTSNA',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/SP_AssignedSupplierRel/LTSNA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<core:ExtensionPoint name="extExpClassification" />
+							<!-- Extension Point to add Forms in Export Data -->
+							<core:ExtensionPoint name="extSimpleFormExportData" />
+						</form:content>
+						<!-- Extension Point for ControlData form -->
+						<core:ExtensionPoint name="extSimpleFormControlData" />
+					</form:SimpleForm>
+					<!-- Extension Point to add forms in ERP Customer View -->
+					<core:ExtensionPoint name="extErpCustomerAddForm" />
+				</l:content>
+			</l:Grid>
+			<l:VerticalLayout width="100%">
+				<l:content>
+					<Table id="subranges" width="100%" mode="{device>/listMode}"
+						noDataText=" ">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>SubRanges}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column mergeDuplicates="true" id="srlang">
+								<header>
+									<Label text="{i18n>Language}">
+									</Label>
+								</header>
+							</Column>
+
+							<Column id="sranges" hAlign="Center">
+								<header>
+									<Label text="{i18n>SubRange}">
+									</Label>
+								</header>
+							</Column>
+							<!-- Extension Point for Relationship workplace addresses table -->
+							<core:ExtensionPoint name="extSubRangeTable" />
+						</columns>
+					</Table>
+				</l:content>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</core:View>

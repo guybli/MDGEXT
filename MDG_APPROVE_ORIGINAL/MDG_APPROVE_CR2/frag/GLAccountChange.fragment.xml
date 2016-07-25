@@ -1,0 +1,210 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:ui="sap.ca.ui">
+	<layout:VerticalLayout id="glChangeLayout" width="100%">
+		<layout:content>
+			<form:SimpleForm id="glChangeSimpleForm"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+				<!--  <core:Title id="ChageGenTitle" text="{i18n>CC_TIT_GEN}"></core:Title>-->
+					<Label id="lblCD_COA" text="{i18n>GL_COA}"></Label>
+					<Text id="CD_COA" 
+					text="{parts: [{path:'/ACCOUNT/CD_COA/Code'}, {path:'/ACCOUNT/CD_COA/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/CD_COA/Code',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					
+					<Label id="lblACCOUNT" text="{i18n>GL_ACC_NAME}"></Label> 
+					<Text id="ACCOUNT" text="{parts : [{path : '/ACCOUNT/TXTSH'}, {path : '/ACCOUNT/ACCOUNT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/ACCOUNT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<!-- 
+					<Label id="LBL_CHANGE_ACCOUNT1" text="{i18n>GL_ACC_NAME}"></Label>
+					<Text id="GlChangeAccNameNumber1" text="{/ACCOUNT/ACCOUNT}"
+					visible = "{path:'/ACCOUNT/ACCOUNT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					 -->
+					 
+					<Label id="lblTXTLG" text="{i18n>GL_LONG_TXT}"></Label>
+					<Text id="TXTLG" text="{/ACCOUNT/TXTLG}"
+					visible = "{path:'/ACCOUNT/TXTLG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+						
+					<core:Title id="LBL_CHANGE_CNTRL_DATA" text="{i18n>GL_TT_CNTRLDATA}" />
+					<Label id = "lblCD_ACCGRPACC" text="{i18n>GL_ACC_GRP}" />
+					<Text id="CD_ACCGRPACC" text="{ parts : [{path : '/ACCOUNT/CD_ACCGRPACC/Description'}, {path : '/ACCOUNT/CD_ACCGRPACC/Code'}],
+					formatter : 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'} "
+					visible = "{path:'/ACCOUNT/ACCGRPACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblCD_ACCTYP" text="{i18n>GL_ACC_TYPE}" />
+					<Text id="CD_ACCTYP" text="{/ACCOUNT/CD_ACCTYP/Description}" 
+					visible = "{path:'/ACCOUNT/CD_ACCTYP/Description',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblCD_ACCPLTYP" text="{i18n>GL_PL_STMNT}" />
+					<Text id="CD_ACCPLTYP" 
+					text="{ parts: [{path:'/ACCOUNT/CD_ACCPLTYP/Code'}, {path:'/ACCOUNT/CD_ACCPLTYP/Description'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/ACCPLTYP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					
+					
+					<core:Title id="LBL_CHANGE_ADM_TYPE" text="{i18n>GL_TT_ADMTYPE}" />
+					<Label id = "lblCD_ACCNEWACC" text="{i18n>GL_NEW_ACC}" />
+					<Text id="CD_ACCNEWACC" text="{parts: [{path:'/ACCOUNT/CD_ACCNEWACC/Code'}, {path:'/ACCOUNT/CD_ACCNEWACC/Description'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCOUNT/ACCNEWACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblCD_ACCRESPU" text="{i18n>GL_USR_RESP}" />
+					<Text id="CD_ACCRESPU" text="{ parts : [{path : '/ACCOUNT/CD_ACCRESPU/Code'}, {path:'/ACCOUNT/CD_ACCRESPU/Description'}],
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCOUNT/ACCRESPU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblACCRESPP" text="{i18n>GL_PERS_RESP}" />
+					<Text id="ACCRESPP" text="{/ACCOUNT/ACCRESPP}"
+					visible = "{path:'/ACCOUNT/ACCRESPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<core:Title id="LBL_CHANGE_AUD_INFO" text="{i18n>GL_TT_AUD_INFO}" />
+					<Label id = "lblCD_USMD_ENT_CRTD_BY" text="{i18n>GL_CREATED_BY}" />
+					<Text id="CD_USMD_ENT_CRTD_BY" text="{/ACCOUNT/CD_USMD_ENT_CRTD_BY/Description}"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CRTD_BY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblUSMD_ENT_CRTD_AT" text="{i18n>GL_CREATED_ON}" />
+					<Text id="USMD_ENT_CRTD_AT" text="{path:'/ACCOUNT/USMD_ENT_CRTD_AT', formatter:'fcg.mdg.approvecrv2.util.Formatter.dateTime'}"
+					 visible = "{path:'/ACCOUNT/USMD_ENT_CRTD_AT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblUSMD_ENT_CHNG_BY" text="{i18n>GL_CHANGED_BY}" />
+					<Text id="USMD_ENT_CHNG_BY" text="{/ACCOUNT/USMD_ENT_CHNG_BY}"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CHNG_BY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "lblUSMD_ENT_CHNG_AT" text="{i18n>GL_CHANGED_ON}" />
+					<Text id="USMD_ENT_CHNG_AT" text="{ path : '/ACCOUNT/USMD_ENT_CHNG_AT', formatter:'fcg.mdg.approvecrv2.util.Formatter.dateTime' }"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CHNG_AT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					
+						
+			   </form:content>
+			</form:SimpleForm>
+			
+			<core:ExtensionPoint name="extccChangeFormCustomSection"></core:ExtensionPoint>
+
+		    <Table id="glChangeDescriptionTable" mode="{device>/listMode}"
+			class="table_padding headerBold" width="100%" headerText="{i18n>GL_DESC_TAB}" >
+			<columns>
+			<Column id="glChangecolLang">
+				<header>
+					<Label text="{i18n>Language}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glChangecolName" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_DESC_NAME}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glChangecolLongText" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_LONG_TEXT}">
+					</Label>
+				</header>
+			</Column>
+	    	</columns>
+			<!-- Extends the column of a description table -->
+			<core:ExtensionPoint name="extccChangeDescriptionTable" />
+			</Table>
+			
+			<!-- Extends the form with custom groups -->
+			<core:ExtensionPoint name="extccChangeFormCustomSection"></core:ExtensionPoint>
+	
+			<form:SimpleForm id="glChangeSecondForm"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+				<core:Title id="AccChangeConsDetails" text="{i18n>GL_ACC_CONS_DET}"></core:Title>
+					<Label id="lblCD_COMPACC" text="{i18n>GL_TRAD_PARTNR}"></Label>
+					<Text id="CD_COMPACC" text="{parts: [{path:'/ACCOUNT/CD_COMPACC/Code'}, {path:'/ACCOUNT/CD_COMPACC/Description'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/COMPACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+					<Label id="lblFSIACC" text="{i18n>GL_GROUP_ACC}"></Label>
+					<Text id="FSIACC" text="{/ACCOUNT/FSIACC}"
+					visible = "{path:'/ACCOUNT/FSIACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+					<Label id="lblFSIACCSTA" text="{i18n>GL_STAT_GROUP_ACC}"></Label>
+					<Text id="FSIACCSTA" text="{/ACCOUNT/FSIACCSTA}"
+					visible = "{path:'/ACCOUNT/FSIACCSTA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+			   </form:content>
+			</form:SimpleForm>
+			
+			<core:ExtensionPoint name="ChangeCompCodeTable"></core:ExtensionPoint>
+
+		    <Table id="glChangeCompCode" 
+			class="table_padding headerBold" width="100%" headerText="{i18n>GL_TT_COMP_CODE}">
+			<columns>
+				<Column id="glChangecompCode">
+				<header>
+					<Label text="{i18n>GL_COMP_CODE}">
+					</Label>
+				</header>
+				</Column>
+			<!--<Column id="glChangecolCurr" hAlign="Center">	
+				<header>
+					<Label text="{i18n>GL_CURR}">
+					</Label>
+				</header>
+			</Column>--> 
+			</columns>
+			<!-- Extends the column of a description table -->
+			<core:ExtensionPoint name="extglChangeDescriptionTable" />
+			</Table>
+			
+			<core:ExtensionPoint name="ChangeCostElTable"></core:ExtensionPoint>
+
+		    <Table id="glChangeCostEl" 
+			class="table_padding headerBold" width="100%" headerText="{i18n>GL_TT_COST_EL}">
+			<columns>
+			<Column id="glChangecolCOA">
+				<header>
+					<Label text="{i18n>GL_COA}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glChangecolCostEl" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_COST_EL}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glChangecolFunArea">
+				<header>
+					<Label text="{i18n>GL_FUNC_AREA}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glChangecolCostElCategory" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_COST_EL_CATEGORY}">
+					</Label>
+				</header>
+			</Column>
+			</columns>
+			<!-- Extends the column of a description table -->
+			<core:ExtensionPoint name="extccChangeDescriptionTable" />
+			</Table>
+			
+			<List class="headerBold" id="glChangeAttachFileUpload" headerText="{i18n>GL_TT_ACC_ATT}">
+					<items>
+					</items>
+				</List>
+			
+		</layout:content>
+	</layout:VerticalLayout>
+</core:FragmentDefinition>

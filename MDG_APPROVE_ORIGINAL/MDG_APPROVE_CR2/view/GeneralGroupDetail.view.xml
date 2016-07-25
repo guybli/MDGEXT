@@ -1,0 +1,67 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding BP Group Details selected in the Change and Create scenario  -->
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="fcg.mdg.approvecrv2.view.GeneralGroupDetail">
+	<Page id="generalGroupPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="groupDetailHeader">
+			<!-- Extension Point for BP Group Detail header -->
+				<core:ExtensionPoint name="extgroupDetailHeader" />
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormGeneralGroup"
+						columnsM="1" columnsL="1" emptySpanM="1" emptySpanL="1"
+						labelSpanM="4" labelSpanL="4" layout="ResponsiveGridLayout"
+						minWidth="1024" maxContainerCols="1">
+						<form:content>
+							<!-- General Details INFORMATIONS -->
+							<core:Title id="GGeneral" text="{i18n>General}" /> 
+							<Label id='lblGTITLE_KEY' text="{i18n>PC_TITLE}" />
+							<Text id="GTITLE_KEY" text="{path:'/TITLE_KEY__TXT'}"
+				            visible="{path:'/TITLE_KEY__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id='lblGNAMEGROUP1' text="{i18n>CC_NAME1}" />
+							<Text id="GNAMEGROUP1" text="{/BP_GroupRel/NAMEGROUP1}"
+								visible="{path:'/BP_GroupRel/NAMEGROUP1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id='lblGNAMEGROUP2' text="{i18n>CC_NAME2}" />
+							<Text id="GNAMEGROUP2" text="{/BP_GroupRel/NAMEGROUP2}"
+								visible="{path:'/BP_GroupRel/NAMEGROUP2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblGSEARCHTERM1" text="{i18n>Searchterm1}" />
+							<Text id="GSEARCHTERM1" text="{/SEARCHTERM1}"
+								visible="{path:'/SEARCHTERM1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id='lblGSEARCHTERM2' text="{i18n>Searchterm2}" />
+							<Text id='GSEARCHTERM2' text="{/SEARCHTERM2}"
+								visible="{path:'/SEARCHTERM2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+								<!-- Extension Point for General in BP Group Details Form in Change View -->
+							<core:ExtensionPoint name="extGGeneral" /> 
+
+							<!--Group Details INFORMATIONS -->
+
+
+							<core:Title id="GroupData" text="{i18n>GroupData}" />
+							<Label id='lblGGROUPTYPE' text="{i18n>PartnerGrpTyp}" />
+							<Text id='GGROUPTYPE' text="{path:'/BP_GroupRel/GROUPTYPE__TXT'}"
+			                 visible="{path:'/BP_GroupRel/GROUPTYPE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id='lblGAUTHORIZATIONGROUP' text="{i18n>AuthorizationGroup}" />
+							<Text id='GAUTHORIZATIONGROUP' text="{path:'/AUTHORIZATIONGROUP__TXT'}"
+				             visible="{path:'/AUTHORIZATIONGROUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+								<!-- Extension Point for BP Person Details for Person Form in Change View -->
+							<core:ExtensionPoint name="extGroupData" /> 
+						</form:content>
+						<!-- Extension Point for BP Group Form in Change View -->
+							<core:ExtensionPoint name="extSimpleFormGeneralGroup" /> 
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

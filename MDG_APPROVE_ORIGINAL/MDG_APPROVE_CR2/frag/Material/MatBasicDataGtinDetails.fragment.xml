@@ -1,0 +1,63 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<!--<l:VerticalLayout id="matGtinLayout" width="100%">-->
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="GtinDetailForm" labelSpanL="4" labelSpanM="4"
+				layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>Gtin_Dim_Detail}">
+				<f:content>
+					<Label id="Lbl_LAENG" text="{i18n>Gtin_Length}"></Label>
+					<Text id="Txt_LAENG" text="{/LAENG}" visible="{path:'/LAENG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_BREIT" text="{i18n>Gtin_Width}"></Label>
+					<Text id="Txt_BREIT" text="{/BREIT}" visible="{path:'/BREIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_HOEHE" text="{i18n>Gtin_Height}"></Label>
+					<Text id="Txt_HOEHE" text="{/HOEHE}" visible="{path:'/HOEHE',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_VOLUM" text="{i18n>Gtin_Volume}"></Label>
+					<Text id="Txt_VOLUM" text="{/VOLUM}" visible="{path:'/VOLUM',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_BRGEW" text="{i18n>Gtin_Gross_Weight}"></Label>
+					<Text id="Txt_BRGEW" text="{/BRGEW}" visible="{path:'/BRGEW',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_NTGEW" text="{i18n>Gtin_Net_Weight}"></Label>
+					<Text id="Txt_NTGEW" text="{/NTGEW}" visible="{path:'/NTGEW',formatter:'fcg.mdg.approvecrv2.util.Formatter.MatZerovisibility'}"></Text>
+					<Label id="Lbl_GROES" text="{i18n>Gtin_Size_Dim}"></Label>
+					<Text id="Txt_GROES" text="{/GROES}" visible="{path:'/GROES',formatter:'fcg.mdg.approvecrv2.util.Formatter.MatZerovisibility'}"></Text>
+					<!-- Extension Point for dimension detail-->
+					<core:ExtensionPoint name="extGtinDetailForm"></core:ExtensionPoint>
+				</f:content>
+			</f:SimpleForm>
+			<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="GtinEanDetailForm" labelSpanL="4" labelSpanM="4"
+				layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024" title="{i18n>i18n>GTIN_EAN_Details}">
+				<f:content>
+					<Label id="Lbl_UMREN" text="{i18n>Mat_Quantity}"></Label>
+					<Text id="Txt_UMREN" text="{/UMREN}" visible="{path:'/UMREN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_QTEUNIT" text="{i18n>Mat_Unit_Measure}"></Label>
+					<Text id="Txt_QTEUNIT" maxLines="0"
+						text="{parts: [{path:'/QTEUNIT'}, {path:'/QTEUNIT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/QTEUNIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_UMREZ" text="{i18n>Mat_Base_Quantity}"></Label>
+					<Text id="Txt_UMREZ" text="{/UMREZ}" visible="{path:'/UMREZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_baseunitofmeasure" text="{i18n>Mat_Base_Unit_Measure}"></Label>
+					<Text id="Txt_baseunitofmeasure" maxLines="0"
+						text="{parts: [{path:'/baseunitofmeasure'}, {path:'/baseunitofmeasure_txt'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/baseunitofmeasure',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_EAN_MARM" text="{i18n>Gtin_EAN_UPC}"></Label>
+					<Text id="Txt_EAN_MARM" text="{/EAN}" visible="{path:'/EAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_HPEAN" text="{i18n>Gtin_Main_EAN}"></Label>
+					<Text id="Txt_HPEAN" maxLines="0" text="{path:'/HPEAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/HPEAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!--<Text id="Txt_HPEAN"  text="{/HPEAN__TXT}" visible="{path:'/HPEAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+					<Label id="Lbl_EANTP_MEA" text="{i18n>Gtin_EAN_Category}"></Label>
+					<!--<Text id="Txt_EANTP_MEA"  text="{/EANTP_MEA}" visible="{path:'/EANTP_MEA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+					<Text id="Txt_EANTP_MEA" maxLines="0"
+						text="{parts: [{path:'/EANTP_MEA'}, {path:'/EANTP_MEA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/EANTP_MEA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for mean gtin detail-->
+					<core:ExtensionPoint name="extGtinEanDetailForm"></core:ExtensionPoint>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

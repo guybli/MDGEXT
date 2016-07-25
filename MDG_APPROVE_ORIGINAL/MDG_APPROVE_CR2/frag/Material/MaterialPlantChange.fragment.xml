@@ -1,0 +1,83 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" 
+	xmlns:f="sap.ui.layout.form">
+	<l:VerticalLayout id="matPlntChangeLayout" width="100%">
+                          <Panel id="MatReqPlanningPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Mat_ReqPlng}"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+							<!-- Extension Point for MRP change panel-->
+							<core:ExtensionPoint name="extMatReqPlanningPanelChng"></core:ExtensionPoint>
+                            </content>
+					    </Panel>
+
+                        <Panel id="MatForecastingPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>PlntFrcstng}"/>
+								</Toolbar>
+							</headerToolbar>
+						        <content>
+							<!-- Extension Point for Forecasting change panel-->
+							<core:ExtensionPoint name="extMatForecastingPanelChng"></core:ExtensionPoint>
+					           </content>
+            			</Panel>
+
+                        <Panel id="MatQltyMngmntPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding">
+						    <headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Pur_Quality_Management}"/>
+								</Toolbar>
+							</headerToolbar>
+						    <content>
+								<!-- Extension Point for QM change panel-->
+							<core:ExtensionPoint name="extMatQltyMngmntPanelChng"></core:ExtensionPoint>
+					        </content>
+            			</Panel>
+
+                        <Panel id="MatWorkSchdlngPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding" >
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>PlntWrkSchdl}"/>
+								</Toolbar>
+							</headerToolbar>
+						    <content>
+								<!-- Extension Point for Work Scheduling change panel-->
+							<core:ExtensionPoint name="extMatWorkSchdlngPanelChng"></core:ExtensionPoint>
+					        </content>
+            			</Panel>
+
+                        <Panel id="MatStrgCstngPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Strg_Cstng}"/>
+								</Toolbar>
+							</headerToolbar>
+						    <content>
+								<!-- Extension Point for Costing and Storage change panel-->
+							<core:ExtensionPoint name="extMatStrgCstngPanelChng"></core:ExtensionPoint>
+                            </content>
+						</Panel>
+						<Panel id="MatValuationPanelChng" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Mat_Plant_Val}"/>
+								</Toolbar>
+							</headerToolbar>
+						    <content>
+							<!-- Extension Point for Costing and Storage change panel-->
+							<core:ExtensionPoint name="extMatValuationPanelChng"></core:ExtensionPoint>
+                            </content>
+						</Panel>
+					<!-- Extension Point for Plant change Layout-->
+					<core:ExtensionPoint name="extmatPlntChangeLayout"></core:ExtensionPoint>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

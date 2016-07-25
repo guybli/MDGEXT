@@ -1,0 +1,31 @@
+[
+  {
+    "COUNTRY": "DE",
+    "COUNTRYISO": "",
+    "STD_NO": "X",
+    "TELEPHONE": "88888888888",
+    "EXTENSION": "333",
+    "TEL_NO": "",
+    "CALLER_NO": "",
+    "STD_RECIP": "",
+    "R_3_USER": "1",
+    "HOME_FLAG": "",
+    "CONSNUMBER": "001",
+    "ERRORFLAG": "",
+    "FLG_NOUSE": "",
+    "VALID_FROM": "",
+    "VALID_TO": "",
+    "LANGU": "",
+    "LANGU_ISO": "",
+    "COMM_NOTES": "",
+    "VALIDFROMDATE": null,
+    "VALIDTODATE": null,
+    "BP_GUID": "AFBWkYPhHtScqG6YvgjU7w==",
+    "PARTNER1": "$5738",
+    "PARTNER2": "0000000128",
+    "RELATIONSHIPCATEGORY": "BUR001",
+    "VALIDUNTILDATE": null,
+    "ADDRESS_NUMBER": "$6230",
+    "COMM_TYPE": "TEL"
+  }
+]

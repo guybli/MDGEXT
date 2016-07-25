@@ -1,0 +1,141 @@
+[{
+	"MATNR": "MATNR 1",
+	"LANGU": "LANGU 1",
+	"TDID": "TDID 1",
+	"NOTE": "NOTE 1",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 1',LANGU='LANGU 1',TDID='TDID 1')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 1',LANGU='LANGU 1',TDID='TDID 1')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 2",
+	"LANGU": "LANGU 2",
+	"TDID": "TDID 2",
+	"NOTE": "NOTE 2",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 2',LANGU='LANGU 2',TDID='TDID 2')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 2',LANGU='LANGU 2',TDID='TDID 2')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 3",
+	"LANGU": "LANGU 3",
+	"TDID": "TDID 3",
+	"NOTE": "NOTE 3",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 3',LANGU='LANGU 3',TDID='TDID 3')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 3',LANGU='LANGU 3',TDID='TDID 3')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 4",
+	"LANGU": "LANGU 4",
+	"TDID": "TDID 4",
+	"NOTE": "NOTE 4",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 4',LANGU='LANGU 4',TDID='TDID 4')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 4',LANGU='LANGU 4',TDID='TDID 4')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 5",
+	"LANGU": "LANGU 5",
+	"TDID": "TDID 5",
+	"NOTE": "NOTE 5",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 5',LANGU='LANGU 5',TDID='TDID 5')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 5',LANGU='LANGU 5',TDID='TDID 5')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 6",
+	"LANGU": "LANGU 6",
+	"TDID": "TDID 6",
+	"NOTE": "NOTE 6",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 6',LANGU='LANGU 6',TDID='TDID 6')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 6',LANGU='LANGU 6',TDID='TDID 6')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 7",
+	"LANGU": "LANGU 7",
+	"TDID": "TDID 7",
+	"NOTE": "NOTE 7",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 7',LANGU='LANGU 7',TDID='TDID 7')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 7',LANGU='LANGU 7',TDID='TDID 7')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 8",
+	"LANGU": "LANGU 8",
+	"TDID": "TDID 8",
+	"NOTE": "NOTE 8",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 8',LANGU='LANGU 8',TDID='TDID 8')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 8',LANGU='LANGU 8',TDID='TDID 8')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 9",
+	"LANGU": "LANGU 9",
+	"TDID": "TDID 9",
+	"NOTE": "NOTE 9",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 9',LANGU='LANGU 9',TDID='TDID 9')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 9',LANGU='LANGU 9',TDID='TDID 9')/ChangeData"
+		}
+	}
+}, {
+	"MATNR": "MATNR 10",
+	"LANGU": "LANGU 10",
+	"TDID": "TDID 10",
+	"NOTE": "NOTE 10",
+	"__metadata": {
+		"uri": "NOTESCollection(MATNR='MATNR 10',LANGU='LANGU 10',TDID='TDID 10')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.NOTES"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "NOTESCollection(MATNR='MATNR 10',LANGU='LANGU 10',TDID='TDID 10')/ChangeData"
+		}
+	}
+}]

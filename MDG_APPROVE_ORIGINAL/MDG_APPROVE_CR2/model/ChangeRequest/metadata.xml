@@ -1,0 +1,313 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="MDG_APPROVE_CR" xml:lang="en" sap:schema-version="0001">
+			<EntityType Name="Attachment" m:HasStream="true"
+				sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+					<PropertyRef Name="CreatedAt" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="FileName" Type="Edm.String" Nullable="false"
+					MaxLength="60" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="MimeType" Type="Edm.String" Nullable="false"
+					MaxLength="18" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false"
+					Precision="0" sap:label="Time Stamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Link" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Note" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Text" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false"
+					Precision="0" sap:label="Time Stamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="ChangeRequest" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+				</Key>
+				<Property Name="Edition" Type="MDG_APPROVE_CR.Edition"
+					Nullable="false" />
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="Change Request"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="ChangeRequestDesc" Type="Edm.String"
+					Nullable="false" MaxLength="60" sap:label="Description (Long)"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="StatusDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="DataModel" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Data Model" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Priority" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="PriorityDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Reason" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Reason" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ReasonDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Precision="0"
+					sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="ChangedAt" Type="Edm.DateTime" Precision="0"
+					sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Duedate" Type="Edm.DateTime" Precision="8"
+					sap:label="Due Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Action" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="USMD_ACTION" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="LastProcessedBy" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="USMD_LAST_APPROVED"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="LastProcessedByDesc" Type="Edm.String"
+					Nullable="false" MaxLength="80" sap:label="Full Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="MainEntity" Type="Edm.String" Nullable="false"
+					MaxLength="9" sap:label="Entity Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="MainEntityText" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					MaxLength="12" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedByDesc" Type="Edm.String" Nullable="false"
+					MaxLength="80" sap:label="Full Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="OTC" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Bus.Object Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ObjectKey" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<NavigationProperty Name="Attachments"
+					Relationship="MDG_APPROVE_CR.ChangeRequestToAttachment" FromRole="FromRole_ChangeRequestToAttachment"
+					ToRole="ToRole_ChangeRequestToAttachment" />
+				<NavigationProperty Name="Notes"
+					Relationship="MDG_APPROVE_CR.ChangeRequestToNote" FromRole="FromRole_ChangeRequestToNote"
+					ToRole="ToRole_ChangeRequestToNote" />
+			</EntityType>
+			<EntityType Name="ChangeData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+					<PropertyRef Name="Entity" />
+					<PropertyRef Name="Attribute" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="Change Request"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Entity" Type="Edm.String" Nullable="false"
+					MaxLength="9" sap:label="Entity Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Attribute" Type="Edm.String" Nullable="false"
+					MaxLength="9" sap:label="Attribute" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="EntityAction" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="USMD_ENTITY_ACTION" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="EntityDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="NewValue" Type="Edm.String" Nullable="false"
+					sap:label="NEW_VALUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="OldValue" Type="Edm.String" Nullable="false"
+					sap:label="OLD_VALUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="AttributeDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ChangeKey" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="OldValueText" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="NewValueText" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Context" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Action" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="UsmdCrequest" />
+					<PropertyRef Name="UsmdCrAction" />
+				</Key>
+				<Property Name="UsmdCrequest" Type="Edm.String" Nullable="false"
+					MaxLength="12" sap:label="USMD_CREQUEST" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdCrAction" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Action" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdActDescripti" Type="Edm.String"
+					Nullable="false" MaxLength="60" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="UsmdBtnTxt" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdBtnTooltip" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdSequenceNr" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="MDG Step sequence" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<ComplexType Name="RejectionReason">
+				<Property Name="ReasonCode" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Reason for Rejection" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ReasonText" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<ComplexType Name="Message">
+				<Property Name="MsgTxt" Type="Edm.String" Nullable="false"
+					MaxLength="220" sap:label="Message Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<ComplexType Name="Edition">
+				<Property Name="UsmdEdtnNumber" Type="Edm.String" Nullable="false"
+					MaxLength="6" sap:label="Edition Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdVdateFrom" Type="Edm.DateTime"
+					Precision="7" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdVdateTo" Type="Edm.DateTime" Precision="7"
+					sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdEdition" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Edition" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdEdtnDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<Association Name="ChangeRequestToAttachment"
+				sap:content-version="1">
+				<End Type="MDG_APPROVE_CR.ChangeRequest" Multiplicity="1"
+					Role="FromRole_ChangeRequestToAttachment" />
+				<End Type="MDG_APPROVE_CR.Attachment" Multiplicity="*"
+					Role="ToRole_ChangeRequestToAttachment" />
+			</Association>
+			<Association Name="ChangeRequestToNote"
+				sap:content-version="1">
+				<End Type="MDG_APPROVE_CR.ChangeRequest" Multiplicity="1"
+					Role="FromRole_ChangeRequestToNote" />
+				<End Type="MDG_APPROVE_CR.Note" Multiplicity="*"
+					Role="ToRole_ChangeRequestToNote" />
+			</Association>
+			<EntityContainer Name="MDG_APPROVE_CR_Entities"
+				m:IsDefaultEntityContainer="true">
+				<EntitySet Name="ChangeRequestCollection" EntityType="MDG_APPROVE_CR.ChangeRequest"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="ChangeDataCollection" EntityType="MDG_APPROVE_CR.ChangeData"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="ActionCollection" EntityType="MDG_APPROVE_CR.Action"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="AttachmentCollection" EntityType="MDG_APPROVE_CR.Attachment"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+				<EntitySet Name="NoteCollection" EntityType="MDG_APPROVE_CR.Note"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+				<AssociationSet Name="ChangeRequestToNoteSet"
+					Association="MDG_APPROVE_CR.ChangeRequestToNote" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToNote" />
+					<End EntitySet="NoteCollection" Role="ToRole_ChangeRequestToNote" />
+				</AssociationSet>
+				<AssociationSet Name="ChangeRequestToAttachmentSet"
+					Association="MDG_APPROVE_CR.ChangeRequestToAttachment"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToAttachment" />
+					<End EntitySet="AttachmentCollection" Role="ToRole_ChangeRequestToAttachment" />
+				</AssociationSet>
+				<FunctionImport Name="GetRejectionReasons"
+					ReturnType="Collection(MDG_APPROVE_CR.RejectionReason)"
+					m:HttpMethod="GET" sap:action-for="MDG_APPROVE_CR.ChangeRequest">
+					<Parameter Name="ChangeRequestType" Type="Edm.String"
+						Mode="In" MaxLength="8" />
+				</FunctionImport>
+				<FunctionImport Name="PerformAction" ReturnType="MDG_APPROVE_CR.Message"
+					m:HttpMethod="POST" sap:action-for="MDG_APPROVE_CR.ChangeRequest">
+					<Parameter Name="Note" Type="Edm.String" Mode="In" />
+					<Parameter Name="Model" Type="Edm.String" Mode="In"
+						MaxLength="2" />
+					<Parameter Name="ChangedAt" Type="Edm.DateTime" Mode="In"
+						Precision="0" />
+					<Parameter Name="MainEntity" Type="Edm.String" Mode="In" />
+					<Parameter Name="RejectionReasonCode" Type="Edm.String"
+						Mode="In" MaxLength="2" />
+					<Parameter Name="ActionCode" Type="Edm.String" Mode="In"
+						MaxLength="2" />
+					<Parameter Name="CreatedBy" Type="Edm.String" Mode="In"
+						MaxLength="80" />
+					<Parameter Name="LogicalAction" Type="Edm.String" Mode="In"
+						MaxLength="10" />
+					<Parameter Name="ObjectDescription" Type="Edm.String"
+						Mode="In" />
+					<Parameter Name="ChangeRequestID" Type="Edm.String" Mode="In" />
+				</FunctionImport>
+				<FunctionImport Name="Decisions"
+					ReturnType="Collection(MDG_APPROVE_CR.Action)" EntitySet="ActionCollection"
+					m:HttpMethod="GET" sap:action-for="MDG_APPROVE_CR.Action">
+					<Parameter Name="Crequest" Type="Edm.String" Mode="In"
+						MaxLength="12" />
+				</FunctionImport>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

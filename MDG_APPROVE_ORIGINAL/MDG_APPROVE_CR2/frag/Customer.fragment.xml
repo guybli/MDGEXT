@@ -1,0 +1,108 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Fragment to create the Icontab bar in which all the entity sections 
+	layout will be included which will be used in both create and change scenario -->
+<core:FragmentDefinition id="Customer" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<IconTabBar id="CustomerTabBar" expandable="false" select="onSelect">
+		<items>
+
+			<IconTabFilter id="CGeneralDataSection" icon="sap-icon://factory"
+				text="{i18n>Central}" key="gen" tooltip="{i18n>Central}" design="Horizontal" >
+				<layout:VerticalLayout id="CGeneral" width="100%" />
+				<layout:VerticalLayout id="CRoles" width="100%" />
+				<layout:VerticalLayout id="CAddress" width="100%" />
+				<layout:VerticalLayout id="CAddressUsages"
+					width="100%" />
+				<layout:VerticalLayout id="CBank" width="100%" />
+				<layout:VerticalLayout id="CIdentification"
+					width="100%" />
+				<layout:VerticalLayout id="CTax" width="100%" />
+				<layout:VerticalLayout id="CIndustries" width="100%" />
+				<layout:VerticalLayout id="CErpCustomer"
+					width="100%" />
+				<Panel id="relPanel" expandable="true" expanded="false">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Relationships}"></Label>
+						</Toolbar>
+					</headerToolbar>
+				</Panel>
+
+				<!-- Extends the General section Tab -->
+				<core:ExtensionPoint name="extCGeneralDataSection" />
+
+			</IconTabFilter>
+
+			<IconTabFilter id="CCCDataSection" icon="sap-icon://account"
+				text="{i18n>CompCodes}" key="compcode" tooltip="{i18n>CompCodes}" design="Horizontal">
+
+				<layout:VerticalLayout id="CCompCodeLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="CDunningLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="CWithhldTaxLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="CTaxClasLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<!-- Extends the Company Code section Tab -->
+				<core:ExtensionPoint name="extCCCDataSection" />
+			</IconTabFilter>
+
+			<IconTabFilter id="SalesDataSection" icon="sap-icon://person-placeholder"
+				text="{i18n>salesheader}" key="sale" tooltip="{i18n>salesheader}" design="Horizontal">
+
+				<layout:VerticalLayout id="CSaleLayout" width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="CPartnerFuncLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<!-- Extends the Sales section Tab -->
+				<core:ExtensionPoint name="extSalesDataSection" />
+			</IconTabFilter>
+
+
+			<IconTabFilter id="CNotes" key="notes" icon="sap-icon://notes"
+				text="{i18n>Note}" tooltip="{i18n>Note}" design="Horizontal">
+				<content>
+					<List id="CNote" showSeparators="Inner" items="{json>/Notes}">
+						<FeedListItem sender="{json>sender}" icon="{json>icon}"
+							iconDensityAware="false" senderActive="false" iconActive="false"
+							info="{json>info}" timestamp="{json>timestamp}" text="{json>text}" />
+					</List>
+				</content>
+				<!-- Extends the Notes section Tab -->
+				<core:ExtensionPoint name="extCNotes" />
+			</IconTabFilter>
+
+			<IconTabFilter id="CAttachmentCustomer" key="attach"
+				icon="sap-icon://attachment" text="{i18n>PC_TIT_ATTACH}" tooltip="{i18n>PC_TIT_ATTACH}" design="Horizontal">
+				<content>
+
+					<UploadCollection id="Cfileupload"
+						maximumFilenameLength="35" multiple="true" items="{json>/dataitems}"
+						showSeparators="All" uploadEnabled="false">
+						<UploadCollectionItem contributor="{json>contributor}"
+							visibleDelete="fase" visibleEdit="false" documentId="documentId"
+							fileName="{json>filename}" mimeType="{json>mimeType}"
+							uploadedDate="{json>uploaded}" url="{json>url}" />
+					</UploadCollection>
+
+				</content>
+				<!-- Extends the Attachments section Tab -->
+				<core:ExtensionPoint name="extCAttachmentCustomer" />
+			</IconTabFilter>
+			<!-- Extends the Icon Tab -->
+			<core:ExtensionPoint name="extCustomerTabBar" />
+		</items>
+
+	</IconTabBar>
+</core:FragmentDefinition>

@@ -1,0 +1,200 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fcg.mdg.approvecrv2.view.WPAddress">
+	<Page id="WPAddressPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true"
+		onBack="onBackClick">
+		<content>
+			<ObjectHeader id="wpDetailHeader">
+				<attributes>
+					<ObjectAttribute id="wpAttrHeader" />
+				</attributes>
+				<attributes>
+					<ObjectAttribute id="wpAttrHeaderParent" />
+				</attributes>
+				<!-- Extension Point for Workplaces Address Header -->
+				<core:ExtensionPoint name="extwpDetailHeader" />
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormWPAddress" columnsM="1"
+						columnsL="1" emptySpanM="1" emptySpanL="1" labelSpanM="3"
+						labelSpanL="3" layout="ResponsiveGridLayout" minWidth="1024"
+						maxContainerCols="1">
+						<form:content>
+							<core:Title id="wppersondetails" text="{i18n>wppersondet} " />
+							<Label id="lblFUNCTION" text="{i18n>Function}" />
+							<Text id="FUNCTION" text="{/FUNCTION}"
+								visible="{path:'/FUNCTION',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblDEPARTMENT" text="{i18n>PC_DEPT}" />
+							<Text id="DEPARTMENT" text="{/DEPARTMENT}"
+								visible="{path:'/DEPARTMENT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblROOM_NO" text="{i18n>wproom}" />
+							<Text id="ROOM_NO" text="{/ROOM_NO}"
+								visible="{path:'/ROOM_NO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblFLOOR" text="{i18n>wpfloor}" />
+							<Text id="FLOOR" text="{/FLOOR}"
+								visible="{path:'/FLOOR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblBUILDING_P" text="{i18n>wpbuilding}" />
+							<Text id="BUILDING_P" text="{/BUILDING_P}"
+								visible="{path:'/BUILDING_P',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<!-- Extension Point for Workplace person details -->
+							<core:ExtensionPoint name="extwppersondetails" />
+							<core:Title id="wppercomm" text="{i18n>PC_TIT_COMM}" />
+							<Label id="lblCOMM_TYPE" text="{i18n>wpcomm}" />
+							<Text id="COMM_TYPE"
+								text="{parts:[{path:'/COMM_TYPE'},{path:'/COMM_TYPE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/COMM_TYPE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for communication type -->
+							<core:ExtensionPoint name="extwppercomm" />
+						</form:content>
+						<!-- Extension Point for Simple form of workplace address -->
+						<core:ExtensionPoint name="extSimpleFormWPAddress" />
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+
+			<l:VerticalLayout width="100%">
+				<l:content>
+					<Table id="WPTelephoneNumbers" width="100%" mode="{device>/listMode}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>Telephone}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<header>
+									<Label text="{i18n>Country}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Telephone}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Extension}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Standard}" />
+								</header>
+							</Column>
+							<!-- Extension Point for Workplace Telephone numbers table -->
+							<core:ExtensionPoint name="extWPTelephoneNumbers" />
+						</columns>
+					</Table>
+					<Table id="WPMobileNumbers" width="100%" mode="{device>/listMode}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>Mobile}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<header>
+									<Label text="{i18n>Country}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Mobile}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Standard}" />
+								</header>
+							</Column>
+							<!-- Extension Point for Workplace mobile numbers -->
+							<core:ExtensionPoint name="extWPMobileNumbers" />
+						</columns>
+					</Table>
+					<Table id="WPFaxNumbers" width="100%" mode="{device>/listMode}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>wpfax}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+
+						<columns>
+							<Column>
+								<header>
+									<Label text="{i18n>Country}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Fax}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Extension}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Standard}" />
+								</header>
+							</Column>
+							<!-- Extension Point for WP Fax numbers Table -->
+							<core:ExtensionPoint name="extWPFaxNumbers" />
+						</columns>
+					</Table>
+
+					<Table id="WPEMailAddresses" width="100%" mode="{device>/listMode}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>wpemail}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<header>
+									<Label text="{i18n>EMailAddress}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Standard}" />
+								</header>
+							</Column>
+							<!-- Extension Point for Workplace EMail addresses Table -->
+							<core:ExtensionPoint name="extWPEMailAddresses" />
+						</columns>
+						<!-- Extension Point for adding more tables in workplace -->
+					</Table>
+					<Table id="WPURL" width="100%" mode="{device>/listMode}">
+						<headerToolbar>
+							<Toolbar>
+								<Title text="{i18n>WebSites}" class="sapThemeFontSize"></Title>
+							</Toolbar>
+						</headerToolbar>
+						<columns>
+							<Column>
+								<header>
+									<Label text="{i18n>URL}" />
+								</header>
+							</Column>
+							<Column>
+								<header>
+									<Label text="{i18n>Standard}" />
+								</header>
+							</Column>
+						</columns>
+					</Table>
+				</l:content>
+			</l:VerticalLayout>
+		</content>
+	</Page>
+</core:View>

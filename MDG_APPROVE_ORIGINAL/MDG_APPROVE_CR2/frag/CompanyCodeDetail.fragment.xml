@@ -1,0 +1,321 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<form:SimpleForm id="SimpleFormCompcode"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+
+				<form:content>
+					<!-- Company Code INFORMATIONS -->
+					<!-- <core:Title id="CompCode" text="{i18n>CC_CCODE}" /> -->
+					<Label id="lblcompBUKRS" text="{i18n>CC_CCODE}" class = "sapThemeFont" />
+					<Text id="compBUKRS"  class = "sapThemeFont"
+						text="{parts:[{path:'/BUKRS'},{path:'/BUKRS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BUKRS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblerpcust" text="{i18n>ERPCustomer}" />
+					<Text id="comperpcust"></Text>
+
+					<!-- Extension Point for Company Code Information -->
+					<core:ExtensionPoint name="extCompCodeinformation" />
+
+					<!-- Accounting Information INFORMATIONS -->
+					<core:Title id="AccontingInfo" text="{i18n>AccountingInfo}" />
+					<Label id="lblAKONT" text="{i18n>ReconAct}" />
+					<Text id="AKONT"
+						text="{parts:[{path:'/AKONT'},{path:'/AKONT__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/AKONT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKNRZE" text="{i18n>HeadOfc}" />
+					<Text id="KNRZE"
+						text="{parts:[{path:'/KNRZE'},{path:'/KNRZE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KNRZE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblBEGRU" text="{i18n>AuthorizationGroup}" />
+					<Text id="BEGRU"
+						text="{parts:[{path:'/BEGRU'},{path:'/BEGRU__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblWBRSL" text="{i18n>ValueAjstmnt}" />
+					<Text id="WBRSL"
+						text="{parts:[{path:'/WBRSL'},{path:'/WBRSL__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/WBRSL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZUAWA" text="{i18n>SortKey}" />
+					<Text id="ZUAWA"
+						text="{parts:[{path:'/ZUAWA'},{path:'/ZUAWA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZUAWA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblFDGRV" text="{i18n>PlaningGrp}" />
+					<Text id="FDGRV"
+						text="{parts:[{path:'/FDGRV'},{path:'/FDGRV__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/FDGRV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblFRGRP" text="{i18n>ReleaseGrp}" />
+					<Text id="FRGRP"
+						text="{path:'/FRGRP__TXT'}"
+						visible="{path:'/FRGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Accounting Information -->
+					<core:ExtensionPoint name="extCompCodeAccountinginfo" />
+
+					<!-- Interest Calculation INFORMATIONS -->
+					<core:Title id="IntrestCalc" text="{i18n>IntrestCalc}" />
+					<Label id="lblVZSKZ" text="{i18n>IntrestInc}" />
+					<Text id="VZSKZ"
+						text="{parts:[{path:'/VZSKZ'},{path:'/VZSKZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VZSKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZINRT" text="{i18n>IntrestCalcFreq}" />
+					<Text id="ZINRT"
+						text="{path:'/ZINRT__TXT'}"
+						visible="{path:'/ZINRT__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZINDT" text="{i18n>LastKeyDate}" />
+					<Text id="ZINDT"
+						text="{path:'/ZINDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+						visible="{path:'/ZINDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblDATLZ" text="{i18n>LatIntrestRun}" />
+					<Text id="DATLZ"
+						text="{path:'/DATLZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+						visible="{path:'/DATLZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Intrest Calculation Information -->
+					<core:ExtensionPoint name="extCompCodeIntrestCalcInfo" />
+
+					<!--Reference Data INFORMATIONS -->
+					<core:Title id="ReferenceData" text="{i18n>ReferenceData}" />
+					<Label id="lblALTKN" text="{i18n>PreviousAccNum}" />
+					<Text id="ALTKN"
+						text="{path:'/ALTKN'}"
+						visible="{path:'/ALTKN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblEKVBD" text="{i18n>BuyingGrp}" />
+					<Text id="EKVBD"
+						text="{parts:[{path:'/EKVBD'},{path:'/EKVBD__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+						visible="{path:'/EKVBD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPERNR" text="{i18n>PersonalNum}" />
+					<Text id="PERNR" text="{path:'/PERNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+						visible="{path:'/PERNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+
+					<!-- Extension Point for Referance Data information -->
+					<core:ExtensionPoint name="extCompCodeReferenceDataInfo" />
+
+					<!--Payment Data INFORMATIONS -->
+					<core:Title id="PaymentData" text="{i18n>PaymntData}" />
+					<Label id="lblZTERM" text="{i18n>TermsofPaymnt}" />
+					<Text id="ZTERM"
+						text="{parts:[{path:'/ZTERM'},{path:'/ZTERM__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZTERM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblGUZTE" text="{i18n>CreditMemo}" />
+					<Text id="GUZTE"
+						text="{parts:[{path:'/GUZTE'},{path:'/GUZTE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/GUZTE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblWAKON" text="{i18n>ChargePaymntterm}" />
+					<Text id="WAKON"
+						text="{parts:[{path:'/WAKON'},{path:'/WAKON__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/WAKON',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKULTG" text="{i18n>CheckCashtme}" />
+					<Text id="KULTG" text="{/KULTG}"
+						visible="{path:'/KULTG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblTOGRU" text="{i18n>TollGrp}" />
+					<Text id="TOGRU"
+						text="{parts:[{path:'/TOGRU'},{path:'/TOGRU__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/TOGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblURLID" text="{i18n>knwnLeave}" />
+					<Text id="URLID"
+						text="{path:'/URLID__TXT'}"
+						visible="{path:'/URLID',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblCESSION_KZ" text="{i18n>ArPledgingInc}" />
+					<Text id="CESSION_KZ"
+						text="{parts:[{path:'/CESSION_KZ'},{path:'/CESSION_KZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/CESSION_KZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXZVER" text="{i18n>PaymntHistoryRecrd}" />
+					<Text id="XZVER"
+						text="{path:'/XZVER',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XZVER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Payment Data Information -->
+					<core:ExtensionPoint name="extCompCodePaymntDataInfo" />
+
+					<!--Automatic Payment Transactions INFORMATIONS -->
+					<core:Title id="AautomaticPaymnt" text="{i18n>AautomaticPaymnt}" />
+					<Label id="lblZWELS" text="{i18n>PaymntMethod}" />
+					<Text id="ZWELS"
+						text="{parts:[{path:'/ZWELS'},{path:'/ZWELS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZWELS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKNRZB" text="{i18n>AlternativePayer}" />
+					<Text id="KNRZB"
+						text="{parts:[{path:'/KNRZB'},{path:'/KNRZB__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KNRZB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblWEBTR" text="{i18n>BillofExchge}" />
+					<Text id="WEBTR"
+						text="{parts:[{path:'/WEBTR'},{path:'/WEBTR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.currency'}"
+						visible="{path:'/WEBTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblUZAWE" text="{i18n>PaymntSuplmnt}" />
+					<Text id="UZAWE"
+						text="{parts:[{path:'/UZAWE'},{path:'/UZAWE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/UZAWE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblREMIT" text="{i18n>NextPayee}" />
+					<Text id="REMIT"
+						text="{parts:[{path:'/REMIT'},{path:'/REMIT__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/REMIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblLOCKB" text="{i18n>LockBox}" />
+					<Text id="LOCKB"
+						text="{parts:[{path:'/LOCKB'},{path:'/LOCKB__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LOCKB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXVERR" text="{i18n>ClearVendor}" />
+					<Text id="XVERR"
+						text="{path:'/XVERR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XVERR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZAHLS" text="{i18n>PaymntBlk}" />
+					<Text id="ZAHLS"
+						text="{path:'/ZAHLS__TXT'}"
+						visible="{path:'/ZAHLS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblHBKID" text="{i18n>HouseBnk}" />
+					<Text id="HBKID"
+						text="{parts:[{path:'/HBKID'},{path:'/HBKID__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/HBKID',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZGRUP" text="{i18n>Groupinky}" />
+					<Text id="ZGRUP"
+						text="{path:'/ZGRUP__TXT'}"
+						visible="{path:'/ZGRUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXPORE" text="{i18n>Indvipaymnt}" />
+					<Text id="XPORE"
+						text="{path:'/XPORE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XPORE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXEDIP" text="{i18n>PaymentAdvEDI}" />
+					<Text id="XEDIP"
+						text="{path:'/XEDIP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XEDIP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Automatic Payment Transaction Information -->
+					<core:ExtensionPoint name="extCompCodeAutomaticTransactionInfo" />
+
+					<!--Payment Advise Notes Transactions INFORMATIONS -->
+					<core:Title id="PaymntAdvce" text="{i18n>PaymntAdvce}" />
+					<Label id="lblVRSDG" text="{i18n>ReasonCodeConv}" />
+					<Text id="VRSDG"
+						text="{path:'/VRSDG__TXT'}"
+						visible="{path:'/VRSDG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSREGL" text="{i18n>SelRule}" />
+					<Text id="SREGL"
+						text="{path:'/SREGL__TXT'}"
+						visible="{path:'/SREGL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Payment Advise Information -->
+					<core:ExtensionPoint name="extCompCodePaymntAdviseInfo" />
+
+					<!--Export Credit Insurance INFORMATIONS -->
+					<core:Title id="ExprtCreditIns" text="{i18n>ExprtCreditIns}" />
+					<Label id="lblVRSNR" text="{i18n>policyNum}" />
+					<Text id="VRSNR"
+						text="{parts:[{path:'/VRSNR'},{path:'/VRSNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VRSNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVLIBB" text="{i18n>AmntInsured}" />
+					<Text id="VLIBB"
+						text="{parts:[{path:'/VLIBB'},{path:'/VLIBB__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.currency'}"
+						visible="{path:'/VLIBB',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblVRSZL" text="{i18n>LeadMnth}" />
+					<Text id="VRSZL" text="{/VRSZL}"
+						visible="{path:'/VRSZL',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblVRBKZ" text="{i18n>InstNumbr}" />
+					<Text id="VRBKZ"
+						text="{parts:[{path:'/VRBKZ'},{path:'/VRBKZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VRBKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVERDT" text="{i18n>PC_VAL_TO}" />
+					<Text id="VERDT"
+						text="{path:'/VERDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+						visible="{path:'/VERDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVRSPR" text="{i18n>Deductablepercentage}" />
+					<Text id="VRSPR" text="{/VRSPR}"
+						visible="{path:'/VRSPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+
+					<!-- Extension Point for Export Credit Insurance Information -->
+					<core:ExtensionPoint name="extCompCodeExportCreditInfo" />
+
+					<!--Correspondence INFORMATIONS -->
+					<core:Title id="Correspondance" text="{i18n>Correspondance}" />
+					<Label id="lblBUSAB" text="{i18n>AaccountingClrk}" />
+					<Text id="BUSAB"
+						text="{parts:[{path:'/BUSAB'},{path:'/BUSAB__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BUSAB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblEIKTO" text="{i18n>AcntCust}" />
+					<Text id="EIKTO"
+						text="{path:'/EIKTO'}"
+						visible="{path:'/EIKTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblTLFNS" text="{i18n>ClerksTel}" />
+					<Text id="TLFNS"
+						text="{path:'/TLFNS'}"
+						visible="{path:'/TLFNS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKVERM" text="{i18n>AccountMem}" />
+					<Text id="KVERM"
+						text="{path:'/KVERM'}"
+						visible="{path:'/KVERM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZSABE" text="{i18n>ClerkaTCust}" />
+					<Text id="ZSABE"
+						text="{path:'/ZSABE'}"
+						visible="{path:'/ZSABE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXAUSZ" text="{i18n>AccontStmnt}" />
+					<Text id="XAUSZ"
+						text="{path:'/XAUSZ__TXT'}"
+						visible="{path:'/XAUSZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPERKZ" text="{i18n>CollectvInv}" />
+					<Text id="PERKZ"
+						text="{path:'/PERKZ'}"
+						visible="{path:'/PERKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblXDEZV" text="{i18n>LocalProcsing}" />
+					<Text id="XDEZV"
+						text="{path:'/XDEZV',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XDEZV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblINTAD" text="{i18n>ClerksIntrnt}" />
+					<Text id="INTAD"
+						text="{path:'/INTAD'}"
+						visible="{path:'/INTAD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblTLFXS" text="{i18n>ClerksFax}" />
+					<Text id="TLFXS"
+						text="{path:'/TLFXS'}"
+						visible="{path:'/TLFXS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Correspondance Information -->
+					<core:ExtensionPoint name="extCompCodeCorrespondanceInfo" />
+
+					<!--Payment Notice To -->
+					<core:Title id="PaymntNoticeTo" text="{i18n>PaymntNoticeTo}" />
+					<Label id="lblZAMIR" text="{i18n>LegalDept}" />
+					<Text id="ZAMIR"
+						text="{path:'/ZAMIR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/ZAMIR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZAMIO" text="{i18n>CustomerwithoutCi}" />
+					<Text id="ZAMIO"
+						text="{path:'/ZAMIO',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/ZAMIO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZAMIB" text="{i18n>Accounting}" />
+					<Text id="ZAMIB"
+						text="{path:'/ZAMIB',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/ZAMIB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZAMIV" text="{i18n>Sales}" />
+					<Text id="ZAMIV"
+						text="{path:'/ZAMIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/ZAMIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblZAMIM" text="{i18n>CutomerWithCi}" />
+					<Text id="ZAMIM"
+						text="{path:'/ZAMIM',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/ZAMIM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Payment Notice To -->
+					<core:ExtensionPoint name="extCompCodePaymentNoticeTo" />
+
+					<!--Dunning Data -->
+					<core:Title id="DunningData" text="{i18n>DunningData}" />
+					<Label id="lblMGRUP" text="{i18n>Groupinky}" />
+					<Text id="MGRUP"
+						text="{path:'/MGRUP__TXT'}"
+						visible="{path:'/MGRUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Dunning Data -->
+					<core:ExtensionPoint name="extCompCodeDunningData" />
+				</form:content>
+				<!-- Extension Point for CompanyCode SimpleForm -->
+				<core:ExtensionPoint name="extCompCodeSimpleForm" />
+			</form:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

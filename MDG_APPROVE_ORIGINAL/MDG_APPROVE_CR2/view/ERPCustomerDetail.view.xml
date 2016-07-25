@@ -1,0 +1,439 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Erp Customer Details selected 
+	in the Change and Create scenario -->
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="fcg.mdg.approvecrv2.view.ERPCustomerDetail">
+	<Page id="erpCustomerPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="erpCustomerObjHeaderDet">
+				<attributes>
+					<ObjectAttribute id="erpCustObjectKey" />
+					<!-- Extension Point for ERP Customer Detail header -->
+					<core:ExtensionPoint name="exterpCustomerObjHeaderDet" />
+				</attributes>
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormControlData" layout="ResponsiveGridLayout"
+						labelSpanM="5" labelSpanL="5" minWidth="1024" maxContainerCols="2">
+						<form:content>
+							<!-- Control data INFORMATIONS -->
+							<core:Title id="SimpleFormCustControlData" text="{i18n>ControlData}" />
+							<Title id="multiassign" text="{i18n>MultiAssign}"
+								visible="{parts:[{path:'/REASON_ID'},{path : '/STANDARD'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblREASON_ID" text="{i18n>Reason}" />
+							<Text id="REASON_ID" text="{path:'/REASON_ID__TXT'}"
+								visible="{path:'/REASON_ID',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTANDARD" text="{i18n>Standard}" />
+							<Text id="STANDARD"
+								text="{path:'/STANDARD',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/STANDARD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for multiple assignment -->
+							<core:ExtensionPoint name="extmultiassign" />
+
+							<!-- Administrative Data INFORMATIONS <Label></Label> -->
+							<Label></Label>
+							<Title id="AdmineData" text="{i18n>AdministrativeData}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/KUNNR'},{path : '/CU_AssignedCustomerRel/KTOKD'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblKUNNR" text="{i18n>ERPCustomer}" />
+							<Text id="KUNNR"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KUNNR'},{path:'/CU_AssignedCustomerRel/KUNNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/CU_AssignedCustomerRel/KUNNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblKTOKD" text="{i18n>AccountGroup}" />
+							<Text id="KTOKD" text="{path:'/CU_AssignedCustomerRel/KTOKD__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KTOKD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for AdmineData -->
+							<core:ExtensionPoint name="extAdmineData" />
+
+							<!-- Account Control INFORMATIONS -->
+							<Label></Label>
+							<Title id="AccountControl" text="{i18n>AccountControl}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/BEGRU'},{path : '/CU_AssignedCustomerRel/KONZS'},{path:'/CU_AssignedCustomerRel/VBUND'},{path:'/CU_AssignedCustomerRel/LIFNR'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleFour'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblBEGRU" text="{i18n>AuthorizationGroup}" />
+							<Text id="BEGRU" text="{/CU_AssignedCustomerRel/BEGRU}"
+								visible="{path:'/CU_AssignedCustomerRel/BEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKONZS" text="{i18n>GroupKey}" />
+							<Text id="KONZS" text="{/CU_AssignedCustomerRel/KONZS}"
+								visible="{path:'/CU_AssignedCustomerRel/KONZS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblVBUND" text="{i18n>TradingPartner}" />
+							<Text id="VBUND"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/VBUND'},{path:'/CU_AssignedCustomerRel/VBUND__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/VBUND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblLIFNR" text="{i18n>Vendor}" />
+							<Text id="LIFNR"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/LIFNR'},{path:'/CU_AssignedCustomerRel/LIFNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/CU_AssignedCustomerRel/LIFNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<!-- Extension Point for AccountControl -->
+							<core:ExtensionPoint name="extAccountControl" />
+							<!-- Reference Data INFORMATIONS -->
+							<Label></Label>
+							<Title id="ReferenceData" text="{i18n>ReferenceData}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/BAHNE'},{path : '/CU_AssignedCustomerRel/BAHNS'},{path:'/CU_AssignedCustomerRel/LOCCO'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitle'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblBAHNE" text="{i18n>ExpressStation}" />
+							<Text id="BAHNE" text="{/CU_AssignedCustomerRel/BAHNE}"
+								visible="{path:'/CU_AssignedCustomerRel/BAHNE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBAHNS" text="{i18n>TrainStation}" />
+							<Text id="BAHNS" text="{/CU_AssignedCustomerRel/BAHNS}"
+								visible="{path:'/CU_AssignedCustomerRel/BAHNS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblLOCCO" text="{i18n>LocationCode}" />
+							<Text id="LOCCO" text="{/CU_AssignedCustomerRel/LOCCO}"
+								visible="{path:'/CU_AssignedCustomerRel/LOCCO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for ReferenceData -->
+							<core:ExtensionPoint name="extReferenceData" />
+
+							<core:Title id="SimpleFormTaxInformation" text="{i18n>TaxInformation}" />
+
+							<Label id="lblCITYC" text="{i18n>CityCode}" />
+							<Text id="CITYC"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/CITYC'},{path:'/CU_AssignedCustomerRel/CITYC__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/CITYC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblCOUNC" text="{i18n>CountyCode}" />
+							<Text id="COUNC"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/COUNC'},{path:'/CU_AssignedCustomerRel/COUNC__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/COUNC__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblFISKN" text="{i18n>FiscalAddress}" />
+							<Text id="FISKN"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/FISKN'},{path:'/CU_AssignedCustomerRel/FISKN__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/FISKN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblFITYP" text="{i18n>TaxType}" />
+							<Text id="FITYP" text="{path:'/CU_AssignedCustomerRel/FITYP__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/FITYP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblXSUBT" text="{i18n>SubTribGroup}" />
+							<Text id="XSUBT"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/XSUBT'},{path:'/CU_AssignedCustomerRel/XSUBT__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/XSUBT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblJ_1KFTBUS" text="{i18n>TypeofBusiness}" />
+							<Text id="J_1KFTBUS" text="{/CU_AssignedCustomerRel/J_1KFTBUS}"
+								visible="{path:'/CU_AssignedCustomerRel/J_1KFTBUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblJ_1KFREPRE" text="{i18n>Representative}" />
+							<Text id="J_1KFREPRE" text="{/CU_AssignedCustomerRel/J_1KFREPRE}"
+								visible="{path:'/CU_AssignedCustomerRel/J_1KFREPRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTKZU" text="{i18n>LiableforVAT}" />
+							<Text id="STKZU"
+								text="{path:'/CU_AssignedCustomerRel/STKZU',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/STKZU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblSTKZA" text="{i18n>SalesEqualizatnTax}" />
+							<Text id="STKZA"
+								text="{path:'/CU_AssignedCustomerRel/STKZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/STKZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblXICMS" text="{i18n>ICMSExempt}" />
+							<Text id="XICMS"
+								text="{path:'/CU_AssignedCustomerRel/XICMS',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/XICMS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblXXIPI" text="{i18n>IPIExempt}" />
+							<Text id="XXIPI"
+								text="{path:'/CU_AssignedCustomerRel/XXIPI',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/XXIPI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblCFOPC" text="{i18n>CFOPCategory}" />
+							<Text id="CFOPC" text="{path:'/CU_AssignedCustomerRel/CFOPC__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/CFOPC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblJ_1KFTIND" text="{i18n>TypeofIndustry}" />
+							<Text id="J_1KFTIND" text="{/CU_AssignedCustomerRel/J_1KFTIND}"
+								visible="{path:'/CU_AssignedCustomerRel/J_1KFTIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Tax Information -->
+							<core:ExtensionPoint name="extTaxInformation" />
+							<core:ExtensionPoint name="extSimpleFormTaxInformation" />
+
+							<core:Title id="SimpleFormPaymentTransac" text="{i18n>PaymentTransactions}" />
+							<!-- Payment Transaction INFORMATIONS -->
+							<Title id="PaymentTransactions" text="{i18n>PaymentTransactions}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/DTAMS__TXT'},{path : '/CU_AssignedCustomerRel/DTAWS'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblDTAMS" text="{i18n>DMEIndicator}" />
+							<Text id="DTAMS" text="{path:'/CU_AssignedCustomerRel/DTAMS__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/DTAMS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblDTAWS" text="{i18n>InstructionKey}" />
+							<Text id="DTAWS"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/DTAWS'},{path:'/CU_AssignedCustomerRel/DTAWS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/DTAWS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for PaymentTransactions -->
+							<core:ExtensionPoint name="extPaymentTransactions" />
+
+							<!-- Alternate Payer INFORMATIONS -->
+							<Label></Label>
+							<Title id="AlternativePayer" text="{i18n>AlternativePayer}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/XZEMP'},{path : '/CU_AssignedCustomerRel/KNRZA'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblXZEMP" text="{i18n>AltpayerinDoc}" />
+							<Text id="XZEMP"
+								text="{path:'/CU_AssignedCustomerRel/XZEMP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/XZEMP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKNRZA" text="{i18n>AlternativePayer}" />
+							<Text id="KNRZA"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KNRZA'},{path:'/CU_AssignedCustomerRel/KNRZA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/CU_AssignedCustomerRel/KNRZA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for AlternativePayer -->
+							<core:ExtensionPoint name="extAlternativePayer" />
+							<!-- Extension Point for PaymentTransac form -->
+							<core:ExtensionPoint name="extSimpleFormPaymentTransac" />
+
+							<core:Title id="SimpleFormMarketing" text="{i18n>Marketing}" />
+							<!-- Marketing INFORMATIONS -->
+							<Title id="MarkClassification" text="{i18n>Classification}"
+								visible="{parts:[{path:'/CU_AssignedCustomerRel/NIELS'},{path : '/CU_AssignedCustomerRel/KUKLA'},{path:'/CU_AssignedCustomerRel/BRAN1'},{path : '/CU_AssignedCustomerRel/BRAN2'},{path:'/CU_AssignedCustomerRel/BRAN3'},{path : '/CU_AssignedCustomerRel/BRAN4'},{path:'/CU_AssignedCustomerRel/BRAN5'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleSeven'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblNIELS" text="{i18n>NielsenIndicator}" />
+							<Text id="NIELS"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/NIELS'},{path:'/CU_AssignedCustomerRel/NIELS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/NIELS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKUKLA" text="{i18n>CustomerClassification}" />
+							<Text id="KUKLA"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KUKLA'},{path:'/CU_AssignedCustomerRel/KUKLA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KUKLA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBRAN1" text="{i18n>IndustryCode1}" />
+							<Text id="BRAN1"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/BRAN1'},{path:'/CU_AssignedCustomerRel/BRAN1__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/BRAN1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBRAN2" text="{i18n>IndustryCode2}" />
+							<Text id="BRAN2"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/BRAN2'},{path:'/CU_AssignedCustomerRel/BRAN2__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/BRAN2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBRAN3" text="{i18n>IndustryCode3}" />
+							<Text id="BRAN3"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/BRAN3'},{path:'/CU_AssignedCustomerRel/BRAN3__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/BRAN3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBRAN4" text="{i18n>IndustryCode4}" />
+							<Text id="BRAN4"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/BRAN4'},{path:'/CU_AssignedCustomerRel/BRAN4__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/BRAN4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblBRAN5" text="{i18n>IndustryCode5}" />
+							<Text id="BRAN5"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/BRAN5'},{path:'/CU_AssignedCustomerRel/BRAN5__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/BRAN5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for MarkClassification -->
+							<core:ExtensionPoint name="extMarkClassification" />
+
+							<!-- KeyFigure INFORMATIONS -->
+							<Label></Label>
+							<Title id="KeyFigures" text="{i18n>KeyFigures}"
+							visible="{parts:[{path:'/CU_AssignedCustomerRel/UMSA1'},{path : '/CU_AssignedCustomerRel/UWAER'},{path:'/CU_AssignedCustomerRel/UMJAH'},{path : '/CU_AssignedCustomerRel/JMZAH'},{path:'/CU_AssignedCustomerRel/JMJAH'},{path : '/CU_AssignedCustomerRel/PERIV'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleSix'}"
+							align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+
+							<Label id="lblUMSA1" text="{i18n>AnnualSales}" />
+							<Text id="UMSA1"
+								text="{path:'/CU_AssignedCustomerRel/UMSA1',formatter:'fcg.mdg.approvecrv2.util.Formatter.currency'}"
+								visible="{path:'/CU_AssignedCustomerRel/UMSA1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblUWAER" text="{i18n>Currency}" />
+							<Text id="UWAER"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/UWAER'},{path:'/CU_AssignedCustomerRel/UWAER__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/UWAER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblUMJAH" text="{i18n>SalesYear}" />
+							<Text id="UMJAH" text="{/CU_AssignedCustomerRel/UMJAH}"
+								visible="{path:'/CU_AssignedCustomerRel/UMJAH',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblJMZAH" text="{i18n>Employees}" />
+							<Text id="JMZAH"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/JMZAH'},{path:'/CU_AssignedCustomerRel/JMZAH__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/CU_AssignedCustomerRel/JMZAH',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblJMJAH" text="{i18n>InYear}" />
+							<Text id="JMJAH" text="{/CU_AssignedCustomerRel/JMJAH}"
+								visible="{path:'/CU_AssignedCustomerRel/JMJAH',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="lblPERIV" text="{i18n>FiscalYearVariant}" />
+							<Text id="PERIV" text="{path:'/CU_AssignedCustomerRel/PERIV__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/PERIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for KeyFigures -->
+							<core:ExtensionPoint name="extKeyFigures" />
+							<!-- Extension Point for Marketing form -->
+							<core:ExtensionPoint name="extSimpleFormMarketing" />
+
+							<core:Title id="SimpleFormExportData" text="{i18n>ExportData}" />
+							<Title id="ExpClassification" text="{i18n>Classification}"
+							visible="{parts:[{path:'/CU_AssignedCustomerRel/CCC01'},{path : '/CU_AssignedCustomerRel/CCC02'},{path:'/CU_AssignedCustomerRel/CCC03'},{path : '/CU_AssignedCustomerRel/CCC04'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleFour'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblCCC01" text="{i18n>BiochemicalWarfare}" />
+							<Text id="CCC01"
+								text="{path:'/CU_AssignedCustomerRel/CCC01',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/CCC01',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblCCC02" text="{i18n>NuclearNonproliferation}" />
+							<Text id="CCC02"
+								text="{path:'/CU_AssignedCustomerRel/CCC02',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/CCC02',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblCCC03" text="{i18n>NationalSecurity}" />
+							<Text id="CCC03"
+								text="{path:'/CU_AssignedCustomerRel/CCC03',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/CCC03',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblCCC04" text="{i18n>MissileTechnology}" />
+							<Text id="CCC04"
+								text="{path:'/CU_AssignedCustomerRel/CCC04',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/CCC04',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Export Classification -->
+							<core:ExtensionPoint name="extExpClassification" />
+
+							<Label></Label>
+							<Title id="Usage" text="{i18n>Usage}"
+							visible="{parts:[{path:'/CU_AssignedCustomerRel/CIVVE'},{path : '/CU_AssignedCustomerRel/MILVE'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" 
+							align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblCIVVE" text="{i18n>NonMilitaryUse}" />
+							<Text id="CIVVE"
+								text="{path:'/CU_AssignedCustomerRel/CIVVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/CIVVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblMILVEe" text="{i18n>MilitaryUse}" />
+							<Text id="MILVE"
+								text="{path:'/CU_AssignedCustomerRel/MILVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/CU_AssignedCustomerRel/MILVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Usage form -->
+							<core:ExtensionPoint name="extUsage" />
+
+							<!-- Extension Point to add Forms in Export Data -->
+							<core:ExtensionPoint name="extSimpleFormExportData" />
+
+							<core:Title id="SimpleFormAdditionalData" text="{i18n>AdditionalData}" />
+							<!-- Attributes INFORMATIONS -->
+							<Title id="Attributes" text="{i18n>Attributes}" 
+							visible="{parts:[{path:'/CU_AssignedCustomerRel/KATR1'},{path : '/CU_AssignedCustomerRel/KATR2'},{path:'/CU_AssignedCustomerRel/KATR3'},{path : '/CU_AssignedCustomerRel/KATR4'},{path:'/CU_AssignedCustomerRel/KATR5'},{path : '/CU_AssignedCustomerRel/KATR6'},{path:'/CU_AssignedCustomerRel/KATR7'},{path : '/CU_AssignedCustomerRel/KATR8'},{path:'/CU_AssignedCustomerRel/KATR9'},{path : '/CU_AssignedCustomerRel/KATR10'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleTen'}"
+							align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblKATR1" text="{i18n>Attribute1}" />
+							<Text id="KATR1"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR1'},{path:'/CU_AssignedCustomerRel/KATR1__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR2" text="{i18n>Attribute2}" />
+							<Text id="KATR2"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR2'},{path:'/CU_AssignedCustomerRel/KATR2__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR3" text="{i18n>Attribute3}" />
+							<Text id="KATR3"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR3'},{path:'/CU_AssignedCustomerRel/KATR3__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR4" text="{i18n>Attribute4}" />
+							<Text id="KATR4"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR4'},{path:'/CU_AssignedCustomerRel/KATR4__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR5" text="{i18n>Attribute5}" />
+							<Text id="KATR5"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR5'},{path:'/CU_AssignedCustomerRel/KATR5__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR6" text="{i18n>Attribute6}" />
+							<Text id="KATR6"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR6'},{path:'/CU_AssignedCustomerRel/KATR6__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR6',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR7" text="{i18n>Attribute7}" />
+							<Text id="KATR7"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR7'},{path:'/CU_AssignedCustomerRel/KATR7__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR7',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR8" text="{i18n>Attribute8}" />
+							<Text id="KATR8"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR8'},{path:'/CU_AssignedCustomerRel/KATR8__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR8',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR9" text="{i18n>Attribute9}" />
+							<Text id="KATR9"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR9'},{path:'/CU_AssignedCustomerRel/KATR9__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR9',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKATR10" text="{i18n>Attribute10}" />
+							<Text id="KATR10"
+								text="{parts:[{path:'/CU_AssignedCustomerRel/KATR10'},{path:'/CU_AssignedCustomerRel/KATR10__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/CU_AssignedCustomerRel/KATR10',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<!-- Extension Point for Attributes -->
+							<core:ExtensionPoint name="extAttributes" />
+
+							<!-- Condition Groups -->
+							<Label></Label>
+							<Title id="ConditionGroups" text="{i18n>ConditionGroups}"
+							visible="{parts:[{path:'/CU_AssignedCustomerRel/KDKG1'},{path : '/CU_AssignedCustomerRel/KDKG2'},{path:'/CU_AssignedCustomerRel/KDKG3'},{path : '/CU_AssignedCustomerRel/KDKG4'},{path:'/CU_AssignedCustomerRel/KDKG5'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibilityERPTitleFive'}"
+								align="left">
+								<layoutData>
+									<l:GridData indent="L1 M1 S0" span="L12 M12 S12"
+										linebreakL="true" linebreakM="true" linebreakS="true" />
+								</layoutData>
+							</Title>
+							<Label id="lblKDKG1" text="{i18n>ConditionGroup1}" />
+							<Text id="KDKG1" text="{path:'/CU_AssignedCustomerRel/KDKG1__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KDKG1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKDKG2" text="{i18n>ConditionGroup2}" />
+							<Text id="KDKG2" text="{path:'/CU_AssignedCustomerRel/KDKG2__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KDKG2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKDKG3" text="{i18n>ConditionGroup3}" />
+							<Text id="KDKG3" text="{path:'/CU_AssignedCustomerRel/KDKG3__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KDKG3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKDKG4" text="{i18n>ConditionGroup4}" />
+							<Text id="KDKG4" text="{path:'/CU_AssignedCustomerRel/KDKG4__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KDKG4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblKDKG5" text="{i18n>ConditionGroup5}" />
+							<Text id="KDKG5" text="{path:'/CU_AssignedCustomerRel/KDKG5__TXT'}"
+								visible="{path:'/CU_AssignedCustomerRel/KDKG5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<!-- Extension Point for Condition Groups -->
+							<core:ExtensionPoint name="extConditionGroups" />
+
+							<!-- Extension Point for PaymentTransac form -->
+							<core:ExtensionPoint name="extSimpleFormAdditionalData" />
+
+						</form:content>
+						<!-- Extension Point for ControlData form -->
+						<core:ExtensionPoint name="extSimpleFormControlData" />
+					</form:SimpleForm>
+
+					<!-- Extension Point to add forms in ERP Customer View -->
+					<core:ExtensionPoint name="extErpCustomerAddForm" />
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

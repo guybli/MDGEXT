@@ -1,0 +1,136 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fcg.mdg.approvecrv2.view.RelDetail">
+	<Page id="relPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+
+			<ObjectHeader id="relDetailHeader">
+				<attributes>
+					<ObjectAttribute id="relAttrHeader" />
+				</attributes>
+				<!-- Extension Point for Relationship Details header -->
+				<core:ExtensionPoint name="extrelDetailHeader" />
+			</ObjectHeader>
+
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormRel"
+						maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+						labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+						columnsL="1" editable="false" columnsM="1">
+						<form:content>
+							<!-- Rel Details INFORMATIONS -->
+							<core:Title id="RelDetails" text="{i18n>RelDetails}"
+								visible="{path:'/RELATIONSHIPCATEGORY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblRELATIONSHIPCATEGORY" text="{i18n>RelCat}" />
+							<Text id="RELATIONSHIPCATEGORY"
+								text="{parts : [{path:'/RELATIONSHIPCATEGORY'},{path:'/RELATIONSHIPCATEGORY__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/RELATIONSHIPCATEGORY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblPARTNER2" text="{i18n>Partner}" />
+							<Text id="PARTNER2"
+								text="{parts : [{path:'/PARTNER2'},{path:'/PARTNER2__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+								visible="{path:'/PARTNER2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblDEFAULTRELATIONSHIP" text="{i18n>Standard}" />
+							<Text id="DEFAULTRELATIONSHIP"
+								text="{path:'/DEFAULTRELATIONSHIP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/DEFAULTRELATIONSHIP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Relationship Details form -->
+							<core:ExtensionPoint name="extRelDetails" />
+							<!-- Contact Person Details -->
+							<core:Title id="CPDetails" text="{i18n>ContactPerson}" />
+							<Label id="lblDEPARTMENT" text="{i18n>Department}" />
+
+							<Text id="DEPARTMENT"
+								text="{parts : [{path:'/DEPARTMENT'},{path:'/DEPARTMENT__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/DEPARTMENT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<Label id="lblFUNCTION" text="{i18n>Function}" />
+
+							<Text id="FUNCTION"
+								text="{parts : [{path:'/FUNCTION'},{path:'/FUNCTION__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/FUNCTION',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<Label id="lblAUTHORITY" text="{i18n>Authority}" />
+							<Text id="AUTHORITY"
+								text="{parts : [{path:'/AUTHORITY'},{path:'/AUTHORITY__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/AUTHORITY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<Label id="lblVIP" text="{i18n>Vip}" />
+							<Text id="VIP"
+								text="{parts : [{path:'/VIP'},{path:'/VIP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/VIP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+							<Label id="lblCOMMENTS" text="{i18n>RelComments}" />
+							<Text id="COMMENTS" text="{/COMMENTS}"
+								visible="{path:'/COMMENTS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Relationship Contact person details form -->
+							<core:ExtensionPoint name="extCPDetails" />
+						</form:content>
+						<core:ExtensionPoint name="extSimpleFormRel" />
+					</form:SimpleForm>
+				</l:content>
+				<l:VerticalLayout  id="WPAddressLayout" width="100%">
+					<l:content>
+						<Table id="wpaddress" width="100%" mode="{device>/listMode}"
+							noDataText=" " selectionChange="navigatetoWPAddress">
+							<headerToolbar>
+								<Toolbar>
+									<Title text="{i18n>WorkPlaceAddress}" class="sapThemeFontSize"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column mergeDuplicates="true" id="WPAddress">
+									<header>
+										<Label text="{i18n>PC_TIT_ADDRESS}">
+										</Label>
+									</header>
+								</Column>
+
+								<Column id="telephone" hAlign="Center">
+									<header>
+										<Label text="{i18n>Telephone}">
+										</Label>
+									</header>
+								</Column>
+								<Column id="mobile" hAlign="Center">
+									<header>
+										<Label text="{i18n>Mobile}">
+										</Label>
+									</header>
+								</Column>
+
+								<Column id="emailaddress" hAlign="Center">
+									<header>
+										<Label text="{i18n>EMailAddress}">
+										</Label>
+									</header>
+								</Column>
+								<Column id="standard" hAlign="Center">
+									<header>
+										<Label text="{i18n>Standard}">
+										</Label>
+									</header>
+								</Column>
+								<!-- Extension Point for Relationship workplace addresses table -->
+								<core:ExtensionPoint name="extwpaddressTable" />
+							</columns>
+							<!-- Extension Point for Relationship additional tables -->
+							<core:ExtensionPoint name="extRelationtables" />
+						</Table>
+
+					</l:content>
+				</l:VerticalLayout>
+			</l:Grid>
+		</content>
+
+
+	</Page>
+
+</core:View>

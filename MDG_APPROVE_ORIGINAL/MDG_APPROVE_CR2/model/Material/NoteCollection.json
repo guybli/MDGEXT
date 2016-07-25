@@ -1,0 +1,91 @@
+[{
+	"ChangeRequestID": "ChangeRequestID 1",
+	"CreatedBy": "CreatedBy 1",
+	"Text": "Text 1",
+	"CreatedAt": "/Date(1193221821000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 1')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 2",
+	"CreatedBy": "CreatedBy 2",
+	"Text": "Text 2",
+	"CreatedAt": "/Date(1476441021000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 2')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 3",
+	"CreatedBy": "CreatedBy 3",
+	"Text": "Text 3",
+	"CreatedAt": "/Date(1521023421000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 3')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 4",
+	"CreatedBy": "CreatedBy 4",
+	"Text": "Text 4",
+	"CreatedAt": "/Date(1453458621000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 4')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 5",
+	"CreatedBy": "CreatedBy 5",
+	"Text": "Text 5",
+	"CreatedAt": "/Date(957090621000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 5')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 6",
+	"CreatedBy": "CreatedBy 6",
+	"Text": "Text 6",
+	"CreatedAt": "/Date(1354703421000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 6')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 7",
+	"CreatedBy": "CreatedBy 7",
+	"Text": "Text 7",
+	"CreatedAt": "/Date(1573554621000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 7')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 8",
+	"CreatedBy": "CreatedBy 8",
+	"Text": "Text 8",
+	"CreatedAt": "/Date(1547634621000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 8')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 9",
+	"CreatedBy": "CreatedBy 9",
+	"Text": "Text 9",
+	"CreatedAt": "/Date(1332930621000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 9')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}, {
+	"ChangeRequestID": "ChangeRequestID 10",
+	"CreatedBy": "CreatedBy 10",
+	"Text": "Text 10",
+	"CreatedAt": "/Date(1100601021000)/",
+	"__metadata": {
+		"uri": "NoteCollection('ChangeRequestID 10')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.Note"
+	}
+}]

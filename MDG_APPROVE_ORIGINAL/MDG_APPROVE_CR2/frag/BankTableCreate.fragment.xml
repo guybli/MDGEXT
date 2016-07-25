@@ -1,0 +1,51 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Fragment to create a Bank Table in the Create Scenario -->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.layout.form="sap.ui.layout.form">
+	<Table>
+		<headerToolbar>
+			<Toolbar>
+				<Title text="{i18n>BankAccounts}" class="sapThemeFontSize"></Title>
+			</Toolbar>
+		</headerToolbar>
+		<columns>
+			<Column mergeDuplicates="true">
+				<header>
+					<Label text="{i18n>BankCtry}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Label text="{i18n>BankName}" />
+				</header>
+			</Column>
+			<Column>
+				<header>
+					<Label text="{i18n>BankAccount}" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Label text="{i18n>AccountName}" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Tablet" demandPopin="true">
+				<header>
+					<Label text="{i18n>PC_VAL_FRM}" />
+				</header>
+			</Column>
+			<Column minScreenWidth="Desktop" demandPopin="true">
+				<header>
+					<Label text="{i18n>PC_VAL_TO}" />
+				</header>
+			</Column>
+			<!-- Extension Point for Bank table -->
+			<core:ExtensionPoint name="extBankTable" />
+		</columns>
+	</Table>
+</core:FragmentDefinition>

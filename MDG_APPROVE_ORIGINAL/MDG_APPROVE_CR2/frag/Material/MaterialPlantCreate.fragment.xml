@@ -1,0 +1,35 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" 
+	xmlns:f="sap.ui.layout.form">
+                <Table id="MatPlantTable" 
+		               inset="false" width="100%">
+		            <headerToolbar>
+                        <Toolbar >
+                            <Title width="100%" text="{i18n>Mat_Plants}" class="sapThemeFontSize"></Title>
+                            <Button id="PlantpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                        </Toolbar>
+                    </headerToolbar>
+		            <columns>
+			            <Column id="Plant_Name"
+			            demandPopin="true">
+			            <header>
+							<Text text="{i18n>Mat_PlantName}" />
+						</header>
+			        </Column>
+			        <Column id="Stts_PlntSpecf"  minScreenWidth="Tablet"
+				        demandPopin="true">
+				        <header>
+							<Text text="{i18n>Mat_Stts_PlntSpecf}" />
+						</header>
+			        </Column>
+			        <!-- Extension Point for Plant table  -->
+					<core:ExtensionPoint name="extMatPlantTable"></core:ExtensionPoint>
+			       </columns>
+                </Table>
+</core:FragmentDefinition>

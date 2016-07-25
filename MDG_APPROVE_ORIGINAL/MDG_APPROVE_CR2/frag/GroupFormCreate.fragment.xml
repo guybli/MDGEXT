@@ -1,0 +1,49 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--  Fragment to create a BP Group Form in the Create Scenario -->
+
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<form:SimpleForm id="FormGeneralGrp" columnsM="1"
+		columnsL="1" emptySpanM="1" emptySpanL="1" labelSpanM="4" labelSpanL="4"
+		layout="ResponsiveGridLayout" minWidth="1024" maxContainerCols="1">
+		<form:content>
+			<!-- General Details INFORMATIONS -->
+
+			<Label id="lblGFTITLE_KEY" text="{i18n>Title}" />
+			<Text id="GFTITLE_KEY" text="{path:'/TITLE_KEY__TXT'}"
+				visible="{path:'/TITLE_KEY__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblGFNAMEGROUP1" text="{i18n>CC_NAME1}" />
+			<Text id="GFNAMEGROUP1" text="{/BP_GroupRel/NAMEGROUP1}"
+				visible="{path:'/BP_GroupRel/NAMEGROUP1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblGFNAMEGROUP2" text="{i18n>CC_NAME2}" />
+			<Text id="GFNAMEGROUP2" text="{/BP_GroupRel/NAMEGROUP2}"
+				visible="{path:'/BP_GroupRel/NAMEGROUP2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblGFSEARCHTERM1" text="{i18n>Searchterm1}" />
+			<Text id="GFSEARCHTERM1" text="{/SEARCHTERM1}"
+				visible="{path:'/SEARCHTERM1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblGFSEARCHTERM2" text="{i18n>Searchterm2}" />
+			<Text id="GFSEARCHTERM2" text="{/SEARCHTERM2}"
+				visible="{path:'/SEARCHTERM2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+				<!-- Extension Point for  General in BP Group Form  in fragment -->
+							<core:ExtensionPoint name="extGFGeneral" />
+							
+			<!-- Group Details INFORMATIONS -->
+			<core:Title id="GFGroupData" text="{i18n>GroupData}" />
+			<Label id="lblGFGROUPTYPE" text="{i18n>PartnerGrpTyp}" />
+			<Text id="GFGROUPTYPE" text="{path:'/BP_GroupRel/GROUPTYPE__TXT'}"
+				visible="{path:'/BP_GroupRel/GROUPTYPE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblGFAUTHORIZATIONGROUP" text="{i18n>AuthorizationGroup}" />
+			<Text id="GFAUTHORIZATIONGROUP" text="{path:'/AUTHORIZATIONGROUP__TXT'}"
+				visible="{path:'/AUTHORIZATIONGROUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"  />
+				<!-- Extension Point for BP Person Details for Group Form in fragment -->
+							<core:ExtensionPoint name="extGFGroupData" /> 
+		</form:content>
+		<!-- Extension Point for BP General Group Form in fragment -->
+							<core:ExtensionPoint name="extFormGeneralGrp" /> 
+	</form:SimpleForm>
+</core:FragmentDefinition>

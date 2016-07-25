@@ -1,0 +1,375 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--This is the fragement which shows the data for Material Sales Detailed data in both Create and Change Scenario. At runtime, 
+this fragment is loaded in Sales tab on navigation when respective Distribution chain  is clicked.
+When only one Distribution chain is there,this fragment is loaded in the same screen and there is no need of navigation-->
+
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core"
+	xmlns:form="sap.ui.layout.form" 
+	xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			  <Title id="Txt_SALESORG" titleStyle="H2"></Title>
+			   <Title id="Txt_DISTCHANNEL" titleStyle="H2"></Title>
+			<form:SimpleForm
+	               id="matSalesTableS4Form"
+				   maxContainerCols="1" 
+				   minWidth="1024" 
+				   layout="ResponsiveGridLayout"
+				   labelSpanL="5" 
+				   labelSpanM="5" 
+				   emptySpanL="1" 
+				   emptySpanM="1"
+			       columnsL="1"
+				    columnsM="1">
+			   	<form:content>
+			   	 
+			   	 
+			   	
+				   	<!--SALES-->
+					<core:Title id="matSalesMainSection" text="{i18n>SL}" />
+					<!--<Label></Label>-->
+					
+					
+					
+						<!--SALES GENERAL DATA-->
+					     <Title  id="MatSalesGenData" text = "{i18n>GEN_DATA}">
+                         <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                         </layoutData>
+                        </Title>
+						
+						<Label id="LBL_VRKME" size="300" text="{i18n>SL_UNIT}"></Label>
+						<Text id="Txt_VRKME" text="{parts: [{path:'/VRKME'}, {path:'/VRKME__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/VRKME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						
+						<Label id="LBL_MEGSALES" text="{i18n>SL_UNIT_MSR}"></Label>
+						<Text id="Txt_MEGSALES" text="{/MEGSALES}" 
+						visible="{path:'/MEGSALES',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						
+						<Label id="LBL_VMSTA" text="{i18n>SL_DST_MTR_STAT}"></Label>
+						<Text id="Txt_VMSTA"
+						text="{parts: [{path:'/VMSTA'}, {path:'/VMSTA__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/VMSTA', formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						<Label id="LBL_VMSTD" text="{i18n>Mat_Valid_Frm}"></Label>
+						<Text id="Txt_VMSTD" text="{path:'/VMSTD'}"
+						visible="{path:'/VMSTD', formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+					
+						
+						
+						<Label id="LBL_WRKSALES" text="{i18n>SL_DLVR_PLT}"></Label>
+						<Text id="Txt_WRKSALES" text="{parts: [{path:'/WRKSALES'}, {path:'/WRKSALES__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/WRKSALES',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_SKTOF" text="{i18n>SL_CSH_DIS}"></Label>
+						<Text id="Txt_SKTOF" text="{path:'/SKTOF',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/SKTOF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+							<core:ExtensionPoint name="extMatSalesGenData"></core:ExtensionPoint>
+						
+				     	<Label></Label>
+				     	
+				     	<!--QUANTITY-->
+				     	
+						<Title  id="MatSalesQnty" text = "{i18n>SL_QNTY}">
+                        <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                        </layoutData>
+                       </Title>
+		
+						<Label id="LBL_AUMNG" text="{i18n>SL_MIN_ORDR}"></Label>
+						<Text id="Txt_AUMNG" text="{parts: [{path:'/AUMNG'}, {path:'/AUMNG__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/AUMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_LFMNG" text="{i18n>SL_MIN_DLVR}"></Label>
+						<Text id="Txt_LFMNG" text="{parts: [{path:'/LFMNG'}, {path:'/LFMNG__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/LFMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_EFMNG" text="{i18n>SL_MM_QTY}"></Label>
+						<Text id="Txt_EFMNG" text="{parts: [{path:'/EFMNG'}, {path:'/EFMNG__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/EFMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_SCMNG" text="{i18n>SL_DLVR_UNIT}"></Label>
+						<Text id="Txt_SCMNG"
+							 text="{parts: [{path:'/SCMNG'}, {path:'/SCHME'}, {path:'/SCHME__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/SCMNG', formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+							
+						<Label id="LBL_RDPSALES" text="{i18n>SL_RND_PF}"></Label>
+						<Text id="Txt_RDPSALES" text="{parts: [{path:'/RDPSALES'}, {path:'/RDPSALES__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/RDPSALES',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+							<core:ExtensionPoint name="extMatSalesQnty"></core:ExtensionPoint>
+					
+					    	<!--PRODUCT ATTRIBUTES-->
+					    <Label></Label>
+					    <Title  id="MatSalesProdAttr" text = "{i18n>SL_PROD_ATTR}">
+                        <layoutData>
+                        <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                        </layoutData>
+                        </Title>
+					
+						<Label id="LBL_PRAT1" size="300" text="{i18n>SL_PR_ATR1}"></Label>
+						<Text id="Txt_PRAT1" text="{parts: [{path:'/PRAT1'}, {path:'/PRAT1__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT2" text="{i18n>SL_PR_ATR2}"></Label>
+						<Text id="Txt_PRAT2" text="{parts: [{path:'/PRAT2'}, {path:'/PRAT2__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT3" text="{i18n>SL_PR_ATR3}"></Label>
+						<Text id="Txt_PRAT3" text="{parts: [{path:'/PRAT3'}, {path:'/PRAT3__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT4" text="{i18n>SL_PR_ATR4}"></Label>
+						<Text id="Txt_PRAT4" text="{parts: [{path:'/PRAT4'}, {path:'/PRAT4__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT5" text="{i18n>SL_PR_ATR5}"></Label>
+						<Text id="Txt_PRAT5" text="{parts: [{path:'/PRAT5'}, {path:'/PRAT5__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT6" size="300" text="{i18n>SL_PR_ATR6}"></Label>
+						<Text id="Txt_PRAT6" text="{parts: [{path:'/PRAT6'}, {path:'/PRAT6__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT6',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT7" text="{i18n>SL_PR_ATR7}"></Label>
+						<Text id="Txt_PRAT7" text="{parts: [{path:'/PRAT7'}, {path:'/PRAT7__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT7',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT8" text="{i18n>SL_PR_ATR8}"></Label>
+						<Text id="Txt_PRAT8" text="{parts: [{path:'/PRAT8'}, {path:'/PRAT8__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT8',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRAT9" text="{i18n>SL_PR_ATR9}"></Label>
+						<Text id="Txt_PRAT9" text="{parts: [{path:'/PRAT9'}, {path:'/PRAT9__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRAT9',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRATA" text="{i18n>SL_PR_ATR10}"></Label>
+						<Text id="Txt_PRATA" text="{parts: [{path:'/PRATA'}, {path:'/PRATA__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PRATA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						<core:ExtensionPoint name="extMatSalesProdAttr"></core:ExtensionPoint>
+						<Label></Label>
+						
+							<!--SALES-->
+							
+					<Title  id="matSalesSubSection" text = "{i18n>SL}">
+                      <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+                     </Title>
+						
+						<Label id="LBL_VAVME" text="{i18n>SL_MTR_VL_SL}"></Label>
+						<Text id="Txt_VAVME" text="{path:'/VAVME',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+					    visible="{path:'/VAVME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+			        	
+			        	<core:ExtensionPoint name="extmatSalesSubSection"></core:ExtensionPoint>
+			        	<core:ExtensionPoint name="extmatSalesMainSection"></core:ExtensionPoint>
+			        		</form:content>
+		    	</form:SimpleForm>
+			        		<form:SimpleForm
+	               id="matSalesTableS4Form2"
+				   maxContainerCols="1" 
+				   minWidth="1024" 
+				   layout="ResponsiveGridLayout"
+				   labelSpanL="5" 
+				   labelSpanM="5" 
+				   emptySpanL="1" 
+				   emptySpanM="1"
+			       columnsL="1"
+				    columnsM="1">
+			   	<form:content>
+			        	
+			        	
+			           	<!--GROUPING SALES DATA-->
+				       <core:Title id="grp" text="{i18n>GRP}" />
+					<Title  id="matSalesGrouping" text = "{i18n>SL}">
+                      <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+                     </Title>
+						
+						<Label id="LBL_VERSG" text="{i18n>SL_MTR_ST_GRP}"></Label>
+						<Text id="Txt_VERSG" text="{parts: [{path:'/VERSG'}, {path:'/VERSG__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/VERSG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_BONUS" text="{i18n>SL_VL_RBT_GRP}"></Label>
+						<Text id="Txt_BONUS" text="{parts: [{path:'/BONUS'}, {path:'/BONUS__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/BONUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PROVG" text="{i18n>SL_CM_GRP}"></Label>
+						<Text id="Txt_PROVG" text="{parts: [{path:'/PROVG'}, {path:'/PROVG__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PROVG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PMATN" text="{i18n>SL_PR_REF_MTR}"></Label>
+						<Text id="Txt_PMATN" text="{parts: [{path:'/PMATN'}, {path:'/PMATN__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PMATN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_KONDM" text="{i18n>SL_MTR_PR_GRP}"></Label>
+						<Text id="Txt_KONDM" text="{parts: [{path:'/KONDM'}, {path:'/KONDM__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/KONDM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_PRODH" text="{i18n>SL_PR_HRCHY}"></Label>
+						<Text id="Txt_PRODH"
+							text="{parts: [{path:'/PRODH'}, {path:'/PRODH__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/PRODH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+							</Text>
+							
+						<Label id="LBL_KTGRM" text="{i18n>SL_ACT_ASMT_GRP}"></Label>
+						<Text id="Txt_KTGRM" text="{parts: [{path:'/KTGRM'}, {path:'/KTGRM__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/KTGRM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MTPOS" text="{i18n>SL_ITM_CTG}"></Label>
+						<Text id="Txt_MTPOS" text="{parts: [{path:'/MTPOS'}, {path:'/MTPOS__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MTPOS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+							<core:ExtensionPoint name="extmatSalesGrouping"></core:ExtensionPoint>
+							
+					    	<!--MATERIAL GROUP DATA-->
+								
+					    <Title  id="Mat" text = "{i18n>SL_MTR}">
+                        <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                         </layoutData>
+                        </Title>
+						
+					
+						<Label id="LBL_MVGR1" text="{i18n>SL_MTR_GRP1}"></Label>
+						<Text id="Txt_MVGR1" text="{parts: [{path:'/MVGR1'}, {path:'/MVGR1__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MVGR1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MVGR2" text="{i18n>SL_MTR_GRP2}"></Label>
+						<Text id="Txt_MVGR2" text="{parts: [{path:'/MVGR2'}, {path:'/MVGR2__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MVGR2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MVGR3" text="{i18n>SL_MTR_GRP3}"></Label>
+						<Text id="Txt_MVGR3" text="{parts: [{path:'/MVGR3'}, {path:'/MVGR3__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MVGR3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MVGR4" text="{i18n>SL_MTR_GRP4}"></Label>
+						<Text id="Txt_MVGR4" text="{parts: [{path:'/MVGR4'}, {path:'/MVGR4__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MVGR4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MVGR5" text="{i18n>SL_MTR_GRP5}"></Label>
+						<Text id="Txt_MVGR5" text="{parts: [{path:'/MVGR5'}, {path:'/MVGR5__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MVGR5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						<core:ExtensionPoint name="extMat"></core:ExtensionPoint>
+						
+						<core:ExtensionPoint name="extgrp"/>
+					</form:content>
+		    	</form:SimpleForm>
+		    
+			
+			    	<!--TAX TABLE table_padding-->
+			    	   <Table id="MatSalestaxTable" 
+		    	           width="100%" >
+		    	           <headerToolbar>
+					<Toolbar>
+						<Title width="100%" text="{i18n>SL_TAX}" class = "sapThemeFontSize" design="Bold"></Title>
+						<Button id="SalesTaxpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+					</Toolbar>
+				</headerToolbar>
+							<columns>
+								<Column id="Tax_Country">
+									<Text text="{i18n>Sl_Cnty}"/>
+								</Column>
+								<Column id="Tax_Category">
+									<Text text="{i18n>Sl_Ctgy}"/>
+								</Column>
+								<Column id="Tax_Classification">
+									<Text text="{i18n>Sl_Clfctn}"/>
+								</Column>
+							</columns>
+								<core:ExtensionPoint name="extMatSalestaxTable"></core:ExtensionPoint>
+						</Table>
+		
+				   	<!--TEXT TABLE-->
+				   	 <Table id="MatSalestextTable" 
+		    	           width="100%" >
+		    	             <headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>SL_TEXT}" class = "sapThemeFontSize" design="Bold"></Title>
+					</Toolbar>
+				</headerToolbar>
+							<columns>
+								<Column>
+									<Text text="{i18n>Sl_ln}"/>
+								</Column>
+								<Column>
+									<Text text="{i18n>Sl_txt}"/>
+								</Column>
+							</columns>
+							<core:ExtensionPoint name="extMatSalestextTable"></core:ExtensionPoint>
+						</Table>
+			</l:content>
+		</l:Grid>
+</core:FragmentDefinition>

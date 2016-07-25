@@ -1,0 +1,182 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<form:SimpleForm id="SimpleSuppFormSubrange"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout" 
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" editable="false" columnsM="1">
+				<form:content>
+					<!-- Different Purchasing Data <core:Title id="diffpurchase" text="{i18n>diffpurchdata}" 
+						/> <Label id="lblSuppLTSNR" text="{i18n>SubRange}" /> <Text id="SuppLTSNR" 
+						text="{parts:[{path:'/LTSNR'},{path:'/LTSNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}" 
+						visible="{path:'/LTSNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+						<Label id="lblWERKS" text="{i18n>plant}" /> <Text id="WERKS" text="{parts:[{path:'/WERKS'},{path:'/WERKS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}" 
+						visible="{path:'/WERKS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+						Extension Point for Different Purchasing Data <core:ExtensionPoint name="extdiffpurchase" 
+						/> -->
+
+					<!-- Conditions -->
+					<core:Title id="suppconditions" text="{i18n>SP_Condition}" />
+					<Label id="lblSbrWAERS" text="{i18n>SP_OrdCurcy}" />
+					<Text id="SbrWAERS"
+						text="{parts:[{path:'/WAERS'},{path:'/WAERS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/WAERS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblSbrMINBW" text="{i18n>SP_MinOrdValue}" />
+					<Text id="SbrMINBW"
+						text="{parts:[{path:'/MINBW'},{path:'/MINBW__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/MINBW',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+
+					<Label id="lblSbrBOPNR" text="{i18n>SP_RestricProf}" />
+					<Text id="SbrBOPNR"
+						text="{parts:[{path:'/BOPNR'},{path:'/BOPNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BOPNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblSbrZTERM" text="{i18n>TermsofPaymnt}" />
+					<Text id="SbrZTERM"
+						text="{parts : [{path:'/ZTERM'},{path:'/ZTERM__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZTERM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblSbrINCO1" text="{i18n>Incoterm}" />
+					<Text id="SbrINCO1"
+						text="{parts:[{path:'/INCO1'},{path:'/INCO1__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/INCO1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblINCO2" text="{i18n>Inco2}" />
+					<Text id="INCO2" text="{path:'/INCO2'}"
+						visible="{path:'/INCO2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+
+
+					<Label id="lblSbrMEPRF" text="{i18n>SP_PricingDate}" />
+					<Text id="SbrMEPRF" text="{path:'/MEPRF__TXT'}"
+						visible="{path:'/MEPRF__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Conditions -->
+					<core:ExtensionPoint name="extsuppconditions" />
+
+					<!-- SP_SaleData -->
+					<core:Title id="suppsalesdata" text="{i18n>SP_SaleData}" />
+					<Label id="lblSbrVERKF" text="{i18n>SP_Saleperson}" />
+					<Text id="SbrVERKF" text="{path:'/VERKF'}"
+						visible="{path:'/VERKF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Supplier Sale data -->
+					<core:ExtensionPoint name="extsuppsalesdata" />
+
+					<!-- Control Data -->
+					<core:Title id="suppControlData" text="{i18n>ControlData}" />
+					<Label id="lblSbrLFABC" text="{i18n>SP_AbcInd}" />
+					<Text id="SbrLFABC"
+						text="{parts : [{path:'/LFABC'},{path:'/LFABC__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LFABC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrEXPVZ" text="{i18n>SP_ModeTrasport}" />
+					<Text id="SbrEXPVZ"
+						text="{parts:[{path:'/EXPVZ'},{path:'/EXPVZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EXPVZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrZOLLA" text="{i18n>SP_Customofc}" />
+					<Text id="SbrZOLLA"
+						text="{parts:[{path:'/ZOLLA'},{path:'/ZOLLA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZOLLA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrPAPRF" text="{i18n>SP_ProactProfile}" />
+					<Text id="SbrPAPRF" text="{path:'/PAPRF__TXT'}"
+						visible="{path:'/PAPRF__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrXNBWY" text="{i18n>reval}" />
+					<Text id="SbrXNBWY"
+						text="{path:'/XNBWY',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XNBWY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrLEBRE" text="{i18n>SP_ServiceBased}" />
+					<Text id="SbrLEBRE"
+						text="{path:'/LEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrWEBRE" text="{i18n>SP_GoodsReceipt}" />
+					<Text id="SbrWEBRE"
+						text="{path:'/WEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/WEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrXERSY" text="{i18n>Evalrecdel}" />
+					<Text id="SbrXERSY"
+						text="{path:'/XERSY',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XERSY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblSbrXERSR" text="{i18n>Evalrecsettlereturn}" />
+					<Text id="SbrXERSR"
+						text="{path:'/XERSR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XERSR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblSbrKZABS" text="{i18n>SP_Acknwledge}" />
+					<Text id="SbrKZABS" text="{path:'/KZABS__TXT'}"
+						visible="{path:'/KZABS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrKZAUT" text="{i18n>SP_AutomatPo}" />
+					<Text id="SbrKZAUT"
+						text="{path:'/KZAUT',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/KZAUT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Control Data -->
+					<core:ExtensionPoint name="extsuppControlData" />
+
+					<!-- Default Data Material -->
+					<core:Title id="SP_DefaultMat" text="{i18n>SP_DefaultMat}" />
+					<Label id="lblSbrEKGRP" text="{i18n>SP_PurchGrp}" />
+					<Text id="SbrEKGRP"
+						text="{parts : [{path:'/EKGRP'},{path:'/EKGRP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EKGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrBSTAE" text="{i18n>SP_ConfirmationCntrl}" />
+					<Text id="SbrBSTAE"
+						text="{parts:[{path:'/BSTAE'},{path:'/BSTAE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BSTAE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrMEGRU" text="{i18n>UOM}" />
+					<Text id="SbrMEGRU" text="{path:'/MEGRU__TXT'}"
+						visible="{path:'/MEGRU__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrRDPRF" text="{i18n>Roundingprof}" />
+					<Text id="SbrRDPRF"
+						text="{parts : [{path:'/RDPRF'},{path:'/RDPRF__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/RDPRF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrPLIFZ" text="{i18n>SP_PlandDelTime}" />
+					<Text id="SbrPLIFZ" text="{path:'/PLIFZ'}"
+						visible="{path:'/PLIFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblSbrDISPO" text="{i18n>MrpControler}" />
+					<Text id="SbrDISPO"
+						text="{parts:[{path:'/DISPO'},{path:'/DISPO__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/DISPO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrMRPPP" text="{i18n>Plningcal}" />
+					<Text id="SbrMRPPP"
+						text="{parts:[{path:'/MRPPP'},{path:'/MRPPP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/MRPPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrLFRHY" text="{i18n>Plngcycle}" />
+					<Text id="SbrLFRHY"
+						text="{parts:[{path:'/LFRHY'},{path:'/LFRHY__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LFRHY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Default Data Material -->
+					<core:ExtensionPoint name="extSupplierDefaultMat" />
+
+					<!-- Service Data -->
+					<core:Title id="SP_ServiceData" text="{i18n>SP_ServiceData}" />
+					<Label id="lblSbrLIPRE" text="{i18n>pricemktngagrmnt}" />
+					<Text id="SbrLIPRE"
+						text="{parts:[{path:'/LIPRE'},{path:'/LIPRE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LIPRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrLIBES" text="{i18n>SP_OrderEntry}" />
+					<Text id="SbrLIBES"
+						text="{path:'/LIBES',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LIBES',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSbrLISER" text="{i18n>rackjobagrd}" />
+					<Text id="SbrLISER"
+						text="{path:'/LISER',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LISER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Service Data -->
+					<core:ExtensionPoint name="extSupplierServiceData" />
+				</form:content>
+				<!-- Extension Point for Sub Range SimpleForm -->
+				<core:ExtensionPoint name="extSimpleSuppFormSubrange" />
+			</form:SimpleForm>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

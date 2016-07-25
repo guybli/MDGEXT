@@ -1,0 +1,27 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View controllerName="fcg.mdg.approvecrv2.view.SalesDetail"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form">
+	
+	<Page enableScrolling="true" navButtonPress="PressBack"
+		showHeader="true" title="{i18n>salesarea}" showFooter="true"
+		showNavButton="true" id="SalesPage">
+		<content>
+			<ObjectHeader id="ccObjHeaderDet">
+				<attributes>
+					<ObjectAttribute id="erpCustSales" />
+					<ObjectAttribute id="disChannel" />
+					<ObjectAttribute id="division" />
+					<ObjectAttribute id="bpdesc" />
+				</attributes>
+				<!-- Extension Point for Sales Details PageHeader -->
+				<core:ExtensionPoint name="extSalesDetailHeader" />
+			</ObjectHeader>
+		</content>
+	</Page>
+</core:View>

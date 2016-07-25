@@ -1,0 +1,1183 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" 
+	xmlns:f="sap.ui.layout.form">
+	
+	<l:VerticalLayout id="matCreatePlantLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			<Title id="Txt_WERKS" titleStyle="H2"></Title>
+			<Title id="MatPlantCentral" text="{i18n>Central}" titleStyle="H3" class="formTitleAlign"></Title>
+            	           <f:SimpleForm id="matPlantDataForm"
+                            					maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                            					labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                            					columnsL="1" columnsM="1">
+                            		<f:content>
+		                                <Label id="Lbl_LOGGR" text="{i18n>Mat_Log_HndlGrp}"></Label>
+					                    <Text id="Txt_LOGGR" maxLines="0" text="{parts: [{path:'/LOGGR'}, {path:'/LOGGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/LOGGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MMSTA" text="{i18n>Mat_Stts_PlntSpecf}"></Label>
+					                    <Text id="Txt_MMSTA" maxLines="0" text="{parts: [{path:'/MMSTA'}, {path:'/MMSTA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/MMSTA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MMSTD" text="{i18n>Mat_ValidDt_PlntSts}"></Label>
+					                    <Text id="Txt_MMSTD" maxLines="0" text="{path:'/MMSTD',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" 
+					                        visible="{path:'/MMSTD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MXCHPF" text="{i18n>Mat_Bat_Mgmt}"></Label>
+					                    <Text id="Txt_MXCHPF" maxLines="0" text="{parts: [{path:'/XCHPF'}, {path:'/XCHPF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/XCHPF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRCMARCBA" text="{i18n>PC_ID}"></Label>
+					                    <Text id="Txt_PRCMARCBA" maxLines="0" text="{parts: [{path:'/PRCMARCBA'}, {path:'/PRCMARCBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PRCMARCBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SERNP" text="{i18n>Mat_SrNo_Prof}"></Label>
+					                    <Text id="Txt_SERNP" maxLines="0" text="{parts: [{path:'/SERNP'}, {path:'/SERNP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/SERNP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZDKZ" text="{i18n>Mat_Doc_Rqrd}"></Label>
+					                    <Text id="Txt_KZDKZ" maxLines="0" text="{/KZDKZ__TXT}" 
+					                        visible="{path:'/KZDKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_XMCNG" text="{i18n>Mat_NegStk_Alwd}"></Label>
+					                    <Text id="Txt_XMCNG" maxLines="0" text="{/XMCNG__TXT}" 
+					                        visible="{path:'/XMCNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant General Data -->
+										<core:ExtensionPoint name="extMatPlantCentral"></core:ExtensionPoint>
+					                    <Label></Label>
+					                    
+					                    <!--Forecast Requirements-->
+					                    <Title  id="Frcst_Rqmnt" text = "{i18n>Mat_Frcst_Rqmnt}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_AUFMRPFC" text="{i18n>Mat_Split_Indctr}"></Label>
+					                    <Text id="Txt_AUFMRPFC" text="{/AUFMRPFC}" maxLines="0"
+					                        visible="{path:'/AUFMRPFC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PERIV" text="{i18n>FiscalYearVariant}"></Label>
+					                    <Text id="Txt_PERIV" text="{parts: [{path:'/PERIV'}, {path:'/PERIV__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PERIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PERMRPFC" text="{i18n>Mat_Prd_Indctr}"></Label>
+					                    <Text id="Txt_PERMRPFC" text="{parts: [{path:'/PERMRPFC'}, {path:'/PERMRPFC__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/PERMRPFC__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Forecast Requirements -->
+										<core:ExtensionPoint name="extFrcst_Rqmnt"></core:ExtensionPoint>
+					                    <Label></Label>
+										
+					                    <!--ATP-->
+					                    <Title  id="ATP" text = "{i18n>Mat_ATP}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_WZEIT" text="{i18n>Mat_Tot_LeadTime}"></Label>
+					                    <Text id="Txt_WZEIT" text="{path: '/WZEIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}" maxLines="0"
+					                        visible="{path:'/WZEIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_MTVFP" text="{i18n>Mat_Avl_ChkGrp}"></Label>
+					                    <Text id="Txt_MTVFP" text="{parts: [{path:'/MTVFP'}, {path:'/MTVFP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MTVFP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZPSP" text="{i18n>Mat_CrsPrjct}"></Label>
+					                    <Text id="Txt_KZPSP" text="{parts: [{path:'/KZPSP'}, {path:'/KZPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/KZPSP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+                                		<!-- Extension Point for Plant ATP -->
+										<core:ExtensionPoint name="extATP"></core:ExtensionPoint>
+									</f:content>
+                                </f:SimpleForm>	
+				<!--PLANT SALES-->
+					            <Title id="Plnt_Sales" text="{i18n>Plnt_Sales}" titleStyle="H3" class="formTitleAlign"></Title>
+					            <f:SimpleForm id="matPlantSalesForm"
+                            					maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                            					labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                            					columnsL="1" columnsM="1">
+                            		<f:content>
+                    					<!--General Data-->
+					                    <Title  id="PlantSalesGeneral" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_ATPKZ" text="{i18n>Mat_Rplc_Part}"></Label>
+					                    <Text id="Txt_ATPKZ" text="{parts: [{path:'/ATPKZ'}, {path:'/ATPKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/ATPKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MFRGR" text="{i18n>Mat_frght_Grp}"></Label>
+					                    <Text id="Txt_MFRGR" text="{parts: [{path:'/MFRGR'}, {path:'/MFRGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MFRGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant SALES General Data-->
+										<core:ExtensionPoint name="extPlantSalesGeneral"></core:ExtensionPoint>
+					                    <Label></Label>
+					<!--Shipping Data-->
+					                    <Title  id="Plnt_SalesShip" text = "{i18n>Mat_Plnt_SalesShip}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_LADGR" text="{i18n>Mat_Load_Grp}"></Label>
+					                    <Text id="Txt_LADGR" text="{parts: [{path:'/LADGR'}, {path:'/LADGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/LADGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_VBAMG" text="{i18n>Mat_Base_Quantity}"></Label>
+					                    <Text id="Txt_VBAMG" text="{/VBAMG}" maxLines="0"
+					                        visible="{path:'/VBAMG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_VBEAZ" text="{i18n>Mat_Prcsng_Time}"></Label>
+					                    <Text id="Txt_VBEAZ" text="{/VBEAZ}" maxLines="0"
+					                        visible="{path:'/VBEAZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_VRVEZ" text="{i18n>Mat_Setup_Time}"></Label>
+					                    <Text id="Txt_VRVEZ" text="{/VRVEZ}" maxLines="0"
+					                        visible="{path:'/VRVEZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+                                		<!-- Extension Point for Plant SALES Shipping Data-->
+										<core:ExtensionPoint name="extPlnt_SalesShip"></core:ExtensionPoint>
+								</f:content>
+                            </f:SimpleForm>
+					<!--Plant Foreign Trade-->
+					           <Title id="Plant_FTrade" text="{i18n>Mat_Plant_FTrade}" titleStyle="H3" class="formTitleAlign"></Title>
+					           <f:SimpleForm id="matPlantFtrdForm"
+                            					maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                            					labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                            					columnsL="1" columnsM="1">
+                            		<f:content>
+                            		    <!--General Data--> 
+					                    <Title  id="PlantFTradeGeneral" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_CASMARCFT" text="{i18n>Mat_CAS_No}"></Label>
+					                    <Text id="Txt_CASMARCFT" text="{parts: [{path:'/CASMARCFT'}, {path:'/CASMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/CASMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_STEMARCFT" text="{i18n>Mat_Ctrl_Cod}"></Label>
+					                    <Text id="Txt_STEMARCFT" text="{parts: [{path:'/STEMARCFT'}, {path:'/STEMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/STEMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_GPNMARCFT" text="{i18n>Mat_PRODCO_No}"></Label>
+					                    <Text id="Txt_GPNMARCFT" text="{parts: [{path:'/GPNMARCFT'}, {path:'/GPNMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/GPNMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_HERKL" text="{i18n>Mat_Cntry_Orgn}"></Label>
+					                    <Text id="Txt_HERKL" text="{parts: [{path:'/HERKL'}, {path:'/HERKL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/HERKL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_HERMARCFT" text="{i18n>Mat_Reg_Orgn}"></Label>
+					                    <Text id="Txt_HERMARCFT" text="{parts: [{path:'/HERMARCFT'}, {path:'/HERMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/HERMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MTVER" text="{i18n>Mat_ExpImp_Grp}"></Label>
+					                    <Text id="Txt_MTVER" text="{parts: [{path:'/MTVER'}, {path:'/MTVER__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MTVER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_STAMARCFT" text="{i18n>Mat_ComdtyCod_No}"></Label>
+					                    <Text id="Txt_STAMARCFT" text="{parts: [{path:'/STAMARCFT'}, {path:'/STAMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/STAMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_EXPME" text="{i18n>Mat_ComdtyCod_Unit}"></Label>
+					                    <Text id="Txt_EXPME" text="{parts: [{path:'/EXPME'}, {path:'/EXPME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/EXPME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Foreign Trade General Data-->
+										<core:ExtensionPoint name="extPlantFTradeGeneral"></core:ExtensionPoint>
+					                    <Label></Label>
+									<!--Common Agricultural Policy-->
+					                    <Title  id="Plant_FTrade_CAP" text = "{i18n>Mat_Plant_FTrade_CAP}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_MOGMARCFT" text="{i18n>Mat_CAP_PrdGrp}"></Label>
+					                    <Text id="Txt_MOGMARCFT" text="{parts: [{path:'/MOGMARCFT'}, {path:'/MOGMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MOGMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MOWMARCFT" text="{i18n>Mat_CAP_PrdLstNo}"></Label>
+					                    <Text id="Txt_MOWMARCFT" text="{parts: [{path:'/MOWMARCFT'}, {path:'/MOWMARCFT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MOWMARCFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							        	<!-- Extension Point for Plant Foreign Trade Common Agricultural Policy-->
+										<core:ExtensionPoint name="extPlant_FTrade_CAP"></core:ExtensionPoint>
+					                    <Label></Label>
+									<!--Export Licenses-->
+					                    <Title  id="Plant_Ftrd_ExpLc" text = "{i18n>Plant_Ftrd_ExpLc}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_ITARK" text="{i18n>Miltry_Goods}"></Label>
+					                    <Text id="Txt_ITARK" text="{/ITARK__TXT}" maxLines="0"
+					                        visible="{path:'/ITARK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRENC" text="{i18n>Exmptn_Cert}"></Label>
+					                    <Text id="Txt_PRENC" text="{parts: [{path:'/PRENC'}, {path:'/PRENC__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/PRENC__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PREND" text="{i18n>Exmptn_Cert_IsuDt}"></Label>
+					                    <Text id="Txt_PREND" text="{path:'/PREND',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/PREND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRENO" text="{i18n>exemptioncertinum}"></Label>
+					                    <Text id="Txt_PRENO" text="{/PRENO}" maxLines="0"
+					                        visible="{path:'/PRENO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Foreign Trade Export Licenses-->
+										<core:ExtensionPoint name="extPlant_Ftrd_ExpLc"></core:ExtensionPoint>
+					                    <Label></Label>
+									<!--Preference-->
+					                    <Title  id="Plnt_FTrd_Pref" text = "{i18n>Plnt_FTrd_Pref}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_PREFE" text="{i18n>Mat_Pref_Ind}"></Label>
+					                    <Text id="Txt_PREFE" text="{parts: [{path:'/PREFE'}, {path:'/PREFE__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PREFE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRENE" text="{i18n>Mat_Vendr_DecCod}"></Label>
+					                    <Text id="Txt_PRENE" text="{parts: [{path:'/PRENE'}, {path:'/PRENE__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PRENE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRENG" text="{i18n>Mat_Vndr_DecDt}"></Label>
+					                    <Text id="Txt_PRENG" text="{path:'/PRENG',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/PRENG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+                    					<!-- Extension Point for Plant Foreign Trade Preference-->
+										<core:ExtensionPoint name="extPlnt_FTrd_Pref"></core:ExtensionPoint>
+								</f:content>
+                            </f:SimpleForm>
+					<!--Purchasing-->
+					            <Title id="Plant_Purchsng_Data" text="{i18n>Plant_Purchsng_Data}" titleStyle="H3" class="formTitleAlign"></Title>
+					            <f:SimpleForm id="matPlantPurchForm"
+                            					maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                            					labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                            					columnsL="1" columnsM="1">
+                            		<f:content>
+                            		<!--General Data--> 
+					                    <Title  id="PlantPurchGeneral" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_EKGRP" text="{i18n>SP_PurchGrp}"></Label>
+					                    <Text id="Txt_EKGRP" text="{parts: [{path:'/EKGRP'}, {path:'/EKGRP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/EKGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KAUTB" text="{i18n>Mat_AutoPO_Alwd}"></Label>
+					                    <Text id="Txt_KAUTB" text="{/KAUTB__TXT}" maxLines="0"
+					                        visible="{path:'/KAUTB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KORDB" text="{i18n>Mat_Src_Rqrmnt}"></Label>
+					                    <Text id="Txt_KORDB" text="{/KORDB__TXT}" maxLines="0"
+					                        visible="{path:'/KORDB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_TAIPURTAX" text="{i18n>Mat_Tax_Indictr}"></Label>
+					                    <Text id="Txt_TAIPURTAX" maxLines="0"></Text>
+					                    <!-- Extension Point for Plant Purchasing General Data-->
+										<core:ExtensionPoint name="extPlantPurchGeneral"></core:ExtensionPoint>
+					                    <Label></Label>
+					         <!--Other Data-->
+					                    <Title  id="PurchOtherData" text = "{i18n>OtherData}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_INSMK" text="{i18n>Mat_Post_InspctnStck}"></Label>
+					                    <Text id="Txt_INSMK" text="{/INSMK__TXT}" maxLines="0"
+					                        visible="{path:'/INSMK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZKRI" text="{i18n>Mat_Crtcal_Part}"></Label>
+					                    <Text id="Txt_KZKRI" text="{/KZKRI__TXT}" maxLines="0"
+					                        visible="{path:'/KZKRI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Purchasing Other Data-->
+										<core:ExtensionPoint name="extPurchOtherData"></core:ExtensionPoint>
+		                            </f:content>
+                                </f:SimpleForm>
+                    	<!--MRP Panel-->
+                          <Panel id="MatReqPlanningPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Mat_ReqPlng}"/>
+								</Toolbar>
+							</headerToolbar>
+							<content>
+
+                            <f:SimpleForm id="MatPlntReqForm"
+                        				  maxContainerCols="1" minWidth="1024"  layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	<f:content>
+                            	        <!--General Data--> 
+					                    <Title  id="PlantMrpGeneral" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_DISPR" text="{i18n>Mat_MRP_Prof}"></Label>
+					                    <Text id="Txt_DISPR" text="{parts: [{path:'/DISPR'}, {path:'/DISPR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DISPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_DGRMRPPP" text="{i18n>Mat_MRP_Grp}"></Label>
+					                    <Text id="Txt_DGRMRPPP" text="{parts: [{path:'/DGRMRPPP'}, {path:'/DGRMRPPP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DGRMRPPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MAABC" text="{i18n>SP_AbcInd}"></Label>
+					                    <Text id="Txt_MAABC" text="{parts: [{path:'/MAABC'}, {path:'/MAABC__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MAABC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							            <!-- Extension Point for MRP General data-->
+										<core:ExtensionPoint name="extPlantMrpGeneral"></core:ExtensionPoint>
+					                    <Label></Label>
+										
+					                    <!--Scheduling--> 
+					                    <Title  id="PlantMrpSchdlng" text = "{i18n>MRP_Schdlng}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_FHOMRPPP" text="{i18n>Schdlng_MargnKeyFloat}"></Label>
+					                    <Text id="Txt_FHOMRPPP" text="{parts: [{path:'/FHOMRPPP'}, {path:'/FHOMRPPP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/FHOMRPPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for MRP Scheduling-->
+										<core:ExtensionPoint name="extPlantMrpSchdlng"></core:ExtensionPoint>
+					                    <Label></Label>
+										
+					                    <!--MRP Procedure--> 
+					                    <Title  id="PlantMrpPrcdr" text = "{i18n>Mat_Procedure}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_DISMM" text="{i18n>MRP_Type}"></Label>
+					                    <Text id="Txt_DISMM" text="{parts: [{path:'/DISMM'}, {path:'/DISMM__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DISMM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_DISMRPPP" text="{i18n>MrpControler}"></Label>
+					                    <Text id="Txt_DISMRPPP" text="{parts: [{path:'/DISMRPPP'}, {path:'/DISMRPPP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DISMRPPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_FXHOR" text="{i18n>PlngTime_Fence}"></Label>
+					                    <Text id="Txt_FXHOR" text="{path: '/FXHOR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/FXHOR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_LFRMRPPP" text="{i18n>Plngcycle}"></Label>
+					                    <Text id="Txt_LFRMRPPP" text="{parts: [{path:'/LFRMRPPP'}, {path:'/LFRMRPPP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/LFRMRPPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MINBE" text="{i18n>Reordr_Point}"></Label>
+					                    <Text id="Txt_MINBE" text="{/MINBE}" maxLines="0"
+					                        visible="{path:'/MINBE',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for MRP Procedure-->
+										<core:ExtensionPoint name="extPlantMrpPrcdr"></core:ExtensionPoint>
+					                    <Label></Label>
+										
+					<!--Lot Size Data-->
+					            <core:Title id="Plnt_LotSizeData" text="{i18n>Plnt_LotSizeData}" titleStyle="H3" textAlign="Left"></core:Title>
+					                    <Label id="Lbl_DISLS" text="{i18n>LotSize}"></Label>
+					                    <Text id="Txt_DISLS" text="{parts: [{path:'/DISLS'}, {path:'/DISLS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DISLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MRPMRPSP" text="{i18n>Plningcal}"></Label>
+					                    <Text id="Txt_MRPMRPSP" text="{/MRPMRPSP}" maxLines="0"
+					                        visible="{path:'/MRPMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_BSTMI" text="{i18n>Min_LotSize}"></Label>
+					                    <Text id="Txt_BSTMI" text="{/BSTMI}" maxLines="0"
+					                        visible="{path:'/BSTMI',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_BSTMA" text="{i18n>Max_LotSize}"></Label>
+					                    <Text id="Txt_BSTMA" text="{/BSTMA}" maxLines="0"
+					                        visible="{path:'/BSTMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_AUSSS" text="{i18n>Assmbly_Scrap}"></Label>
+					                    <Text id="Txt_AUSSS" text="{/AUSSS}" maxLines="0"
+					                        visible="{path:'/AUSSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_BSTFE" text="{i18n>Fix_LotSize}"></Label>
+					                    <Text id="Txt_BSTFE" text="{/BSTFE}" maxLines="0"
+					                        visible="{path:'/BSTFE',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_BSTRF" text="{i18n>RoundngValue}"></Label>
+					                    <Text id="Txt_BSTRF" text="{/BSTRF}" maxLines="0"
+					                        visible="{path:'/BSTRF',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_LAGMRPLS" text="{i18n>Storg_CostIndctr}"></Label>
+					                    <Text id="Txt_LAGMRPLS" text="{/LAGMRPLS}" maxLines="0"
+					                        visible="{path:'/LAGMRPLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+                            	        <Label id="Lbl_MABST" text="{i18n>Max_StockLvl}"></Label>
+					                    <Text id="Txt_MABST" text="{/MABST}" maxLines="0"
+					                        visible="{path:'/MABST',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_MEGMRPLS" text="{i18n>UOM}"></Label>
+					                    <Text id="Txt_MEGMRPLS" text="{parts: [{path:'/MEGMRPLS'}, {path:'/MEGMRPLS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MEGMRPLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_RDPMRPLS" text="{i18n>Roundingprof}"></Label>
+					                    <Text id="Txt_RDPMRPLS" text="{parts: [{path:'/RDPMRPLS'}, {path:'/RDPMRPLS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/RDPMRPLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_TAKZT" text="{i18n>TakTime}"></Label>
+					                    <Text id="Txt_TAKZT" text="{/TAKZT}" maxLines="0"
+					                        visible="{path:'/TAKZT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_LOSFX" text="{i18n>OrdrngCost}"></Label>
+					                    <Text id="Txt_LOSFX" text="{/LOSFX}" maxLines="0"
+					                        visible="{path:'/LOSFX',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for MRP Lot Size Data-->
+										<core:ExtensionPoint name="extPlnt_LotSizeData"></core:ExtensionPoint>
+					                    <Label></Label>
+					                 <!--Net Requirements Calculation-->
+					                    <Title  id="PlntLotSizDta_Calc" text = "{i18n>PlntLotSizDta_Calc}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_RWPMRPLS" text="{i18n>Cvrg_Prof}"></Label>
+					                    <Text id="Txt_RWPMRPLS" text="{parts: [{path:'/RWPMRPLS'}, {path:'/RWPMRPLS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/RWPMRPLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SHFLG" text="{i18n>SaftyTime}"></Label>
+					                    <Text id="Txt_SHFLG" text="{parts: [{path:'/SHFLG'}, {path:'/SHFLG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/SHFLG__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SHPMRPLS" text="{i18n>SaftyTime_PeriodProf}"></Label>
+					                    <Text id="Txt_SHPMRPLS" text="{parts: [{path:'/SHPMRPLS'}, {path:'/SHPMRPLS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SHPMRPLS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SHZET" text="{i18n>SaftyTime}"></Label>
+					                    <Text id="Txt_SHZET" text="{path: '/SHZET',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/SHZET',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_EISBE" text="{i18n>SafetyStock}"></Label>
+					                    <Text id="Txt_EISBE" text="{/EISBE}" maxLines="0"
+					                        visible="{path:'/EISBE',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_EISLO" text="{i18n>Min_SafetyStock}"></Label>
+					                    <Text id="Txt_EISLO" text="{/EISLO}" maxLines="0"
+					                        visible="{path:'/EISLO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_LGRAD" text="{i18n>ServcLvl}"></Label>
+					                    <Text id="Txt_LGRAD" text="{/LGRAD}" maxLines="0"
+					                        visible="{path:'/LGRAD',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for MRP Net Requirements Calculation-->
+										<core:ExtensionPoint name="extPlntLotSizDta_Calc"></core:ExtensionPoint>
+					<!--Plant Procurement-->
+					            <core:Title id="PlntProcurement" text="{i18n>PlntProcurement}" titleStyle="H3" textAlign="Left"></core:Title>
+					                    <Label id="Lbl_BESKZ" text="{i18n>ProcurmntType}"></Label>
+					                    <Text id="Txt_BESKZ" text="{parts: [{path:'/BESKZ'}, {path:'/BESKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/BESKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SOBMRPSP" text="{i18n>SpclProcurmnt}"></Label>
+					                    <Text id="Txt_SOBMRPSP" text="{parts: [{path:'/SOBMRPSP'}, {path:'/SOBMRPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SOBMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_EPRMRPSP" text="{i18n>StckDetrmntn_Grp}"></Label>
+					                    <Text id="Txt_EPRMRPSP" text="{parts: [{path:'/EPRMRPSP'}, {path:'/EPRMRPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/EPRMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZECH" text="{i18n>BatchEntry}"></Label>
+					                    <Text id="Txt_KZECH" text="{parts: [{path:'/KZECH'}, {path:'/KZECH__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/KZECH__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_LGPMRPSP" text="{i18n>Prdct_StrgLoc}"></Label>
+					                    <Text id="Txt_LGPMRPSP" text="{parts: [{path:'/LGPMRPSP'}, {path:'/LGPMRPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/LGPMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_VSPMRPSP" text="{i18n>Deflt_SuplyArea}"></Label>
+					                    <Text id="Txt_VSPMRPSP" text="{parts: [{path:'/VSPMRPSP'}, {path:'/VSPMRPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/VSPMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_RGEKZ" text="{i18n>Backflush}"></Label>
+					                    <Text id="Txt_RGEKZ" text="{parts: [{path:'/RGEKZ'}, {path:'/RGEKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/RGEKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SCHGT" text="{i18n>BulkMat}"></Label>
+					                    <Text id="Txt_SCHGT" text="{/SCHGT__TXT}" maxLines="0"
+					                        visible="{path:'/SCHGT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for MRP Plant Procurement-->
+										<core:ExtensionPoint name="extPlntProcurement"></core:ExtensionPoint>
+					                    <Label></Label>
+					                 <!--Purchasing-->
+					                    <Title  id="PlntPrcurmnt_Purchsng" text = "{i18n>PlntPrcurmnt_Purchsng}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_FABKZ" text="{i18n>JIT_DlvrySchdl}"></Label>
+					                    <Text id="Txt_FABKZ" text="{parts: [{path:'/FABKZ'}, {path:'/FABKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/FABKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_USEQU" text="{i18n>QuotaArrngmnt_Usg}"></Label>
+					                    <Text id="Txt_USEQU" text="{parts: [{path:'/USEQU'}, {path:'/USEQU__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/USEQU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_WEBAZ" text="{i18n>GoodsRcpt_PrcsngTime}"></Label>
+					                    <Text id="Txt_WEBAZ" text="{path: '/WEBAZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/WEBAZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_PLIFZ" text="{i18n>PlndDelvry_Time}"></Label>
+					                    <Text id="Txt_PLIFZ" text="{path: '/PLIFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/PLIFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_LGFMRPSP" text="{i18n>StrgLoc_ExtPrcurmnt}"></Label>
+					                    <Text id="Txt_LGFMRPSP" text="{parts: [{path:'/LGFMRPSP'}, {path:'/LGFMRPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/LGFMRPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for MRP Purchasing-->
+										<core:ExtensionPoint name="extPlntPrcurmnt_Purchsng"></core:ExtensionPoint>
+					<!--Plant Planning-->
+					            <core:Title id="PlantPlng" text="{i18n>PlantPlng}" titleStyle="H3" textAlign="Left"></core:Title>
+					                    <Label id="Lbl_MISKZ" text="{i18n>MixdMRP}"></Label>
+					                    <Text id="Txt_MISKZ" text="{parts: [{path:'/MISKZ'}, {path:'/MISKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MISKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_STRGR" text="{i18n>PlngStrtgyGrp}"></Label>
+					                    <Text id="Txt_STRGR" text="{parts: [{path:'/STRGR'}, {path:'/STRGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/STRGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_VINT1" text="{i18n>BkwdCnsmptn_Period}"></Label>
+					                    <Text id="Txt_VINT1" text="{path: '/VINT1', formatter: 'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/VINT1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_VINT2" text="{i18n>FwdCnsmptn_Period}"></Label>
+					                    <Text id="Txt_VINT2" text="{path:'/VINT2', formatter: 'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/VINT2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_VRMOD" text="{i18n>CnsmptnMode}"></Label>
+					                    <Text id="Txt_VRMOD" text="{parts: [{path:'/VRMOD'}, {path:'/VRMOD__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/VRMOD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRGPRODG" text="{i18n>PlngMat}"></Label>
+					                    <Text id="Txt_PRGPRODG" text="{parts: [{path:'/PRGPRODG'}, {path:'/PRGPRODG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PRGPRODG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRWPRODG" text="{i18n>PlngPlant}"></Label>
+					                    <Text id="Txt_PRWPRODG" text="{parts: [{path:'/PRWPRODG'}, {path:'/PRWPRODG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PRWPRODG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_UMREF" text="{i18n>PlngCnvrsn_factr}"></Label>
+					                    <Text id="Txt_UMREF" text="{/UMREF}" maxLines="0"
+					                        visible="{path:'/UMREF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for MRP Plant Planning-->
+										<core:ExtensionPoint name="extPlantPlng"></core:ExtensionPoint>
+					                    <Label></Label>
+					                  <!--ATP-->
+					                    <Title  id="PlntPlng_ATP" text = "{i18n>PlntPlng_ATP}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_MWZEIT" text="{i18n>TotRplshmntTime}"></Label>
+					                    <Text id="Txt_MWZEIT" text="{path: '/WZEIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}" maxLines="0"
+					                        visible="{path:'/WZEIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_MMTVFP" text="{i18n>Mat_Avl_ChkGrp}"></Label>
+					                    <Text id="Txt_MMTVFP" text="{parts: [{path:'/MTVFP'}, {path:'/MTVFP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MTVFP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MKZPSP" text="{i18n>Mat_CrsPrjct}"></Label>
+					                    <Text id="Txt_MKZPSP" text="{parts: [{path:'/KZPSP'}, {path:'/KZPSP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/KZPSP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for MRP ATP-->
+										<core:ExtensionPoint name="extPlntPlng_ATP"></core:ExtensionPoint>    
+					<!--Plant Manufacturing Bill of Material-->
+					            <core:Title id="PlntMnfctrng" text="{i18n>PlntMnfctrng}" titleStyle="H3" textAlign="Left"></core:Title>
+					                    <Title  id="PlntMnfctrng_BOM" text = "{i18n>PlntMnfctrng_BOM}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_ALTSL" text="{i18n>SlctnMethod}"></Label>
+					                    <Text id="Txt_ALTSL" text="{parts: [{path:'/ALTSL'}, {path:'/ALTSL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/ALTSL__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KAUSF" text="{i18n>CmpnentScrap}"></Label>
+					                    <Text id="Txt_KAUSF" text="{/KAUSF}" maxLines="0"
+					                        visible="{path:'/KAUSF',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_KZBED" text="{i18n>Rqrmnt_grp}"></Label>
+					                    <Text id="Txt_KZBED" text="{parts: [{path:'/KZBED'}, {path:'/KZBED__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/KZBED',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SBDKZ" text="{i18n>IndvdlClctv_Rqrmnt}"></Label>
+					                    <Text id="Txt_SBDKZ" text="{parts: [{path:'/SBDKZ'}, {path:'/SBDKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/SBDKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_AHDIS" text="{i18n>MRP_Rlvncy_DpndntRqrmnt}"></Label>
+					                    <Text id="Txt_AHDIS" text="{parts: [{path:'/AHDIS'}, {path:'/AHDIS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/AHDIS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Manufacturing Bill of Material-->
+										<core:ExtensionPoint name="extPlntMnfctrng_BOM"></core:ExtensionPoint>
+					                    <Label></Label>
+					        <!--Repetitive Manufacturing-->
+					                    <Title  id="Reptitve_Manfactrng" text = "{i18n>Reptitve_Manfactrng}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_MDAMRPMI" text="{i18n>ActnCntrl}"></Label>
+					                    <Text id="Txt_MDAMRPMI" text="{/MDAMRPMI}" maxLines="0"
+					                        visible="{path:'/MDAMRPMI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SAUFT" text="{i18n>Reptitve_Manfactrng}"></Label>
+					                    <Text id="Txt_SAUFT" text="{/SAUFT__TXT}" maxLines="0"
+					                        visible="{path:'/SAUFT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SFEPR" text="{i18n>Reptitve_ManfactrngProf}"></Label>
+					                    <Text id="Txt_SFEPR" text="{parts: [{path:'/SFEPR'}, {path:'/SFEPR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SFEPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Repetitive Manufacturing-->
+										<core:ExtensionPoint name="extReptitve_Manfactrng"></core:ExtensionPoint>
+					                    <Label></Label>
+					                  <!--Discontinued Parts-->
+					                    <Title  id="PlntMnfctrng_DscntnudParts" text = "{i18n>PlntMnfctrng_DscntnudParts}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_AUSDT" text="{i18n>Effctv_OutDt}"></Label>
+					                    <Text id="Txt_AUSDT" text="{path:'/AUSDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/AUSDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZAUS" text="{i18n>Discontinuation}"></Label>
+					                    <Text id="Txt_KZAUS" text="{parts: [{path:'/KZAUS'}, {path:'/KZAUS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/KZAUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_NFMAT" text="{i18n>FollowUp_Mat}"></Label>
+					                    <Text id="Txt_NFMAT" text="{parts: [{path:'/NFMAT'}, {path:'/NFMAT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/NFMAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    
+					                    <!-- Extension Point for Discontinued Parts-->
+										<core:ExtensionPoint name="extPlntMnfctrng_DscntnudParts"></core:ExtensionPoint>
+								<!-- Extension Point for Plant Manufacturing-->
+								<core:ExtensionPoint name="extPlntMnfctrng"></core:ExtensionPoint>
+                            	</f:content>
+                        	</f:SimpleForm>
+                    <!--Plant MRP Areas-->
+                        	     <Table id="MatMrpAreaTable" inset="false" width="100%">
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title width="100%" text="{i18n>Mat_Plant_MRPArea}" class="sapThemeFontSize"></Title>
+                            		      <Button id="PlantMRPAreapersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column id="Mat_MRPArea"
+                            				demandPopin="true">
+                            					<header>
+													<Text text="{i18n>Mat_MRPArea}" />
+												</header>
+                            			</Column>
+                            			<Column id="Mat_MRP_Grp"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Mat_MRP_Grp}" />
+											</header>
+                            			</Column>
+                            			<!-- Extension Point for Plant MRP Areas-->
+										<core:ExtensionPoint name="extMatMrpAreaTable"></core:ExtensionPoint>
+                            		</columns>
+                            </Table>
+                    <!--Plant Production versions-->
+                        	     <Table id="MatPrdVrsnTable" inset="false" width="100%">
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title width="100%" text="{i18n>Mat_Plant_PrdVer}" class="sapThemeFontSize"></Title>
+                            		       <Button id="PlantPrdVrsnpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column id="Prd_Ver"
+                            				demandPopin="true">
+                            					<header>
+													<Text text="{i18n>Mat_Prd_Ver}" />
+												</header>
+                            			</Column>
+                            			<Column id="CC_VAL_FRM"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>CC_VAL_FRM}" />
+											</header>
+                            			</Column>
+                            			<Column id="CC_VAL_TO"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            					<header>
+													<Text text="{i18n>CC_VAL_TO}" />
+												</header>
+                            			</Column>
+                            			<Column id="RepMnfct_Allwd"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Mat_RepMnfct_Allwd}" />
+											</header>
+                            			</Column>
+                            			<!-- Extension Point for Plant Production versions-->
+										<core:ExtensionPoint name="extMatPrdVrsnTable"></core:ExtensionPoint>
+                            		</columns>
+                            </Table>
+                    <!--Plant MRP Text-->
+                            <Table id="MatMrpTxttable" inset="false" width="100%" >
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title text="{i18n>Plant_MRPTxt}" class="sapThemeFontSize"></Title>
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column>
+                            				<header>
+													<Label text="{i18n>Text}" />
+											</header>
+                            			</Column>
+                            			 <!--Extension Point for Plant MRP Text-->
+										<core:ExtensionPoint name="extMatMrpTxttable"></core:ExtensionPoint>
+                            		</columns> 
+                            </Table>
+                            <!-- Extension Point for Plant MRP Panel-->
+							<core:ExtensionPoint name="extMatReqPlanningPanel"></core:ExtensionPoint>
+                    </content>
+					</Panel>
+                    
+                <!--Forecasting panel-->
+                        <Panel id="MatForecastingPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>PlntFrcstng}"></Label>
+								</Toolbar>
+							</headerToolbar>
+						<content>
+                            <f:SimpleForm id="MatPlantFrcstForm"
+                        				  maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	 <f:content>
+                            	
+                            	      <!--General Data-->
+					                    <Title  id="t_Central" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_VRBDT" text="{i18n>DateTo}"></Label>
+					                    <Text id="Txt_VRBDT" text="{path:'/VRBDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/VRBDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_VRBFK" text="{i18n>Multiplier}"></Label>
+					                    <Text id="Txt_VRBFK" text="{parts: [{path:'/VRBFK'}, {path:'/VRBFK__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/VRBFK',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_VRBMT" text="{i18n>RefMatForCnsmptn}"></Label>
+					                    <Text id="Txt_VRBMT" text="{parts: [{path:'/VRBMT'}, {path:'/VRBMT__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/VRBMT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_VRBWK" text="{i18n>RefPlntForCnsmptn}"></Label>
+					                    <Text id="Txt_VRBWK" text="{/VRBWK}" maxLines="0"
+					                        visible="{path:'/VRBWK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Forecasting General Data-->
+										<core:ExtensionPoint name="extt_Central"></core:ExtensionPoint>
+										<Label></Label>
+					                  <!--Number of Periods Required-->
+					                    <Title  id="PlntFrcstng_NoPeriodReq" text = "{i18n>PlntFrcstng_NoPeriodReq}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_PERAN" text="{i18n>HstrclPeriod}"></Label>
+					                    <Text id="Txt_PERAN" text="{/PERAN}" maxLines="0"
+					                        visible="{path:'/PERAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_PERIN" text="{i18n>InitlztnPeriod}"></Label>
+					                    <Text id="Txt_PERIN" text="{/PERIN}" maxLines="0"
+					                        visible="{path:'/PERIN',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_ANZPR" text="{i18n>FrcstPeriod}"></Label>
+					                    <Text id="Txt_ANZPR" text="{/ANZPR}" maxLines="0"
+					                        visible="{path:'/ANZPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_FIMON" text="{i18n>FixPeriod}"></Label>
+					                    <Text id="Txt_FIMON" text="{/FIMON}" maxLines="0"
+					                        visible="{path:'/FIMON',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_PERIO" text="{i18n>PeriodFrSeason}"></Label>
+					                    <Text id="Txt_PERIO" text="{/PERIO}" maxLines="0"
+					                        visible="{path:'/PERIO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for Forecasting Number of Periods Required-->
+										<core:ExtensionPoint name="extPlntFrcstng_NoPeriodReq"></core:ExtensionPoint>
+										<Label></Label>
+					                  <!--Control Data-->
+					                    <Title  id="PlntFrcstng_CtrlDta" text = "{i18n>PlntFrcstng_CtrlDta}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_AUTRU" text="{i18n>Reset_Auto}"></Label>
+					                    <Text id="Txt_AUTRU" text="{/AUTRU__TXT}" maxLines="0"
+					                        visible="{path:'/AUTRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZKFK" text="{i18n>CrctnFactrs}"></Label>
+					                    <Text id="Txt_KZKFK" text="{/KZKFK__TXT}" maxLines="0"
+					                        visible="{path:'/KZKFK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                   <!-- Extension Point for Forecasting Control Data-->
+										<core:ExtensionPoint name="extPlntFrcstng_CtrlDta"></core:ExtensionPoint>
+										<Label></Label>
+                            	        <!--Other Control Data-->
+					                    <Title  id="OthrCtrlData" text = "{i18n>Frcstng_OthrCtrlDta}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_PRMOD" text="{i18n>FrcstMdl}"></Label>
+					                    <Text id="Txt_PRMOD" text="{parts: [{path:'/PRMOD'}, {path:'/PRMOD__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PRMOD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PRDAT" text="{i18n>LastFrcst}"></Label>
+					                    <Text id="Txt_PRDAT" text="{path:'/PRDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/PRDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZINI" text="{i18n>Initialization}"></Label>
+					                    <Text id="Txt_KZINI" text="{parts: [{path:'/KZINI'}, {path:'/KZINI__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/KZINI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MODAW" text="{i18n>MdlSlctn}"></Label>
+					                    <Text id="Txt_MODAW" text="{parts: [{path:'/MODAW'}, {path:'/MODAW__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MODAW',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZPAR" text="{i18n>ParamOptimization}"></Label>
+					                    <Text id="Txt_KZPAR" text="{/KZPAR__TXT}" maxLines="0"
+					                        visible="{path:'/KZPAR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_OPGRA" text="{i18n>OptimizationLvl}"></Label>
+					                    <Text id="Txt_OPGRA" text="{parts: [{path:'/OPGRA'}, {path:'/OPGRA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/OPGRA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SIGGR" text="{i18n>TrckngLmt}"></Label>
+					                    <Text id="Txt_SIGGR" text="{/SIGGR}" maxLines="0"
+					                        visible="{path:'/SIGGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_MODAV" text="{i18n>SlctnPrcdr}"></Label>
+					                    <Text id="Txt_MODAV" text="{parts: [{path:'/MODAV'}, {path:'/MODAV__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MODAV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+					                    <Label id="Lbl_GEWMARCPA" text="{i18n>WeightngGrp}"></Label>
+					                    <Text id="Txt_GEWMARCPA" text="{/GEWMARCPA}" maxLines="0"
+					                        visible="{path:'/GEWMARCPA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_ALPHA" text="{i18n>AlphaFctr}"></Label>
+					                    <Text id="Txt_ALPHA" text="{parts: [{path:'/ALPHA'}, {path:'/ALPHA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/ALPHA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_BETA1" text="{i18n>BetaFctr}"></Label>
+					                    <Text id="Txt_BETA1" text="{parts: [{path:'/BETA1'}, {path:'/BETA1__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/BETA1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_GAMMA" text="{i18n>Gammafctr}"></Label>
+					                    <Text id="Txt_GAMMA" text="{parts: [{path:'/GAMMA'}, {path:'/GAMMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/GAMMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_DELTA" text="{i18n>DeltaFctr}"></Label>
+					                    <Text id="Txt_DELTA" text="{parts: [{path:'/DELTA'}, {path:'/DELTA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DELTA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for Forecasting Other Control Data-->
+										<core:ExtensionPoint name="extOthrCtrlData"></core:ExtensionPoint>
+					               </f:content>
+                        	     </f:SimpleForm>
+                        	     <!-- Extension Point for Forecasting Panel-->
+								<core:ExtensionPoint name="extMatForecastingPanel"></core:ExtensionPoint>
+					           </content>
+            				</Panel>
+            		  
+                <!--Quality Management-->
+                          <Panel id="MatQltyMngmntPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							<headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Pur_Quality_Management}"/>
+								</Toolbar>
+							</headerToolbar>
+						<content>
+                            <f:SimpleForm id="MatQMForm"
+                        				  maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	<f:content>
+					                    
+					                  <!--Plant Quality Management General Data-->
+                                        <Title  id="qm_Central" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_PRFRQ" text="{i18n>IntrvlUnt_NxtRcrngInspctn}"></Label>
+					                    <Text id="Txt_PRFRQ" text="{/PRFRQ}" maxLines="0"
+					                        visible="{path:'/PRFRQ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_QMATA" text="{i18n>AuthrztnGrp_ActInQM}"></Label>
+					                    <Text id="Txt_QMATA" text="{parts: [{path:'/QMATA'}, {path:'/QMATA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/QMATA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MKZDKZ" text="{i18n>Mat_Doc_Rqrd}"></Label>
+					                    <Text id="Txt_MKZDKZ" text="{/KZDKZ__TXT}" maxLines="0"
+					                        visible="{path:'/KZDKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Quality Management General Data-->
+										<core:ExtensionPoint name="extqm_Central"></core:ExtensionPoint>
+										<Label></Label>
+					                  <!--Plant Quality Management Procurement-->
+					                    <Title  id="PlntQltyMngmnt_Prcrmnt" text = "{i18n>PlntQltyMngmnt_Prcrmnt}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_QZGTP" text="{i18n>Cert_Type}"></Label>
+					                    <Text id="Txt_QZGTP" text="{parts: [{path:'/QZGTP'}, {path:'/QZGTP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/QZGTP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_QSSYS" text="{i18n>RqrdQMSys_Vndr}"></Label>
+					                    <Text id="Txt_QSSYS" text="{parts: [{path:'/QSSYS'}, {path:'/QSSYS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/QSSYS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SSQSS" text="{i18n>CtrlKeyForQM}"></Label>
+					                    <Text id="Txt_SSQSS" text="{parts: [{path:'/SSQSS'}, {path:'/SSQSS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SSQSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Quality Management Procurement-->
+										<core:ExtensionPoint name="extPlntQltyMngmnt_Prcrmnt"></core:ExtensionPoint>
+					                </f:content>
+                        	     </f:SimpleForm>
+                       <!--Inspection Type-->
+                        	     <Table id="MatInspectnSetup" inset="false" width="100%">
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title width="100%" text="{i18n>Mat_Inspctnsetup}" class="sapThemeFontSize"></Title>
+                            		       <Button id="PlantInspctnSetuppersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column id="InspctnType"
+                            				demandPopin="true">
+                            					<header>
+													<Text text="{i18n>Mat_InspctnType}" />
+												</header>
+                            			</Column>
+                            			<Column id="Pref_InspTyp"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Mat_Pref_InspTyp}" />
+											</header>
+                            			</Column>
+                            			<Column id="Ins_Setup_Active"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Mat_Active}" />
+											</header>
+                            			</Column>
+                            			<!-- Extension Point for Plant Quality Management Inspection Type-->
+										<core:ExtensionPoint name="extMatInspectnSetup"></core:ExtensionPoint>
+                            		</columns>
+                            </Table>
+                            <!-- Extension Point for Plant Quality Management Panel-->
+							<core:ExtensionPoint name="extMatQltyMngmntPanel"></core:ExtensionPoint>
+					    </content>
+            		</Panel>
+					                    
+                             <Panel id="MatWorkSchdlngPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							    <headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>PlntWrkSchdl}"/>
+								</Toolbar>
+							    </headerToolbar>
+						    <content>
+                                <f:SimpleForm id="MatWorkSchdlngForm"
+                        				  maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	<f:content>
+					                  <!--Plant Work Scheduling General Data-->
+					                    <Title  id="ws_Central" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_FEVMARCWR" text="{i18n>PrdctnSupervisor}"></Label>
+					                    <Text id="Txt_FEVMARCWR" text="{parts: [{path:'/FEVMARCWR'}, {path:'/FEVMARCWR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/FEVMARCWR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_FRTME" text="{i18n>PrdctnUnt}"></Label>
+					                    <Text id="Txt_FRTME" text="{parts: [{path:'/FRTME'}, {path:'/FRTME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/FRTME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZPRO" text="{i18n>WthdrwlStck_PrdctnUnt}"></Label>
+					                    <Text id="Txt_KZPRO" text="{/KZPRO__TXT}" maxLines="0"
+					                       visible="{path:'/KZPRO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_MATGR" text="{i18n>Mat_Grpng}"></Label>
+					                    <Text id="Txt_MATGR" text="{parts: [{path:'/MATGR'}, {path:'/MATGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/MATGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_OCMPF" text="{i18n>ProfForOrdChngMngmnt}"></Label>
+					                    <Text id="Txt_OCMPF" text="{parts: [{path:'/OCMPF'}, {path:'/OCMPF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/OCMPF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SFCMARCWR" text="{i18n>PrdctnSchdlngProf}"></Label>
+					                    <Text id="Txt_SFCMARCWR" text="{parts: [{path:'/SFCMARCWR'}, {path:'/SFCMARCWR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SFCMARCWR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Work Scheduling General Data-->
+										<core:ExtensionPoint name="extws_Central"></core:ExtensionPoint>
+										<Label></Label>
+					                  <!--Plant Work Scheduling Tolerance Data-->
+					                    <Title  id="PlntWrkSchdl_TolrncDta" text = "{i18n>PlntWrkSchdl_TolrncDta}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_UEETK" text="{i18n>Pur_Del_Alllowed}"></Label>
+					                    <Text id="Txt_UEETK" text="{/UEETK__TXT}" maxLines="0"
+					                        visible="{path:'/UEETK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_UEETO" text="{i18n>OvrDel_TolrncLvl}"></Label>
+					                    <Text id="Txt_UEETO" text="{/UEETO}" maxLines="0"
+					                        visible="{path:'/UEETO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_UNETO" text="{i18n>UndrDel_TolrncLvl}"></Label>
+					                    <Text id="Txt_UNETO" text="{/UNETO}" maxLines="0"
+					                        visible="{path:'/UNETO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for Plant Work Scheduling Tolerance Data-->
+										<core:ExtensionPoint name="extPlntWrkSchdl_TolrncDta"></core:ExtensionPoint>
+										<Label></Label>
+					                  <!--Plant In House Production Time Lot size Independent-->
+					                    <Title  id="PlntInHouse_Prdctntime" text = "{i18n>InHous_PrdctnTime}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+                                        <Label></Label>
+					                    <Title  id="LotsizeInd" text="{i18n>PlntInHouse_Prdctntime}" titleStyle="H5">
+                                          <layoutData>
+                                             <l:GridData indent = "L2 M2 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_DZEIT" text="{i18n>InHous_PrdctnTime}"></Label>
+					                    <Text id="Txt_DZEIT" text="{/DZEIT}" maxLines="0"
+					                        visible="{path:'/DZEIT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                        <!-- Extension Point for Plant In House Production Time Lot size Independent-->
+										<core:ExtensionPoint name="extLotsizeInd"></core:ExtensionPoint>
+					                	<Label></Label>
+					                  <!--Plant In House Production Time Lot size Dependent-->
+					                    <Title  id="LotSizeDep" text="{i18n>PlntInHsePrdctnTime_LtSzDpndnt}" titleStyle="H5">
+                                          <layoutData>
+                                             <l:GridData indent = "L2 M2 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_BEARZ" text="{i18n>Mat_Prcsng_Time}"></Label>
+					                    <Text id="Txt_BEARZ" text="{/BEARZ}" maxLines="0"
+					                        visible="{path:'/BEARZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_BASMG" text="{i18n>Mat_Base_Quantity}"></Label>
+					                    <Text id="Txt_BASMG" text="{/BASMG}" maxLines="0"
+					                        visible="{path:'/BASMG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_RUEZT" text="{i18n>Mat_Setup_Time}"></Label>
+					                    <Text id="Txt_RUEZT" text="{/RUEZT}" maxLines="0"
+					                        visible="{path:'/RUEZT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_TRANZ" text="{i18n>Interoperation}"></Label>
+					                    <Text id="Txt_TRANZ" text="{/TRANZ}" maxLines="0"
+					                        visible="{path:'/TRANZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <!-- Extension Point for Plant In House Production Time Lot size Dependent-->
+										<core:ExtensionPoint name="extLotSizeDep"></core:ExtensionPoint>
+										
+										<!-- Extension Point for Plant In House Production Timet-->
+										<core:ExtensionPoint name="extPlntInHouse_Prdctntime"></core:ExtensionPoint>
+					               </f:content>
+                        	     </f:SimpleForm>
+                        	    	<!-- Extension Point for Plant Quality Management Panel-->
+									<core:ExtensionPoint name="extMatWorkSchdlngPanel"></core:ExtensionPoint>
+					           </content>
+            				</Panel>
+					 
+                             <Panel id="MatStrgCstngPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							    <headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Strg_Cstng}"/>
+								</Toolbar>
+							    </headerToolbar>
+						    <content>
+						    
+						    <f:SimpleForm id="MatPlantCostingForm"
+                        				  maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	<f:content>
+                            	 <core:Title id="PlntCostng" text="{i18n>PlntCostng}" titleStyle="H3" textAlign="Left"></core:Title>
+                            	        <!--General Data--> 
+					                    <Title  id="CostngGeneral" text = "{i18n>Central}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_AWSMARCCS" text="{i18n>VarianceKey}"></Label>
+					                    <Text id="Txt_AWSMARCCS" text="{parts: [{path:'/AWSMARCCS'}, {path:'/AWSMARCCS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/AWSMARCCS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_NCOST" text="{i18n>DoNotCost}"></Label>
+					                    <Text id="Txt_NCOST" text="{/NCOST__TXT}" maxLines="0"
+					                        visible="{path:'/NCOST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                        <!-- Extension Point for Plant Costing General Data-->
+											<core:ExtensionPoint name="extCostngGeneral"></core:ExtensionPoint>
+					                   <Label></Label>
+					                    
+					                    <!--Quantity Structure Data--> 
+					                    <Title  id="QtyStrctData" text = "{i18n>QtyStrctrData}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_APLAL" text="{i18n>GrpCountr}"></Label>
+					                    <Text id="Txt_APLAL" text="{path: '/APLAL',formatter: 'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/APLAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_FXPRU" text="{i18n>FxdPrice_CoPrdct}"></Label>
+					                    <Text id="Txt_FXPRU" text="{/FXPRU__TXT}" maxLines="0"
+					                        visible="{path:'/FXPRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_KZKUP" text="{i18n>CoProduct}"></Label>
+					                    <Text id="Txt_KZKUP" text="{/KZKUP__TXT}" maxLines="0"
+					                        visible="{path:'/KZKUP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_LOSGR" text="{i18n>CostngLotSize}"></Label>
+					                    <Text id="Txt_LOSGR" text="{/LOSGR}" maxLines="0"
+					                        visible="{path:'/LOSGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					                    <Label id="Lbl_PLNNR" text="{i18n>Group}"></Label>
+					                    <Text id="Txt_PLNNR" text="{parts: [{path:'/PLNNR'}, {path:'/PLNNR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PLNNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_PLNTY" text="{i18n>TaskListType}"></Label>
+					                    <Text id="Txt_PLNTY" text="{parts: [{path:'/PLNTY'}, {path:'/PLNTY__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/PLNTY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_SOBMARCCS" text="{i18n>SpclPrcrmntType_Costing}"></Label>
+					                    <Text id="Txt_SOBMARCCS" text="{parts: [{path:'/SOBMARCCS'}, {path:'/SOBMARCCS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/SOBMARCCS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_STLAN" text="{i18n>BOMUsage}"></Label>
+					                    <Text id="Txt_STLAN" text="{parts: [{path:'/STLAN'}, {path:'/STLAN__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/STLAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+					                    <Label id="Lbl_STLAL" text="{i18n>BOM_Altrntve}"></Label>
+					                    <Text id="Txt_STLAL" text="{path: '/STLAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/STLAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_FVIDK" text="{i18n>Mat_Prd_Ver}"></Label>
+					                    <Text id="Txt_FVIDK" text="{parts: [{path:'/FVIDK'}, {path:'/FVIDK__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/FVIDK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Costing Quantity Structure Data-->
+										<core:ExtensionPoint name="extQtyStrctData"></core:ExtensionPoint>
+										<!-- Extension Point for Plant Costing-->
+										<core:ExtensionPoint name="extPlntCostng"></core:ExtensionPoint>
+					    <!--Storage-->
+                            	<core:Title id="PlntStrgDta" text="{i18n>PlntStrgDta}" titleStyle="H3" textAlign="Left"></core:Title>
+					                    <Label id="Lbl_AUSME" text="{i18n>UntOfIssue}"></Label>
+					                    <Text id="Txt_AUSME" text="{parts: [{path:'abc>/AUSME'}, {path:'abc>/AUSME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'abc>/AUSME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_ROTATION" text="{i18n>PutawyStckRemvl_Strtgy}"></Label>
+					                    <Text id="Txt_ROTATION" text="{parts: [{path:'abc>/ROTATION'}, {path:'abc>/ROTATION__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'abc>/ROTATION',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_UCHKZ" text="{i18n>OrgnlBatch_Mngmnt}"></Label>
+					                    <Text id="Txt_UCHKZ" text="{parts: [{path:'abc>/UCHKZ'}, {path:'abc>/UCHKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'abc>/UCHKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_ABCMARCST" text="{i18n>PhyInvntryIndictr_CyclCountng}"></Label>
+					                    <Text id="Txt_ABCMARCST" text="{abc>/ABCMARCST}" maxLines="0"
+					                        visible="{path:'abc>/ABCMARCST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_CCFIX" text="{i18n>Cycle_CountrIsFixd}"></Label>
+					                    <Text id="Txt_CCFIX" text="{abc>/CCFIX__TXT}" maxLines="0"
+					                        visible="{path:'abc>/CCFIX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant Storage-->
+										<core:ExtensionPoint name="extPlntStrgDta"></core:ExtensionPoint>
+                            	</f:content>
+                        	</f:SimpleForm>
+							
+                            <Table id="MatStrgLoctable" inset="false" width="100%">
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title width="100%" text="{i18n>Plnt_StrgLoc}" class="sapThemeFontSize"></Title>
+                            		       <Button id="PlantStrgLocpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column id="StorageLocation"
+                            				demandPopin="true">
+                            					<header>
+													<Text text="{i18n>StorageLoctn}" />
+												</header>
+                            			</Column>
+                            			<Column id="Storage_Locn_MRPInd"  minScreenWidth="Tablet"
+                            				demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Storage_Loc_MRPInd}" />
+											</header>
+                            			</Column>
+                            			<!-- Extension Point for Plant Storage Location-->
+										<core:ExtensionPoint name="extMatStrgLoctable"></core:ExtensionPoint>
+                            		</columns>
+                            </Table>
+                            <!-- Extension Point for Costing and Storage panel-->
+							<core:ExtensionPoint name="extMatStrgCstngPanel"></core:ExtensionPoint>
+                    </content>
+				</Panel>
+					<Panel id="MatValuationPanel" expandable="true" expanded="false" class="sapUiNoContentPadding">
+							    <headerToolbar>
+								<Toolbar>
+									<Label design="Bold" text="{i18n>Mat_Plant_Val}"/>
+								</Toolbar>
+							    </headerToolbar>
+						    <content>
+						    
+						     
+						    <f:SimpleForm id="MatValForm"
+                        				  maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+                        				  labelSpanL="6" labelSpanM="6" emptySpanL="0" emptySpanM="0"
+                        				  columnsL="1" columnsM="1">
+                            	<f:content>
+                            	 <core:Title id="PlntCostngvaluationCreate" text="{i18n>PlntCostng}" titleStyle="H3" textAlign="Left"></core:Title>
+                            	        <!--General Data--> 
+                            	        <Title  id="GenDatavaluationCreate" text = "{i18n>GEN_DATA}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                  <Label id="Lbl_HKMAT" text="{i18n>Mat_origin}"></Label>
+					                   <Text id="Txt_HKMAT" text="{/HKMAT__TXT}" maxLines="0"
+					                        visible="{path:'/HKMAT__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <Label id="Lbl_HRKCSTNG" text="{i18n>Mat_origin_group}"></Label>
+					                    <Text id="Txt_HRKCSTNG" text="{parts: [{path:'/HRKCSTNG'}, {path:'/HRKCSTNG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/HRKCSTNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                  <Label id="Lbl_KOSCSTNG" text="{i18n>Mat_overhead_group}"></Label>
+					                    <Text id="Txt_KOSCSTNG" text="{parts: [{path:'/KOSCSTNG'}, {path:'/KOSCSTNG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/KOSCSTNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                   <Label></Label>
+					                    <!-- Extension Point for Plant valuation General Data-->
+										<core:ExtensionPoint name="extPlntCostngvaluationCreate"></core:ExtensionPoint>
+					                    <!--Quantity Structure Data--> 
+					                   <!--<core:Title id="QtyStrctDatavaluationCreate" text="{i18n>QtyStrctrData}" titleStyle="H3" textAlign="Left"></core:Title>-->
+					                    <Title  id="QtyStrctDatavaluationCreate" text = "{i18n>QtyStrctrData}">
+                                          <layoutData>
+                                             <l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                                          </layoutData>
+                                        </Title>
+					                    <Label id="Lbl_EKALR" text="{i18n>Mat_Cost_Quan_Str}"></Label>
+					                    <Text id="Txt_EKALR" text="{parts: [{path:'/EKALR'}, {path:'/EKALR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/EKALR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					                    <!-- Extension Point for Plant valuation Quantity Structure Data-->
+										<core:ExtensionPoint name="extQtyStrctDatavaluationCreate"></core:ExtensionPoint>
+                            	</f:content>
+                        	</f:SimpleForm>
+							
+                            <Table id="MatValAreatable" inset="false" width="100%">
+                            		<headerToolbar>
+                            		    <Toolbar >
+                            		      <Title width="100%" text="{i18n>Mat_Plant_Val_Area_Plant}" class="sapThemeFontSize"></Title>
+                            		      <Button id="PlantValAreapersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                            		    </Toolbar>
+                            		</headerToolbar>
+                            		<columns>
+                            		    <Column id="Val_Type" >
+                            					<header>
+													<Text text="{i18n>Mat_Val_Type}" />
+												</header>
+                            			</Column>
+                            			<Column id="Val_Cat"  minScreenWidth="Tablet" demandPopin="true">
+                            				<header>
+													<Text text="{i18n>Mat_Val_Cat}" />
+											</header>
+                            			</Column>
+                            			<!-- Extension Point for Plant valuation Area table-->
+										<core:ExtensionPoint name="extMatValAreatable"></core:ExtensionPoint>
+                            		</columns>
+                            </Table>
+                            <!-- Extension Point for Plant valuation Panel-->
+							<core:ExtensionPoint name="extMatValuationPanel"></core:ExtensionPoint>
+                    </content>
+				</Panel>
+				<!-- Extension Point for Plant detail layout-->
+				<core:ExtensionPoint name="extmatCreatePlantLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,52 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matClassificationChangeLayout" width="100%">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<Table id="ClassDetailsTable" inset="false">
+							<headerToolbar>
+							<Toolbar>
+								<Title class="sapThemeFontSize" text="{i18n>Mat_Class}"></Title>
+								</Toolbar>
+							</headerToolbar>
+					<!-- sap.m.Toolbar, since 1.16 -->
+					<columns>
+						<Column >
+							<Text text="{i18n>Mat_Class_Column}"/>
+						</Column>
+							<Column demandPopin="true">
+							<Text text="{i18n>Mat_Status}"/>
+						</Column>
+							<Column demandPopin="true">
+							<Text text="{i18n>Mat_class_longtxt}"/>
+						</Column>
+							<!-- Extension Point for classification table-->
+						<core:ExtensionPoint name="extClassDetailsTable"></core:ExtensionPoint>
+						</columns> 
+				</Table>
+				<Table id="CharDetailsTable" inset="false">
+							<headerToolbar>
+							<Toolbar>
+								<Title class="sapThemeFontSize" text="{i18n>Mat_Class_Characteristic}"></Title>
+								</Toolbar>
+							</headerToolbar>
+					<!-- sap.m.Toolbar, since 1.16 -->
+					<columns>
+						<Column mergeDuplicates="true" >
+							<Text text="{i18n>Mat_Characteristic_Column}"/>
+						</Column>
+							<Column demandPopin="true">
+							<Text text="{i18n>Mat_Char_Value}"/>
+						</Column>
+					<!-- Extension Point for characteristics table-->
+					<core:ExtensionPoint name="extCharDetailsTable"></core:ExtensionPoint>
+					</columns>
+				</Table>
+			<!-- Extension Point for classification layout-->
+			<core:ExtensionPoint name="extmatClassificationChangeLayout"></core:ExtensionPoint>
+	</l:Grid>
+		</l:VerticalLayout>
+</core:FragmentDefinition>

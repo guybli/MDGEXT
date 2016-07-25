@@ -1,0 +1,34 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View controllerName="fcg.mdg.approvecrv2.view.MatBasicDataDetails"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui">
+	<Page id="MatBasicDataDetailPage"  showNavButton="true" showFooter="true"
+		showHeader="true"  enableScrolling="true">
+		<headerContent>
+		</headerContent>
+		<content>
+		 <ObjectHeader 
+                id="MatBasicDataDetailHeader">
+			
+                <attributes>
+                    
+                    <!--<level id="lblunit_of_measure"></level>-->
+                    <ObjectAttribute  id="materialheader"
+                      
+                        level="H4" active="false">
+                        </ObjectAttribute>
+                        </attributes>
+                        </ObjectHeader>
+
+					<!--<ObjectAttribute text="{parts:[{path:'/Edition/UsmdVdateFrom'}, {path:'/Edition/UsmdVdateTo'}],formatter:'.validityFormatter'}"/>-->
+<!-- 					<ObjectAttribute id="cDateTo" title="{i18n>CC_VAL_TO}" text="{path:'/Edition/UsmdVdateTo',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"/> -->
+		</content>
+		<footer>
+			<Bar />
+		</footer>
+	</Page>
+</core:View>

@@ -1,0 +1,193 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matCreateWarehouseLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto"> 
+		
+			<l:content>
+			  <Title id="Txt_WAREHOUSEDETAILS" titleStyle="H2"></Title>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matWarehouseDataForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<core:Title id="MatWarehouseCentral" text="{i18n>Central}"></core:Title>
+						<Label id="LBL_LVSME" text="{i18n>Mat_Wrh_UOM}"></Label>
+						<Text id="Txt_LVSME" maxLines="0"
+							text="{parts: [{path:'/LVSME'}, {path:'/LVSME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LVSME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_VOMEM" text="{i18n>Mat_Prop_UOM}"></Label>
+						<Text id="Txt_VOMEM" maxLines="0"
+							text="{parts: [{path:'/VOMEM'},{path:'/VOMEM__TXT'}], formatter:'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/VOMEM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_MKAPV" text="{i18n>Mat_Cap_Usge}"></Label>
+						
+							<Text id="Txt_MKAPV"
+							text="{parts: [{path:'/MKAPV'},{path:'/BEZME'}, {path:'/BEZME__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/MKAPV',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+						
+						
+						
+						<!--<Text id="Txt_MKAPV" maxLines="0" text="{/MKAPV}" visible="{path:'/MKAPV',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>-->
+						<!--<Label id="LBL_BEZME" text="{i18n>Mat_Cap_Uni_Cons}"></Label>-->
+						<!--<Text id="Txt_BEZME" maxLines="0"-->
+						<!--	text="{parts: [{path:'/BEZME'}, {path:'/BEZME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"-->
+						<!--	visible="{path:'/BEZME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+						<Label id="LBL_PLKMLGNST" text="{i18n>Mat_Pick_Strg_Type}"></Label>
+						<Text id="Txt_PLKMLGNST" maxLines="0"
+							text="{parts: [{path:'/PLKMLGNST'}, {path:'/PLKMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/PLKMLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					     	<core:ExtensionPoint name="extMatWarehouseCentral"></core:ExtensionPoint>
+						<!--Palletization Data-->
+							<Label></Label>
+						<Title  id="Mat_Pallet_Data" text = "{i18n>Mat_Pallet_Data}">
+                         <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                         </layoutData>
+                        </Title>
+						
+						<!--<core:Title id="Mat_Pallet_Data" text="{i18n>Mat_Pallet_Data}"></core:Title>-->
+						<Label id="LBL_LHMG1" text="{i18n>Mat_Load_Equip_Qty1}"></Label>
+							<Text id="Txt_LHMG1"
+							text="{parts: [{path:'/LHMG1'},{path:'/LHME1'}, {path:'/LHME1__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/LHMG1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+						
+						<!--<Text id="Txt_LHMG1" maxLines="0" text="{/LHMG1}" visible="{path:'/LHMG1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>-->
+						<!--<Label id="LBL_LHME1" text="{i18n>Mat_War_UOM1}"></Label>-->
+						<!--<Text id="Txt_LHME1" maxLines="0"-->
+						<!--	text="{parts: [{path:'/LHME1'}, {path:'/LHME1__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"-->
+						<!--	visible="{path:'/LHME1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+						<Label id="LBL_LE1MLGNST" text="{i18n>Mat_Storage_Unit_Type1}"></Label>
+						<Text id="Txt_LE1MLGNST" maxLines="0"
+							text="{parts: [{path:'/LE1MLGNST'}, {path:'/LE1MLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LE1MLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_LHMG2" text="{i18n>Mat_Load_Equip_Qty2}"></Label>
+							<Text id="Txt_LHMG2"
+							text="{parts: [{path:'/LHMG2'},{path:'/LHME2'}, {path:'/LHME2__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/LHMG2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+						
+						<!--<Text id="Txt_LHMG2" maxLines="0" text="{/LHMG2}" visible="{path:'/LHMG2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>-->
+						<!--<Label id="LBL_LHME2" text="{i18n>Mat_War_UOM2}"></Label>-->
+						<!--<Text id="Txt_LHME2" maxLines="0"-->
+						<!--	text="{parts: [{path:'/LHME2'}, {path:'/LHME2__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"-->
+						<!--	visible="{path:'/LHME2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+						<Label id="LBL_LE2MLGNST" text="{i18n>Mat_Storage_Unit_Type2}"></Label>
+						<Text id="Txt_LE2MLGNST" maxLines="0"
+							text="{parts: [{path:'/LE2MLGNST'}, {path:'/LE2MLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LE2MLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_LHMG3" text="{i18n>Mat_Load_Equip_Qty3}"></Label>
+							<Text id="Txt_LHMG3"
+							text="{parts: [{path:'/LHMG3'},{path:'/LHME3'}, {path:'/LHME3__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/LHMG3',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+						
+						
+						
+						<!--<Text id="Txt_LHMG3" maxLines="0" text="{/LHMG3}" visible="{path:'/LHMG3',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>-->
+						<!--<Label id="LBL_LHME3" text="{i18n>Mat_War_UOM3}"></Label>-->
+						<!--<Text id="Txt_LHME3" maxLines="0"-->
+						<!--	text="{parts: [{path:'/LHME3'}, {path:'/LHME3__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"-->
+						<!--	visible="{path:'/LHME3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>-->
+						<Label id="LBL_LE3MLGNST" text="{i18n>Mat_Storage_Unit_Type3}"></Label>
+						<Text id="Txt_LE3MLGNST" maxLines="0"
+							text="{parts: [{path:'/LE3MLGNST'}, {path:'/LE3MLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LE3MLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<core:ExtensionPoint name="extMat_Pallet_Data"></core:ExtensionPoint>
+								<Label></Label>
+							<Title  id="Mat_Storage_Strategies" text = "{i18n>Mat_Storage_Strategy}">
+                         <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                         </layoutData>
+                        </Title>
+                        <!--Storage Strategies-->
+						
+						
+						<!--<core:Title id="Mat_Storage_Strategies" text="{i18n>Mat_Storage_Strategy}"></core:Title>-->
+						<Label id="LBL_LTAMLGNST" text="{i18n>Mat_Stock_Removal}"></Label>
+						<Text id="Txt_LTAMLGNST" maxLines="0"
+							text="{parts: [{path:'/LTAMLGNST'}, {path:'/LTAMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LTAMLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_LTEMLGNST" text="{i18n>Mat_Stock_Placement}"></Label>
+						<Text id="Txt_LTEMLGNST" maxLines="0"
+							text="{parts: [{path:'/LTEMLGNST'}, {path:'/LTEMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LTEMLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_LGBMLGNST" text="{i18n>Mat_Storage_Section_Key}"></Label>
+						<Text id="Txt_LGBMLGNST" maxLines="0"
+							text="{parts: [{path:'/LGBMLGNST'}, {path:'/LGBMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LGBMLGNST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_BLOMLGNST" text="{i18n>Mat_Bulk_Storage}"></Label>
+						<Text id="Txt_BLOMLGNST" maxLines="0"
+							text="{parts: [{path:'/BLOMLGNST'}, {path:'/BLOMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/BLOMLGNST__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_BSSMLGNST" text="{i18n>Mat_Special_Movement}"></Label>
+						<Text id="Txt_BSSMLGNST" maxLines="0"
+							text="{parts: [{path:'/BSSMLGNST'}, {path:'/BSSMLGNST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/BSSMLGNST__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_L2SKR" text="{i18n>Mat_2_Step_Picking}"></Label>
+						<Text id="Txt_L2SKR" maxLines="0"
+							text="{parts: [{path:'/L2SKR'}, {path:'/L2SKR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/L2SKR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_KZMBF" text="{i18n>Mat_Msg_Inv_Mngmt}"></Label>
+						<Text id="Txt_KZMBF" maxLines="0"
+							text="{parts: [{path:'/KZMBF'}, {path:'/KZMBF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/KZMBF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="LBL_KZZUL" text="{i18n>Mat_Allow_Add_To_Stock}"></Label>
+						<Text id="Txt_KZZUL" maxLines="0"
+							text="{parts: [{path:'/KZZUL'}, {path:'/KZZUL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/KZZUL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<core:ExtensionPoint name="extMat_Storage_Strategies"></core:ExtensionPoint>
+						<!-- Extension Point for Warehosue Details  -->
+					</f:content>
+				</f:SimpleForm>
+						<!--Warehouse Storage Type Data in a Table-->
+					    
+						<Table id="MatWarehouseStorageTypeTable" inset="false" width="100%" minScreenWidth = "tablet" >
+						<headerToolbar>
+								<Toolbar>
+									<Title width="100%" class="sapThemeFontSize" id="Warehouse_Storage_Type" text="{i18n>Mat_Warehouse_Storage_Type}"></Title>
+									
+									<Button id="StorageTypepersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+								</Toolbar>
+						</headerToolbar>
+							<columns>
+								<Column id="Storage_Type" demandPopin="true">
+									<Text text="{i18n>Mat_Warehouse_StorageType}"/>
+								</Column>
+								<Column id="Storage_Bin" demandPopin="true">
+									<Text text="{i18n>Mat_Warehouse_Storage_Bin}"/>
+								</Column>
+								<Column id="Picking_Area" demandPopin="true">
+									<Text text="{i18n>Mat_Picking_Area}"/>
+								</Column>
+								<Column id="Min_Bin_Qty" demandPopin="true">
+									<Text text="{i18n>Mat_Min_Bin_Qty}"/>
+								</Column>
+								<Column id="Max_Bin_Qty" demandPopin="true">
+									<Text text="{i18n>Mat_Max_Bin_Qty}"/>
+								</Column>
+								<Column id="Control_Qty" demandPopin="true">
+									<Text text="{i18n>Mat_Control_Qty}"/>
+								</Column>
+								<Column id="Replenish_Qty" demandPopin="true">
+									<Text text="{i18n>Mat_Replenish_Qty}"/>
+								</Column>
+								<Column id="Rounding_Qty" demandPopin="true">
+									<Text text="{i18n>Mat_Rounding_Qty}"/>
+								</Column>
+								<!-- Extension Point for Storage Type table  -->
+								<core:ExtensionPoint name="extMatWarehouseStorageTypeTable"></core:ExtensionPoint>
+							</columns>
+						</Table>
+					</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

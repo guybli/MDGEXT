@@ -1,0 +1,8 @@
+{ "application" : "fcg.mdg.approvecrv2",
+  "version" : "1.6.40",
+  "buildNumber" : "51",
+  "buildId" : "2015-11-27_10-36-51",
+  "branch" : "${env.GIT_BRANCH}",
+  "revision" : "${env.GIT_COMMIT}",
+  "GitURL" : "${env.GIT_URL}"
+}

@@ -1,0 +1,339 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<form:SimpleForm id="SimpleFormSales"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+
+				<form:content>
+					<!--Customer Sales Area -->
+					<Label id="lblVKORG" text="{i18n>SalesOrg}" class = "sapThemeFont" />
+					<Text id="VKORG" class = "sapThemeFont"
+						text="{parts:[{path:'/VKORG'},{path:'/VKORG__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VKORG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVTWEG" text="{i18n>Distribution}" />
+					<Text id="VTWEG"
+						text="{parts:[{path:'/VTWEG'},{path:'/VTWEG__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VTWEG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSPART" text="{i18n>Division}" />
+					<Text id="SPART"
+						text="{parts:[{path:'/SPART'},{path:'/SPART__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/SPART',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSalesErpcust" text="{i18n>ERPCustomer}" />
+					<Text id="saleerpcust"></Text>
+
+
+					<!-- Extension Point for Customer Sales Area -->
+					<core:ExtensionPoint name="extSalesCustSalesArea" />
+
+					<!-- Sales Order -->
+					<core:Title id="salesOrder" text="{i18n>SalesOrder}" />
+					<Label id="lblBZIRK" text="{i18n>SalesDistrict}" />
+					<Text id="BZIRK"
+						text="{parts:[{path:'/BZIRK'},{path:'/BZIRK__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BZIRK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVKBUR" text="{i18n>SalesOfc}" />
+					<Text id="VKBUR"
+						text="{parts:[{path:'/VKBUR'},{path:'/VKBUR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VKBUR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVKGRP" text="{i18n>SalesGrp}" />
+					<Text id="VKGRP"
+						text="{parts:[{path:'/VKGRP'},{path:'/VKGRP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VKGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKDGRP" text="{i18n>CustGrp}" />
+					<Text id="KDGRP"
+						text="{parts:[{path:'/KDGRP'},{path:'/KDGRP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KDGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKLABC" text="{i18n>ABCClass}" />
+					<Text id="KLABC" text="{path:'/KLABC'}"
+						visible="{path:'/KLABC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblWAERS" text="{i18n>Currency}" />
+					<Text id="WAERS"
+						text="{parts:[{path:'/WAERS'},{path:'/WAERS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/WAERS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblRDOFF" text="{i18n>SwitchoffRounding}" />
+					<Text id="RDOFF"
+						text="{path:'/RDOFF',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/RDOFF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblAWAHR" text="{i18n>OrderProbablity}" />
+					<Text id="AWAHR"
+						text="{path:'/AWAHR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+						visible="{path:'/AWAHR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblsaleBEGRU" text="{i18n>AuthorizationGroup}" />
+					<Text id="saleBEGRU" text="{path:'/BEGRU'}"
+						visible="{path:'/BEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVSORT" text="{i18n>ItemProposal}" />
+					<Text id="VSORT" text="{path:'/VSORT__TXT'}"
+						visible="{path:'/VSORT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblsaleEIKTO" text="{i18n>AcntCust}" />
+					<Text id="saleEIKTO" text="{path:'/EIKTO'}"
+						visible="{path:'/EIKTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblMEGRU" text="{i18n>UOM}" />
+					<Text id="MEGRU"
+						text="{parts:[{path:'/MEGRU'},{path:'/MEGRU__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/MEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKURST" text="{i18n>ExchangeRate}" />
+					<Text id="KURST"
+						text="{parts:[{path:'/KURST'},{path:'/KURST__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KURST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPVKSM" text="{i18n>PPCustProcedure}" />
+					<Text id="PVKSM" text="{path:'/PVKSM__TXT'}"
+						visible="{path:'/PVKSM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+
+					<!-- Extension Point for Sales Order Information -->
+					<core:ExtensionPoint name="extSalesSalesOrderInfo" />
+					<!-- Pricing Statistics -->
+					<core:Title id="pricingstatistic" text="{i18n>PricingStatistic}" />
+					<Label id="lblKONDA" text="{i18n>PriceGrp}" />
+					<Text id="KONDA"
+						text="{parts:[{path:'/KONDA'},{path:'/KONDA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KONDA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPLTYP" text="{i18n>PriceList}" />
+					<Text id="PLTYP"
+						text="{parts:[{path:'/PLTYP'},{path:'/PLTYP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/PLTYP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKALKS" text="{i18n>CustPriceProcedure}" />
+					<Text id="KALKS"
+						text="{parts:[{path:'/KALKS'},{path:'/KALKS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KALKS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVERSG" text="{i18n>Custstatgrp}" />
+					<Text id="VERSG"
+						text="{parts:[{path:'/VERSG'},{path:'/VERSG__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VERSG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+
+					<!-- Extension Point for Pricing/Statistics -->
+					<core:ExtensionPoint name="extSalesPricingStatistics" />
+					<!-- Agency Business -->
+					<core:Title id="agencygrp" text="{i18n>AgencyBusiness}" />
+					<Label id="lblAGREL" text="{i18n>AgencyBusiness}" />
+					<Text id="AGREL"
+						text="{path:'/AGREL',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/AGREL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblBLIND" text="{i18n>DocIndex}" />
+					<Text id="BLIND"
+						text="{path:'/BLIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/BLIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Agency Business -->
+					<core:ExtensionPoint name="extSalesAgencyBusiness" />
+
+					<!-- Shipping -->
+					<core:Title id="shipping" text="{i18n>Shipping}" />
+					<Label id="lblLPRIO" text="{i18n>DelPrio}" />
+					<Text id="LPRIO"
+						text="{parts:[{path:'/LPRIO'},{path:'/LPRIO__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LPRIO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblVSBED" text="{i18n>ShipCond}" />
+					<Text id="VSBED"
+						text="{parts:[{path:'/VSBED'},{path:'/VSBED__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VSBED',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblVWERK" text="{i18n>DelPlant}" />
+					<Text id="VWERK"
+						text="{parts:[{path:'/VWERK'},{path:'/VWERK__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VWERK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKZAZU" text="{i18n>OrderComb}" />
+					<Text id="KZAZU"
+						text="{parts:[{path:'/KZAZU'},{path:'/KZAZU__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/KZAZU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPODKZ" text="{i18n>RelevantforPOD}" />
+					<Text id="PODKZ"
+						text="{parts:[{path:'/PODKZ'},{path:'/PODKZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/PODKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPODTG" text="{i18n>PODTime}" />
+					<Text id="PODTG" text="{path:'/PODTG__TXT'}"
+						visible="{path:'/PODTG',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+
+
+					<!-- Extension Point for Shipping -->
+					<core:ExtensionPoint name="extSalesShipping" />
+					<!-- Partial Deliveries -->
+					<core:Title id="partialdel" text="{i18n>PartialDel}" />
+					<Label id="lblAUTLF" text="{i18n>CompleteDel}" />
+					<Text id="AUTLF"
+						text="{path:'/AUTLF',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/AUTLF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKZTLF" text="{i18n>PartialDelperItem}" />
+					<Text id="KZTLF"
+						text="{parts:[{path:'/KZTLF'},{path:'/KZTLF__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KZTLF__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblANTLF" text="{i18n>MaxpartialDel}" />
+					<Text id="ANTLF" text="{/ANTLF}"
+						visible="{path:'/ANTLF',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblUEBTK" text="{i18n>UnlimitedTol}" />
+					<Text id="UEBTK"
+						text="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblUNTTO" text="{i18n>UnderDelivary}" />
+					<Text id="UNTTO" text="{/UNTTO}"
+						visible="{path:'/UNTTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblUEBTO" text="{i18n>OrderDel}" />
+					<Text id="UEBTO" text="{/UEBTO}"
+						visible="{path:'/UEBTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+
+					<!-- Extension Point for Partial Deliveries -->
+					<core:ExtensionPoint name="extSalesPartialDelivery" />
+					<!-- Billing Document -->
+					<core:Title id="billingdoc" text="{i18n>BillingDoc}" />
+					<Label id="lblMRNKZ" text="{i18n>ManualInvc}" />
+					<Text id="MRNKZ"
+						text="{path:'/MRNKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/MRNKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPERFK" text="{i18n>InvoicingDate}" />
+					<Text id="PERFK"
+						text="{parts:[{path:'/PERFK'},{path:'/PERFK__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/PERFK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPERRL" text="{i18n>InvoicingDateList}" />
+					<Text id="PERRL"
+						text="{parts:[{path:'/PERRL'},{path:'/PERRL__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/PERRL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPRFRE" text="{i18n>PriceDermine}" />
+					<Text id="PRFRE"
+						text="{path:'/PRFRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/PRFRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblBOKRE" text="{i18n>Rebate}" />
+					<Text id="BOKRE"
+						text="{path:'/BOKRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/BOKRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Billing Document -->
+					<core:ExtensionPoint name="extSalesBillingDoc" />
+
+					<!-- Payment Advise Notes Transactions INFORMATIONS -->
+					<core:Title id="salePaymntAdvce" text="{i18n>DelivaryPaymnt}" />
+					<Label id="lblINCO1" text="{i18n>Incoterm}" />
+					<Text id="INCO1"
+						text="{parts:[{path:'/INCO1'},{path:'/INCO1__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/INCO1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblINCO2" text="{i18n>Inco2}" />
+					<Text id="INCO2"
+						text="{parts:[{path:'/INCO2'},{path:'/INCO2__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/INCO2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKABSS" text="{i18n>PaymntGyranted}" />
+					<Text id="KABSS"
+						text="{parts:[{path:'/KABSS'},{path:'/KABSS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KABSS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblsaleZTERM" text="{i18n>TermsofPaymnt}" />
+					<Text id="saleZTERM"
+						text="{parts:[{path:'/ZTERM'},{path:'/ZTERM__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZTERM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKKBER" text="{i18n>CreditContArea}" />
+					<Text id="KKBER"
+						text="{parts:[{path:'/KKBER'},{path:'/KKBER__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KKBER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Payment Advise Notes -->
+					<core:ExtensionPoint name="extSalesPaymentAdviseNotes" />
+
+					<!-- Account INFORMATIONS -->
+					<core:Title id="accounting" text="{i18n>Accounting}" />
+					<Label id="lblKTGRD" text="{i18n>AcntAsigmntGrp}" />
+					<Text id="KTGRD"
+						text="{parts:[{path:'/KTGRD'},{path:'/KTGRD__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KTGRD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Account Information -->
+					<core:ExtensionPoint name="extSalesAccountInfo" />
+
+					<!-- Customer Groups INFORMATIONS -->
+					<core:Title id="custGrps" text="{i18n>CustGrps}" />
+					<Label id="lblKVGR1" text="{i18n>CustGrp1}" />
+					<Text id="KVGR1" text="{path:'/KVGR1__TXT'}"
+						visible="{path:'/KVGR1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKVGR2" text="{i18n>CustGrp2}" />
+					<Text id="KVGR2" text="{path:'/KVGR2__TXT'}"
+						visible="{path:'/KVGR2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKVGR3" text="{i18n>CustGrp3}" />
+					<Text id="KVGR3" text="{path:'/KVGR3__TXT'}"
+						visible="{path:'/KVGR3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKVGR4" text="{i18n>CustGrp4}" />
+					<Text id="KVGR4" text="{path:'/KVGR4__TXT'}"
+						visible="{path:'/KVGR4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblKVGR5" text="{i18n>CustGrp5}" />
+					<Text id="KVGR5" text="{path:'/KVGR5__TXT'}"
+						visible="{path:'/KVGR5',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for Customer Groups -->
+					<core:ExtensionPoint name="extSalesCustomerGroups" />
+
+					<!-- Extension Point for Customer Sales Area -->
+					<core:ExtensionPoint name="extSalesSimpleForm" />
+				</form:content>
+			</form:SimpleForm>
+			<Table id="partnerfunc" width="100%" mode="{device>/listMode}"
+				noDataText=" ">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>PartnerFunc}" class="sapThemeFontSize"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="partnerfuncs">
+						<header>
+							<Label text="{i18n>PartnerFunc}"></Label>
+						</header>
+					</Column>
+					<Column id="samepartner" hAlign="Center">
+						<header>
+							<Label text="{i18n>samepartner}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="partner" hAlign="Center">
+						<header>
+							<Label text="{i18n>Partner}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="pfpartnerdesc" hAlign="Center">
+						<header>
+							<Label text="{i18n>partnerdesc}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="defaultpartner" hAlign="Center">
+						<header>
+							<Label text="{i18n>defaultpartner}">
+							</Label>
+						</header>
+					</Column>
+					<!-- Extends the column of a Partner Function Table -->
+					<core:ExtensionPoint name="extSalesPartnerFuncTable" />
+				</columns>
+			</Table>
+			<Table id="taxindic" width="100%" mode="{device>/listMode}"
+				noDataText="">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>taxindic}" class="sapThemeFontSize"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="ctry">
+						<header>
+							<Label text="{i18n>Country}"></Label>
+						</header>
+					</Column>
+					<Column id="taxcat" hAlign="Center">
+						<header>
+							<Label text="{i18n>taxcat}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="taxclas" hAlign="Center">
+						<header>
+							<Label text="{i18n>taxclas}">
+							</Label>
+						</header>
+					</Column>
+					<!-- Extends the column of a Tax Indicator Table -->
+					<core:ExtensionPoint name="extSalesTaxIndicatorTable" />
+				</columns>
+			</Table>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

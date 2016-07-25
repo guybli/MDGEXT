@@ -1,0 +1,182 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matMRPAreasLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matMRPAreasForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<!--General Data-->
+						<Title id="Mat_MrpAreaGenDta" text="{i18n>Central}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_DGRMDMA" text="{i18n>Mat_MRP_Grp}"></Label>
+						<Text id="Txt_DGRMDMA" maxLines="0"
+							text="{parts: [{path:'/DGRMDMA'}, {path:'/DGRMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/DGRMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for General Data-->
+						<core:ExtensionPoint name="extMat_MrpAreaGenDta"></core:ExtensionPoint>
+						<Label></Label>
+						<!--MRP Procedure-->
+						<Title id="Mat_MrpPrcdr" text="{i18n>Mat_Procedure}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_DISMMMDMA" text="{i18n>MRP_Type}"></Label>
+						<Text id="Txt_DISMMMDMA" maxLines="0"
+							text="{parts: [{path:'/DISMMMDMA'}, {path:'/DISMMMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/DISMMMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MINBEMDMA" text="{i18n>Reordr_Point}"></Label>
+						<Text id="Txt_MINBEMDMA" maxLines="0" text="{/MINBEMDMA}"
+							visible="{path:'/MINBEMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_LFRMDMA" text="{i18n>Plngcycle}"></Label>
+						<Text id="Txt_LFRMDMA" maxLines="0"
+							text="{parts: [{path:'/LFRMDMA'}, {path:'/LFRMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LFRMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_APOKZMDMA" text="{i18n>Mat_ReltoAPO}"></Label>
+						<Text id="Txt_APOKZMDMA" maxLines="0"
+							text="{parts: [{path:'/APOKZMDMA'}, {path:'/APOKZMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}"
+							visible="{path:'/APOKZMDMA__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_FXHORMDMA" text="{i18n>PlngTime_Fence}"></Label>
+						<Text id="Txt_FXHORMDMA" maxLines="0" text="{/FXHORMDMA}"
+							visible="{path:'/FXHORMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_DISMDMA" text="{i18n>MrpControler}"></Label>
+						<Text id="Txt_DISMDMA" maxLines="0"
+							text="{parts: [{path:'/DISMDMA'}, {path:'/DISMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/DISMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for MRP Procedure-->
+						<core:ExtensionPoint name="extMat_MrpPrcdr"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Lot Size Data-->
+						<Title id="Mat_MrpLotSizeData" text="{i18n>Plnt_LotSizeData}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_DISLSMDMA" text="{i18n>LotSize}"></Label>
+						<Text id="Txt_DISLSMDMA" maxLines="0"
+							text="{parts: [{path:'/DISLSMDMA'}, {path:'/DISLSMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/DISLSMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_RDPMDMA" text="{i18n>Roundingprof}"></Label>
+						<Text id="Txt_RDPMDMA" maxLines="0"
+							text="{parts: [{path:'/RDPMDMA'}, {path:'/RDPMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/RDPMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BSTRFMDMA" text="{i18n>RoundngValue}"></Label>
+						<Text id="Txt_BSTRFMDMA" maxLines="0" text="{/BSTRFMDMA}"
+							visible="{path:'/BSTRFMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BSTMIMDMA" text="{i18n>Min_LotSize}"></Label>
+						<Text id="Txt_BSTMIMDMA" maxLines="0" text="{/BSTMIMDMA}"
+							visible="{path:'/BSTMIMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BSTMAMDMA" text="{i18n>Max_LotSize}"></Label>
+						<Text id="Txt_BSTMAMDMA" maxLines="0" text="{/BSTMAMDMA}"
+							visible="{path:'/BSTMAMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BSTFEMDMA" text="{i18n>Fix_LotSize}"></Label>
+						<Text id="Txt_BSTFEMDMA" maxLines="0" text="{/BSTFEMDMA}"
+							visible="{path:'/BSTFEMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_MABSTMDMA" text="{i18n>Max_StockLvl}"></Label>
+						<Text id="Txt_MABSTMDMA" maxLines="0" text="{/MABSTMDMA}"
+							visible="{path:'/MABSTMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_LOSFXMDMA" text="{i18n>Mat_LotSz_IndCst}"></Label>
+						<Text id="Txt_LOSFXMDMA" maxLines="0" text="{/LOSFXMDMA}"
+							visible="{path:'/LOSFXMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_LAGMDMA" text="{i18n>Mat_StrgCstIndic}"></Label>
+						<Text id="Txt_LAGMDMA" maxLines="0"
+							text="{parts: [{path:'/LAGMDMA'}, {path:'/LAGMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LAGMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_AUSSSMDMA" text="{i18n>Assmbly_Scrap}"></Label>
+						<Text id="Txt_AUSSSMDMA" maxLines="0" text="{/AUSSSMDMA}"
+							visible="{path:'/AUSSSMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_TAKZTMDMA" text="{i18n>TakTime}"></Label>
+						<Text id="Txt_TAKZTMDMA" maxLines="0" text="{/TAKZTMDMA}"
+							visible="{path:'/TAKZTMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<!-- Extension Point for Lot Size Data-->
+						<core:ExtensionPoint name="extMat_MrpLotSizeData"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Procurement-->
+						<Title id="Mat_MrpPrcrmnt" text="{i18n>PlntQltyMngmnt_Prcrmnt}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_SOBMDMA" text="{i18n>SpclProcurmnt}"></Label>
+						<Text id="Txt_SOBMDMA" maxLines="0"
+							text="{parts: [{path:'/SOBMDMA'}, {path:'/SOBMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/SOBMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_LGPMDMA" text="{i18n>Prdct_StrgLoc}"></Label>
+						<Text id="Txt_LGPMDMA" maxLines="0"
+							text="{parts: [{path:'/LGPMDMA'}, {path:'/LGPMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LGPMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_LGFMDMA" text="{i18n>Mat_StrgLoc_ExtPrc}"></Label>
+						<Text id="Txt_LGFMDMA" maxLines="0"
+							text="{parts: [{path:'/LGFMDMA'}, {path:'/LGFMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LGFMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Procurement-->
+						<core:ExtensionPoint name="extMat_MrpPrcrmnt"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Scheduling-->
+						<Title id="Mat_MRPSchdlng" text="{i18n>MRP_Schdlng}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_MRPMDMA" text="{i18n>Plningcal}"></Label>
+						<Text id="Txt_MRPMDMA" maxLines="0"
+							text="{parts: [{path:'/MRPMDMA'}, {path:'/MRPMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MRPMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLIFZMDMA" text="{i18n>PlndDelvry_Time}"></Label>
+						<Text id="Txt_PLIFZMDMA" maxLines="0" text="{/PLIFZMDMA}"
+							visible="{path:'/PLIFZMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_PLIFZX" text="{i18n>Mat_PlndDelTym_Indic}"></Label>
+						<Text id="Txt_PLIFZX" maxLines="0" text="{path:'/PLIFZX',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/PLIFZX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Scheduling-->
+						<core:ExtensionPoint name="extMat_MRPSchdlng"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Net Requirements Calculation-->
+						<Title id="Mat_MrpNetReqCalc" text="{i18n>PlntLotSizDta_Calc}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_EISBEMDMA" text="{i18n>SafetyStock}"></Label>
+						<Text id="Txt_EISBEMDMA" maxLines="0" text="{/EISBEMDMA}"
+							visible="{path:'/EISBEMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_LGRADMDMA" text="{i18n>ServcLvl}"></Label>
+						<Text id="Txt_LGRADMDMA" maxLines="0" text="{/LGRADMDMA}"
+							visible="{path:'/LGRADMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_RWPMDMA" text="{i18n>Cvrg_Prof}"></Label>
+						<Text id="Txt_RWPMDMA" maxLines="0"
+							text="{parts: [{path:'/RWPMDMA'}, {path:'/RWPMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/RWPMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_SHFLGMDMA" text="{i18n>Mat_SaftyTim_Indic}"></Label>
+						<Text id="Txt_SHFLGMDMA" maxLines="0"
+							text="{parts: [{path:'/SHFLGMDMA'}, {path:'/SHFLGMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}"
+							visible="{path:'/SHFLGMDMA__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_SHZETMDMA" text="{i18n>Mat_SaftyTim_Wd}"></Label>
+						<Text id="Txt_SHZETMDMA" maxLines="0" text="{/SHZETMDMA}"
+							visible="{path:'/SHZETMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_SHPMDMA" text="{i18n>SaftyTime_PeriodProf}"></Label>
+						<Text id="Txt_SHPMDMA" maxLines="0"
+							text="{parts: [{path:'/SHPMDMA'}, {path:'/SHPMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/SHPMDMA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_AHDISMDMA" text="{i18n>Mat_RelDep_Req}"></Label>
+						<Text id="Txt_AHDISMDMA" maxLines="0"
+							text="{parts: [{path:'/AHDISMDMA'}, {path:'/AHDISMDMA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}"
+							visible="{path:'/AHDISMDMA__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Net Requirements Calculation-->
+						<core:ExtensionPoint name="extMat_MrpNetReqCalc"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				<!-- Extension Point for MRP Area Layout-->
+				<core:ExtensionPoint name="extmatMRPAreasLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

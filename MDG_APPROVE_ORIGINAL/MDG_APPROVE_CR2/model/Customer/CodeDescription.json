@@ -1,0 +1,369 @@
+[
+{
+"Code":"02",
+"Description":"MDG Dunning Area 02 for CC 0001"
+},
+{
+"Code":"0005",
+"Description":"Four-level dunning notice, every two weeks, RE forms"
+},
+{
+"Code":"H",
+"Description":"Block reason H"
+},
+{
+"Code":"4",
+"Description":""
+},
+{
+"Code":"33",
+"Description":"Hub Copy 6/1 with customer role"
+},
+{
+"Code":"01",
+"Description":"Mr X"
+},
+{
+"Code":"20140807",
+"Description":""
+},
+{
+"Code":"20140806",
+"Description":""
+},
+{
+"Code":"",
+"Description":"Default Dunning Area"
+},
+{
+"Code":"0001",
+"Description":"Four-level dunning notice, every two weeks"
+},
+{
+"Code":"A",
+"Description":"Manual block reason A..."
+},
+{
+"Code":"3",
+"Description":""
+},
+{
+"Code":"27",
+"Description":"Five Star Tuning"
+},
+{
+"Code":"HM",
+"Description":"Hans Meier"
+},
+{
+"Code":"00000000",
+"Description":""
+},
+{
+"Code":"00000000",
+"Description":""
+},
+{
+"Code":"03",
+"Description":"MDG Dunning Area 03 for CC 0001"
+},
+{
+"Code":"0001",
+"Description":"Four-level dunning notice, every two weeks"
+},
+{
+"Code":"",
+"Description":"Freed for dunning"
+},
+{
+"Code":"0",
+"Description":""
+},
+{
+"Code":"",
+"Description":""
+},
+{
+"Code":"0001",
+"Description":"MDG Company Code 0001"
+},
+{
+"Code":"",
+"Description":"No"
+},
+{
+"Code":"X",
+"Description":"Yes"
+},
+{
+"Code":"06",
+"Description":"6 months"
+},
+{
+"Code":"X",
+"Description":"Yes"
+},
+{
+"Code":"06",
+"Description":"6 months"
+},
+{
+"Code":"001",
+"Description":"Posting date"
+},
+{
+"Code":"001",
+"Description":"Posting date"
+},
+{
+"Code":"127000",
+"Description":"Bills of exchange presented (Italy/Spain)"
+},
+{
+"Code":"02",
+"Description":"Standard bal.int.cal"
+},
+{
+"Code":"L",
+"Description":"AuslandsÃ¼berweisung"
+},
+{
+"Code":"*",
+"Description":"Skip account"
+},
+{
+"Code":"A4",
+"Description":"Major vendors"
+},
+{
+"Code":"EM",
+"Description":"Erika MÃ¼ller"
+},
+{
+"Code":"0.00 ",
+"Description":"European Euro(EUR)"
+},
+{
+"Code":"DEB3",
+"Description":"DEB3"
+},
+{
+"Code":"DRE",
+"Description":"Dresdner Bank"
+},
+{
+"Code":"0001",
+"Description":"Illness"
+},
+{
+"Code":"01",
+"Description":"Contract number/contract type"
+},
+{
+"Code":"1",
+"Description":"Weekly account statement"
+},
+{
+"Code":"0003",
+"Description":"within 14 days 3 % cash discount; within 20 days 2 % cash discount; within 30 days Due net"
+},
+{
+"Code":"0001",
+"Description":"Four-level dunning notice, every two weeks"
+},
+{
+"Code":"H",
+"Description":"Block reason H"
+},
+{
+"Code":"301",
+"Description":"SAP Labs India Pvt Ltd SLI"
+},
+{
+"Code":"02",
+"Description":"Mr Y"
+},
+{
+"Code":"1000",
+"Description":"MDG Company Code 1000"
+},
+{
+"Code":"01",
+"Description":"Standard itm int.cal"
+},
+{
+"Code":"A",
+"Description":"Bankabbuchung"
+},
+{
+"Code":"","Description":"Free for payment"
+},
+{
+"Code":"0001",
+"Description":"Payable immediately Due net"
+},
+{
+"Code":"A3",
+"Description":"Vendor-affiliated companies"
+},
+{
+"Code":"HM",
+"Description":"Hans Meier"
+},
+{
+"Code":"0.00 ",
+"Description":"European Euro(EUR)"
+},
+{
+"Code":"DEB1",
+"Description":"DEB1"
+},
+{
+"Code":"141010",
+"Description":"Customer receivables - foreign, one-time accounts"
+},
+{
+"Code":"SP",
+"Description":"Sold-to party"
+},
+{
+"Code":"BP",
+"Description":"Bill-to party"
+},
+{
+"Code":"21",
+"Description":"Thamas Peter"
+},
+{
+"Code":"PY",
+"Description":"Payer"
+},
+{
+"Code":"SH",
+"Description":"Ship-to party"
+},
+{
+"Code":"DE",
+"Description":"Germany"
+},
+{
+"Code":"MWST",
+"Description":"Output Tax"
+},
+{
+"Code":"0",
+"Description":"Tax Exempt"
+},
+{
+"Code":"01",
+"Description":"Product Division 01"
+},
+{
+"Code":"0001",
+"Description":"Sales Org. 001"
+},
+{
+"Code":"01",
+"Description":"Distribtn Channel 01"
+},
+{
+"Code":"1",
+"Description":"Standard"
+},
+{
+"Code":"02",
+"Description":"Retail"
+},
+{
+"Code":"NORTH",
+"Description":"MDG District North"
+},
+{
+"Code":"04",
+"Description":"VIP buyer"
+},
+{
+"Code":"CIP",
+"Description":"Carriage and insurance paid to"
+},
+{
+"Code":"01",
+"Description":"High"
+},
+{
+"Code":"EUR",
+"Description":"European Euro"
+},
+{
+"Code":"01",
+"Description":"Domestic Revenues"
+},
+{
+"Code":"SH",
+"Description":"Ship-to party"
+},
+{
+"Code":"CA",
+"Description":"Canada"
+},
+{
+"Code":"1",
+"Description":"Liable for Taxes"
+},
+{
+"Code":"CTX3",
+"Description":"PST (Base+GST) Cdn"
+},
+{
+"Code":"CTX2",
+"Description":"PST (Canada)"
+},
+{
+"Code":"CTX1",
+"Description":"GST (Canada)"
+},
+{
+"Code":"MWST",
+"Description":"Output Tax"
+},
+{
+"Code":"01",
+"Description":"Product Division 01"
+},
+{
+"Code":"0002",
+"Description":"Sales Org. 002"
+},
+{
+"Code":"02",
+"Description":"Distribtn Channel 02"
+},
+{
+"Code":"0002",
+"Description":"MDG Plant 0002"
+},
+{
+"Code":"1",
+"Description":"Standard"
+},
+{
+"Code":"CENTRE",
+"Description":"MDG District Central"
+},
+{
+"Code":"05",
+"Description":"New buyer"
+},
+{
+"Code":"0005",
+"Description":"Payable immediately Due net; Baseline date on 10 of next month"
+},
+{
+"Code":"002",
+"Description":"Sales Group 002"
+},
+{
+"Code":"0002",
+"Description":"MDG Office North"
+}
+]

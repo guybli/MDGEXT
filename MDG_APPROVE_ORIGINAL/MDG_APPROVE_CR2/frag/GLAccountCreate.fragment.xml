@@ -1,0 +1,162 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--This fragment is responsible for showing the General data in Create Scenario on S3 screen. For Change Scenario, the fragment is shown in s4 detail page. This 
+is loaded in GLAccountCreate.js(Create Scenario) and GLItemDetail Controller(Change Scenario).-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:ui="sap.ca.ui">
+	<layout:VerticalLayout id="glCreateLayout" width="100%">
+		<layout:content>
+			<form:SimpleForm id="glCreateMainDataForm"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+			 
+					<Label id="LBL_COA" text="{i18n>GL_CHART_ACC}"></Label>
+					<Text id="TXT_COA" 
+					text="{parts: [{path:'/ACCOUNT/COA'}, {path:'/ACCOUNT/COA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/COA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCOUNT" text="{i18n>GL_ACC_NAME}"></Label> 
+					<Text id="TXT_ACCOUNT" text="{parts : [{path : '/ACCOUNT/ACCOUNT'}, {path : '/ACCOUNT/TXTSH'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/ACCOUNT/ACCOUNT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+				
+					<Label id="LBL_TXTLG" text="{i18n>GL_LONG_TXT}"></Label>
+					<Text id="TXT_TXTLG" text="{/ACCOUNT/TXTLG}"
+					visible = "{path:'/ACCOUNT/TXTLG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+				
+					<core:ExtensionPoint name="extglAccGenData"></core:ExtensionPoint>
+						
+					<core:Title id="LBL_CNTRL_DATA" text="{i18n>GL_TT_CNTRLDATA}" />
+					<Label id = "LBL_ACCGRPACC" text="{i18n>GL_ACC_GRP}" />
+					<Text id="TXT_ACCGRPACC" text="{ parts : [{path : '/ACCOUNT/ACCGRPACC'}, {path :'/ACCOUNT/ACCGRPACC__TXT'}],
+					formatter : 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCOUNT/ACCGRPACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_ACCTYP" text="{i18n>GL_ACC_TYPE}" />
+					<Text id="TXT_ACCTYP" text="{/ACCOUNT/ACCTYP__TXT}" 
+					visible = "{path:'/ACCOUNT/ACCTYP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_ACCPLTYP" text="{i18n>GL_PL_STMNT}" />
+					<Text id="TXT_ACCPLTYP" 
+					text="{ parts: [{path:'/ACCOUNT/ACCPLTYP'}, {path:'/ACCOUNT/ACCPLTYP__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/ACCOUNT/ACCPLTYP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_FUNCACC" text="{i18n>CC_FAREA}" />
+					<Text id="TXT_FUNCACC" 
+					text="{ parts: [{path:'/ACCOUNT/FUNCACC'}, {path:'/ACCOUNT/FUNCACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/ACCOUNT/FUNCACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					                         
+					<core:ExtensionPoint name="extglAccCntrlData"></core:ExtensionPoint>
+					
+					<core:Title id="LBL_ADM_TYPE" text="{i18n>AdministrativeData}" />
+					<Label id = "LBL_ACCNEWACC" text="{i18n>GL_NEW_ACC}" />
+					<Text id="TXT_ACCNEWACC" text="{parts: [{path:'/ACCOUNT/ACCNEWACC'}, {path:'/ACCOUNT/ACCNEWACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}" 
+					visible = "{path:'/ACCOUNT/ACCNEWACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_ACCRESPU" text="{i18n>GL_USR_RESP}" />
+					<Text id="TXT_ACCRESPU" text="{ parts : [{path : '/ACCOUNT/ACCRESPU'}, {path:'/ACCOUNT/ACCRESPU__TXT'}],
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCOUNT/ACCRESPU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_ACCRESPP" text="{i18n>GL_PERS_RESP}" />
+					<Text id="TXT_ACCRESPP" text="{/ACCOUNT/ACCRESPP}"
+					visible = "{path:'/ACCOUNT/ACCRESPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<core:ExtensionPoint name="extglAccAdmData"></core:ExtensionPoint>
+					
+					<core:Title id="LBL_AUD_INFO" text="{i18n>GL_TT_AUD_INFO}" />
+					<Label id = "LBL_USMD_ENT_CRTD_BY" text="{i18n>GL_CREATED_BY}" />
+					<Text id="TXT_USMD_ENT_CRTD_BY" text="{/ACCOUNT/USMD_ENT_CRTD_BY__TXT}"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CRTD_BY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_USMD_ENT_CRTD_AT" text="{i18n>GL_CREATED_ON}" />
+					<Text id="TXT_USMD_ENT_CRTD_AT" text="{path:'/ACCOUNT/USMD_ENT_CRTD_AT', formatter:'fcg.mdg.approvecrv2.util.Formatter.dateTime'}"
+					 visible = "{path:'/ACCOUNT/USMD_ENT_CRTD_AT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_USMD_ENT_CHNG_BY" text="{i18n>GL_CHANGED_BY}" />
+					<Text id="TXT_USMD_ENT_CHNG_BY" text="{/ACCOUNT/USMD_ENT_CHNG_BY__TXT}"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CHNG_BY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id = "LBL_USMD_ENT_CHNG_AT" text="{i18n>GL_CHANGED_ON}" />
+					<Text id="TXT_USMD_ENT_CHNG_AT" text="{ path : '/ACCOUNT/USMD_ENT_CHNG_AT', formatter:'fcg.mdg.approvecrv2.util.Formatter.dateTime' }"
+					visible = "{path:'/ACCOUNT/USMD_ENT_CHNG_AT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<core:ExtensionPoint name="extglAccAudInfo"></core:ExtensionPoint>
+
+					<core:Title id="AccConsDetails" text="{i18n>GL_ACC_CONS_DET}"></core:Title>
+					<Label id="LBL_COMPACC" text="{i18n>GL_TRAD_PARTNR}"></Label>
+					<Text id="TXT_COMPACC" text="{parts: [{path:'/ACCOUNT/COMPACC'}, {path:'/ACCOUNT/COMPACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCOUNT/COMPACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+					<Label id="LBL_FSIACC" text="{i18n>GL_GROUP_ACC}"></Label>
+					<Text id="TXT_FSIACC" text="{parts : [{path : '/ACCOUNT/FSIACC'}, {path : '/ACCOUNT/FSIACC__TXT'}],
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/ACCOUNT/FSIACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+					<Label id="LBL_FSIACCSTA" text="{i18n>GL_STAT_GROUP_ACC}"></Label>
+					<Text id="TXT_FSIACCSTA" text="{parts : [{path : '/ACCOUNT/FSIACCSTA'}, {path : '/ACCOUNT/FSIACCSTA__TXT'}],
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/ACCOUNT/FSIACCSTA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+					</Text>
+					
+					<core:ExtensionPoint name="extglCreateConsldtnForm" />
+			   </form:content>
+			</form:SimpleForm>
+			<!--Extends the form -->
+			<core:ExtensionPoint name="extglCreateMainDataForm"></core:ExtensionPoint>
+			
+			
+			  <Table id="glDescTab" mode="None"
+			class="table_padding headerBold" width="100%">
+		    	<headerToolbar>
+        			<Toolbar>
+        				<Title text="{i18n>GL_DESC_TAB}" class="sapThemeFontSize"></Title>
+        			</Toolbar>
+        		</headerToolbar>
+			<columns>
+			<Column id="glcolLang">
+				<header>
+					<Label text="{i18n>Language}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glcolName" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_DESC_NAME}">
+					</Label>
+				</header>
+			</Column>
+			<Column id="glcolLongText" hAlign="Center">
+				<header>
+					<Label text="{i18n>GL_LONG_TEXT}">
+					</Label>
+				</header>
+			</Column>
+			<!-- Extends the column of a description table -->
+			<core:ExtensionPoint name="extglDescTab" />
+	    	</columns>
+			</Table>
+
+
+			<List class="headerBold" id="glAttachFileList">
+				<headerToolbar>
+        			<Toolbar>
+        				<Title text="{i18n>GL_TT_ACC_ATT}" class="sapThemeFontSize"></Title>
+        			</Toolbar>
+        		</headerToolbar>
+					<items>
+					</items>
+			</List>
+		</layout:content>
+	</layout:VerticalLayout>
+</core:FragmentDefinition>

@@ -1,0 +1,64 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Bank Details selected in 
+	the Change and Create scenario --> 
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fcg.mdg.approvecrv2.view.IAVPersDetail">
+	<Page id="IAVPersDetailPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="IAVPersDetailHeader">
+				<attributes>
+					<ObjectAttribute id="IAVPersAttrHeader" />
+					<!-- Extension Point for Bank Detail header -->
+					<core:ExtensionPoint name="extIAVPersDetailHeader" />
+				</attributes>
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormIAVPers" labelSpanM="6"
+						labelSpanL="6" layout="ResponsiveGridLayout" minWidth="1024"
+						maxContainerCols="2">
+						<form:content>
+							<core:Title id="IAVPers_Sect2" /> <!-- Just Blank Space is required here -->
+							<core:Title id="IAVPers_Sect3" text="{i18n>Central}" />
+							<Label id="lblTITLE_P" text="{i18n>PC_TITLE}" />
+							<Text id="TITLE_P" text="{/BP_AddressPersonVersionRel/TITLE_P__TXT}"
+								visible="{path:'/BP_AddressPersonVersionRel/TITLE_P',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblFIRSTNAME" text="{i18n>FirstName}" />
+							<Text id="FIRSTNAME" text="{/BP_AddressPersonVersionRel/FIRSTNAME}"
+								visible="{path:'/BP_AddressPersonVersionRel/FIRSTNAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblLASTNAME" text="{i18n>LastName}" />
+							<Text id="LASTNAME" text="{/BP_AddressPersonVersionRel/LASTNAME}"
+								visible="{path:'/BP_AddressPersonVersionRel/LASTNAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblSORT1_P" text="{i18n>Searchterm1}" />
+							<Text id="SORT1_P" text="{/BP_AddressPersonVersionRel/SORT1_P}"
+								visible="{path:'/BP_AddressPersonVersionRel/SORT1_P',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblSORT2_P" text="{i18n>Searchterm2}" />
+							<Text id="SORT2_P" text="{/BP_AddressPersonVersionRel/SORT2_P}"
+								visible="{path:'/BP_AddressPersonVersionRel/SORT2_P',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<core:Title id="IAVPers_Sect4" text="{i18n>PC_TIT_ADDRESS}" />
+							<Label text="{i18n>PC_STREET}" id="lblpSTREET" />
+							<Text id="pSTREET" text="{/STREET}"
+								visible="{path:'/STREET',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label text="{i18n>HOUSENO}" id="lblpHOUSE_NO" />
+							<Text id="pHOUSE_NO" text="{/HOUSE_NO}"
+								visible="{path:'/HOUSE_NO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label text="{i18n>City}" id="lblpCITY" />
+							<Text id="pCITY" text="{/CITY}"
+								visible="{path:'/CITY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+						</form:content>
+						<!-- Extension Point for Bank Form for Create and Change scenario -->
+						<core:ExtensionPoint name="extSimpleFormBank" />
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

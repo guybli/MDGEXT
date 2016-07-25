@@ -1,0 +1,391 @@
+[{
+	"MANDT": "MANDT 1",
+	"MATNR": "MATNR 1",
+	"MEINH": "MEINH 1",
+	"UMREZ": 8902.31,
+	"UMREN": 232.59,
+	"EANNR": "EANNR 1",
+	"EAN11": "EAN11 1",
+	"NUMTP": "NUMTP 1",
+	"LAENG": 5216.6,
+	"BREIT": 3959.57,
+	"HOEHE": 1277.44,
+	"MEABM": "MEABM 1",
+	"VOLUM": 1046.91,
+	"VOLEH": "VOLEH 1",
+	"BRGEW": 6057.89,
+	"GEWEI": "GEWEI 1",
+	"MESUB": "MESUB 1",
+	"ATINN": "ATINN 1",
+	"MESRT": "MESRT 1",
+	"XFHDW": "XFHDW 1",
+	"XBEWW": "XBEWW 1",
+	"KZWSO": "KZWSO 1",
+	"MSEHI": "MSEHI 1",
+	"BFLME_MARM": "BFLME_MARM 1",
+	"GTIN_VARIANT": "GTIN_VARIANT 1",
+	"NEST_FTR": 4078.03,
+	"MAX_STACK": 6,
+	"CAPAUSE": 9828.02,
+	"TY2TQ": "TY2TQ 1",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 1',MEINH='MEINH 1')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 1',MEINH='MEINH 1')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 2",
+	"MATNR": "MATNR 2",
+	"MEINH": "MEINH 2",
+	"UMREZ": 8454.92,
+	"UMREN": 4461.02,
+	"EANNR": "EANNR 2",
+	"EAN11": "EAN11 2",
+	"NUMTP": "NUMTP 2",
+	"LAENG": 2479.06,
+	"BREIT": 6567.35,
+	"HOEHE": 7842.98,
+	"MEABM": "MEABM 2",
+	"VOLUM": 8662.42,
+	"VOLEH": "VOLEH 2",
+	"BRGEW": 5492.05,
+	"GEWEI": "GEWEI 2",
+	"MESUB": "MESUB 2",
+	"ATINN": "ATINN 2",
+	"MESRT": "MESRT 2",
+	"XFHDW": "XFHDW 2",
+	"XBEWW": "XBEWW 2",
+	"KZWSO": "KZWSO 2",
+	"MSEHI": "MSEHI 2",
+	"BFLME_MARM": "BFLME_MARM 2",
+	"GTIN_VARIANT": "GTIN_VARIANT 2",
+	"NEST_FTR": 2121.97,
+	"MAX_STACK": 9,
+	"CAPAUSE": 5527,
+	"TY2TQ": "TY2TQ 2",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 2',MEINH='MEINH 2')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 2',MEINH='MEINH 2')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 3",
+	"MATNR": "MATNR 3",
+	"MEINH": "MEINH 3",
+	"UMREZ": 2268.06,
+	"UMREN": 4757.87,
+	"EANNR": "EANNR 3",
+	"EAN11": "EAN11 3",
+	"NUMTP": "NUMTP 3",
+	"LAENG": 4533.61,
+	"BREIT": 1013.8,
+	"HOEHE": 9952.11,
+	"MEABM": "MEABM 3",
+	"VOLUM": 6414.68,
+	"VOLEH": "VOLEH 3",
+	"BRGEW": 8739.29,
+	"GEWEI": "GEWEI 3",
+	"MESUB": "MESUB 3",
+	"ATINN": "ATINN 3",
+	"MESRT": "MESRT 3",
+	"XFHDW": "XFHDW 3",
+	"XBEWW": "XBEWW 3",
+	"KZWSO": "KZWSO 3",
+	"MSEHI": "MSEHI 3",
+	"BFLME_MARM": "BFLME_MARM 3",
+	"GTIN_VARIANT": "GTIN_VARIANT 3",
+	"NEST_FTR": 8932.46,
+	"MAX_STACK": 2,
+	"CAPAUSE": 8261.27,
+	"TY2TQ": "TY2TQ 3",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 3',MEINH='MEINH 3')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 3',MEINH='MEINH 3')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 4",
+	"MATNR": "MATNR 4",
+	"MEINH": "MEINH 4",
+	"UMREZ": 1234.31,
+	"UMREN": 6403.46,
+	"EANNR": "EANNR 4",
+	"EAN11": "EAN11 4",
+	"NUMTP": "NUMTP 4",
+	"LAENG": 2755.11,
+	"BREIT": 3949.46,
+	"HOEHE": 9023.68,
+	"MEABM": "MEABM 4",
+	"VOLUM": 6415.79,
+	"VOLEH": "VOLEH 4",
+	"BRGEW": 7741.98,
+	"GEWEI": "GEWEI 4",
+	"MESUB": "MESUB 4",
+	"ATINN": "ATINN 4",
+	"MESRT": "MESRT 4",
+	"XFHDW": "XFHDW 4",
+	"XBEWW": "XBEWW 4",
+	"KZWSO": "KZWSO 4",
+	"MSEHI": "MSEHI 4",
+	"BFLME_MARM": "BFLME_MARM 4",
+	"GTIN_VARIANT": "GTIN_VARIANT 4",
+	"NEST_FTR": 7353.07,
+	"MAX_STACK": 7,
+	"CAPAUSE": 22.19,
+	"TY2TQ": "TY2TQ 4",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 4',MEINH='MEINH 4')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 4',MEINH='MEINH 4')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 5",
+	"MATNR": "MATNR 5",
+	"MEINH": "MEINH 5",
+	"UMREZ": 1053.96,
+	"UMREN": 2266.07,
+	"EANNR": "EANNR 5",
+	"EAN11": "EAN11 5",
+	"NUMTP": "NUMTP 5",
+	"LAENG": 5011,
+	"BREIT": 8706.85,
+	"HOEHE": 5300.36,
+	"MEABM": "MEABM 5",
+	"VOLUM": 6677.67,
+	"VOLEH": "VOLEH 5",
+	"BRGEW": 7707.57,
+	"GEWEI": "GEWEI 5",
+	"MESUB": "MESUB 5",
+	"ATINN": "ATINN 5",
+	"MESRT": "MESRT 5",
+	"XFHDW": "XFHDW 5",
+	"XBEWW": "XBEWW 5",
+	"KZWSO": "KZWSO 5",
+	"MSEHI": "MSEHI 5",
+	"BFLME_MARM": "BFLME_MARM 5",
+	"GTIN_VARIANT": "GTIN_VARIANT 5",
+	"NEST_FTR": 8414.29,
+	"MAX_STACK": 9,
+	"CAPAUSE": 4631.09,
+	"TY2TQ": "TY2TQ 5",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 5',MEINH='MEINH 5')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 5',MEINH='MEINH 5')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 6",
+	"MATNR": "MATNR 6",
+	"MEINH": "MEINH 6",
+	"UMREZ": 259.4,
+	"UMREN": 8245.61,
+	"EANNR": "EANNR 6",
+	"EAN11": "EAN11 6",
+	"NUMTP": "NUMTP 6",
+	"LAENG": 7237.49,
+	"BREIT": 2522.73,
+	"HOEHE": 4162.81,
+	"MEABM": "MEABM 6",
+	"VOLUM": 5080.96,
+	"VOLEH": "VOLEH 6",
+	"BRGEW": 9259.81,
+	"GEWEI": "GEWEI 6",
+	"MESUB": "MESUB 6",
+	"ATINN": "ATINN 6",
+	"MESRT": "MESRT 6",
+	"XFHDW": "XFHDW 6",
+	"XBEWW": "XBEWW 6",
+	"KZWSO": "KZWSO 6",
+	"MSEHI": "MSEHI 6",
+	"BFLME_MARM": "BFLME_MARM 6",
+	"GTIN_VARIANT": "GTIN_VARIANT 6",
+	"NEST_FTR": 5522.25,
+	"MAX_STACK": 7,
+	"CAPAUSE": 7089.6,
+	"TY2TQ": "TY2TQ 6",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 6',MEINH='MEINH 6')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 6',MEINH='MEINH 6')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 7",
+	"MATNR": "MATNR 7",
+	"MEINH": "MEINH 7",
+	"UMREZ": 6310.64,
+	"UMREN": 1660.83,
+	"EANNR": "EANNR 7",
+	"EAN11": "EAN11 7",
+	"NUMTP": "NUMTP 7",
+	"LAENG": 5358.05,
+	"BREIT": 4677.47,
+	"HOEHE": 5522.6,
+	"MEABM": "MEABM 7",
+	"VOLUM": 1257.52,
+	"VOLEH": "VOLEH 7",
+	"BRGEW": 3826.16,
+	"GEWEI": "GEWEI 7",
+	"MESUB": "MESUB 7",
+	"ATINN": "ATINN 7",
+	"MESRT": "MESRT 7",
+	"XFHDW": "XFHDW 7",
+	"XBEWW": "XBEWW 7",
+	"KZWSO": "KZWSO 7",
+	"MSEHI": "MSEHI 7",
+	"BFLME_MARM": "BFLME_MARM 7",
+	"GTIN_VARIANT": "GTIN_VARIANT 7",
+	"NEST_FTR": 5674.65,
+	"MAX_STACK": 3,
+	"CAPAUSE": 9424.91,
+	"TY2TQ": "TY2TQ 7",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 7',MEINH='MEINH 7')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 7',MEINH='MEINH 7')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 8",
+	"MATNR": "MATNR 8",
+	"MEINH": "MEINH 8",
+	"UMREZ": 1960.2,
+	"UMREN": 3990.1,
+	"EANNR": "EANNR 8",
+	"EAN11": "EAN11 8",
+	"NUMTP": "NUMTP 8",
+	"LAENG": 613.43,
+	"BREIT": 759.63,
+	"HOEHE": 5441.6,
+	"MEABM": "MEABM 8",
+	"VOLUM": 2064.97,
+	"VOLEH": "VOLEH 8",
+	"BRGEW": 2940.92,
+	"GEWEI": "GEWEI 8",
+	"MESUB": "MESUB 8",
+	"ATINN": "ATINN 8",
+	"MESRT": "MESRT 8",
+	"XFHDW": "XFHDW 8",
+	"XBEWW": "XBEWW 8",
+	"KZWSO": "KZWSO 8",
+	"MSEHI": "MSEHI 8",
+	"BFLME_MARM": "BFLME_MARM 8",
+	"GTIN_VARIANT": "GTIN_VARIANT 8",
+	"NEST_FTR": 3668.39,
+	"MAX_STACK": 1,
+	"CAPAUSE": 8942.57,
+	"TY2TQ": "TY2TQ 8",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 8',MEINH='MEINH 8')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 8',MEINH='MEINH 8')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 9",
+	"MATNR": "MATNR 9",
+	"MEINH": "MEINH 9",
+	"UMREZ": 4859.16,
+	"UMREN": 3139.94,
+	"EANNR": "EANNR 9",
+	"EAN11": "EAN11 9",
+	"NUMTP": "NUMTP 9",
+	"LAENG": 1949.39,
+	"BREIT": 6928.6,
+	"HOEHE": 2443.36,
+	"MEABM": "MEABM 9",
+	"VOLUM": 3474.76,
+	"VOLEH": "VOLEH 9",
+	"BRGEW": 80.16,
+	"GEWEI": "GEWEI 9",
+	"MESUB": "MESUB 9",
+	"ATINN": "ATINN 9",
+	"MESRT": "MESRT 9",
+	"XFHDW": "XFHDW 9",
+	"XBEWW": "XBEWW 9",
+	"KZWSO": "KZWSO 9",
+	"MSEHI": "MSEHI 9",
+	"BFLME_MARM": "BFLME_MARM 9",
+	"GTIN_VARIANT": "GTIN_VARIANT 9",
+	"NEST_FTR": 5314.81,
+	"MAX_STACK": 5,
+	"CAPAUSE": 11.36,
+	"TY2TQ": "TY2TQ 9",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 9',MEINH='MEINH 9')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 9',MEINH='MEINH 9')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 10",
+	"MATNR": "MATNR 10",
+	"MEINH": "MEINH 10",
+	"UMREZ": 5144.32,
+	"UMREN": 9848.94,
+	"EANNR": "EANNR 10",
+	"EAN11": "EAN11 10",
+	"NUMTP": "NUMTP 10",
+	"LAENG": 7767.09,
+	"BREIT": 2238.98,
+	"HOEHE": 9902.71,
+	"MEABM": "MEABM 10",
+	"VOLUM": 5375.99,
+	"VOLEH": "VOLEH 10",
+	"BRGEW": 1581.8,
+	"GEWEI": "GEWEI 10",
+	"MESUB": "MESUB 10",
+	"ATINN": "ATINN 10",
+	"MESRT": "MESRT 10",
+	"XFHDW": "XFHDW 10",
+	"XBEWW": "XBEWW 10",
+	"KZWSO": "KZWSO 10",
+	"MSEHI": "MSEHI 10",
+	"BFLME_MARM": "BFLME_MARM 10",
+	"GTIN_VARIANT": "GTIN_VARIANT 10",
+	"NEST_FTR": 0.18,
+	"MAX_STACK": 3,
+	"CAPAUSE": 9716.28,
+	"TY2TQ": "TY2TQ 10",
+	"__metadata": {
+		"uri": "MARMCollection(MATNR='MATNR 10',MEINH='MEINH 10')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MARM"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MARMCollection(MATNR='MATNR 10',MEINH='MEINH 10')/ChangeData"
+		}
+	}
+}]

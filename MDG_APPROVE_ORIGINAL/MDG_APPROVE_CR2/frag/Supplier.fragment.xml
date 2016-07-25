@@ -1,0 +1,105 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Fragment to create the Icontab bar in which all the entity sections 
+	layout will be included which will be used in both create and change scenario -->
+<core:FragmentDefinition id="Supplier" xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<IconTabBar id="SupplierTabBar" expandable="false" select="onSelect">
+		<items>
+
+			<IconTabFilter id="SGeneralDataSection" icon="sap-icon://factory"
+				text="{i18n>Central}" key="gen" tooltip="{i18n>Central}" design="Horizontal">
+				<layout:VerticalLayout id="SGeneral" width="100%" />
+				<layout:VerticalLayout id="SRoles" width="100%" />
+				<layout:VerticalLayout id="SAddress" width="100%" />
+				<layout:VerticalLayout id="SAddressUsages"
+					width="100%" />
+				<layout:VerticalLayout id="SBank" width="100%" />
+				<layout:VerticalLayout id="SIdentification"
+					width="100%" />
+				<layout:VerticalLayout id="STax" width="100%" />
+				<layout:VerticalLayout id="SIndustries" width="100%" />
+				<layout:VerticalLayout id="SErpSupplier" width="100%" />
+				<Panel id="suppRelPanel" expandable="true" expanded="false">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Relationships}"></Label>
+						</Toolbar>
+					</headerToolbar>
+				</Panel>
+				<!-- Extends the General section Tab -->
+				<core:ExtensionPoint name="extSGeneralDataSection" />
+
+			</IconTabFilter>
+
+			<IconTabFilter id="SCCDataSection" icon="sap-icon://account"
+				text="{i18n>CompCodes}" key="compcode" tooltip="{i18n>CompCodes}" design="Horizontal">
+
+				<layout:VerticalLayout id="SCompCodeLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="SDunningLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="SWithhldTaxLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<!-- Extends the Company Code section Tab -->
+				<core:ExtensionPoint name="extSCCDataSection" />
+			</IconTabFilter>
+
+			<IconTabFilter id="SPurchaseDataSection" icon="sap-icon://inventory"
+				text="{i18n>Purchasingdetails}" key="Purchasingdetail" tooltip="{i18n>Purchasingdetails}" design="Horizontal">
+
+				<layout:VerticalLayout id="SPurchaseLayout"
+					width="100%">
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="SPartnerFuncLayout"
+					width="100%">
+				<layout:VerticalLayout id="SSubrangeLayout"
+					width="100%" />
+				</layout:VerticalLayout>
+				<!-- Extends the Purchase section Tab -->
+				<core:ExtensionPoint name="extSPurchaseDataSection" />
+			</IconTabFilter>
+
+
+			<IconTabFilter id="SNotes" key="notes" icon="sap-icon://notes"
+				text="{i18n>Note}" tooltip="{i18n>Note}" design="Horizontal">
+				<content>
+					<List id="SNote" showSeparators="Inner" items="{json>/Notes}">
+						<FeedListItem sender="{json>sender}" icon="{json>icon}"
+							iconDensityAware="false" senderActive="false" iconActive="false"
+							info="{json>info}" timestamp="{json>timestamp}" text="{json>text}" />
+					</List>
+				</content>
+				<!-- Extends the Notes section Tab -->
+				<core:ExtensionPoint name="extSNotes" />
+			</IconTabFilter>
+			<IconTabFilter id="SAttachmentSupplier" key="attach"
+				icon="sap-icon://attachment" text="{i18n>PC_TIT_ATTACH}" tooltip="{i18n>PC_TIT_ATTACH}" design="Horizontal">
+				<content>
+					<UploadCollection id="Sfileupload"
+						maximumFilenameLength="35" multiple="true" items="{json>/dataitems}"
+						showSeparators="All" uploadEnabled="false">
+						<UploadCollectionItem contributor="{json>contributor}"
+							visibleDelete="fase" visibleEdit="false" documentId="documentId"
+							fileName="{json>filename}" mimeType="{json>mimeType}"
+							uploadedDate="{json>uploaded}" url="{json>url}" />
+					</UploadCollection>
+
+				</content>
+				<!-- Extends the Attachments section Tab -->
+				<core:ExtensionPoint name="SAttachmentSupplier" />
+			</IconTabFilter>
+
+			<!-- Extends the Icon Tab -->
+			<core:ExtensionPoint name="extSupplierTabBar" />
+		</items>
+
+	</IconTabBar>
+</core:FragmentDefinition>

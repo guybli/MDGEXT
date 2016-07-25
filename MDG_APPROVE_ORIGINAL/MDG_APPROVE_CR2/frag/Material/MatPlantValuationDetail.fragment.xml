@@ -1,0 +1,208 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matCreatevalutionLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			<Title id="Matvalacnt" text="{i18n>Account}" titleStyle="H3" class="formTitleAlign"></Title>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="0" emptySpanM="0" id="matvaluationdetailForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<core:Title design="Bold" id="Plant_Val_Cur" text="{i18n>Plant_Val_Curr_Per}"></core:Title>
+						<Label id="Lbl_FZKPRS" text="{i18n>Fut_Price}"></Label>
+						<Text id="Txt_FZKPRS" maxLines="0" text="{/FZKPRS}"
+							visible="{path:'/FZKPRS',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_FZKDAT" text="{i18n>CC_VAL_FRM}"></Label>
+				    	<Text id="Txt_FZKDAT" text="{path:'/FZKDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/FZKDAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for account current period-->
+						<core:ExtensionPoint name="extPlant_Val_Cur"></core:ExtensionPoint>
+						<core:Title design="Bold" id="Plant_Lifo_Datat" text="{i18n>Lifo_Datat}"></core:Title>
+						<Label id="Lbl_MYPACTNG" text="{i18n>Lifo_Pool}"></Label>
+						<Text id="Txt_MYPACTNG" maxLines="0"
+							text="{parts: [{path:'/MYPACTNG'}, {path:'/MYPACTNG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MYPACTNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_FXLIFO" text="{i18n>Lifo_Fifo_Rel}"></Label>
+					   <Text id="Txt_FXLIFO" maxLines="0" text="{/FXLIFO__TXT}"
+							visible="{path:'/FXLIFO__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<!-- Extension Point for lifo data-->
+					<core:ExtensionPoint name="extPlant_Lifo_Datat"></core:ExtensionPoint>
+					<core:Title design="Bold" id="Plant_Det_Low_Val" text="{i18n>Det_Low_Val}"></core:Title>
+	
+						<Label id="Lbl_ABWKZ" text="{i18n>Devaluation}"></Label>
+							<Text id="Txt_ABWKZ" text="{path:'/ABWKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+							visible="{path:'/ABWKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BWPEI" text="{i18n>Price_Unit}"></Label>
+						<Text id="Txt_BWPEI" maxLines="0" text="{/BWPEI}"
+							visible="{path:'/BWPEI',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BWPRS" text="{i18n>Tax_Price1}"></Label>
+						<Text id="Txt_BWPRS" maxLines="0" text="{/BWPRS}"
+							visible="{path:'/BWPRS',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BWPS1" text="{i18n>Tax_Price2}"></Label>
+						<Text id="Txt_BWPS1" maxLines="0" text="{/BWPS1}"
+							visible="{path:'/BWPS1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_VJBWS" text="{i18n>Tax_Price3}"></Label>
+							<Text id="Txt_VJBWS" maxLines="0" text="{/VJBWS}"
+							visible="{path:'/VJBWS',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						
+						<Label id="Lbl_BWPRH" text="{i18n>Comm_Price1}"></Label>
+						<Text id="Txt_BWPRH" maxLines="0" text="{/BWPRH}"
+							visible="{path:'/BWPRH',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BWPH1" text="{i18n>Comm_Price2}"></Label>
+						<Text id="Txt_BWPH1" maxLines="0" text="{/BWPH1}"
+							visible="{path:'/BWPH1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_VJBWH" text="{i18n>Comm_Price3}"></Label>
+						<Text id="Txt_VJBWH" maxLines="0" text="{/VJBWH}"
+							visible="{path:'/VJBWH',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+			<!-- Extension Point for Determination of Lowest Value-->
+		 <core:ExtensionPoint name="extPlant_Det_Low_Val"></core:ExtensionPoint>
+     	  </f:content>
+          </f:SimpleForm>
+         	<Title id="Matvaluationtitle" text="{i18n>Mat_Plant_Val}" titleStyle="H3" class="formTitleAlign"></Title>
+         <f:SimpleForm columnsL="1" columnsM="1" emptySpanL="0" emptySpanM="0" id="matvaluationForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<core:Title design="Bold" id="Gen_Data_Title" text="{i18n>Gen_Data}"></core:Title>
+					<Label id="Lbl_MBEWMLAST" text="{i18n>Mat_Price_Det_Control}"></Label>
+					<Text id="Txt_MBEWMLAST" maxLines="0"
+							text="{parts: [{path:'/MBEWMLAST'}, {path:'/MBEWMLAST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MBEWMLAST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="Lbl_MBEWMLMAA" text="{i18n>Mat_Ledger_Act}"></Label>
+					<Text id="Txt_MBEWMLMAA" maxLines="0"
+							text="{parts: [{path:'/MBEWMLMAA'}, {path:'/MBEWMLMAA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MBEWMLMAA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					
+					
+						<Label id="Lbl_BKLAS" text="{i18n>Val_Class}"></Label>
+						<Text id="Txt_BKLAS"
+							text="{parts: [{path:'/BKLAS'}, {path:'/BKLAS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/BKLAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BWTTY" text="{i18n>VAL_Cat}"></Label>
+						<Text id="Txt_BWTTY"
+							text="{parts: [{path:'/BWTTY'}, {path:'/BWTTY__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/BWTTY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_QKLAS" text="{i18n>Val_Class_Proj_Stock}"></Label>
+						<Text id="Txt_QKLAS"
+							text="{parts: [{path:'/QKLAS'}, {path:'/QKLAS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/QKLAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_EKLAS" text="{i18n>Val_Class_Sales_Order}"></Label>
+					<Text id="Txt_EKLAS"
+							text="{parts: [{path:'/EKLAS'}, {path:'/EKLAS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/EKLAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="Lbl_PEINH" text="{i18n>Mat_Price_Unit}"></Label>
+						<Text id="Txt_PEINH" maxLines="0" text="{/PEINH}"
+							visible="{path:'/PEINH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+	     	<!-- Extension Point for valuation general data-->
+	               <core:ExtensionPoint name="extGen_Data_Title"></core:ExtensionPoint>
+						<core:Title design="Bold" id="idmatPricingTitle" text="{i18n>Pricing}"></core:Title>
+						<Label id="Lbl_FZPLP1" text="{i18n>Plan_Price1}"></Label>
+						<Text id="Txt_FZPLP1" text="{/FZPLP1}" visible="{path:'/FZPLP1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					    	<Label id="Lbl_FZPLD1" text="{i18n>CC_VAL_FRM}"></Label>
+				    	<Text id="Txt_FZPLD1" text="{path:'/FZPLD1',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/FZPLD1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					    	<Label id="Lbl_FZPLP2" text="{i18n>Plan_Price2}"></Label>
+						<Text id="Txt_FZPLP2" text="{/FZPLP2}" visible="{path:'/FZPLP2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+							<Label id="Lbl_FZPLD2" text="{i18n>CC_VAL_FRM}"></Label>
+				    	<Text id="Txt_FZPLD2" text="{path:'/FZPLD2',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/FZPLD2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="Lbl_FZPLP3" text="{i18n>Plan_Price3}"></Label>
+						<Text id="Txt_FZPLP3" text="{/FZPLP3}" visible="{path:'/FZPLP3',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="Lbl_FZPLD3" text="{i18n>CC_VAL_FRM}"></Label>
+				    	<Text id="Txt_FZPLD3" text="{path:'/FZPLD3',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/FZPLD3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for valuation pricing-->
+					<core:ExtensionPoint name="extidmatPricingTitle"></core:ExtensionPoint>
+						<!--valuation(current priod)-->
+					<core:Title design="Bold" id="idValuationCoreTitle" text="{i18n>Plant_Val_Curr_Per}"></core:Title>
+						<Label id="Lbl_VPRSV" text="{i18n>Price_Control}"></Label>
+						<Text id="Txt_VPRSV"
+							text="{parts: [{path:'/VPRSV'}, {path:'/VPRSV__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/VPRSV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_STPRV" text="{i18n>Prev_Price2}"></Label>
+						<Text id="Txt_STPRV" text="{/STPRV}" visible="{path:'/STPRV',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_VERPR" text="{i18n>Mov_Price3}"></Label>
+						<Text id="Txt_VERPR" text="{/VERPR}" visible="{path:'/VERPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<!-- Extension Point for valuation(current priod)-->
+						<core:ExtensionPoint name="extidValuationCoreTitle"></core:ExtensionPoint>
+					<!--standard cost estimate-->
+						<core:Title design="Bold" id="idStd_Cost_EstTitle" text="{i18n>Std_Cost_Est}"></core:Title>
+						<Label id="Lbl_STPRS" text="{i18n>Std_Price}"></Label>
+						<Text id="Txt_STPRS" text="{/STPRS}" visible="{path:'/STPRS',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_FZPLPR" text="{i18n>Future_Planned_Price}"></Label>
+						<Text id="Txt_FZPLPR" text="{/FZPLPR}" visible="{path:'/FZPLPR',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+				<!-- Extension Point for standard cost estimate-->
+				<core:ExtensionPoint name="extidStd_Cost_EstTitle"></core:ExtensionPoint>
+				<!-- Extension Point for valuation form-->
+				<core:ExtensionPoint name="extmatvaluationForm"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				
+				<Table id="Matledgerper" inset="false" width="100%">
+			<headerToolbar>
+						<Toolbar>
+						<Title width="100%" class="sapThemeFontSize" text="{i18n>Mat_Ledger_period}"></Title>
+						 <Button id="PlantMatledgerpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+						</Toolbar>
+					</headerToolbar>
+                            		<columns>
+                            		<Column id="Val_Cur">
+									<Text  text="{i18n>Mat_Val_Cur}"/>
+								</Column>
+								<Column id="Val_Period"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Val_Period}"/>
+								</Column>
+								<Column id="Val_Year"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Val_Year}"/>
+								</Column>
+								<Column id="Val_Std_Price"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Val_Std_Price}"/>
+								</Column>
+								<Column id="Val_Per_Unit_Price"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Per_Unit_Price}"/>
+								</Column>
+								<Column id="Val_Price_Unit"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Price_Unit}"/>
+								</Column>
+								<Column id="Val_Price_Control"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Val_Price_Control}"/>
+								</Column>
+								<!-- Extension Point for material ledger period-->	
+                             <core:ExtensionPoint name="extMatledgerper"></core:ExtensionPoint>
+                            		</columns> 
+                            </Table>
+                            
+                            <Table id="Matplantledgerprice" inset="false" width="100%">
+                            <headerToolbar>
+						<Toolbar>
+						<Title width="100%" class="sapThemeFontSize" text="{i18n>Mat_Ledger_prices}"></Title>
+						<Button id="PlantMatplantledgerpricepersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+						</Toolbar>
+				  	</headerToolbar>
+                            		<columns>
+                            		<Column id="Val_Ledger_Price_Cur">
+									<Text  text="{i18n>Mat_Val_Cur}"/>
+								</Column>
+								<Column id="Val_Ledger_Price_Unit"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Price_Unit}"/>
+								</Column>
+								<Column id="Fut_Ledger_Price"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Fut_Price}"/>
+								</Column>
+								<Column id="Val_Ledger_Date"  minScreenWidth="Tablet" demandPopin="true">
+									<Text  text="{i18n>Mat_Val_Date}"/>
+								</Column>
+                            	<!-- Extension Point for material ledger price-->
+                            	<core:ExtensionPoint name="extMatplantledgerprice"></core:ExtensionPoint>
+                            		</columns> 
+                            </Table>
+		<!-- Extension Point for valuation and account layout-->
+		<core:ExtensionPoint name="extmatCreatevalutionLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

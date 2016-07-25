@@ -1,0 +1,175 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matProductionVersionLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matPrdctnVrsnForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<!--Basic Data  -->
+						<Title id="Mat_BasicData" text="{i18n>Mat_Basic_Data}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_TEXT1MKAL" text="{i18n>PC_DESC_COL_NAME}"></Label>
+						<Text id="Txt_TEXT1MKAL" text="{/TEXT1MKAL}" maxLines="0"
+					                        visible="{path:'/TEXT1MKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MKSPMKAL" text="{i18n>Mat_PrdVer_Lockd}"></Label>
+						<Text id="Txt_MKSPMKAL" text="{/MKSPMKAL__TXT}" maxLines="0"
+					                        visible="{path:'/MKSPMKAL__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BSTMIMKAL" text="{i18n>Mat_LotSizFrm}"></Label>
+						<Text id="Txt_BSTMIMKAL" text="{/BSTMIMKAL}" maxLines="0"
+					                        visible="{path:'/BSTMIMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_BSTMAMKAL" text="{i18n>Mat_LotSizTo}"></Label>
+						<Text id="Txt_BSTMAMKAL" text="{/BSTMAMKAL}" maxLines="0"
+					                        visible="{path:'/BSTMAMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_ADATUMKAL" text="{i18n>CC_VAL_FRM}"></Label>
+						<Text id="Txt_ADATUMKAL" text="{path:'/ADATUMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/ADATUMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BDATUMKAL" text="{i18n>CC_VAL_TO}"></Label>
+						<Text id="Txt_BDATUMKAL" text="{path:'/BDATUMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}" maxLines="0"
+					                        visible="{path:'/BDATUMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					    <!-- Extension Point for production Version Basic Data-->
+						<core:ExtensionPoint name="extMat_BasicData"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Detailed Planning-->
+						<Title id="Mat_DtlPlng" text="{i18n>Mat_Dtl_Plng}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_PLNTYP" text="{i18n>TaskListType}"></Label>
+						<Text id="Txt_PLNTYP" maxLines="0" text="{parts: [{path:'/PLNTYP'}, {path:'/PLNTYP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNTYP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRP" text="{i18n>Group}"></Label>
+						<Text id="Txt_PLNNRP" maxLines="0" text="{parts: [{path:'/PLNNRP'}, {path:'/PLNNRP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNNRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNALP" text="{i18n>GrpCountr}"></Label>
+						<Text id="Txt_PLNALP" maxLines="0" text="{path: '/PLNALP',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" 
+					                        visible="{path:'/PLNALP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRP__TXT" text="{i18n>Status}"></Label>
+						<Text id="Txt_PLNNRP__TXT" text="{/PLNNRP__TXT}" maxLines="0"
+					                        visible="{path:'/PLNNRP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for production Version Detailed Planning-->
+						<core:ExtensionPoint name="extMat_DtlPlng"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Rate-Based Planning-->
+						<Title id="Mat_RateBsdPlng" text="{i18n>Mat_RateBsd_Plng}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_PLNTYG" text="{i18n>TaskListType}"></Label>
+						<Text id="Txt_PLNTYG" maxLines="0" text="{parts: [{path:'/PLNTYG'}, {path:'/PLNTYG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNTYG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRG" text="{i18n>Group}"></Label>
+						<Text id="Txt_PLNNRG" maxLines="0" text="{parts: [{path:'/PLNNRG'}, {path:'/PLNNRG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNNRG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNALG" text="{i18n>GrpCountr}"></Label>
+						<Text id="Txt_PLNALG" maxLines="0" text="{path: '/PLNALG',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" 
+					                        visible="{path:'/PLNALG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRG__TXT" text="{i18n>Status}"></Label>
+						<Text id="Txt_PLNNRG__TXT" text="{/PLNNRG__TXT}" maxLines="0"
+					                        visible="{path:'/PLNNRG__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for production Version Rate-Based Planning-->
+						<core:ExtensionPoint name="extMat_RateBsdPlng"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Rough-Cut Planning-->
+						<Title id="Mat_RoughCutPlng" text="{i18n>Mat_RoughCut_Plng}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_PLNTYM" text="{i18n>TaskListType}"></Label>
+						<Text id="Txt_PLNTYM" maxLines="0" text="{parts: [{path:'/PLNTYM'}, {path:'/PLNTYM__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNTYM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRM" text="{i18n>Group}"></Label>
+						<Text id="Txt_PLNNRM" maxLines="0" text="{parts: [{path:'/PLNNRM'}, {path:'/PLNNRM__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PLNNRM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNALM" text="{i18n>GrpCountr}"></Label>
+						<Text id="Txt_PLNALM" maxLines="0" text="{path: '/PLNALM',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" 
+					                        visible="{path:'/PLNALM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PLNNRM__TXT" text="{i18n>Status}"></Label>
+						<Text id="Txt_PLNNRM__TXT" text="{/PLNNRM__TXT}" maxLines="0"
+					                        visible="{path:'/PLNNRM__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for production Version Rough-Cut Planning-->
+						<core:ExtensionPoint name="extMat_RoughCutPlng"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Bill of Material-->
+						<Title id="Mat_PrdVrsn_BOM" text="{i18n>PlntMnfctrng_BOM}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_STAMKALBA" text="{i18n>Mat_Alt_BOM}"></Label>
+						<Text id="Txt_STAMKALBA" maxLines="0" text="{parts: [{path:'/STAMKALBA'}, {path:'/STAMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/STAMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_STLANMKAL" text="{i18n>Mat_BOM_Usage}"></Label>
+						<Text id="Txt_STLANMKAL" maxLines="0" text="{parts: [{path:'/STLANMKAL'}, {path:'/STLANMKAL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/STLANMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_CSPMKALBA" text="{i18n>Mat_AppnmntStrct}"></Label>
+						<Text id="Txt_CSPMKALBA" maxLines="0" text="{parts: [{path:'/CSPMKALBA'}, {path:'/CSPMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/CSPMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_STAMKALBA__TXT" text="{i18n>Status}"></Label>
+						<Text id="Txt_STAMKALBA__TXT" text="{/STAMKALBA__TXT}" maxLines="0"
+					                        visible="{path:'/STAMKALBA__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for production Version Bill of Material-->
+						<core:ExtensionPoint name="extMat_PrdVrsn_BOM"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Repititive Manufacturing-->
+						<Title id="Mat_PrdVrsn_REM" text="{i18n>Reptitve_Manfactrng}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_SERKZMKAL" text="{i18n>Mat_REM_Allowd}"></Label>
+						<Text id="Txt_SERKZMKAL" text="{/SERKZMKAL__TXT}" maxLines="0"
+					                        visible="{path:'/SERKZMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MDV01MKAL" text="{i18n>Mat_PrdLine}"></Label>
+						<Text id="Txt_MDV01MKAL" maxLines="0" text="{parts: [{path:'/MDV01MKAL'}, {path:'/MDV01MKAL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/MDV01MKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MDVMKALBA" text="{i18n>Mat_PlngId}"></Label>
+						<Text id="Txt_MDVMKALBA" maxLines="0" text="{parts: [{path:'/MDVMKALBA'}, {path:'/MDVMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/MDVMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_ELPMKALBA" text="{i18n>Mat_Issue_StrgLoc}"></Label>
+						<Text id="Txt_ELPMKALBA" maxLines="0" text="{parts: [{path:'/ELPMKALBA'}, {path:'/ELPMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/ELPMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_ALOMKALBA" text="{i18n>Mat_Rcv_StrgLoc}"></Label>
+						<Text id="Txt_ALOMKALBA" maxLines="0" text="{parts: [{path:'/ALOMKALBA'}, {path:'/ALOMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/ALOMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PRVMKALBA" text="{i18n>Deflt_SuplyArea}"></Label>
+						<Text id="Txt_PRVMKALBA" maxLines="0" text="{parts: [{path:'/PRVMKALBA'}, {path:'/PRVMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/PRVMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for production Version Repititive Manufacturing-->
+						<core:ExtensionPoint name="extMat_PrdVrsn_REM"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Additional Data-->
+						<Title id="Mat_AddData" text="{i18n>AdditionalData}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true" span="L12 M12 S12"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_MATKOMKAL" text="{i18n>Mat_OthHdr_Matrl}"></Label>
+						<Text id="Txt_MATKOMKAL"  maxLines="0" text="{parts: [{path:'/MATKOMKAL'}, {path:'/MATKOMKAL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/MATKOMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_VERMKALBA" text="{i18n>Mat_DstrbtnKey}"></Label>
+						<Text id="Txt_VERMKALBA"  maxLines="0" text="{parts: [{path:'/VERMKALBA'}, {path:'/VERMKALBA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/VERMKALBA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_UCMATMKAL" text="{i18n>Mat_OrgBatchRefMat}"></Label>
+						<Text id="Txt_UCMATMKAL"  maxLines="0" text="{parts: [{path:'/UCMATMKAL'}, {path:'/UCMATMKAL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					                        visible="{path:'/UCMATMKAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for production Version Additional Data-->
+						<core:ExtensionPoint name="extMat_AddData"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				<!-- Extension Point for production Version-->
+				<core:ExtensionPoint name="extmatProductionVersionLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

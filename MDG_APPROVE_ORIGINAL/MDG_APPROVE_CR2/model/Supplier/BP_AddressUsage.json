@@ -1,0 +1,20 @@
+[
+  {
+    "AD_ID": "0000032821",
+    "ADDRESSTYPE": "XXDEFAULT",
+    "STANDARDADDRESSUSAGE": "",
+    "USAGEVALIDFROM": null,
+    "USAGEVALIDTO": null,
+    "VALIDTOREADFORCHANGE": null,
+    "BP_GUID": "+hY+EvesHtSHo5ScbdVMtw=="
+  },
+  {
+    "AD_ID": "0000032820",
+    "ADDRESSTYPE": "0002",
+    "STANDARDADDRESSUSAGE": "X",
+    "USAGEVALIDFROM": null,
+    "USAGEVALIDTO": null,
+    "VALIDTOREADFORCHANGE": null,
+    "BP_GUID": "+hY+EvesHtSHo5ScbdVMtw=="
+  }
+]

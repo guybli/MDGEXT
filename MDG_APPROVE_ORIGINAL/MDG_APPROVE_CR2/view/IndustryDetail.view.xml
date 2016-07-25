@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Industry Details selected in the Change scenario  -->
+
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:ca="sap.ca.ui" xmlns:ui="sap.ca.ui" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="fcg.mdg.approvecrv2.view.IndustryDetail">
+	<Page id="industryDetailPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="industryDetailHeader">
+				<attributes>
+					<ObjectAttribute id="industryAttrHeader" />
+					<!-- Extension Point for Industry Detail header -->
+				<core:ExtensionPoint name="extindustryAttrHeader" />
+				</attributes>
+			</ObjectHeader>
+			<Table id="industryResults" mode="{device>/listMode}" width="100%">
+				<columns>
+					<Column id="colindustry">
+						<header>
+							<Label text="{i18n>Industry}"></Label>
+						</header>
+					</Column>
+					<Column id="colstandindus">
+						<header>
+							<Label text="{i18n>StandIndustry}"></Label>
+						</header>
+					</Column>
+					<!-- Extension Point for Industry table -->
+						<core:ExtensionPoint name="extindustryResults" />
+				</columns>
+				<!-- Extension Point for Industry additional tables -->
+					<core:ExtensionPoint name="extIndustryAddTables" />
+			</Table>
+		</content>
+	</Page>
+</core:View>

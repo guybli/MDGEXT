@@ -1,0 +1,41 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--   Fragment to create a pop up for the Change request description in the Detail page Header --> 
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<ResponsivePopover title="{i18n>CRDetails}" placement="Bottom" >
+		<content>
+			<form:SimpleForm id="simpleForm" maxContainerCols="1"
+				minWidth="1024" layout="ResponsiveGridLayout" labelSpanL="4"
+				labelSpanM="4" emptySpanL="1" emptySpanM="1" columnsL="1" columnsM="1">
+				<form:content>
+					<Label text="{i18n>RequestDate}"></Label>
+					<Text
+						text="{path:'CreatedAt',formatter:'fcg.mdg.approvecrv2.util.Formatter.dateTime'}"
+						visible="{path:'CreatedAt',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>RequestReason}"></Label>
+					<Text text="{ReasonDesc}"
+						visible="{path:'ReasonDesc',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>LastApprBy}"></Label>
+					<Text text="{ parts : [{path : 'LastProcessedBy'}, {path :'LastProcessedByDesc'}],
+					formatter : 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible="{path:'LastProcessedByDesc',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label text="{i18n>DueDate}"></Label>
+					<Text
+						text="{path:'Duedate',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+						visible="{path:'Duedate',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>Priority}"></Label>
+					<Text text="{PriorityDesc}"
+						visible="{path:'PriorityDesc',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extension Point for CR Popup -->
+					<core:ExtensionPoint name="extsimpleFormPopup" />
+				</form:content>
+			</form:SimpleForm>
+		</content>
+	</ResponsivePopover>
+</core:FragmentDefinition>

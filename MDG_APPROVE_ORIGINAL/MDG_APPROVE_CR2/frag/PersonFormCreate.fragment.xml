@@ -1,0 +1,70 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--  Fragment to create a BP Person Form in the Create Scenario -->
+
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+
+	<form:SimpleForm id="FormGeneralPerson" columnsM="1"
+		columnsL="1" emptySpanM="1" emptySpanL="1" labelSpanM="4" labelSpanL="4"
+		layout="ResponsiveGridLayout" minWidth="1024" maxContainerCols="1">
+		<form:content>
+			<!-- General Details INFORMATIONS -->
+
+			<Label id="lblPFTITLE_KEY" text="{i18n>Title}" />
+			<Text id="PFTITLE_KEY" text="{path:'/TITLE_KEY__TXT'}"
+				visible="{path:'/TITLE_KEY__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"  />
+			<Label id="lblPFTITLE_ACA1" text="{i18n>AcademicTitle}" />
+			<Text id="PFTITLE_ACA1" text="{path:'/BP_PersonRel/TITLE_ACA1__TXT'}"
+				visible="{path:'/BP_PersonRel/TITLE_ACA1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFFIRSTNAME" text="{i18n>FirstName}" />
+			<Text id="PFFIRSTNAME" text="{/BP_PersonRel/FIRSTNAME}"
+				visible="{path:'/BP_PersonRel/FIRSTNAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFLASTNAME" text="{i18n>LastName}" />
+			<Text id="PFLASTNAME" text="{/BP_PersonRel/LASTNAME}"
+				visible="{path:'/BP_PersonRel/LASTNAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFTITLELETTER" text="{i18n>Salutation}" />
+			<Text id="PFTITLELETTER" text="{/TITLELETTER}"
+				visible="{path:'/TITLELETTER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFSEARCHTERM1" text="{i18n>Searchterm1}" />
+			<Text id="PFSEARCHTERM1" text="{/SEARCHTERM1}"
+				visible="{path:'/SEARCHTERM1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFSEARCHTERM2" text="{i18n>Searchterm2}" />
+			<Text id="PFSEARCHTERM2" text="{/SEARCHTERM2}"
+				visible="{path:'/SEARCHTERM2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+				<!-- Extension Point for  General in BP Person Form  in fragment -->
+							<core:ExtensionPoint name="extPFGeneral" />
+
+
+			<!-- Person Details INFORMATIONS -->
+			<core:Title id="PFPersonalData" text="{i18n>PersonalData}" />
+			<Label id="lblPFSEX" text="{i18n>Sex}" />
+			<Text id="PFSEX" text="{path:'/BP_PersonRel/SEX__TXT'}"
+				visible="{path:'/BP_PersonRel/SEX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFMARITALSTATUS" text="{i18n>MaritalStatus}" />
+			<Text id="PFMARITALSTATUS" text="{path:'/BP_PersonRel/MARITALSTATUS__TXT'}"
+				visible="{path:'/BP_PersonRel/MARITALSTATUS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFBIRTHDATE" text="{i18n>BirthDate}" />
+			<Text id="PFBIRTHDATE" text="{path:'/BP_PersonRel/BIRTHDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+				visible="{path:'/BP_PersonRel/BIRTHDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFBIRTHPLACE" text="{i18n>Birthplace}" />
+			<Text id="PFBIRTHPLACE" text="{/BP_PersonRel/BIRTHPLACE}"
+				visible="{path:'/BP_PersonRel/BIRTHPLACE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFCORRESPONDLANGUAGE" text="{i18n>CorrespondingLanguage}" />
+			<Text id="PFCORRESPONDLANGUAGE" 
+			text="{parts:[{path:'/BP_PersonRel/CORRESPONDLANGUAGE__TXT'}, {path:'/BP_PersonRel/CORRESPONDLANGUAGEISO'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.descriptionAndCode'}"
+				visible="{path:'/BP_PersonRel/CORRESPONDLANGUAGE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+			<Label id="lblPFAUTHORIZATIONGROUP" text="{i18n>AuthorizationGroup}" />
+			<Text id="PFAUTHORIZATIONGROUP" text="{path:'/AUTHORIZATIONGROUP__TXT'}"
+				visible="{path:'/AUTHORIZATIONGROUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+				<!-- Extension Point for BP Person Details for Person Form in fragment -->
+							<core:ExtensionPoint name="extPFPersonalData" /> 
+		</form:content>
+		<!-- Extension Point for BP General Person Form in fragment -->
+							<core:ExtensionPoint name="extFormGeneralPerson" /> 
+	</form:SimpleForm>
+</core:FragmentDefinition>

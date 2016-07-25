@@ -1,0 +1,124 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matSalesCreateLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			<f:SimpleForm columnsL="1" editable="false" emptySpanL="1" emptySpanM="1" id="matSalesDataForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" minWidth="1024">
+					<f:content>
+						<Label id="LBL_MSTAV" text="{i18n>SL_CROSS_DISTR}"></Label>
+						<Text id="Txt_MSTAV" text="{parts: [{path:'/MSTAV'}, {path:'/MSTAV__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/MSTAV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_MSTDV" text="{i18n>Mat_Valid_Frm}"></Label>
+						<Text id="Txt_MSTDV" text="{/MSTDV}" visible="{path:'/MSTDV',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_KUNNR" text="{i18n>SL_MTR_COMP}"></Label>
+						<Text id="Txt_KUNNR" text="{/KUNNR}" visible="{path:'/KUNNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label></Label>
+						
+						<!--SHIPPING-->
+						 <Title design="Bold" id="MatSalesShip" text="{i18n>SL_SHIP}">
+						<layoutData>
+						<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+						</l:GridData>
+			            </layoutData>
+						 </Title>
+						 <!--<core:Title id="MatSalesShip" text="{i18n>SL_SHIP}" />-->
+			
+						<Label id="LBL_TRAGR" text="{i18n>SL_TRNSPRT}"></Label>
+						<Text id="Txt_TRAGR" text="{parts: [{path:'/TRAGR'}, {path:'/TRAGR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/TRAGR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					 
+						<core:ExtensionPoint name="extMatSalesShip"></core:ExtensionPoint>
+						<Label></Label>
+						
+						<!--PACKAGING-->
+					    <Title design="Bold" id="MatSalesPackMtr" text="{i18n>SL_PCK_MTR}">
+					    <layoutData>
+						<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+						</l:GridData>
+			            </layoutData>
+					    </Title>
+					    <!--<core:Title id="MatSalesPackMtr" text="{i18n>SL_PCK_MTR}" />-->
+						
+						<Label id="LBL_ERGEW" text="{i18n>SL_PCK_WT}"></Label>
+						<Text id="Txt_ERGEW"
+							text="{parts: [{path:'/ERGEW'},{path:'/ERGEI'}, {path:'/ERGEI__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/ERGEW',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+							</Text>
+						
+						<Label id="LBL_GEWTO" text="{i18n>SL_EX_WT}"></Label>
+						<Text id="Txt_GEWTO" text="{/GEWTO}" visible="{path:'/GEWTO',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_ERVOL" text="{i18n>SL_EX_VL}"></Label>
+						<Text id="Txt_ERVOL"
+							text="{parts: [{path:'/ERVOL'}, {path:'/ERVOE'}, {path:'/ERVOE__TXT'}], 
+							formatter: 'fcg.mdg.approvecrv2.util.Formatter.getUnitDesc'}"
+							visible="{path:'/ERVOL', formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_VOLTO" text="{i18n>SL_EX_VL_TL}"></Label>
+						<Text id="Txt_VOLTO" text="{/VOLTO}" visible="{path:'/VOLTO',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						
+						<Label id="LBL_KZGVH" text="{i18n>SL_CLOSED}"></Label>
+						<Text id="Txt_KZGVH" text="{path:'/KZGVH',
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/KZGVH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						<Label id="LBL_VHART" text="{i18n>SL_MTR_TYPE}"></Label>
+						<Text id="Txt_VHART" text="{parts: [{path:'/VHART'}, {path:'/VHART__TXT'}], 
+						formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/VHART',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+						<Label id="LBL_STFAK" text="{i18n>SL_ST_FTR}"></Label>
+						<Text id="Txt_STFAK" text="{/STFAK}" visible="{path:'/STFAK',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.MatZerovisibility'}">
+						</Text>	
+						<core:ExtensionPoint name="extMatSalesPackMtr"></core:ExtensionPoint>
+					  
+						<core:ExtensionPoint name="extmatSalesDataForm"></core:ExtensionPoint>
+											
+					</f:content>
+				</f:SimpleForm>
+	
+					<!--Distribution chain Table-->
+				  <Table id="MatSalesDistChainTable" 
+		    	     
+		    	           width="100%" >
+		    	           <headerToolbar>
+					<Toolbar>
+						<Title width="100%" text="{i18n>SL_DISTR_CHAIN}" class = "sapThemeFontSize"></Title>
+						<Button id="DisbChainpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+					</Toolbar>
+				</headerToolbar>
+						<columns>
+							<Column id="Sales_Org">
+								<Text text="{i18n>Sl_Org}"/>
+							</Column>
+							<Column id="Disb_Channel">
+								<Text text="{i18n>Sl_Distr_Chnl}"/>
+							</Column>
+						</columns>
+							<core:ExtensionPoint name="extMatSalesDistChainTable"></core:ExtensionPoint>
+					</Table>
+							</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+			
+</core:FragmentDefinition>

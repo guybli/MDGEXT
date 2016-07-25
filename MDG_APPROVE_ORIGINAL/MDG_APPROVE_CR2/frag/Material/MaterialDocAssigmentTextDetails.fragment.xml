@@ -1,0 +1,19 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="mattextDetailLayout" width="100%">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<f:SimpleForm height="200px" id="matdocassignmenttextdetail">
+				<f:content>
+					<Text id="Txt_TXTDRAD"></Text>
+					<core:ExtensionPoint name="extdocassignmenttextdetail"></core:ExtensionPoint>
+				</f:content>
+			</f:SimpleForm>
+		</l:content>
+	</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

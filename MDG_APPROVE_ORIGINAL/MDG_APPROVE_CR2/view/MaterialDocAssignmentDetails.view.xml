@@ -1,0 +1,27 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:ca="sap.ca.ui" xmlns:ui="sap.ca.ui" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="fcg.mdg.approvecrv2.view.MaterialDocAssignmentDetails">	
+	
+	<Page id="DocAssignmentDetail" showNavButton="true" showFooter="true" 
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+    
+		<content>
+		    <ObjectHeader id="DocAssignmentDetailHeader">
+                <attributes>       
+                <ObjectAttribute id="DocDHeader" />
+                    <ObjectAttribute id="MatrlHeader" />
+                </attributes>
+            </ObjectHeader>
+            <!-- Extends Material Document Assignment for details view  -->
+			<core:ExtensionPoint name="extMaterialDocAssignmentDetails"></core:ExtensionPoint>
+		</content>
+		<footer>
+			<Bar />
+		</footer>
+	</Page>
+</core:View>

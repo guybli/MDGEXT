@@ -1,0 +1,19 @@
+[
+  {
+    "ADDRESS_NUMBER": "$6230",
+    "STANDARDADDRESS": "X",
+    "BUILDING_P": "",
+    "FLOOR": "",
+    "ROOM_NO": "",
+    "INITS_SIG": "",
+    "INHOUSE_ML": "",
+    "COMM_TYPE": "INT",
+    "DEPARTMENT": "",
+    "FUNCTION": "lead",
+    "BP_GUID": "AFBWkYPhHtScqG6YvgjU7w==",
+    "PARTNER1": "$5738",
+    "PARTNER2": "$5739",
+    "RELATIONSHIPCATEGORY": "BUR001",
+    "VALIDUNTILDATE": null
+  }
+]

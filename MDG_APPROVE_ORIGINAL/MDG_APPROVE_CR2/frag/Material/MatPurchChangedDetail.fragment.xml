@@ -1,0 +1,99 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matPurchasingChangeLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+						<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matpurchchangedform" labelSpanL="4" labelSpanM="4"
+							layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+						<f:content>
+										<Label id="Lbl_BSTME" text="{i18n>Pur_Order}"></Label>
+								<Text id="Txt_BSTME"
+									text="{parts: [{path:'/BSTME'}, {path:'/BSTME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/BSTME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_VABME" text="{i18n>Pur_Order_Var}"></Label>
+								<Text id="Txt_VABME"
+									text="{parts: [{path:'/VABME'}, {path:'/VABME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/VABME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_EKWSL" text="{i18n>Pur_Key}"></Label>
+								<Text id="Txt_EKWSL" text="{/EKWSL}"
+									visible="{path:'/EKWSL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MAHN1" text="{i18n>Pur_First_Reminder}"></Label>
+								<Text id="Txt_MAHN1"
+									text="{path: '/MAHN1',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_MAHN2" text="{i18n>Pur_Sec_Reminder}"></Label>
+								<Text id="Txt_MAHN2"
+									text="{path: '/MAHN2',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_MAHN3" text="{i18n>Pur_Third_Reminder}"></Label>
+								<Text id="Txt_MAHN3"
+									text="{path:'/MAHN3',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN3',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_WELFZ" text="{i18n>Pur_Del_Date}"></Label>
+								<Text id="Txt_WELFZ" text="{path: '/WELFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/WELFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UNTTO" text="{i18n>Pur_Under_Del}"></Label>
+								<Text id="Txt_UNTTO" text="{/UNTTO} %"
+									visible="{path:'/UNTTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UEBTO" text="{i18n>Pur_Order_Del}"></Label>
+								<Text id="Txt_UEBTO" text="{/UEBTO} %"
+									visible="{path:'/UEBTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_WEPRZ" text="{i18n>Pur_Del_Quantity}"></Label>
+								<Text id="Txt_WEPRZ" text="{/WEPRZ} %"
+									visible="{path:'/WEPRZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UEBTK" text="{i18n>Pur_Del_Alllowed}"></Label>
+								<Text id="Txt_UEBTK" text="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+									visible="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_KZABS" text="{i18n>Pur_Ack_Req}"></Label>
+								<Text id="Txt_KZABS" text="{path:'/KZABS',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+									visible="{path:'/KZABS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+										<Label id="Lbl_NRFHG" text="{i18n>Pur_Qualify_Dis}"></Label>
+									<Text id="Txt_NRFHG"
+									text="{parts: [{path:'/NRFHG'}, {path:'/NRFHG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/NRFHG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label></Label>
+								<!--procurement-->
+								<Title design="Bold" id="idPur_Procurement" text="{i18n>Pur_Procurement}">
+									<layoutData>
+				     	<l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+				     	</l:GridData>
+			          </layoutData>
+				    	</Title>
+								<Label id="Lbl_MFRPN" text="{i18n>Pur_Part_no}"></Label>
+								<Text id="Txt_MFRPN" text="{/MFRPN}"
+									visible="{path:'/MFRPN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MPROF" text="{i18n>Pur_Part_Profile}"></Label>
+								<Text id="Txt_MPROF"
+									text="{parts: [{path:'/MPROF'}, {path:'/MPROF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/MPROF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MFRNR" text="{i18n>Pur_Manufacturer}"></Label>
+							<Text id="Txt_MFRNR" text="{path:'/MFRNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+							visible="{path:'/MFRNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label></Label>
+							<core:ExtensionPoint name="extidPur_Procurement"></core:ExtensionPoint>
+								<!--quality management-->
+								<Title design="Bold" id="idPur_Quality_Management" text="{i18n>Pur_Quality_Management}">
+									<layoutData>
+					<l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+					<Label id="Lbl_QMPUR" text="{i18n>Pur_QM_Procurement}"></Label>
+						<Text id="Txt_QMPUR" maxLines="0" text="{path:'/QMPUR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/QMPUR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_RBNRM" text="{i18n>Pur_Catalog_Profile}"></Label>
+								<Text id="Txt_RBNRM"
+									text="{parts: [{path:'/RBNRM'}, {path:'/RBNRM__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/RBNRM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					     	<core:ExtensionPoint name="extidPur_Quality_Management"></core:ExtensionPoint>
+							</f:content>
+						</f:SimpleForm>
+		<core:ExtensionPoint name="extmatPurchasingChangeLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

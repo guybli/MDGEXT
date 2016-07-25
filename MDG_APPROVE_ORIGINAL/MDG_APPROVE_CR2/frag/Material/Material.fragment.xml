@@ -1,0 +1,152 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:layout="sap.ui.layout" xmlns:ui="sap.ca.ui"
+	xmlns="sap.m">
+	<IconTabBar expandable="false" id="materialTabBar" select="onSelect">
+		<items>
+			<IconTabFilter icon="sap-icon://product" id="matGenIconTab" text="{i18n>General}" tooltip="{i18n>General}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used -->
+				<layout:VerticalLayout id="materialDataLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of general section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="materialchgmngLayout" width="100%">
+				<form:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matchngmgmtchngForm" labelSpanL="4" labelSpanM="4"
+					layout="ResponsiveGridLayout" maxContainerCols="2" minWidth="1024">
+					<form:content>
+						<!--Change management-->
+							<core:Title id="CreateChngMgmttitchng" text="{i18n>Mat_Chnge_Mgmt}"></core:Title>
+							<Label design="Bold" id="Lbl_MatChange" text="{i18n>Mat_Chng_no}"></Label>
+							<Text class="text_bold" id="Txt_MatChange" text="{/ECOCHGMNG}"
+								visible="{path:'/ECOCHGMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label design="Bold" id="Lbl_VALIDFROMCHNAGE" text="{i18n>Mat_Valid_Frm}"></Label>
+							<Text class="text_bold" id="Txt_VALIDFROMCHANGE" design="Bold" text="{/VALID_FROM}" visible="{path:'/VALID_FROM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label design="Bold" id="Lbl_MATREVISION" text="{i18n>Mat_Revision_Level}"></Label>
+							<Text class="text_bold" id="Txt_MATREVISION" text="{/REVCHGMNG}"
+								visible="{path:'/REVCHGMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					     
+					   <!--  Extends the Change management -->
+				<core:ExtensionPoint name="extCreateChngMgmttitchng"/>
+					   <!--  Extends the Change management -->
+				<core:ExtensionPoint name="extmatchngmgmtchngForm"/>
+						</form:content>
+					</form:SimpleForm>
+				</layout:VerticalLayout>
+				<layout:VerticalLayout id="materialChangedDataLayout" width="100%"></layout:VerticalLayout>
+				<layout:VerticalLayout id="materialPanelDataLayout" width="100%">
+					<Panel expandable="true" expanded="false" id="matGtinChangedPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Dimension}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+							</content>
+						</Panel>
+						<Panel expandable="true" expanded="false" id="matClassificationChangedPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Classification}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+							</content>
+						</Panel>
+							<Panel expandable="true" expanded="false" id="matPurchasingChangedPanel" class="sapUiNoContentPadding">
+				    	<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Purchasing}"/>
+						</Toolbar>
+				    	</headerToolbar>
+							<content>
+							</content>
+						</Panel>
+							<Panel expandable="true" expanded="false" id="matNotesChangedPanel" class="sapUiNoContentPadding">
+				    	<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Txt_Comnt}"/>
+						</Toolbar>
+				    	</headerToolbar>
+							<content>
+							</content>
+						</Panel>
+				<!--  Extends the panels -->
+				<core:ExtensionPoint name="extmaterialPanelDataLayout"/>	
+				</layout:VerticalLayout>
+					<!--  Extends the General section Tab -->
+				<core:ExtensionPoint name="extmatGenIconTab"/>	
+			</IconTabFilter>
+			<IconTabFilter icon="sap-icon://my-sales-order" id="matSalesIconTab" key="sales" text="{i18n>Sales}" tooltip="{i18n>Sales}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used for Sales-->
+				<layout:VerticalLayout id="matCreateSalesDataLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of Sales section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="matChangeSalesDataLayout" width="100%"></layout:VerticalLayout>
+				<!--  Extends the Sales section Tab -->
+				<core:ExtensionPoint name="extMaterialSales"/>
+			</IconTabFilter>
+			<!--Tab for Change Request Plant -->
+			<IconTabFilter icon="sap-icon://factory" id="matPlantIconTab" key="plant" text="{i18n>plant}" tooltip="{i18n>plant}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used for Plant-->
+				<layout:VerticalLayout id="matCreatePlantDataLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of Plant section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="matChangePlantDataLayout" width="100%"></layout:VerticalLayout>
+				<!--  Extends the Note section Tab -->
+				<core:ExtensionPoint name="extMaterialPlant"/>
+			</IconTabFilter>
+			<!-- Tab for Wahrehouse -->
+			<IconTabFilter icon="sap-icon://retail-store" id="matWarehouseIconTab" key="warehouse" text="{i18n>Warehouse}" tooltip="{i18n>Warehouse}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used for Warehouse-->
+				<layout:VerticalLayout id="matCreateWarehouseDataLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of Warehouse section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="matChangeWarehouseDataLayout" width="100%"></layout:VerticalLayout>
+				<!--  Extends the Note section Tab -->
+				<core:ExtensionPoint name="extMaterialWarehouse"/>
+			</IconTabFilter>
+			<!-- Tab for Document Assignment -->
+			<IconTabFilter icon="sap-icon://documents" id="matDocAssignmentIconTab" key="docassignment" text="{i18n>Mat_Document}" tooltip="{i18n>Mat_Document}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used for Document Assignment-->
+				<layout:VerticalLayout id="matCreateDocAssignmentDataLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of document assignment in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="matChangeDocAssignmentDataLayout" width="100%"></layout:VerticalLayout>
+				<!--  Extends the Document Assignment section Tab -->
+				<core:ExtensionPoint name="extMaterialDocAssignment"/>
+			</IconTabFilter>
+			<!--Tab for Change Request Notes -->
+			<IconTabFilter icon="sap-icon://notes" id="MaterialNotesTab" key="notes" text="{i18n>Note}" tooltip="{i18n>Note}" design="Horizontal">
+				<List id="MaterialNote" items="{json>/Notes}" showSeparators="Inner">
+					<FeedListItem icon="{json>icon}" iconActive="false" iconDensityAware="false" info="{json>info}" sender="{json>sender}" senderActive="false"
+						text="{json>text}" timestamp="{json>timestamp}"/>
+				</List>
+				<!--Extends the Note section Tab -->
+				<core:ExtensionPoint name="extMaterialNotes"/>
+			</IconTabFilter>
+			<!--Tab for Change Request attachments -->
+			<IconTabFilter icon="sap-icon://attachment" id="MaterialAttachmentsTab" text="{i18n>PC_TIT_ATTACH}" tooltip="{i18n>PC_TIT_ATTACH}" design="Horizontal">
+				<content>
+					<!--<ui:FileUpload acceptRequestHeader="application/json" id="matFileUpload" 
+							items="/dataitems" encodeUrl="/sap/bc/ui2/encode_file" fileName="filename" 
+							url="url" uploadedDate="uploaded" contributor="contributor" mimeType="mimeType" 
+							fileId="documentId" useMultipart="false" renameEnabled="false" showNoData="false" 
+							useEditControls="false" uploadEnabled="false" editMode="false" showAttachmentsLabelInEditMode="false"> 
+							</ui:FileUpload> -->
+					<UploadCollection id="matFileUpload" items="{json>/dataitems}" maximumFilenameLength="35" multiple="true" showSeparators="All"
+						uploadEnabled="false">
+						<UploadCollectionItem contributor="{json>contributor}" documentId="documentId" fileName="{json>filename}" mimeType="{json>mimeType}"
+							uploadedDate="{json>uploaded}" url="{json>url}" visibleDelete="fase" visibleEdit="false"/>
+					</UploadCollection>
+				</content>
+				<!-- Extends the Attachments section Tab -->
+				<core:ExtensionPoint name="extMaterialAttachments"/>
+			</IconTabFilter>
+			<!--	 Extends the Icon Tab -->
+			
+			<core:ExtensionPoint name="extMaterialTabBar"/>
+		</items>
+	</IconTabBar>
+</core:FragmentDefinition>

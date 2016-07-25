@@ -1,0 +1,273 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto" hSpacing="0">
+		<l:content>
+			<form:SimpleForm id="SimpleFormPurchase"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="5" labelSpanM="5" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+
+				<form:content>
+					<!--Purchasing Organization -->
+					<Label id="lblSuppPurchdEKORG" text="{i18n>SP_purchorg}" class = "sapThemeFont"/>
+					<Text id="SuppPurchdEKORG" class = "sapThemeFont"
+						text="{parts:[{path:'/EKORG'},{path:'/EKORG__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EKORG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblSuppPurchdVendor" text="{i18n>ERPSupplier}"/>
+					<Text id="SuppPurchdVendor"></Text> 
+
+					<!-- Extension Point for Purchasing Organization --> 
+					<core:ExtensionPoint name="extSupplierPucrchOrg" />
+
+					<!--Conditions -->
+					<core:Title id="SupplierPurchaseCondition" text="{i18n>SP_Condition}" />
+					<Label id="lblPurWAERS" text="{i18n>SP_OrdCurcy}" />
+					<Text id="purWAERS"
+						text="{parts:[{path:'/WAERS'},{path:'/WAERS__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/WAERS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurZTERM" text="{i18n>TermsofPaymnt}" />
+					<Text id="purZTERM"  
+						text="{parts:[{path:'/ZTERM'},{path:'/ZTERM__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZTERM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurMINBW" text="{i18n>SP_MinOrdValue}" />
+					<Text id="purMINBW"
+						text="{path:'/MINBW',formatter:'fcg.mdg.approvecrv2.util.Formatter.currency'}"
+						visible="{path:'/MINBW',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblPurKALSK" text="{i18n>SP_Schemagrp}" />
+					<Text id="purKALSK"
+						text="{parts:[{path:'/KALSK'},{path:'/KALSK__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/KALSK__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurBOPNR" text="{i18n>SP_RestricProf}" />
+					<Text id="purBOPNR"
+						text="{parts:[{path:'/BOPNR'},{path:'/BOPNR__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BOPNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurMEPRF" text="{i18n>SP_PricingDate}" />
+					<Text id="purMEPRF" text="{path:'/MEPRF__TXT'}"
+						visible="{parts:[{path:'/MEPRF__TXT'},{path:'/MEPRF__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurINCO1" text="{i18n>Incoterm}" />
+					<Text id="purINCO1"
+						text="{parts:[{path:'/INCO1'},{path:'/INCO1__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/INCO1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurINCO2" text="{i18n>Inco2}" />
+					<Text id="purINCO2"
+						text="{parts:[{path:'/INCO2'},{path:'/INCO2__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/INCO2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Conditions -->
+					<core:ExtensionPoint name="extSupplierPurchaseCondition" />
+
+					<!-- Sales Order -->
+					<core:Title id="salesdata" text="{i18n>SP_SaleData}" />
+					<Label id="lblPurVERKF" text="{i18n>SP_Saleperson}" />
+					<Text id="purVERKF"
+						text="{parts:[{path:'/VERKF'},{path:'/VERKF__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VERKF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurEIKTO" text="{i18n>AcontwithVen}" />
+					<Text id="purEIKTO"
+						text="{parts:[{path:'/EIKTO'},{path:'/EIKTO__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EIKTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Sales Order -->
+					<core:ExtensionPoint name="extsalesdata" />
+
+					<!-- Control Data -->
+					<core:Title id="controldata" text="{i18n>ControlData}" />
+					<Label id="lblPurLFABC" text="{i18n>SP_AbcInd}" />
+					<Text id="purLFABC"
+						text="{parts:[{path:'/LFABC'},{path:'/LFABC__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LFABC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurEXPVZ" text="{i18n>SP_ModeTrasport}" />
+					<Text id="purEXPVZ"
+						text="{parts:[{path:'/EXPVZ'},{path:'/EXPVZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EXPVZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurZOLLA" text="{i18n>SP_Customofc}" />
+					<Text id="purZOLLA"
+						text="{parts:[{path:'/ZOLLA'},{path:'/ZOLLA__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/ZOLLA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurSKRIT" text="{i18n>SP_SortCriteria}" />
+					<Text id="purSKRIT" text="{path:'/SKRIT__TXT'}"
+						visible="{path:'/SKRIT__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurPAPRF" text="{i18n>SP_ProactProfile}" />
+					<Text id="purPAPRF" text="{path:'/PAPRF__TXT'}"
+						visible="{path:'/PAPRF__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurVSBED" text="{i18n>ShipCond}" />
+					<Text id="purVSBED"
+						text="{parts:[{path:'/VSBED'},{path:'/VSBED__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VSBED',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurXNBWY" text="{i18n>SP_RevalAlwd}" />
+					<Text id="purXNBWY"
+						text="{path:'/XNBWY',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'} "
+						visible="{path:'/XNBWY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurNRGEW" text="{i18n>SP_Qualify}" />
+					<Text id="purNRGEW"
+						text="{path:'/NRGEW',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/NRGEW',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurPRFRE" text="{i18n>SP_RelpriceDet}" />
+					<Text id="purPRFRE"
+						text="{path:'/PRFRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/PRFRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurAGREL" text="{i18n>SP_RelforAgency}" />
+					<Text id="purAGREL"
+						text="{path:'/AGREL',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/AGREL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurWEBRE" text="{i18n>SP_GoodsReceipt}" />
+					<Text id="purWEBRE"
+						text="{path:'/WEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/WEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					
+					<Label id="lblPurXERSY" text="{i18n>SP_Automaticsettlemt}" />
+					<Text id="purXERSY"
+						text="{path:'/XERSY',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XERSY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					
+					<Label id="lblPurXERSR" text="{i18n>SP_AutomaticReturn}" />
+					<Text id="purXERSR"
+						text="{path:'/XERSR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/XERSR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					
+					<Label id="lblPurKZABS" text="{i18n>SP_Acknwledge}" />
+					<Text id="purKZABS" text="{path:'/KZABS__TXT'}"
+						visible="{path:'/KZABS__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurKZAUT" text="{i18n>SP_AutomaticPurchOrder}" />
+					<Text id="purKZAUT"
+						text="{path:'/KZAUT',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/KZAUT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurBOLRE" text="{i18n>SP_SubjectSettlmnt}" />
+					<Text id="purBOLRE"
+						text="{path:'/BOLRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/BOLRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurBOIND" text="{i18n>SP_IndexCompilation}" />
+					<Text id="purBOIND"
+						text="{path:'/BOIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/BOIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurUMSAE" text="{i18n>SP_ComaprisonAgremnt}" />
+					<Text id="purUMSAE"
+						text="{path:'/UMSAE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/UMSAE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label id="lblPurBLIND" text="{i18n>SP_DocIndex}" />
+					<Text id="purBLIND"
+						text="{path:'/BLIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/BLIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurLEBRE" text="{i18n>SP_ServiceBased}" />
+					<Text id="purLEBRE"
+						text="{path:'/LEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LEBRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Control Data -->
+					<core:ExtensionPoint name="extcontroldata" />
+
+					<!--SP Default Mat -->
+					<core:Title id="defaultdatamat" text="{i18n>SP_DefaultMat}" />
+					<Label id="lblPurEKGRP" text="{i18n>SP_PurchGrp}" />
+					<Text id="purEKGRP"
+						text="{parts:[{path:'/EKGRP'},{path:'/EKGRP__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/EKGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurBSTAE" text="{i18n>SP_ConfirmationCntrl}" />
+					<Text id="purBSTAE"
+						text="{parts:[{path:'/BSTAE'},{path:'/BSTAE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/BSTAE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurRDPRF" text="{i18n>SP_RoundingProfile}" />
+					<Text id="purRDPRF"
+						text="{parts:[{path:'/RDPRF'},{path:'/RDPRF__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/RDPRF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurPLIFZ" text="{i18n>SP_PlandDelTime}" />
+					<Text id="purPLIFZ"
+						text="{parts:[{path:'/PLIFZ'},{path:'/PLIFZ__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/PLIFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblPurMEGRU" text="{i18n>UOM}" />
+					<Text id="purMEGRU" text="{path:'/MEGRU'}"
+						visible="{path:'/MEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for SP Default Mat -->
+					<core:ExtensionPoint name="extdefaultdatamat" />
+
+					<!-- Service Data -->
+					<core:Title id="servicedata" text="{i18n>SP_ServiceData}" />
+					<Label id="lblPurLIPRE" text="{i18n>SP_PriceMarking}" />
+					<Text id="purLIPRE"
+						text="{parts:[{path:'/LIPRE'},{path:'/LIPRE__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/LIPRE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurVENSL" text="{i18n>SP_VendorServicelvl}" />
+					<Text id="purVENSL"
+						text="{parts:[{path:'/VENSL'},{path:'/VENSL__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+						visible="{path:'/VENSL',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+					<Label id="lblPurLISER" text="{i18n>SP_RackJobbing}" />
+					<Text id="purLISER"
+						text="{path:'/LISER',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LISER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="lblPurLIBES" text="{i18n>SP_OrderEntry}" />
+					<Text id="purLIBES"
+						text="{path:'/LIBES',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/LIBES',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extension Point for Service Data -->
+					<core:ExtensionPoint name="extservicedata" />
+				</form:content>
+
+				<!-- Extension Point for Purchase SimpleForm -->
+				<core:ExtensionPoint name="extSimpleFormPurchase" />
+			</form:SimpleForm>
+
+			<Table id="supppartnerfunc" width="100%" mode="{device>/listMode}"
+				noDataText=" ">
+				<headerToolbar>
+					<Toolbar>
+						<Title text="{i18n>PartnerFunc}" class = "sapThemeFontSize"></Title>
+					</Toolbar>
+				</headerToolbar>
+				<columns>
+					<Column id="supppartnerfuncs">
+						<header>
+							<Label text="{i18n>PartnerFunc}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="suppsamepartner" hAlign="Center">
+						<header>
+							<Label text="{i18n>samepartner}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="supppartner" hAlign="Center">
+						<header>
+							<Label text="{i18n>Partner}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="defaultPurchpartner" hAlign="Center">
+						<header>
+							<Label text="{i18n>defaultpartner}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="suppsubrange" hAlign="Center">
+						<header>
+							<Label text="{i18n>SubRange}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="supplant" hAlign="Center">
+						<header>
+							<Label text="{i18n>plant}">
+							</Label>
+						</header>
+					</Column>
+					<!-- Extension Point for Purchase table -->
+					<core:ExtensionPoint name="extPurchaseDetailCreateTable" />
+				</columns>
+			</Table>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

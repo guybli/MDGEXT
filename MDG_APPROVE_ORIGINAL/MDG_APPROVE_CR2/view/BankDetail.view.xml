@@ -1,0 +1,80 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Bank Details selected in the Change and Create scenario  -->
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fcg.mdg.approvecrv2.view.BankDetail" >
+	<Page id="bankPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+		<ObjectHeader id="bankDetailHeader" >
+		<attributes>
+          <ObjectAttribute id="bankAttrHeader" />
+          <!-- Extension Point for Bank Detail header -->
+				<core:ExtensionPoint name="extbankDetailHeader" />
+          </attributes>
+		</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormBank" labelSpanM="6"
+						labelSpanL="6" layout="ResponsiveGridLayout" minWidth="1024"
+						maxContainerCols="2">
+						<form:content>
+							<!-- Bank Details INFORMATIONS  -->
+							<core:Title id="BankDetails" text="{i18n>BankDetails}" />	
+							<Label id="lblBANKDETAILID" text="{i18n>BankAcctID}"/>
+							<Text id="BANKDETAILID" text="{/BANKDETAILID}" visible="{path:'/BANKDETAILID',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />					
+							<Label id="lblBANK_ACCT" text="{i18n>BankAccount}" />
+							<Text id="BANK_ACCT" text="{/BANK_ACCT}" visible="{path:'/BANK_ACCT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblACCOUNTHOLDER" text="{i18n>Accountholder}"  />
+							<Text id="ACCOUNTHOLDER" text="{/ACCOUNTHOLDER}" visible="{path:'/ACCOUNTHOLDER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblIBAN" text="{i18n>Iban}"  />
+							<Text id="IBAN" text="{/IBAN}" visible="{path:'/IBAN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblBANKACCOUNTNAME" text="{i18n>AccountName}"  />
+							<Text id="BANKACCOUNTNAME" text="{/BANKACCOUNTNAME}" visible="{path:'/BANKACCOUNTNAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblCTRL_KEY" text="{i18n>ControlKey}" />
+							<Text id="CTRL_KEY" text="{/CTRL_KEY}" visible="{path:'/CTRL_KEY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblBANK_REF" text="{i18n>Refdetails}"  />
+							<Text id="BANK_REF" text="{/BANK_REF}" visible="{path:'/BANK_REF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblCOLL_AUTH" text="{i18n>Collectionauth}" />
+							<Text id="COLL_AUTH" text="{path:'/COLL_AUTH',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" visible="{path:'/COLL_AUTH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />							
+							<Label id="lblBANKDETAILVALIDFROM" text="{i18n>PC_VAL_FRM}" />
+							<Text  id="BANKDETAILVALIDFROM" text="{path:'/BANKDETAILVALIDFROM',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}" visible="{path:'/BANKDETAILVALIDFROM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblBANKDETAILVALIDTO" text="{i18n>PC_VAL_TO}" />
+							<Text  id="BANKDETAILVALIDTO" text="{path:'/BANKDETAILVALIDTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}" visible="{path:'/BANKDETAILVALIDTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<!-- Extension Point for Bank Details Form for Create and Change scenario -->
+							<core:ExtensionPoint name="extBankDetails" /> 
+							
+							<!-- Bank Data INFORMATIONS -->
+							<core:Title id="BankData" text="{i18n>BankData}"/>
+							<Label id="lblBANK_CTRY" text="{i18n>BankCtry}"  />
+				           	<Text id="BANK_CTRY" text="{parts:[{path:'/BANK_CTRY'},{path:'/BANK_CTRY__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+				          	 visible="{path:'/BANK_CTRY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" /> 
+							<Label id="lblBANK_KEY" text="{i18n>BankKey}"  />
+							<Text id="BANK_KEY" text="{/BANK_KEY}" visible="{path:'/BANK_KEY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblBANK_NAME" text="{i18n>BankName}" />
+							<Text id="BANK_NAME" text="{/BANK_NAME}" visible="{path:'/BANK_NAME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblSTREET" text="{i18n>Street}" />
+							<Text id="STREET" text="{/STREET}" visible="{path:'/STREET',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblCITY" text="{i18n>City}" />
+							<Text id="CITY" text="{/CITY}" visible="{path:'/CITY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblSWIFT_CODE" text="{i18n>SWIFTCODE}" />
+                            <Text id="SWIFT_CODE" text="{/SWIFT_CODE}" visible="{path:'/SWIFT_CODE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							
+							<!-- Extension Point for Bank Data's Form for Create and Change scenario -->
+							<core:ExtensionPoint name="extBankData" /> 
+							
+						</form:content>
+						<!-- Extension Point for Bank Form for Create and Change scenario -->
+							<core:ExtensionPoint name="extSimpleFormBank" /> 
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

@@ -1,0 +1,198 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+			<form:SimpleForm id="pcDetailSimpleForm"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+					<core:Title id="pcDetGenTitle" text="{i18n>General}" />
+					<Label id="LBL_COAREA" text="{i18n>PC_COAREA}" />
+					<Text id="TXT_COAREA" text="{parts: [{path:'/PCTR/CD_COAREA/Code'}, {path:'/PCTR/CD_COAREA/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible="{path:'/PCTR/COAREA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />					
+					<Label id="LBL_PCTR" text="{i18n>PC_ID}" />
+					<Text id="TXT_PCTR" text="{parts: [{path:'/PCTR/PCTR'}, {path:'/PCTR/TXTSH'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible="{path:'/PCTR/PCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_TXTMI" text="{i18n>CC_MED_TEXT}" />
+					<Text id="TXT_TXTMI" text="{/PCTR/TXTMI}"
+						visible="{path:'/PCTR/TXTMI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRDEPT" text="{i18n>PC_DEPT}" />
+					<Text id="TXT_PCTRDEPT" text="{/PCTR/PCTRDEPT}"
+						visible="{path:'/PCTR/PCTRDEPT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRSEG" text="{i18n>PC_SEG}" />
+					<Text id="TXT_PCTRSEG" text="{parts: [{path:'/PCTR/CD_PCTRSEG/Code'}, {path:'/PCTR/CD_PCTRSEG/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PCTRSEG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRLSYS" text="{i18n>PC_LS}" />
+					<Text id="TXT_PCTRLSYS" text="{/PCTR/PCTRLSYS}"
+						visible="{path:'/PCTR/PCTRLSYS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRPCTRN" text="{i18n>PC_NPC_ID}" />
+					<Text id="TXT_PCTRPCTRN" text="{parts: [{path:'/PCTR/CD_PCTRPCTRN/Code'}, {path:'/PCTR/CD_PCTRPCTRN/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PCTRPCTRN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRRESPP" text="{i18n>PC_PRESP}" />
+					<Text id="TXT_PCTRRESPP" text="{/PCTR/PCTRRESPP}"
+						visible="{path:'/PCTR/PCTRRESPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRRESPU" text="{i18n>PC_URESP}" />
+					<Text id="TXT_PCTRRESPU"  text="{parts: [{path:'/PCTR/CD_PCTRRESPU/Code'}, {path:'/PCTR/CD_PCTRRESPU/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PCTRRESPU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<!-- Extends profit center General section for details screen -->
+					<core:ExtensionPoint name="extpcDetGenTitle">
+					</core:ExtensionPoint>
+
+					<core:Title id="pcDetAddress" text="{i18n>PC_TIT_ADDRESS}" />
+					<Label id="LBL_PC_ANRED" text="{i18n>PC_TITLE}" />
+					<Text id="TXT_PC_ANRED" text="{/PCTR/PC_ANRED}"
+						visible="{path:'/PCTR/PC_ANRED',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_NAME1" text="{i18n>PC_NAME1}" />
+					<Text id="TXT_PC_NAME1" text="{/PCTR/PC_NAME1}"
+						visible="{path:'/PCTR/PC_NAME1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_NAME2" text="{i18n>PC_NAME2}" />
+					<Text id="TXT_PC_NAME2" text="{/PCTR/PC_NAME2}"
+						visible="{path:'/PCTR/PC_NAME2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_NAME3" text="{i18n>PC_NAME3}" />
+					<Text id="TXT_PC_NAME3" text="{/PCTR/PC_NAME3}"
+						visible="{path:'/PCTR/PC_NAME3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_NAME4" text="{i18n>PC_NAME4}" />
+					<Text id="TXT_PC_NAME4" text="{/PCTR/PC_NAME4}"
+						visible="{path:'/PCTR/PC_NAME4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_STRAS" text="{i18n>PC_STREET}" />
+					<Text id="TXT_PC_STRAS" text="{/PCTR/PC_STRAS}"
+						visible="{path:'/PCTR/PC_STRAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_PSTLZ" text="{i18n>PC_PCODE}" />
+					<Text id="TXT_PC_PSTLZ" text="{/PCTR/PC_PSTLZ}"
+						visible="{path:'/PCTR/PC_PSTLZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_ORT01" text="{i18n>City}" />
+					<Text id="TXT_PC_ORT01" text="{/PCTR/PC_ORT01}"
+						visible="{path:'/PCTR/PC_ORT01',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_ORT02" text="{i18n>PC_DISCTRICT}" />
+					<Text id="TXT_PC_ORT02" text="{/PCTR/PC_ORT02}"
+						visible="{path:'/PCTR/PC_ORT02',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_LAND1" text="{i18n>Country}" />
+					<Text id="TXT_PC_LAND1" text="{parts: [{path:'/PCTR/CD_PC_LAND1/Code'}, {path:'/PCTR/CD_PC_LAND1/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PC_LAND1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_REGION" text="{i18n>PC_REGION}" />
+					<Text id="TXT_PC_REGION" text="{parts: [{path:'/PCTR/CD_PC_REGION/Code'}, {path:'/PCTR/CD_PC_REGION/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PC_REGION',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_PSTL2" text="{i18n>PC_PO_BOX_PCODE}" />
+					<Text id="TXT_PC_PSTL2" text="{/PCTR/PC_PSTL2}"
+						visible="{path:'/PCTR/PC_PSTL2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_PFACH" text="{i18n>PC_PO_BOX}" />
+					<Text id="TXT_PC_PFACH" text="{/PCTR/PC_PFACH}"
+						visible="{path:'/PCTR/PC_PFACH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PCTRTXJCD" text="{i18n>PC_TAXJUR}" />
+					<Text id="TXT_PCTRTXJCD" text="{parts: [{path:'/PCTR/CD_PCTRTXJCD/Code'}, {path:'/PCTR/CD_PCTRTXJCD/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PCTRTXJCD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<!-- Extends profit center address section for details screen -->
+					<core:ExtensionPoint name="extpcAddress">
+					</core:ExtensionPoint>
+
+					<core:Title id="pcDetComm" text="{i18n>PC_TIT_COMM}" />
+					<Label id="LBL_PC_SPRAS" text="{i18n>Language}" />
+					<Text id="TXT_PC_SPRAS" text="{parts: [{path:'/PCTR/CD_PC_SPRAS/Code'}, {path:'/PCTR/CD_PC_SPRAS/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/PCTR/PC_SPRAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELF1" text="{i18n>CC_TEL1}" />
+					<Text id="TXT_PC_TELF1" text="{/PCTR/PC_TELF1}"
+						visible="{path:'/PCTR/PC_TELF1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELF2" text="{i18n>CC_TEL2}" />
+					<Text id="TXT_PC_TELF2" text="{/PCTR/PC_TELF2}"
+						visible="{path:'/PCTR/PC_TELF2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELFX" text="{i18n>PC_FAX}" />
+					<Text id="TXT_PC_TELFX" text="{/PCTR/PC_TELFX}"
+						visible="{path:'/PCTR/PC_TELFX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELTX" text="{i18n>PC_TELTEX_NUM}" />
+					<Text id="TXT_PC_TELTX" text="{/PCTR/PC_TELTX}"
+						visible="{path:'/PCTR/PC_TELTX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELX1" text="{i18n>PC_TELEX_NUM}" />
+					<Text id="TXT_PC_TELX1" text="{/PCTR/PC_TELX1}"
+						visible="{path:'/PCTR/PC_TELX1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_TELBX" text="{i18n>PC_TELEBOX_NUM}" />
+					<Text id="TXT_PC_TELBX" text="{/PCTR/PC_TELBX}"
+						visible="{path:'/PCTR/PC_TELBX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_DRNAM" text="{i18n>PC_PRNT_NAME}" />
+					<Text id="TXT_PC_DRNAM" text="{/PCTR/PC_DRNAM}"
+						visible="{path:'/PCTR/PC_DRNAM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_PC_DATLT" text="{i18n>PC_DATALINE}" />
+					<Text id="TXT_PC_DATLT" text="{/PCTR/PC_DATLT}"
+						visible="{path:'/PCTR/PC_DATLT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<!-- Extends profit center communication section for details screen -->
+					<core:ExtensionPoint name="extpcComm">
+					</core:ExtensionPoint>
+
+					<core:Title id="pcDetInd" text="{i18n>PC_TIT_IND}" />
+					<Label id="LBL_PCTRLKIND" text="{i18n>PC_LOCK_IND}" />
+					<Text id="TXT_PCTRLKIND"
+						text="{path:'/PCTR/PCTRLKIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+						visible="{path:'/PCTR/PCTRLKIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					<!-- Extends profit center indicator section for details screen -->
+					<core:ExtensionPoint name="extpcInd">
+					</core:ExtensionPoint>
+					<!-- Extends profit center custom section for detail screen -->
+					<core:ExtensionPoint name="extpcDetailFormCustomSection">
+					</core:ExtensionPoint>					
+				</form:content>
+				
+			</form:SimpleForm>
+
+			<!-- Extends profit center form for details view -->
+			<core:ExtensionPoint name="extpcDetailSimpleForm">
+			</core:ExtensionPoint>
+				
+			<Table id="pcDetCompCodeTable" width="100%" mode="{device>/listMode}"
+				class="headerBold" headerText="{i18n>PC_TIT_CC_ASGN}">
+				<columns>
+					<Column id="colDetCompCode">
+						<header>
+							<Label text="{i18n>PC_CCODE}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="colDetPostable" hAlign="Center">
+						<header>
+							<Label text="{i18n>PC_CC_POSTABLE}">
+							</Label>
+						</header>
+					</Column>
+					<!-- Extends profit center company code table for details screen -->
+					<core:ExtensionPoint name="extpcCompCodeTable">
+					</core:ExtensionPoint>
+				</columns>
+			</Table>
+			<Table id="pcDetDescriptionTable" class="headerBold" width="100%" mode="{device>/listMode}"
+				headerText="{i18n>PC_DESC_TAB}">
+				<columns>
+					<Column id="colDetLang">
+						<header>
+							<Label text="{i18n>Language}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="colDetName" hAlign="Center">
+						<header>
+							<Label text="{i18n>PC_DESC_NAME}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="colDetMedText" hAlign="Center">
+						<header>
+							<Label text="{i18n>CC_MED_TEXT}">
+							</Label>
+						</header>
+					</Column>
+					<!-- Extends profit center description table for details screen -->
+					<core:ExtensionPoint name="extpcDescriptionTable">
+					</core:ExtensionPoint>
+				</columns>
+			</Table>
+			<List id="pcDetAttachList" class="headerBold" headerText="{i18n>PC_TIT_ATTACH}">
+				<items>
+				</items>
+			</List>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

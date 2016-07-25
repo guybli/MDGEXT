@@ -1,0 +1,171 @@
+[{
+	"MANDT": "MANDT 1",
+	"MATNR": "MATNR 1",
+	"MEINH": "MEINH 1",
+	"LFNUM": "LFNUM 1",
+	"EAN11": "EAN11 1",
+	"EANTP": "EANTP 1",
+	"HPEAN": "HPEAN 1",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 1',MEINH='MEINH 1',EAN11='EAN11 1')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 1',MEINH='MEINH 1',EAN11='EAN11 1')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 2",
+	"MATNR": "MATNR 2",
+	"MEINH": "MEINH 2",
+	"LFNUM": "LFNUM 2",
+	"EAN11": "EAN11 2",
+	"EANTP": "EANTP 2",
+	"HPEAN": "HPEAN 2",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 2',MEINH='MEINH 2',EAN11='EAN11 2')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 2',MEINH='MEINH 2',EAN11='EAN11 2')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 3",
+	"MATNR": "MATNR 3",
+	"MEINH": "MEINH 3",
+	"LFNUM": "LFNUM 3",
+	"EAN11": "EAN11 3",
+	"EANTP": "EANTP 3",
+	"HPEAN": "HPEAN 3",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 3',MEINH='MEINH 3',EAN11='EAN11 3')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 3',MEINH='MEINH 3',EAN11='EAN11 3')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 4",
+	"MATNR": "MATNR 4",
+	"MEINH": "MEINH 4",
+	"LFNUM": "LFNUM 4",
+	"EAN11": "EAN11 4",
+	"EANTP": "EANTP 4",
+	"HPEAN": "HPEAN 4",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 4',MEINH='MEINH 4',EAN11='EAN11 4')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 4',MEINH='MEINH 4',EAN11='EAN11 4')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 5",
+	"MATNR": "MATNR 5",
+	"MEINH": "MEINH 5",
+	"LFNUM": "LFNUM 5",
+	"EAN11": "EAN11 5",
+	"EANTP": "EANTP 5",
+	"HPEAN": "HPEAN 5",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 5',MEINH='MEINH 5',EAN11='EAN11 5')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 5',MEINH='MEINH 5',EAN11='EAN11 5')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 6",
+	"MATNR": "MATNR 6",
+	"MEINH": "MEINH 6",
+	"LFNUM": "LFNUM 6",
+	"EAN11": "EAN11 6",
+	"EANTP": "EANTP 6",
+	"HPEAN": "HPEAN 6",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 6',MEINH='MEINH 6',EAN11='EAN11 6')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 6',MEINH='MEINH 6',EAN11='EAN11 6')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 7",
+	"MATNR": "MATNR 7",
+	"MEINH": "MEINH 7",
+	"LFNUM": "LFNUM 7",
+	"EAN11": "EAN11 7",
+	"EANTP": "EANTP 7",
+	"HPEAN": "HPEAN 7",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 7',MEINH='MEINH 7',EAN11='EAN11 7')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 7',MEINH='MEINH 7',EAN11='EAN11 7')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 8",
+	"MATNR": "MATNR 8",
+	"MEINH": "MEINH 8",
+	"LFNUM": "LFNUM 8",
+	"EAN11": "EAN11 8",
+	"EANTP": "EANTP 8",
+	"HPEAN": "HPEAN 8",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 8',MEINH='MEINH 8',EAN11='EAN11 8')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 8',MEINH='MEINH 8',EAN11='EAN11 8')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 9",
+	"MATNR": "MATNR 9",
+	"MEINH": "MEINH 9",
+	"LFNUM": "LFNUM 9",
+	"EAN11": "EAN11 9",
+	"EANTP": "EANTP 9",
+	"HPEAN": "HPEAN 9",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 9',MEINH='MEINH 9',EAN11='EAN11 9')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 9',MEINH='MEINH 9',EAN11='EAN11 9')/ChangeData"
+		}
+	}
+}, {
+	"MANDT": "MANDT 10",
+	"MATNR": "MATNR 10",
+	"MEINH": "MEINH 10",
+	"LFNUM": "LFNUM 10",
+	"EAN11": "EAN11 10",
+	"EANTP": "EANTP 10",
+	"HPEAN": "HPEAN 10",
+	"__metadata": {
+		"uri": "MEANCollection(MATNR='MATNR 10',MEINH='MEINH 10',EAN11='EAN11 10')",
+		"type": "MDG_MATERIAL_APPROVE_CR_SRV.MEAN"
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "MEANCollection(MATNR='MATNR 10',MEINH='MEINH 10',EAN11='EAN11 10')/ChangeData"
+		}
+	}
+}]

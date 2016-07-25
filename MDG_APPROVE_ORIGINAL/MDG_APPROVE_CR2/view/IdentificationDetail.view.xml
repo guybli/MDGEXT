@@ -1,0 +1,74 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Identification Details selected 
+	in the Change scenario -->
+
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:ca="sap.ca.ui" xmlns:ui="sap.ca.ui" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="fcg.mdg.approvecrv2.view.IdentificationDetail">
+	<Page id="identificationDetailPage" showNavButton="true"
+		showFooter="false" showHeader="true" navButtonPress="PressBack"
+		enableScrolling="true">
+		<content>
+			<ObjectHeader id="identificationDetailHeader">
+				<attributes>
+					<ObjectAttribute id="identificationAttrHeader" />
+					<!-- Extension Point for Identification Detail header -->
+					<core:ExtensionPoint name="extidentificationDetailHeader" />
+				</attributes>
+			</ObjectHeader>
+			<Table id="identificationResults" mode="{device>/listMode}"
+				width="100%">
+				<columns>
+					<Column id="colIdentificationType">
+						<header>
+							<Label text="{i18n>IdentificationType}"></Label>
+						</header>
+					</Column>
+					<Column id="colIdentificationc">
+						<header>
+							<Label text="{i18n>Identification}"></Label>
+						</header>
+					</Column>
+					<Column id="colResponsibleI">
+						<header>
+							<Label text="{i18n>ResponsibleInst}"></Label>
+						</header>
+					</Column>
+					<Column id="colEntryDate" minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="{i18n>EntryDate}"></Label>
+						</header>
+					</Column>
+					<Column id="colIdentCOUNTRY" minScreenWidth="Tablet" demandPopin="true">
+						<header>
+							<Label text="{i18n>Country}"></Label>
+						</header>
+					</Column>
+					<Column id="colIdentREGION" minScreenWidth="Desktop" demandPopin="true">
+						<header>
+							<Label text="{i18n>CC_REGION}"></Label>
+						</header>
+					</Column>
+					<Column id="colIdentValidFrom" minScreenWidth="Desktop" demandPopin="true">
+						<header>
+							<Label text="{i18n>PC_VAL_FRM}" />
+						</header>
+					</Column>
+					<Column id="colIdentValidTo" minScreenWidth="Desktop" demandPopin="true">
+						<header>
+							<Label text="{i18n>PC_VAL_TO}" />
+						</header>
+					</Column>
+					<!-- Extension Point for Identification table -->
+					<core:ExtensionPoint name="extidentificationResults" />
+				</columns>
+				<!-- Extension Point for Identification additional tables -->
+				<core:ExtensionPoint name="extIdentificationAddTables" />
+			</Table>
+		</content>
+	</Page>
+</core:View>

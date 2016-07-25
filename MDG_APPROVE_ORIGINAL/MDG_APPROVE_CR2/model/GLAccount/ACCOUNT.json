@@ -1,0 +1,1211 @@
+[{
+	"COA": "COA 1",
+	"ACCOUNT": "ACCOUNT 1",
+	"ACCBLCREA": "ACCBLCREA 1",
+	"ACCBLPLAN": "ACCBLPLAN 1",
+	"ACCBLPOST": "ACCBLPOST 1",
+	"ACCDEL": "ACCDEL 1",
+	"ACCGRPACC": "ACCGRPACC 1",
+	"ACCNEWACC": "ACCNEWACC 1",
+	"ACCRESPP": "ACCRESPP 1",
+	"ACCRESPU": "ACCRESPU 1",
+	"ACCTYP": "ACCTYP 1",
+	"COMPACC": "COMPACC 1",
+	"FSIACC": "FSIACC 1",
+	"FSIACCSTA": "FSIACCSTA 1",
+	"FUNCACC": "FUNCACC 1",
+	"TXTLG": "TXTLG 1",
+	"TXTSH": "TXTSH 1",
+	"USMD_ENT_CHNG_AT": "/Date(1009518553000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 1",
+	"USMD_ENT_CRTD_AT": "/Date(1421560153000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 1",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 1',ACCOUNT='ACCOUNT 1')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 2",
+	"ACCOUNT": "ACCOUNT 2",
+	"ACCBLCREA": "ACCBLCREA 2",
+	"ACCBLPLAN": "ACCBLPLAN 2",
+	"ACCBLPOST": "ACCBLPOST 2",
+	"ACCDEL": "ACCDEL 2",
+	"ACCGRPACC": "ACCGRPACC 2",
+	"ACCNEWACC": "ACCNEWACC 2",
+	"ACCRESPP": "ACCRESPP 2",
+	"ACCRESPU": "ACCRESPU 2",
+	"ACCTYP": "ACCTYP 2",
+	"COMPACC": "COMPACC 2",
+	"FSIACC": "FSIACC 2",
+	"FSIACCSTA": "FSIACCSTA 2",
+	"FUNCACC": "FUNCACC 2",
+	"TXTLG": "TXTLG 2",
+	"TXTSH": "TXTSH 2",
+	"USMD_ENT_CHNG_AT": "/Date(1003643353000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 2",
+	"USMD_ENT_CRTD_AT": "/Date(1297835353000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 2",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 2',ACCOUNT='ACCOUNT 2')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 3",
+	"ACCOUNT": "ACCOUNT 3",
+	"ACCBLCREA": "ACCBLCREA 3",
+	"ACCBLPLAN": "ACCBLPLAN 3",
+	"ACCBLPOST": "ACCBLPOST 3",
+	"ACCDEL": "ACCDEL 3",
+	"ACCGRPACC": "ACCGRPACC 3",
+	"ACCNEWACC": "ACCNEWACC 3",
+	"ACCRESPP": "ACCRESPP 3",
+	"ACCRESPU": "ACCRESPU 3",
+	"ACCTYP": "ACCTYP 3",
+	"COMPACC": "COMPACC 3",
+	"FSIACC": "FSIACC 3",
+	"FSIACCSTA": "FSIACCSTA 3",
+	"FUNCACC": "FUNCACC 3",
+	"TXTLG": "TXTLG 3",
+	"TXTSH": "TXTSH 3",
+	"USMD_ENT_CHNG_AT": "/Date(1437976153000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 3",
+	"USMD_ENT_CRTD_AT": "/Date(1364363353000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 3",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 3',ACCOUNT='ACCOUNT 3')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 4",
+	"ACCOUNT": "ACCOUNT 4",
+	"ACCBLCREA": "ACCBLCREA 4",
+	"ACCBLPLAN": "ACCBLPLAN 4",
+	"ACCBLPOST": "ACCBLPOST 4",
+	"ACCDEL": "ACCDEL 4",
+	"ACCGRPACC": "ACCGRPACC 4",
+	"ACCNEWACC": "ACCNEWACC 4",
+	"ACCRESPP": "ACCRESPP 4",
+	"ACCRESPU": "ACCRESPU 4",
+	"ACCTYP": "ACCTYP 4",
+	"COMPACC": "COMPACC 4",
+	"FSIACC": "FSIACC 4",
+	"FSIACCSTA": "FSIACCSTA 4",
+	"FUNCACC": "FUNCACC 4",
+	"TXTLG": "TXTLG 4",
+	"TXTSH": "TXTSH 4",
+	"USMD_ENT_CHNG_AT": "/Date(1112507353000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 4",
+	"USMD_ENT_CRTD_AT": "/Date(1040795353000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 4",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 4',ACCOUNT='ACCOUNT 4')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 5",
+	"ACCOUNT": "ACCOUNT 5",
+	"ACCBLCREA": "ACCBLCREA 5",
+	"ACCBLPLAN": "ACCBLPLAN 5",
+	"ACCBLPOST": "ACCBLPOST 5",
+	"ACCDEL": "ACCDEL 5",
+	"ACCGRPACC": "ACCGRPACC 5",
+	"ACCNEWACC": "ACCNEWACC 5",
+	"ACCRESPP": "ACCRESPP 5",
+	"ACCRESPU": "ACCRESPU 5",
+	"ACCTYP": "ACCTYP 5",
+	"COMPACC": "COMPACC 5",
+	"FSIACC": "FSIACC 5",
+	"FSIACCSTA": "FSIACCSTA 5",
+	"FUNCACC": "FUNCACC 5",
+	"TXTLG": "TXTLG 5",
+	"TXTSH": "TXTSH 5",
+	"USMD_ENT_CHNG_AT": "/Date(986104153000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 5",
+	"USMD_ENT_CRTD_AT": "/Date(1185083353000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 5",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 5',ACCOUNT='ACCOUNT 5')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 6",
+	"ACCOUNT": "ACCOUNT 6",
+	"ACCBLCREA": "ACCBLCREA 6",
+	"ACCBLPLAN": "ACCBLPLAN 6",
+	"ACCBLPOST": "ACCBLPOST 6",
+	"ACCDEL": "ACCDEL 6",
+	"ACCGRPACC": "ACCGRPACC 6",
+	"ACCNEWACC": "ACCNEWACC 6",
+	"ACCRESPP": "ACCRESPP 6",
+	"ACCRESPU": "ACCRESPU 6",
+	"ACCTYP": "ACCTYP 6",
+	"COMPACC": "COMPACC 6",
+	"FSIACC": "FSIACC 6",
+	"FSIACCSTA": "FSIACCSTA 6",
+	"FUNCACC": "FUNCACC 6",
+	"TXTLG": "TXTLG 6",
+	"TXTSH": "TXTSH 6",
+	"USMD_ENT_CHNG_AT": "/Date(947915353000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 6",
+	"USMD_ENT_CRTD_AT": "/Date(995262553000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 6",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 6',ACCOUNT='ACCOUNT 6')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 7",
+	"ACCOUNT": "ACCOUNT 7",
+	"ACCBLCREA": "ACCBLCREA 7",
+	"ACCBLPLAN": "ACCBLPLAN 7",
+	"ACCBLPOST": "ACCBLPOST 7",
+	"ACCDEL": "ACCDEL 7",
+	"ACCGRPACC": "ACCGRPACC 7",
+	"ACCNEWACC": "ACCNEWACC 7",
+	"ACCRESPP": "ACCRESPP 7",
+	"ACCRESPU": "ACCRESPU 7",
+	"ACCTYP": "ACCTYP 7",
+	"COMPACC": "COMPACC 7",
+	"FSIACC": "FSIACC 7",
+	"FSIACCSTA": "FSIACCSTA 7",
+	"FUNCACC": "FUNCACC 7",
+	"TXTLG": "TXTLG 7",
+	"TXTSH": "TXTSH 7",
+	"USMD_ENT_CHNG_AT": "/Date(1495000153000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 7",
+	"USMD_ENT_CRTD_AT": "/Date(1224654553000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 7",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 7',ACCOUNT='ACCOUNT 7')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 8",
+	"ACCOUNT": "ACCOUNT 8",
+	"ACCBLCREA": "ACCBLCREA 8",
+	"ACCBLPLAN": "ACCBLPLAN 8",
+	"ACCBLPOST": "ACCBLPOST 8",
+	"ACCDEL": "ACCDEL 8",
+	"ACCGRPACC": "ACCGRPACC 8",
+	"ACCNEWACC": "ACCNEWACC 8",
+	"ACCRESPP": "ACCRESPP 8",
+	"ACCRESPU": "ACCRESPU 8",
+	"ACCTYP": "ACCTYP 8",
+	"COMPACC": "COMPACC 8",
+	"FSIACC": "FSIACC 8",
+	"FSIACCSTA": "FSIACCSTA 8",
+	"FUNCACC": "FUNCACC 8",
+	"TXTLG": "TXTLG 8",
+	"TXTSH": "TXTSH 8",
+	"USMD_ENT_CHNG_AT": "/Date(1162532953000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 8",
+	"USMD_ENT_CRTD_AT": "/Date(1082872153000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 8",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 8',ACCOUNT='ACCOUNT 8')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 9",
+	"ACCOUNT": "ACCOUNT 9",
+	"ACCBLCREA": "ACCBLCREA 9",
+	"ACCBLPLAN": "ACCBLPLAN 9",
+	"ACCBLPOST": "ACCBLPOST 9",
+	"ACCDEL": "ACCDEL 9",
+	"ACCGRPACC": "ACCGRPACC 9",
+	"ACCNEWACC": "ACCNEWACC 9",
+	"ACCRESPP": "ACCRESPP 9",
+	"ACCRESPU": "ACCRESPU 9",
+	"ACCTYP": "ACCTYP 9",
+	"COMPACC": "COMPACC 9",
+	"FSIACC": "FSIACC 9",
+	"FSIACCSTA": "FSIACCSTA 9",
+	"FUNCACC": "FUNCACC 9",
+	"TXTLG": "TXTLG 9",
+	"TXTSH": "TXTSH 9",
+	"USMD_ENT_CHNG_AT": "/Date(1305179353000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 9",
+	"USMD_ENT_CRTD_AT": "/Date(1153633753000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 9",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 9',ACCOUNT='ACCOUNT 9')/CD_COMPACC"
+		}
+	}
+}, {
+	"COA": "COA 10",
+	"ACCOUNT": "ACCOUNT 10",
+	"ACCBLCREA": "ACCBLCREA 10",
+	"ACCBLPLAN": "ACCBLPLAN 10",
+	"ACCBLPOST": "ACCBLPOST 10",
+	"ACCDEL": "ACCDEL 10",
+	"ACCGRPACC": "ACCGRPACC 10",
+	"ACCNEWACC": "ACCNEWACC 10",
+	"ACCRESPP": "ACCRESPP 10",
+	"ACCRESPU": "ACCRESPU 10",
+	"ACCTYP": "ACCTYP 10",
+	"COMPACC": "COMPACC 10",
+	"FSIACC": "FSIACC 10",
+	"FSIACCSTA": "FSIACCSTA 10",
+	"FUNCACC": "FUNCACC 10",
+	"TXTLG": "TXTLG 10",
+	"TXTSH": "TXTSH 10",
+	"USMD_ENT_CHNG_AT": "/Date(1096350553000)/",
+	"USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 10",
+	"USMD_ENT_CRTD_AT": "/Date(1222667353000)/",
+	"USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 10",
+	"__metadata": {
+		"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')",
+		"type": "MDG_GL_ACCOUNT.ACCOUNT"
+	},
+	"ACCOUNT2ACCCCDETRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2ACCCCDETRel"
+		}
+	},
+	"ACCOUNT2AtthACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2AtthACCOUNTRel"
+		}
+	},
+	"ACCOUNT2CELEMRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2CELEMRel"
+		}
+	},
+	"ACCOUNT2DTxtACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2DTxtACCOUNTRel"
+		}
+	},
+	"ACCOUNT2NEWACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2NEWACCOUNTRel"
+		}
+	},
+	"ACCOUNT2PLACCOUNTRel": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ACCOUNT2PLACCOUNTRel"
+		}
+	},
+	"CD_ACCBLCREA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCBLCREA"
+		}
+	},
+	"CD_ACCBLPLAN": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCBLPLAN"
+		}
+	},
+	"CD_ACCBLPOST": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCBLPOST"
+		}
+	},
+	"CD_ACCDEL": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCDEL"
+		}
+	},
+	"CD_ACCTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCTYP"
+		}
+	},
+	"CD_COA": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_COA"
+		}
+	},
+	"ChangeData": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/ChangeData"
+		}
+	},
+	"CD_ACCRESPU": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCRESPU"
+		}
+	},
+	"CD_ACCNEWACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCNEWACC"
+		}
+	},
+	"CD_ACCPLTYP": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCPLTYP"
+		}
+	},
+	"CD_USMD_ENT_CRTD_BY": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_USMD_ENT_CRTD_BY"
+		}
+	},
+	"CD_ACCGRPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_ACCGRPACC"
+		}
+	},
+	"CD_COMPACC": {
+		"__deferred": {
+			"uri": "ACCOUNTCollection(COA='COA 10',ACCOUNT='ACCOUNT 10')/CD_COMPACC"
+		}
+	}
+}]

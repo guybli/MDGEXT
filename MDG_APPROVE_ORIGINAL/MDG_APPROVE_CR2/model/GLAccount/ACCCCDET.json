@@ -1,0 +1,630 @@
+[
+  {
+    "COA": "COA 1",
+    "ACCOUNT": "ACCOUNT 1",
+    "COMPCODE": "COMPCODE 1",
+    "ACCALTACC": "ACCALTACC 1",
+    "ACCAUTHGP": "ACCAUTHGP 1",
+    "ACCAUTPOS": "ACCAUTPOS 1",
+    "ACCBALLC": "ACCBALLC 1",
+    "ACCBKACC": "ACCBKACC 1",
+    "ACCBUSAB": "ACCBUSAB 1",
+    "ACCCASHFL": "ACCCASHFL 1",
+    "ACCCBLPOS": "ACCCBLPOS 1",
+    "ACCCDEL": "ACCCDEL 1",
+    "ACCEXCHRD": "ACCEXCHRD 1",
+    "ACCFIPOS": "ACCFIPOS 1",
+    "ACCFSTGRP": "ACCFSTGRP 1",
+    "ACCHOUSBK": "ACCHOUSBK 1",
+    "ACCICFREQ": "ACCICFREQ 1",
+    "ACCICIND": "ACCICIND 1",
+    "ACCINFKEY": "ACCINFKEY 1",
+    "ACCLIDISP": "ACCLIDISP 1",
+    "ACCOPNITM": "ACCOPNITM 1",
+    "ACCPLLEV": "ACCPLLEV 1",
+    "ACCRECIND": "ACCRECIND 1",
+    "ACCSRTKEY": "ACCSRTKEY 1",
+    "ACCTAXCAT": "ACCTAXCAT 1",
+    "ACCTOLGRP": "ACCTOLGRP 1",
+    "ACCTXCOPT": "ACCTXCOPT 1",
+    "ACCVALGRP": "ACCVALGRP 1",
+    "ACCWMETH": "ACCWMETH 1",
+    "ACCXMITK": "ACCXMITK 1",
+    "ACCXNKON": "ACCXNKON 1",
+    "CURRACC": "CURRACC 1",
+    "USMD_ENT_CHNG_AT": 3721.07,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 1",
+    "USMD_ENT_CRTD_AT": 2520.51,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 1"
+  },
+  {
+    "COA": "COA 2",
+    "ACCOUNT": "ACCOUNT 2",
+    "COMPCODE": "COMPCODE 2",
+    "ACCALTACC": "ACCALTACC 2",
+    "ACCAUTHGP": "ACCAUTHGP 2",
+    "ACCAUTPOS": "ACCAUTPOS 2",
+    "ACCBALLC": "ACCBALLC 2",
+    "ACCBKACC": "ACCBKACC 2",
+    "ACCBUSAB": "ACCBUSAB 2",
+    "ACCCASHFL": "ACCCASHFL 2",
+    "ACCCBLPOS": "ACCCBLPOS 2",
+    "ACCCDEL": "ACCCDEL 2",
+    "ACCEXCHRD": "ACCEXCHRD 2",
+    "ACCFIPOS": "ACCFIPOS 2",
+    "ACCFSTGRP": "ACCFSTGRP 2",
+    "ACCHOUSBK": "ACCHOUSBK 2",
+    "ACCICFREQ": "ACCICFREQ 2",
+    "ACCICIND": "ACCICIND 2",
+    "ACCINFKEY": "ACCINFKEY 2",
+    "ACCLIDISP": "ACCLIDISP 2",
+    "ACCOPNITM": "ACCOPNITM 2",
+    "ACCPLLEV": "ACCPLLEV 2",
+    "ACCRECIND": "ACCRECIND 2",
+    "ACCSRTKEY": "ACCSRTKEY 2",
+    "ACCTAXCAT": "ACCTAXCAT 2",
+    "ACCTOLGRP": "ACCTOLGRP 2",
+    "ACCTXCOPT": "ACCTXCOPT 2",
+    "ACCVALGRP": "ACCVALGRP 2",
+    "ACCWMETH": "ACCWMETH 2",
+    "ACCXMITK": "ACCXMITK 2",
+    "ACCXNKON": "ACCXNKON 2",
+    "CURRACC": "CURRACC 2",
+    "USMD_ENT_CHNG_AT": 4679.13,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 2",
+    "USMD_ENT_CRTD_AT": 5004.72,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 2"
+  },
+  {
+    "COA": "COA 3",
+    "ACCOUNT": "ACCOUNT 3",
+    "COMPCODE": "COMPCODE 3",
+    "ACCALTACC": "ACCALTACC 3",
+    "ACCAUTHGP": "ACCAUTHGP 3",
+    "ACCAUTPOS": "ACCAUTPOS 3",
+    "ACCBALLC": "ACCBALLC 3",
+    "ACCBKACC": "ACCBKACC 3",
+    "ACCBUSAB": "ACCBUSAB 3",
+    "ACCCASHFL": "ACCCASHFL 3",
+    "ACCCBLPOS": "ACCCBLPOS 3",
+    "ACCCDEL": "ACCCDEL 3",
+    "ACCEXCHRD": "ACCEXCHRD 3",
+    "ACCFIPOS": "ACCFIPOS 3",
+    "ACCFSTGRP": "ACCFSTGRP 3",
+    "ACCHOUSBK": "ACCHOUSBK 3",
+    "ACCICFREQ": "ACCICFREQ 3",
+    "ACCICIND": "ACCICIND 3",
+    "ACCINFKEY": "ACCINFKEY 3",
+    "ACCLIDISP": "ACCLIDISP 3",
+    "ACCOPNITM": "ACCOPNITM 3",
+    "ACCPLLEV": "ACCPLLEV 3",
+    "ACCRECIND": "ACCRECIND 3",
+    "ACCSRTKEY": "ACCSRTKEY 3",
+    "ACCTAXCAT": "ACCTAXCAT 3",
+    "ACCTOLGRP": "ACCTOLGRP 3",
+    "ACCTXCOPT": "ACCTXCOPT 3",
+    "ACCVALGRP": "ACCVALGRP 3",
+    "ACCWMETH": "ACCWMETH 3",
+    "ACCXMITK": "ACCXMITK 3",
+    "ACCXNKON": "ACCXNKON 3",
+    "CURRACC": "CURRACC 3",
+    "USMD_ENT_CHNG_AT": 3822.1,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 3",
+    "USMD_ENT_CRTD_AT": 2424.24,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 3",
+    "__metadata": {
+      "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')",
+      "type": "MDG_GL_ACCOUNT.ACCCCDET"
+    },
+    "ACCCCDET2AtthACCCCDETRel": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/ACCCCDET2AtthACCCCDETRel"
+      }
+    },
+    "CD_ACCAUTPOS": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCAUTPOS"
+      }
+    },
+    "CD_ACCBALLC": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCBALLC"
+      }
+    },
+    "CD_ACCCASHFL": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCCASHFL"
+      }
+    },
+    "CD_ACCCBLPOS": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCCBLPOS"
+      }
+    },
+    "CD_ACCCDEL": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCCDEL"
+      }
+    },
+    "CD_ACCEXCHRD": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCEXCHRD"
+      }
+    },
+    "CD_ACCFSTGRP": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCFSTGRP"
+      }
+    },
+    "CD_ACCICFREQ": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCICFREQ"
+      }
+    },
+    "CD_ACCLIDISP": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCLIDISP"
+      }
+    },
+    "CD_ACCOPNITM": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCOPNITM"
+      }
+    },
+    "CD_ACCRECIND": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCRECIND"
+      }
+    },
+    "CD_ACCTXCOPT": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCTXCOPT"
+      }
+    },
+    "CD_ACCWMETH": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCWMETH"
+      }
+    },
+    "CD_ACCXMITK": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCXMITK"
+      }
+    },
+    "CD_ACCXNKON": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCXNKON"
+      }
+    },
+    "CD_COA": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_COA"
+      }
+    },
+    "CD_COMPCODE": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_COMPCODE"
+      }
+    },
+    "ChangeData": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/ChangeData"
+      }
+    },
+    "CD_CURRACC": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_CURRACC"
+      }
+    },
+    "CD_ACCTAXCAT": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCTAXCAT"
+      }
+    },
+    "CD_ACCPLLEV": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCPLLEV"
+      }
+    },
+    "CD_ACCICIND": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_ACCICIND"
+      }
+    },
+    "CD_UOMCELEM": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 3',ACCOUNT='ACCOUNT 3',COMPCODE='COMPCODE 3')/CD_UOMCELEM"
+      }
+    }
+  },
+  {
+    "COA": "COA 4",
+    "ACCOUNT": "ACCOUNT 4",
+    "COMPCODE": "COMPCODE 4",
+    "ACCALTACC": "ACCALTACC 4",
+    "ACCAUTHGP": "ACCAUTHGP 4",
+    "ACCAUTPOS": "ACCAUTPOS 4",
+    "ACCBALLC": "ACCBALLC 4",
+    "ACCBKACC": "ACCBKACC 4",
+    "ACCBUSAB": "ACCBUSAB 4",
+    "ACCCASHFL": "ACCCASHFL 4",
+    "ACCCBLPOS": "ACCCBLPOS 4",
+    "ACCCDEL": "ACCCDEL 4",
+    "ACCEXCHRD": "ACCEXCHRD 4",
+    "ACCFIPOS": "ACCFIPOS 4",
+    "ACCFSTGRP": "ACCFSTGRP 4",
+    "ACCHOUSBK": "ACCHOUSBK 4",
+    "ACCICFREQ": "ACCICFREQ 4",
+    "ACCICIND": "ACCICIND 4",
+    "ACCINFKEY": "ACCINFKEY 4",
+    "ACCLIDISP": "ACCLIDISP 4",
+    "ACCOPNITM": "ACCOPNITM 4",
+    "ACCPLLEV": "ACCPLLEV 4",
+    "ACCRECIND": "ACCRECIND 4",
+    "ACCSRTKEY": "ACCSRTKEY 4",
+    "ACCTAXCAT": "ACCTAXCAT 4",
+    "ACCTOLGRP": "ACCTOLGRP 4",
+    "ACCTXCOPT": "ACCTXCOPT 4",
+    "ACCVALGRP": "ACCVALGRP 4",
+    "ACCWMETH": "ACCWMETH 4",
+    "ACCXMITK": "ACCXMITK 4",
+    "ACCXNKON": "ACCXNKON 4",
+    "CURRACC": "CURRACC 4",
+    "USMD_ENT_CHNG_AT": 8725.28,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 4",
+    "USMD_ENT_CRTD_AT": 4727.81,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 4",
+    "__metadata": {
+      "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')",
+      "type": "MDG_GL_ACCOUNT.ACCCCDET"
+    },
+    "ACCCCDET2AtthACCCCDETRel": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/ACCCCDET2AtthACCCCDETRel"
+      }
+    },
+    "CD_ACCAUTPOS": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCAUTPOS"
+      }
+    },
+    "CD_ACCBALLC": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCBALLC"
+      }
+    },
+    "CD_ACCCASHFL": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCCASHFL"
+      }
+    },
+    "CD_ACCCBLPOS": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCCBLPOS"
+      }
+    },
+    "CD_ACCCDEL": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCCDEL"
+      }
+    },
+    "CD_ACCEXCHRD": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCEXCHRD"
+      }
+    },
+    "CD_ACCFSTGRP": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCFSTGRP"
+      }
+    },
+    "CD_ACCICFREQ": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCICFREQ"
+      }
+    },
+    "CD_ACCLIDISP": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCLIDISP"
+      }
+    },
+    "CD_ACCOPNITM": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCOPNITM"
+      }
+    },
+    "CD_ACCRECIND": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCRECIND"
+      }
+    },
+    "CD_ACCTXCOPT": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCTXCOPT"
+      }
+    },
+    "CD_ACCWMETH": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCWMETH"
+      }
+    },
+    "CD_ACCXMITK": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCXMITK"
+      }
+    },
+    "CD_ACCXNKON": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCXNKON"
+      }
+    },
+    "CD_COA": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_COA"
+      }
+    },
+    "CD_COMPCODE": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_COMPCODE"
+      }
+    },
+    "ChangeData": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/ChangeData"
+      }
+    },
+    "CD_CURRACC": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_CURRACC"
+      }
+    },
+    "CD_ACCTAXCAT": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCTAXCAT"
+      }
+    },
+    "CD_ACCPLLEV": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCPLLEV"
+      }
+    },
+    "CD_ACCICIND": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_ACCICIND"
+      }
+    },
+    "CD_UOMCELEM": {
+      "__deferred": {
+        "uri": "ACCCCDETCollection(COA='COA 4',ACCOUNT='ACCOUNT 4',COMPCODE='COMPCODE 4')/CD_UOMCELEM"
+      }
+    }
+  },
+  {
+    "COA": "COA 5",
+    "ACCOUNT": "ACCOUNT 5",
+    "COMPCODE": "COMPCODE 5",
+    "ACCALTACC": "ACCALTACC 5",
+    "ACCAUTHGP": "ACCAUTHGP 5",
+    "ACCAUTPOS": "ACCAUTPOS 5",
+    "ACCBALLC": "ACCBALLC 5",
+    "ACCBKACC": "ACCBKACC 5",
+    "ACCBUSAB": "ACCBUSAB 5",
+    "ACCCASHFL": "ACCCASHFL 5",
+    "ACCCBLPOS": "ACCCBLPOS 5",
+    "ACCCDEL": "ACCCDEL 5",
+    "ACCEXCHRD": "ACCEXCHRD 5",
+    "ACCFIPOS": "ACCFIPOS 5",
+    "ACCFSTGRP": "ACCFSTGRP 5",
+    "ACCHOUSBK": "ACCHOUSBK 5",
+    "ACCICFREQ": "ACCICFREQ 5",
+    "ACCICIND": "ACCICIND 5",
+    "ACCINFKEY": "ACCINFKEY 5",
+    "ACCLIDISP": "ACCLIDISP 5",
+    "ACCOPNITM": "ACCOPNITM 5",
+    "ACCPLLEV": "ACCPLLEV 5",
+    "ACCRECIND": "ACCRECIND 5",
+    "ACCSRTKEY": "ACCSRTKEY 5",
+    "ACCTAXCAT": "ACCTAXCAT 5",
+    "ACCTOLGRP": "ACCTOLGRP 5",
+    "ACCTXCOPT": "ACCTXCOPT 5",
+    "ACCVALGRP": "ACCVALGRP 5",
+    "ACCWMETH": "ACCWMETH 5",
+    "ACCXMITK": "ACCXMITK 5",
+    "ACCXNKON": "ACCXNKON 5",
+    "CURRACC": "CURRACC 5",
+    "USMD_ENT_CHNG_AT": 4331.52,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 5",
+    "USMD_ENT_CRTD_AT": 8470.29,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 5"
+  },
+  {
+    "COA": "COA 6",
+    "ACCOUNT": "ACCOUNT 6",
+    "COMPCODE": "COMPCODE 6",
+    "ACCALTACC": "ACCALTACC 6",
+    "ACCAUTHGP": "ACCAUTHGP 6",
+    "ACCAUTPOS": "ACCAUTPOS 6",
+    "ACCBALLC": "ACCBALLC 6",
+    "ACCBKACC": "ACCBKACC 6",
+    "ACCBUSAB": "ACCBUSAB 6",
+    "ACCCASHFL": "ACCCASHFL 6",
+    "ACCCBLPOS": "ACCCBLPOS 6",
+    "ACCCDEL": "ACCCDEL 6",
+    "ACCEXCHRD": "ACCEXCHRD 6",
+    "ACCFIPOS": "ACCFIPOS 6",
+    "ACCFSTGRP": "ACCFSTGRP 6",
+    "ACCHOUSBK": "ACCHOUSBK 6",
+    "ACCICFREQ": "ACCICFREQ 6",
+    "ACCICIND": "ACCICIND 6",
+    "ACCINFKEY": "ACCINFKEY 6",
+    "ACCLIDISP": "ACCLIDISP 6",
+    "ACCOPNITM": "ACCOPNITM 6",
+    "ACCPLLEV": "ACCPLLEV 6",
+    "ACCRECIND": "ACCRECIND 6",
+    "ACCSRTKEY": "ACCSRTKEY 6",
+    "ACCTAXCAT": "ACCTAXCAT 6",
+    "ACCTOLGRP": "ACCTOLGRP 6",
+    "ACCTXCOPT": "ACCTXCOPT 6",
+    "ACCVALGRP": "ACCVALGRP 6",
+    "ACCWMETH": "ACCWMETH 6",
+    "ACCXMITK": "ACCXMITK 6",
+    "ACCXNKON": "ACCXNKON 6",
+    "CURRACC": "CURRACC 6",
+    "USMD_ENT_CHNG_AT": 8064.85,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 6",
+    "USMD_ENT_CRTD_AT": 9372.22,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 6"
+  },
+  {
+    "COA": "COA 7",
+    "ACCOUNT": "ACCOUNT 7",
+    "COMPCODE": "COMPCODE 7",
+    "ACCALTACC": "ACCALTACC 7",
+    "ACCAUTHGP": "ACCAUTHGP 7",
+    "ACCAUTPOS": "ACCAUTPOS 7",
+    "ACCBALLC": "ACCBALLC 7",
+    "ACCBKACC": "ACCBKACC 7",
+    "ACCBUSAB": "ACCBUSAB 7",
+    "ACCCASHFL": "ACCCASHFL 7",
+    "ACCCBLPOS": "ACCCBLPOS 7",
+    "ACCCDEL": "ACCCDEL 7",
+    "ACCEXCHRD": "ACCEXCHRD 7",
+    "ACCFIPOS": "ACCFIPOS 7",
+    "ACCFSTGRP": "ACCFSTGRP 7",
+    "ACCHOUSBK": "ACCHOUSBK 7",
+    "ACCICFREQ": "ACCICFREQ 7",
+    "ACCICIND": "ACCICIND 7",
+    "ACCINFKEY": "ACCINFKEY 7",
+    "ACCLIDISP": "ACCLIDISP 7",
+    "ACCOPNITM": "ACCOPNITM 7",
+    "ACCPLLEV": "ACCPLLEV 7",
+    "ACCRECIND": "ACCRECIND 7",
+    "ACCSRTKEY": "ACCSRTKEY 7",
+    "ACCTAXCAT": "ACCTAXCAT 7",
+    "ACCTOLGRP": "ACCTOLGRP 7",
+    "ACCTXCOPT": "ACCTXCOPT 7",
+    "ACCVALGRP": "ACCVALGRP 7",
+    "ACCWMETH": "ACCWMETH 7",
+    "ACCXMITK": "ACCXMITK 7",
+    "ACCXNKON": "ACCXNKON 7",
+    "CURRACC": "CURRACC 7",
+    "USMD_ENT_CHNG_AT": 1196.73,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 7",
+    "USMD_ENT_CRTD_AT": 7172.63,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 7"
+  },
+  {
+    "COA": "COA 8",
+    "ACCOUNT": "ACCOUNT 8",
+    "COMPCODE": "COMPCODE 8",
+    "ACCALTACC": "ACCALTACC 8",
+    "ACCAUTHGP": "ACCAUTHGP 8",
+    "ACCAUTPOS": "ACCAUTPOS 8",
+    "ACCBALLC": "ACCBALLC 8",
+    "ACCBKACC": "ACCBKACC 8",
+    "ACCBUSAB": "ACCBUSAB 8",
+    "ACCCASHFL": "ACCCASHFL 8",
+    "ACCCBLPOS": "ACCCBLPOS 8",
+    "ACCCDEL": "ACCCDEL 8",
+    "ACCEXCHRD": "ACCEXCHRD 8",
+    "ACCFIPOS": "ACCFIPOS 8",
+    "ACCFSTGRP": "ACCFSTGRP 8",
+    "ACCHOUSBK": "ACCHOUSBK 8",
+    "ACCICFREQ": "ACCICFREQ 8",
+    "ACCICIND": "ACCICIND 8",
+    "ACCINFKEY": "ACCINFKEY 8",
+    "ACCLIDISP": "ACCLIDISP 8",
+    "ACCOPNITM": "ACCOPNITM 8",
+    "ACCPLLEV": "ACCPLLEV 8",
+    "ACCRECIND": "ACCRECIND 8",
+    "ACCSRTKEY": "ACCSRTKEY 8",
+    "ACCTAXCAT": "ACCTAXCAT 8",
+    "ACCTOLGRP": "ACCTOLGRP 8",
+    "ACCTXCOPT": "ACCTXCOPT 8",
+    "ACCVALGRP": "ACCVALGRP 8",
+    "ACCWMETH": "ACCWMETH 8",
+    "ACCXMITK": "ACCXMITK 8",
+    "ACCXNKON": "ACCXNKON 8",
+    "CURRACC": "CURRACC 8",
+    "USMD_ENT_CHNG_AT": 1340.6,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 8",
+    "USMD_ENT_CRTD_AT": 910.96,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 8"
+  },
+  {
+    "COA": "COA 9",
+    "ACCOUNT": "ACCOUNT 9",
+    "COMPCODE": "COMPCODE 9",
+    "ACCALTACC": "ACCALTACC 9",
+    "ACCAUTHGP": "ACCAUTHGP 9",
+    "ACCAUTPOS": "ACCAUTPOS 9",
+    "ACCBALLC": "ACCBALLC 9",
+    "ACCBKACC": "ACCBKACC 9",
+    "ACCBUSAB": "ACCBUSAB 9",
+    "ACCCASHFL": "ACCCASHFL 9",
+    "ACCCBLPOS": "ACCCBLPOS 9",
+    "ACCCDEL": "ACCCDEL 9",
+    "ACCEXCHRD": "ACCEXCHRD 9",
+    "ACCFIPOS": "ACCFIPOS 9",
+    "ACCFSTGRP": "ACCFSTGRP 9",
+    "ACCHOUSBK": "ACCHOUSBK 9",
+    "ACCICFREQ": "ACCICFREQ 9",
+    "ACCICIND": "ACCICIND 9",
+    "ACCINFKEY": "ACCINFKEY 9",
+    "ACCLIDISP": "ACCLIDISP 9",
+    "ACCOPNITM": "ACCOPNITM 9",
+    "ACCPLLEV": "ACCPLLEV 9",
+    "ACCRECIND": "ACCRECIND 9",
+    "ACCSRTKEY": "ACCSRTKEY 9",
+    "ACCTAXCAT": "ACCTAXCAT 9",
+    "ACCTOLGRP": "ACCTOLGRP 9",
+    "ACCTXCOPT": "ACCTXCOPT 9",
+    "ACCVALGRP": "ACCVALGRP 9",
+    "ACCWMETH": "ACCWMETH 9",
+    "ACCXMITK": "ACCXMITK 9",
+    "ACCXNKON": "ACCXNKON 9",
+    "CURRACC": "CURRACC 9",
+    "USMD_ENT_CHNG_AT": 4792.03,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 9",
+    "USMD_ENT_CRTD_AT": 420.05,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 9"
+  },
+  {
+    "COA": "COA 10",
+    "ACCOUNT": "ACCOUNT 10",
+    "COMPCODE": "COMPCODE 10",
+    "ACCALTACC": "ACCALTACC 10",
+    "ACCAUTHGP": "ACCAUTHGP 10",
+    "ACCAUTPOS": "ACCAUTPOS 10",
+    "ACCBALLC": "ACCBALLC 10",
+    "ACCBKACC": "ACCBKACC 10",
+    "ACCBUSAB": "ACCBUSAB 10",
+    "ACCCASHFL": "ACCCASHFL 10",
+    "ACCCBLPOS": "ACCCBLPOS 10",
+    "ACCCDEL": "ACCCDEL 10",
+    "ACCEXCHRD": "ACCEXCHRD 10",
+    "ACCFIPOS": "ACCFIPOS 10",
+    "ACCFSTGRP": "ACCFSTGRP 10",
+    "ACCHOUSBK": "ACCHOUSBK 10",
+    "ACCICFREQ": "ACCICFREQ 10",
+    "ACCICIND": "ACCICIND 10",
+    "ACCINFKEY": "ACCINFKEY 10",
+    "ACCLIDISP": "ACCLIDISP 10",
+    "ACCOPNITM": "ACCOPNITM 10",
+    "ACCPLLEV": "ACCPLLEV 10",
+    "ACCRECIND": "ACCRECIND 10",
+    "ACCSRTKEY": "ACCSRTKEY 10",
+    "ACCTAXCAT": "ACCTAXCAT 10",
+    "ACCTOLGRP": "ACCTOLGRP 10",
+    "ACCTXCOPT": "ACCTXCOPT 10",
+    "ACCVALGRP": "ACCVALGRP 10",
+    "ACCWMETH": "ACCWMETH 10",
+    "ACCXMITK": "ACCXMITK 10",
+    "ACCXNKON": "ACCXNKON 10",
+    "CURRACC": "CURRACC 10",
+    "USMD_ENT_CHNG_AT": 2509.87,
+    "USMD_ENT_CHNG_BY": "USMD_ENT_CHNG_BY 10",
+    "USMD_ENT_CRTD_AT": 1189.77,
+    "USMD_ENT_CRTD_BY": "USMD_ENT_CRTD_BY 10"
+  }
+]

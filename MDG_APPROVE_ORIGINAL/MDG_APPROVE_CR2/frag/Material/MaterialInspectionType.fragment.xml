@@ -1,0 +1,95 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matPlntInspectTypeLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matPlntInspectTypeForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<Label id="Lbl_APA" text="{i18n>Mat_Pref_InspTyp}"></Label>
+						<Text id="Txt_APA" text="{/APA__TXT}" maxLines="0"
+					                        visible="{path:'/APA__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_AKTIV" text="{i18n>Mat_Active}"></Label>
+						<Text id="Txt_AKTIV" text="{path:'/AKTIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/AKTIV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_INSMK_Q" text="{i18n>Mat_Post_InspctnStck}"></Label>
+						<Text id="Txt_INSMK_Q" text="{path:'/INSMK_Q',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/INSMK_Q',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					    <Label id="Lbl_AFR" text="{i18n>Mat_Insp_HndUnit}"></Label>
+						<Text id="Txt_AFR" text="{path:'/AFR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/AFR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+						<Label id="Lbl_SPEZUEBER" text="{i18n>Mat_Insp_MatSpcfc}"></Label>
+						<Text id="Txt_SPEZUEBER" text="{path:'/SPEZUEBER',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/SPEZUEBER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					   <Label id="Lbl_PPL" text="{i18n>Mat_Insp_TaskList}"></Label>
+						<Text id="Txt_PPL" text="{path:'/PPL',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/PPL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text> 
+						<Label id="Lbl_MS_FLAG" text="{i18n>Mat_MultiSpecs}"></Label>
+						<Text id="Txt_MS_FLAG" text="{path:'/MS_FLAG',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/MS_FLAG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					    <Label id="Lbl_CONF" text="{i18n>Mat_Insp_Config}"></Label>
+						<Text id="Txt_CONF" text="{path:'/CONF',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/CONF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>                   
+						<Label id="Lbl_APP" text="{i18n>Mat_AutoAssignmnt}"></Label>
+						<Text id="Txt_APP" text="{path:'/APP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/APP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MER" text="{i18n>Mat_ChkCharctrstc}"></Label>
+						<Text id="Txt_MER" text="{path:'/MER',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/MER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_STICHPRVE" text="{i18n>Mat_SamplPrcdr}"></Label>
+						<Text id="Txt_STICHPRVE" text="{parts: [{path:'/STICHPRVE'}, {path:'/STICHPRVE__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/STICHPRVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_HPZ" text="{i18n>Mat_FullInspectn}"></Label>
+						<Text id="Txt_HPZ" text="{path:'/HPZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/HPZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_SPROZ" text="{i18n>Mat_InspctnPrcntg}"></Label>
+						<Text id="Txt_SPROZ" text="{/SPROZ}" maxLines="0"
+					                        visible="{path:'/SPROZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_MST" text="{i18n>Mat_Manual_SmplCal}"></Label>
+						<Text id="Txt_MST" text="{path:'/MST',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/MST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MPB" text="{i18n>Mat_Manual_SmplEntry}"></Label>
+						<Text id="Txt_MPB" text="{path:'/MPB',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/MPB',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_DYNREGEL" text="{i18n>Mat_ModifRule}"></Label>
+						<Text id="Txt_DYNREGEL" text="{parts: [{path:'/DYNREGEL'}, {path:'/DYNREGEL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/DYNREGEL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_DYN" text="{i18n>Mat_SkipAllowd}"></Label>
+						<Text id="Txt_DYN" text="{path:'/DYN',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/DYN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_AVE" text="{i18n>Mat_AutoUsgDscn}"></Label>
+						<Text id="Txt_AVE" text="{path:'/AVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/AVE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_EIN" text="{i18n>Mat_SrlNo_Psbl}"></Label>
+						<Text id="Txt_EIN" text="{path:'/EIN',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/EIN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MPDAU" text="{i18n>Mat_Avg_InspDur}"></Label>
+						<Text id="Txt_MPDAU" text="{/MPDAU}" visible="{path:'/MPDAU',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_QKZVERF" text="{i18n>Mat_QltyScr_Prcdr}"></Label>
+						<Text id="Txt_QKZVERF" text="{parts: [{path:'/QKZVERF'}, {path:'/QKZVERF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" maxLines="0"
+					                        visible="{path:'/QKZVERF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_QPMAT" text="{i18n>Mat_AllwdScrap_Shr}"></Label>
+						<Text id="Txt_QPMAT" text="{/QPMAT}" visible="{path:'/QPMAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_CHG" text="{i18n>Mat_CtrlInspLot}"></Label>
+						<Text id="Txt_CHG" text="{parts: [{path:'/CHG'}, {path:'/CHG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}" maxLines="0"
+					                        visible="{path:'/CHG__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_KZPRFKOST" text="{i18n>Mat_IndivQltyMgmt_Ordr}"></Label>
+						<Text id="Txt_KZPRFKOST" text="{path:'/KZPRFKOST',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" maxLines="0"
+					                        visible="{path:'/KZPRFKOST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_AUFNR_CO" text="{i18n>Mat_QltyMgmt_Ordr}"></Label>
+						<Text id="Txt_AUFNR_CO" text="{path: '/AUFNR_CO',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" maxLines="0"
+					                        visible="{path:'/AUFNR_CO',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					    <!-- Extension Point for Inspection type form -->
+						<core:ExtensionPoint name="extmatPlntInspectTypeForm"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				<!-- Extension Point for Inspection type layout -->
+				<core:ExtensionPoint name="extmatPlntInspectTypeLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

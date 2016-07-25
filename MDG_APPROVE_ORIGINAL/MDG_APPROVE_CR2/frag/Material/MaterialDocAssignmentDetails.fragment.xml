@@ -1,0 +1,44 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" 
+	xmlns:f="sap.ui.layout.form">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+		 <Title id="Txt_Document" titleStyle="H2"></Title>
+			<UploadCollection id="Dfileupload" multiple="true" items="{json>/dataitems}"
+						showSeparators="All" uploadEnabled="false">
+						<UploadCollectionItem contributor="{json>contributor}"
+							visibleDelete="false" visibleEdit="false" documentId="documentId"
+							fileName="{json>filename}" mimeType="{json>mimeType}"
+							uploadedDate="{json>uploaded}"  url="{json>url}" />
+			</UploadCollection>
+                <Table id="MatDocAssignmentTextTable" 
+		               inset="false" width="100%">
+		        	<headerToolbar>
+								<Toolbar>
+									<Title class="sapThemeFontSize" id="MatDocAssignmentText" text="{i18n>Mat_Txt}"></Title>
+								</Toolbar>
+							</headerToolbar>       
+		            <columns>
+			            <Column >
+			            <header>
+						<Text text="{i18n>Mat_Language}" />
+						</header>
+			        </Column>
+			        <Column>
+			            <header>
+						<Text text="{i18n>Mat_Txt}" />
+						</header>
+			        </Column>
+			        <!-- Extension Point for Document Assignment Text Table-->
+			        <core:ExtensionPoint name="extMatDocAssignmentTextTable"></core:ExtensionPoint>
+			        </columns>
+                </Table>
+                <!-- Table for Document Text -->
+			</l:content>
+	    </l:Grid>
+</core:FragmentDefinition>

@@ -1,0 +1,28 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" 
+	xmlns:f="sap.ui.layout.form">
+                <Table id="MatWarehouseTable" 
+		               inset="false" width="100%">
+		             <headerToolbar>
+                        <Toolbar >
+                            <Title width="100%" text="{i18n>Warehouses}" class="sapThemeFontSize"></Title>
+                            <Button id="WarehousepersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+                        </Toolbar>
+                    </headerToolbar>
+		            <columns>
+			            <Column id="Warehouse_Name">
+			            <header>
+							<Label text="{i18n>Warehouse}" />
+						</header>
+			        </Column>
+			        <!-- Extension Point for Warehouse table  -->
+					<core:ExtensionPoint name="extMatWarehouseTable"></core:ExtensionPoint>
+			        </columns>
+                </Table>
+</core:FragmentDefinition>

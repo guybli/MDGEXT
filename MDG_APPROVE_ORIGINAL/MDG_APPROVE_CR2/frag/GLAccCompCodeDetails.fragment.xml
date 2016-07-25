@@ -1,0 +1,221 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--This is the fragement which shows the data for Company Code details in both Create and Change Scenario. At runtime, this fragment is loaded in Company Code tab if 
+there is only a single Company Code (in create scenario) in GLAccountCreate.js or this is loaded in GLAccountCompCode controller in case of multiple Company Codes.
+In case of Change scenario, this is only loaded in GLAccountCompCode.controller.-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content>
+ 
+		<form:SimpleForm id="glCCControlData"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+                    <Label id="LBL_COMPCODE" text="{i18n>GL_COMP_CODE}" />
+					<Text id="TXT_COMPCODE" text="{parts: [{path:'/COMPCODE'}, {path:'/COMPCODE__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/COMPCODE__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCCGenData"></core:ExtensionPoint>
+					
+					<core:Title id="glCntrlData" text="{i18n>ControlData}" />
+                    <Title  id="glDetACCCntrlCC" text = "{i18n>GL_DET_ACC_CNTRL_CC}">
+                      <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+                     </Title>
+
+					<Label id="LBL_CURRACC" text="{i18n>GL_DET_ACC_CURR}" />
+					<Text id="TXT_CURRACC" text="{parts: [{path:'/CURRACC'}, {path:'/CURRACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/CURRACC__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+
+					<Label id="LBL_ACCBALLC" text="{i18n>GL_DET_BAL_LCL_CURR}" />
+					<Text id="TXT_ACCBALLC" text="{/ACCBALLC__TXT}"
+					visible = "{path:'/ACCBALLC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCEXCHRD" text="{i18n>GL_ACC_EXCG_RATE}" />
+					<Text id="TXT_ACCEXCHRD" text="{parts: [{path:'/ACCEXCHRD'}, {path:'/ACCEXCHRD__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCEXCHRD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCVALGRP" text="{i18n>GL_VAL_GRP}" />
+					<Text id="TXT_ACCVALGRP" text="{/ACCVALGRP}" 
+					visible = "{path:'/ACCVALGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCTAXCAT" text="{i18n>GL_DET_TAX_CAT}" />
+					<Text id="TXT_ACCTAXCAT" text="{parts: [{path:'/ACCTAXCAT'}, {path:'/ACCTAXCAT__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCTAXCAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCTXCOPT" text="{i18n>GL_POS_WO_TAX}" />
+					<Text id="TXT_ACCTXCOPT" text="{path : '/ACCTXCOPT',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCTXCOPT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCRECIND" text="{i18n>GL_REC_ACC_TYPE}" />
+					<Text id="TXT_ACCRECIND" text="{/ACCRECIND__TXT}" 
+					visible = "{path:'/ACCRECIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+
+					<Label id="LBL_ACCALTACC" text="{i18n>GL_ALT_ACC_NUM}" />
+					<Text id="TXT_ACCALTACC" text="{parts: [{path:'/ACCALTACC'}, {path:'/ACCALTACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCALTACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCINFKEY" text="{i18n>GL_ACC_INF_KEY}" />
+					<Text id="TXT_ACCINFKEY" text="{parts: [{path:'/ACCINFKEY'}, {path:'/ACCINFKEY__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/ACCINFKEY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+				
+					<Label id="LBL_ACCTOLGRP" text="{i18n>GL_ACC_TOL_GRP}" />
+					<Text id="TXT_ACCTOLGRP" text="{/ACCTOLGRP__TXT}"
+					visible = "{path:'/ACCTOLGRP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCWMETH" text="{i18n>GL_ACC_MNGD_EXT_SYS}" />
+					<Text id="TXT_ACCWMETH" text="{path : '/ACCWMETH',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCWMETH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCCAccCntrlCC"></core:ExtensionPoint>
+			
+				<Label></Label>
+				<Title id="glDetACCMgmntCC" text="{i18n>GL_DET_ACC_MGMNT_CC}">
+				    <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+				</Title>
+	
+				   	<Label id="LBL_ACCOPNITM" text="{i18n>GL_OPN_ITM_MGMNT}" />
+					<Text id="TXT_ACCOPNITM" text="{path : '/ACCOPNITM',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCOPNITM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+
+					<Label id="LBL_ACCLIDISP" text="{i18n>GL_DET_LINE_DISP}" />
+					<Text id="TXT_ACCLIDISP" text="{/ACCLIDISP__TXT}"
+					visible = "{path:'/ACCLIDISP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCSRTKEY" text="{i18n>GL_ACC_SRT_KEY}" />
+					<Text id="TXT_ACCSRTKEY" text="{parts: [{path:'/ACCSRTKEY'}, {path:'/ACCSRTKEY__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCSRTKEY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+
+					<Label id="LBL_ACCAUTHGP" text="{i18n>GL_ACC_AUTH_GRP}" />
+					<Text id="TXT_ACCAUTHGP" text="{parts: [{path:'/ACCAUTHGP'}, {path:'/ACCAUTHGP__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCAUTHGP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<core:ExtensionPoint name="extglCCAccMgmntCC"></core:ExtensionPoint>
+					
+					<core:ExtensionPoint name="extglCCControlData"></core:ExtensionPoint>
+
+					<!-- Account in Company Code Additional Data -->
+					<core:Title id="glCCAddtnlDataTitle" text="{i18n>AdditionalData}" />
+
+					<Title id="glDetCntrlDocCreatn" text="{i18n>GL_DET_CNTRL_DOC_CREATN}">
+					    <layoutData>
+                        <l:GridData  indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+					</Title>
+					
+					<Label id="LBL_ACCFSTGRP" text="{i18n>GL_DET_FLD_STATUS_GRP}" />
+					<Text id="TXT_ACCFSTGRP" text="{parts: [{path:'/ACCFSTGRP'}, {path:'/ACCFSTGRP__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCFSTGRP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCAUTPOS" text="{i18n>GL_DET_AUTO_POST}" />
+					<Text id="TXT_ACCAUTPOS" text="{/ACCAUTPOS__TXT}"
+					visible = "{path:'/ACCAUTPOS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label></Label>
+					
+					<Label id="LBL_ACCXNKON" text="{i18n>GL_SUP_AUT_POS}" />
+					<Text id="TXT_ACCXNKON" text="{path : '/ACCXNKON',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCXNKON',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCXMITK" text="{i18n>GL_RCNSL_ACC_IN}" />
+					<Text id="TXT_ACCXMITK" text="{path : '/ACCXMITK',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCXMITK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCCDocCreation"></core:ExtensionPoint>
+					
+					<Label></Label>
+				
+					<Title id="glDetBankFinCC" text="{i18n>GL_DET_BANK_FIN_CC}">
+					     <layoutData>
+                        <l:GridData  indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+					</Title>
+					
+					<Label id="LBL_ACCPLLEV" text="{i18n>GL_DET_PLAN_LEVEL}" />
+					<Text id="TXT_ACCPLLEV" text="{parts: [{path:'/ACCPLLEV'}, {path:'/ACCPLLEV__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCPLLEV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<Label id="LBL_ACCCASHFL" text="{i18n>GL_DET_CASH_FLOW}" />
+					<Text id="TXT_ACCCASHFL" text="{path :'/ACCCASHFL', 
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}" 
+					visible = "{path:'/ACCCASHFL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCHOUSBK" text="{i18n>GL_HOUS_BK}" />
+					<Text id="TXT_ACCHOUSBK" text="{parts: [{path:'/ACCHOUSBK'}, {path:'/ACCHOUSBK__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCHOUSBK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label></Label>
+					
+					<Label id="LBL_ACCBKACC" text="{i18n>GL_ACC_ID}" />
+					<Text id="TXT_ACCBKACC" text="{parts: [{path:'/ACCBKACC'}, {path:'/ACCBKACC__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCBKACC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCCBankFin"></core:ExtensionPoint>
+					
+					<Label></Label>
+
+				    <Title id="glDetInterestCalc" text="{i18n>GL_DET_INT_CALC_INFO}">
+					    <layoutData>
+                        <l:GridData  indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+					</Title>
+
+					<Label id="LBL_ACCICIND" text="{i18n>GL_DET_INT_CAL_IND}" />
+					<Text id="TXT_ACCICIND"  text="{parts: [{path:'/ACCICIND'}, {path:'/ACCICIND__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/ACCICIND',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_ACCICFREQ" text="{i18n>GL_DET_INT_CAL_FREQ}" />
+					<Text id="TXT_ACCICFREQ" text="{/ACCICFREQ__TXT}"
+					visible = "{path:'/ACCICFREQ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCCIntCalInfo"></core:ExtensionPoint>
+			
+			        <core:ExtensionPoint name="extglCCAddtnlData"></core:ExtensionPoint>
+			        
+				</form:content>
+
+			</form:SimpleForm>
+			
+				<core:ExtensionPoint name="extglCCFormData"></core:ExtensionPoint>
+		
+
+			<List class="headerBold" id="glCCAttach">
+        		<headerToolbar>
+        			<Toolbar>
+        				<Title text="{i18n>GL_TT_CC_ATT}" class="sapThemeFontSize"></Title>
+        			</Toolbar>
+        		</headerToolbar>
+				<items>
+				</items>
+			</List>
+
+
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

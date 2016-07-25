@@ -1,0 +1,36 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding Role Details selected in the Change scenario  -->
+
+<core:View xmlns:core="sap.ui.core" xmlns:l="sap.ui.layout"
+	xmlns:ca="sap.ca.ui" xmlns:ui="sap.ca.ui" xmlns="sap.m" xmlns:form="sap.ui.layout.form"
+	controllerName="fcg.mdg.approvecrv2.view.RoleDetail">
+	<Page id="roleDetailPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+		<ObjectHeader id="roleDetailHeader" >
+		<attributes>
+          <ObjectAttribute id="roleAttrHeader" />
+          <!-- Extension Point for Role Detail header -->
+				<core:ExtensionPoint name="extroleAttrHeader" />
+          </attributes>
+          </ObjectHeader>
+			<Table id="roleResults" mode="{device>/listMode}" width="100%">
+				<columns>
+					<Column id="colrole">
+						<header>
+							<Label text="{i18n>Role}"></Label>
+						</header>
+					</Column>
+				<!-- Extension Point for Role table -->
+						<core:ExtensionPoint name="extroleResults" />
+				</columns>
+				<!-- Extension Point for Role additional tables -->
+					<core:ExtensionPoint name="extRoleAddTables" />
+			</Table>
+		</content>
+	</Page>
+</core:View>

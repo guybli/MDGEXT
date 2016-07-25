@@ -1,0 +1,509 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matCreateLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			
+					<f:SimpleForm columnsL="1" editable="false" emptySpanL="0" emptySpanM="0" id="matBasicDataForm" labelSpanL="5" labelSpanM="5" maxContainerCols="1"
+					layout="ResponsiveGridLayout" minWidth="1024">
+						<f:content>
+						<!--Change management-->
+						<core:Title id="CreateChngMgmttit" text="{i18n>Mat_Chnge_Mgmt}"></core:Title>
+						<Label id="Lbl_ECOCHGMNG" text="{i18n>Mat_Chng_no}"></Label>
+						<Text id="Txt_ECOCHGMNG"
+							text="{parts: [{path:'/ECOCHGMNG'}, {path:'/ECOCHGMNG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/ECOCHGMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_VALID_FROM" text="{i18n>Mat_Valid_Frm}"></Label>
+						<Text id="Txt_VALID_FROM" text="{path:'/VALID_FROM',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/VALID_FROM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_REVCHGMNG" text="{i18n>Mat_Revision_Level}"></Label>
+						<Text id="Txt_REVCHGMNG" text="{/REVCHGMNG}" visible="{path:'/REVCHGMNG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Change management-->
+					<core:ExtensionPoint name="extCreateChngMgmttit"></core:ExtensionPoint>
+						<core:Title design="Bold" id="Mat_Basic_Data_title" text="{i18n>Mat_Basic_Data}"></core:Title>
+						<Label id="Lbl_MATERIAL" text="{i18n>Material}"></Label>
+						<Text id="Txt_MATERIAL" maxLines="0"
+							text="{parts: [{path:'/MATERIAL'}, {path:'/TXTMI'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MATERIAL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MEINS" text="{i18n>Mat_Basic_Measure}"></Label>
+						<Text id="Txt_MEINS" maxLines="0"
+							text="{parts: [{path:'/MEINS'}, {path:'/MEINS__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MEINS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MTART" text="{i18n>Mat_Type}"></Label>
+						<Text id="Txt_MTART" maxLines="0"
+							text="{parts: [{path:'/MTART'}, {path:'/MTART__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MTART',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MBRSH" text="{i18n>Mat_Indus_Sec}"></Label>
+						<Text id="Txt_MBRSH" maxLines="0"
+							text="{parts: [{path:'/MBRSH'}, {path:'/MBRSH__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MBRSH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MATKL" text="{i18n>Mat_Group}"></Label>
+						<Text id="Txt_MATKL" maxLines="0"
+							text="{parts: [{path:'/MATKL'}, {path:'/MATKL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MATKL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BISMT" text="{i18n>Mat_Old_Mat_No}"></Label>
+						<Text id="Txt_BISMT" maxLines="0" text="{/BISMT}"
+							visible="{path:'/BISMT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_BEGRU" text="{i18n>Mat_Auth_Group}"></Label>
+						<Text id="Txt_BEGRU" maxLines="0" text="{/BEGRU}"
+							visible="{path:'/BEGRU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MSTAE" text="{i18n>Mat_Stat_Valid}"></Label>
+						<Text id="Txt_MSTAE" maxLines="0"
+							text="{parts: [{path:'/MSTAE'}, {path:'/MSTAE__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MSTAE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MSTDE" text="{i18n>Mat_Plant_Valid}"></Label>
+						<Text id="Txt_MSTDE" maxLines="0" text="{path:'/MSTDE',formatter:'fcg.mdg.approvecrv2.util.Formatter.matDateFormat'}"
+							visible="{path:'/MSTDE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_XCHPFMARA" text="{i18n>Mat_Bat_Mgmt}"></Label>
+						<Text id="Txt_XCHPFMARA" maxLines="0" text="{path:'/XCHPFMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/XCHPFMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					   <Label id="Lbl_SERLV" text="{i18n>Mat_Serial_Level}"></Label>
+						<Text id="Txt_SERLV" maxLines="0"
+							text="{parts: [{path:'/SERLV'}, {path:'/SERLV__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/SERLV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_XGCHPMARA" text="{i18n>Mat_Aprov_Bat_Rec}"></Label>
+						<Text id="Txt_XGCHPMARA" maxLines="0" text="{path:'/XGCHPMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/XGCHPMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_SPART" text="{i18n>Mat_Division}"></Label>
+						<Text id="Txt_SPART" maxLines="0"
+							text="{parts: [{path:'/SPART'}, {path:'/SPART__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/SPART',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					 <Label></Label>
+					 	<!-- Extension Point for general data-->
+					<core:ExtensionPoint name="extMat_Basic_Data_title"></core:ExtensionPoint>
+						<!--ATP-->
+						<Title design="Bold" id="CreateMatATPTitle" text="{i18n>Mat_ATP}" >
+					<layoutData>
+					<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+						<core:Title design="Bold" id="CreateMatATPCoreTitle" text="{i18n>Mat_ATP}"></core:Title>
+					<Label id="Lbl_KOSCH" text="{i18n>Mat_Product_Allocation}"></Label>
+					<Text id="Txt_KOSCH" maxLines="0"
+							text="{parts: [{path:'/KOSCH'}, {path:'/KOSCH__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/KOSCH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					 <Label></Label>
+					 	<!-- Extension Point for atp-->
+				<core:ExtensionPoint name="extCreateMatATPTitle"></core:ExtensionPoint>
+						<!--grouping	-->
+						<Title design="Bold" id="idGrouping" text="{i18n>Mat_Grouping}" >
+					<layoutData>
+					<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			</layoutData>
+					</Title>
+						<core:Title design="Bold" id="idGroupingCoreTitle" text="{i18n>Mat_Grouping}"></core:Title>
+						<Label id="Lbl_EXTWG" text="{i18n>Ext_Mat_Group}"></Label>
+						<Text id="Txt_EXTWG"
+							text="{parts: [{path:'/EXTWG'}, {path:'/EXTWG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/EXTWG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PRDHA" text="{i18n>Mat_Product_Hier}"></Label>
+						<Text id="Txt_PRDHA"
+							text="{parts: [{path:'/PRDHA'}, {path:'/PRDHA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/PRDHA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MTPOSMARA" text="{i18n>Mat_Generic_item_Hier}"></Label>
+						<Text id="Txt_MTPOSMARA"
+							text="{parts: [{path:'/MTPOSMARA'}, {path:'/MTPOSMARA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MTPOSMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_MAGRVMARA" text="{i18n>Mat_Group_pack}"></Label>
+						<Text id="Txt_MAGRVMARA"
+							text="{parts: [{path:'/MAGRVMARA'}, {path:'/MAGRVMARA__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/MAGRVMARA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+	     
+	                    <Label></Label>
+					<!-- Extension Point for grouping-->
+					<core:ExtensionPoint name="extidGroupingCoreTitle"></core:ExtensionPoint>
+						<!--design data-->
+						<Title design="Bold" id="idmatDesign_Data" text="{i18n>Mat_Design_Data}">
+							<layoutData>
+					<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+						<core:Title design="Bold" id="idmatDesign_DataCoreTitle" text="{i18n>Mat_Design_Data}"></core:Title>
+						<Label id="Lbl_LABOR" text="{i18n>Mat_Lab}"></Label>
+						<Text id="Txt_LABOR"
+							text="{parts: [{path:'/LABOR'}, {path:'/LABOR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LABOR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_NORMT" text="{i18n>Mat_Indus_Std_Desc}"></Label>
+						<Text id="Txt_NORMT" text="{/NORMT}" visible="{path:'/NORMT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_WRKST" text="{i18n>Mat_Basic}"></Label>
+						<Text id="Txt_WRKST" text="{/WRKST}" visible="{path:'/WRKST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_FERTH" text="{i18n>Mat_Prod_Memo}"></Label>
+						<Text id="Txt_FERTH" text="{/FERTH}" visible="{path:'/FERTH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_FORMT" text="{i18n>Mat_Format_Prod_Memo}"></Label>
+						<Text id="Txt_FORMT" text="{/FORMT}" visible="{path:'/FORMT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_CADKZ" text="{i18n>Mat_Cad_Indicator}"></Label>
+						<Text id="Txt_CADKZ" text="{/CADKZ__TXT}"
+							visible="{path:'/CADKZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+                        <Label></Label>
+					<!-- Extension Point for design data-->
+					<core:ExtensionPoint name="extidmatDesign_DataCoreTitle"></core:ExtensionPoint>
+						<!--configuration-->
+						<Title design="Bold" id="idMat_Configuration" text="{i18n>Mat_Configuration}">
+							<layoutData>
+					<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+						<core:Title design="Bold" id="idMat_ConfigurationCoreTitle" text="{i18n>Mat_Configuration}"></core:Title>
+						<Label id="Lbl_SATNR" text="{i18n>Mat_Cross_Config_Mat}"></Label>
+						<Text id="Txt_SATNR" text="{path:'/SATNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+							visible="{path:'/SATNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_KZKFG" text="{i18n>Mat_Config}"></Label>
+						<Text id="Txt_KZKFG" text="{/KZKFG__TXT}"
+							visible="{path:'/KZKFG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					  <Label></Label>
+					<!-- Extension Point for configuration-->
+					<core:ExtensionPoint name="extidMat_ConfigurationCoreTitle"></core:ExtensionPoint>
+						<!--environment-->
+						<Title design="Bold" id="idMat_Environment" text="{i18n>Mat_Environment}">
+						<layoutData>
+					<l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+					<core:Title design="Bold" id="idMat_EnvironmentCoreTitle" text="{i18n>Mat_Environment}"></core:Title>
+						<Label id="Lbl_KZUMW" text="{i18n>Mat_Environment_Relevance}"></Label>
+						<Text id="Txt_KZUMW" text="{/KZUMW__TXT}"
+							visible="{path:'/KZUMW',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_PROFL" text="{i18n>Mat_Dangerous_Good_Indicator}"></Label>
+						<Text id="Txt_PROFL"
+							text="{parts: [{path:'/PROFL'}, {path:'/PROFL__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/PROFL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+				<!-- Extension Point for environment-->
+				<core:ExtensionPoint name="extidMat_EnvironmentCoreTitle"></core:ExtensionPoint>
+					<core:ExtensionPoint name="extmatBasicDataForm"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				<Panel expandable="true" id="matGtinPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Dimension}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<Table id="matDimensionTable" inset="false">
+							<headerToolbar>
+							<Toolbar>
+							<Title width="100%" class="sapThemeFontSize"></Title>
+							<Button id="DimensionpersIcon" icon="sap-icon://person-placeholder"
+												tap="onPersoButtonPressed" tooltip="{i18n>PERSONALIZE_TOOLTIP}" />
+							</Toolbar>
+							</headerToolbar>
+							<columns>
+								<Column id="Dim_Quantity">
+									<Text text="{i18n>Mat_Quantity}"/>
+								</Column>
+								<Column id="Dim_Unit_Measure">
+									<Text text="{i18n>Mat_Unit_Measure}"/>
+								</Column>
+								<Column id="Dim_Base_Quantity">
+									<Text text="{i18n>Mat_Base_Quantity}"/>
+								</Column>
+								<Column id="Dim_Base_Unit_Measure">
+									<Text text="{i18n>Mat_Base_Unit_Measure}"/>
+								</Column>
+								<Column id="Dim_UPC">
+									<Text text="{i18n>Mat_UPC}"/>
+								</Column>
+								<Column id="Dim_Main_EAN">
+									<Text text="{i18n>Mat_Main_EAN}"/>
+								</Column>
+						<!-- Extension Point for DimensionTable-->
+						<core:ExtensionPoint name="extmatDimensionTable"></core:ExtensionPoint>
+							</columns>
+						</Table>
+					<!-- Extension Point for Dimension Panel-->
+					<core:ExtensionPoint name="extmatGtinPanel"></core:ExtensionPoint>
+					</content>
+				</Panel>
+				<Panel expandable="true" id="matClassificationPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Classification}"/>
+						</Toolbar>
+					</headerToolbar>
+					<!--<l:Grid defaultSpan="L12 M12 S12" width="auto">-->
+						<content>
+							<f:SimpleForm columnsL="1" columnsM="1" editable="true" emptySpanL="0" emptySpanM="0" id="ClassTypeForm" labelSpanL="5" labelSpanM="5"
+								layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+								<f:content>
+									<Label id="Lbl_Change_No" labelFor="matClfChangeno" text="{i18n>Mat_Change_No}"></Label>
+									<ComboBox id="matClfChangeno" width="auto">
+										<core:Item key="{changeno}" text="{changeno}"/>
+									</ComboBox>
+									<Input enabled="false" id="matCCValidity"/>
+									<Label id="Lbl_Class_Type" text="{i18n>Mat_Class_Type}" vertical-align="bottom"></Label>
+									<ComboBox id="Combo_Class_Type" width="auto">
+										<core:Item key="{classtype}" text="{classtype_txt}"/>
+									</ComboBox>
+							<!-- Extension Point for Class form-->
+							<core:ExtensionPoint name="extClassTypeForm"></core:ExtensionPoint>
+								</f:content>
+							</f:SimpleForm>
+							<Table id="idClasificationTable" inset="false">
+							<headerToolbar>
+							<Toolbar>
+								<Title class="sapThemeFontSize" text="{i18n>Mat_Class}"></Title>
+								</Toolbar>
+							</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>Mat_Class_Column}"/>
+										</header>
+									</Column>
+									<Column demandPopin="true">
+										<header>
+											<Label text="{i18n>Mat_Status}"/>
+										</header>
+									</Column>
+									<Column demandPopin="true">
+										<header>
+											<Label text="{i18n>Mat_class_longtxt}"/>
+										</header>
+									</Column>
+							<!-- Extension Point for ClasificationTable-->
+							<core:ExtensionPoint name="extidClasificationTable"></core:ExtensionPoint>
+								</columns>
+							</Table>
+							<Table id="idCharacteristicTable" inset="false">
+							<headerToolbar>
+							<Toolbar>
+								<Title class="sapThemeFontSize" text="{i18n>Mat_Class_Characteristic}"></Title>
+								</Toolbar>
+							</headerToolbar>
+								<columns>
+									<Column mergeDuplicates="true">
+										<Label text="{i18n>Mat_Characteristic_Column}"/>
+									</Column>
+									<Column demandPopin="true">
+										<Label text="{i18n>Mat_Char_Value}"/>
+									</Column>
+							<!-- Extension Point for CharacteristicTable-->
+							<core:ExtensionPoint name="extidCharacteristicTable"></core:ExtensionPoint>
+								</columns>
+							</Table>
+						</content>
+					<!--</l:Grid>-->
+			<!-- Extension Point for ClassificationPanel-->
+			<core:ExtensionPoint name="extmatClassificationPanel"></core:ExtensionPoint>
+				</Panel>
+				<Panel expandable="true" expanded="false" id="matPurchasingPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Purchasing}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+					<!--<l:HorizontalLayout>-->
+				<f:SimpleForm id="matpurchasingform" 
+                        				  maxContainerCols="1" minWidth="1024"  layout="ResponsiveGridLayout"
+                        				  labelSpanL="5" labelSpanM="5" emptySpanL="0" emptySpanM="0" columnsL="1" columnsM="1" >
+                        				  
+                            	<f:content>
+								<Label id="Lbl_BSTME" text="{i18n>Pur_Order}"></Label>
+								<Text id="Txt_BSTME"
+									text="{parts: [{path:'/BSTME'}, {path:'/BSTME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/BSTME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_VABME" text="{i18n>Pur_Order_Var}"></Label>
+								<Text id="Txt_VABME"
+									text="{parts: [{path:'/VABME'}, {path:'/VABME__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/VABME',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_EKWSL" text="{i18n>Pur_Key}"></Label>
+								<Text id="Txt_EKWSL" text="{/EKWSL}"
+									visible="{path:'/EKWSL',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MAHN1" text="{i18n>Pur_First_Reminder}"></Label>
+								<Text id="Txt_MAHN1"
+									text="{path: '/MAHN1',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN1',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_MAHN2" text="{i18n>Pur_Sec_Reminder}"></Label>
+								<Text id="Txt_MAHN2"
+									text="{path: '/MAHN2',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN2',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_MAHN3" text="{i18n>Pur_Third_Reminder}"></Label>
+								<Text id="Txt_MAHN3"
+									text="{path:'/MAHN3',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/MAHN3',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_WELFZ" text="{i18n>Pur_Del_Date}"></Label>
+								<Text id="Txt_WELFZ" text="{path: '/WELFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.matPurchDays'}"
+									visible="{path:'/WELFZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UNTTO" text="{i18n>Pur_Under_Del}"></Label>
+								<Text id="Txt_UNTTO" text="{/UNTTO} %"
+									visible="{path:'/UNTTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UEBTO" text="{i18n>Pur_Order_Del}"></Label>
+								<Text id="Txt_UEBTO" text="{/UEBTO} %"
+									visible="{path:'/UEBTO',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_WEPRZ" text="{i18n>Pur_Del_Quantity}"></Label>
+								<Text id="Txt_WEPRZ" text="{/WEPRZ} %"
+									visible="{path:'/WEPRZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+								<Label id="Lbl_UEBTK" text="{i18n>Pur_Del_Alllowed}"></Label>
+								<Text id="Txt_UEBTK" text="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+									visible="{path:'/UEBTK',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_KZABS" text="{i18n>Pur_Ack_Req}"></Label>
+								<Text id="Txt_KZABS" text="{path:'/KZABS',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+									visible="{path:'/KZABS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+										<Label id="Lbl_NRFHG" text="{i18n>Pur_Qualify_Dis}"></Label>
+									<Text id="Txt_NRFHG"
+									text="{parts: [{path:'/NRFHG'}, {path:'/NRFHG__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/NRFHG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label></Label>
+								<!--procurement-->
+								<Title design="Bold" id="idPur_Procurement" text="{i18n>Pur_Procurement}">
+									<layoutData>
+				     	<l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+				     	</l:GridData>
+			          </layoutData>
+				    	</Title>
+								<Label id="Lbl_MFRPN" text="{i18n>Pur_Part_no}"></Label>
+								<Text id="Txt_MFRPN" text="{/MFRPN}"
+									visible="{path:'/MFRPN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MPROF" text="{i18n>Pur_Part_Profile}"></Label>
+								<Text id="Txt_MPROF"
+									text="{parts: [{path:'/MPROF'}, {path:'/MPROF__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/MPROF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_MFRNR" text="{i18n>Pur_Manufacturer}"></Label>
+							<Text id="Txt_MFRNR" text="{path:'/MFRNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}"
+							visible="{path:'/MFRNR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label></Label>
+							<!-- Extension Point for Procurement-->
+							<core:ExtensionPoint name="extidPur_Procurement"></core:ExtensionPoint>
+								<!--quality management-->
+								<Title design="Bold" id="idPur_Quality_Management" text="{i18n>Pur_Quality_Management}">
+									<layoutData>
+					<l:GridData indent = "L1 M1 S0" linebreakL= "true" linebreakM= "true" linebreakS= "true">
+					</l:GridData>
+			       </layoutData>
+					</Title>
+					<Label id="Lbl_QMPUR" text="{i18n>Pur_QM_Procurement}"></Label>
+						<Text id="Txt_QMPUR" maxLines="0" text="{path:'/QMPUR',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+							visible="{path:'/QMPUR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+								<Label id="Lbl_RBNRM" text="{i18n>Pur_Catalog_Profile}"></Label>
+								<Text id="Txt_RBNRM"
+									text="{parts: [{path:'/RBNRM'}, {path:'/RBNRM__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+									visible="{path:'/RBNRM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Quality Management-->
+						<core:ExtensionPoint name="extidPur_Quality_Management"></core:ExtensionPoint>
+							</f:content>
+						</f:SimpleForm>
+					<!--</l:HorizontalLayout>-->
+				<!-- Extension Point for Purchasing Panel-->
+				<core:ExtensionPoint name="extmatPurchasingPanel"></core:ExtensionPoint>
+					</content>
+				</Panel>
+				<Panel expandable="true" id="matNotesPanel" class="sapUiNoContentPadding">
+					<headerToolbar>
+						<Toolbar>
+							<Label design="Bold" text="{i18n>Mat_Txt_Comnt}"/>
+						</Toolbar>
+					</headerToolbar>
+					<content>
+						<Table id="matNotesDescTable" itemPress="" width="100%" xmlns="sap.m">
+							<headerToolbar>
+								<Toolbar>
+									<Title class="sapThemeFontSize" text="{i18n>Mat_Txt_Description}"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<!-- sap.m.Toolbar, since 1.16 -->
+							<columns>
+								<Column mergeDuplicates="true">
+									<Text text="{i18n>Mat_Language}"/>
+								</Column>
+								<Column >
+									<Text text="{i18n>Mat_Txt}"/>
+								</Column>
+						<!-- Extension Point for description table-->
+						<core:ExtensionPoint name="extmatNotesDescTable"></core:ExtensionPoint>
+							</columns>
+						</Table>
+						<Table id="matNotesBasTxtTable" itemPress="" xmlns="sap.m">
+							<headerToolbar>
+								<Toolbar>
+									<Title class="sapThemeFontSize" text="{i18n>Mat_Basic_Txt}"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<!-- sap.m.Toolbar, since 1.16 -->
+							<columns>
+							<Column  >
+									<Text text="{i18n>Mat_Language}"/>
+								</Column>
+								<Column >
+									<Text text="{i18n>Mat_Txt}"/>
+								</Column>
+						<!-- Extension Point for basic text table-->
+						<core:ExtensionPoint name="extmatNotesBasTxtTable"></core:ExtensionPoint>
+							</columns>
+						</Table>
+						<Table id="matNotesIntComntTable" itemPress="" width="100%" xmlns="sap.m">
+							<headerToolbar>
+								<Toolbar>
+									<Title class="sapThemeFontSize" text="{i18n>Mat_Internal_Comment}"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<!-- sap.m.Toolbar, since 1.16 -->
+							<columns>
+								<Column mergeDuplicates="true" >
+									<Text text="{i18n>Mat_Language}"/>
+								</Column>
+								<Column demandPopin="true" >
+									<Text text="{i18n>Mat_Txt}"/>
+								</Column>
+						<!-- Extension Point for internal comnt-->
+						<core:ExtensionPoint name="extmatNotesIntComntTable"></core:ExtensionPoint>
+							</columns>
+							<!-- sap.m.Column -->
+						</Table>
+						<Table id="matNotesPurchasingOrderTable" itemPress="" width="100%" xmlns="sap.m">
+							<headerToolbar>
+								<Toolbar>
+									<Title level="H2" text="{i18n>Mat_Purch_Order_Txt}"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<!-- sap.m.Toolbar, since 1.16 -->
+							<columns>
+								<Column mergeDuplicates="true" >
+									<Text text="{i18n>Mat_Language}"/>
+								</Column>
+								<Column demandPopin="true" >
+									<Text text="{i18n>Mat_Txt}"/>
+								</Column>
+						<!-- Extension Point for purchasing order-->
+						<core:ExtensionPoint name="extmatNotesPurchasingOrderTable"></core:ExtensionPoint>
+							</columns>
+							<!-- sap.m.Column -->
+						</Table>
+						<Table id="matNotesQualityTable" itemPress="" width="100%" xmlns="sap.m">
+							<headerToolbar>
+								<Toolbar>
+									<Title class="sapThemeFontSize" text="{i18n>Mat_Quality_Inspection}"></Title>
+								</Toolbar>
+							</headerToolbar>
+							<!-- sap.m.Toolbar, since 1.16 -->
+							<columns>
+								<Column mergeDuplicates="true" >
+									<Text text="{i18n>Mat_Language}"/>
+								</Column>
+								<Column demandPopin="true">
+									<Text text="{i18n>Mat_Txt}"/>
+								</Column>
+								<!-- Extension Point for quality inspection table-->
+								<core:ExtensionPoint name="extmatNotesQualityTable"></core:ExtensionPoint>
+							</columns>
+							<!-- sap.m.Column -->
+						</Table>
+						<!-- Extension Point for long text panel-->
+						<core:ExtensionPoint name="extmatNotesPanel"></core:ExtensionPoint>
+					</content>
+				</Panel>
+					<!-- Extension Point for create layout-->
+				<core:ExtensionPoint name="extmatCreateLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

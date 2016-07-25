@@ -1,0 +1,1061 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<edmx:Edmx Version="1.0" xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema Namespace="MDG_MATERIAL_APPROVE_CR_SRV" sap:schema-version="1" xml:lang="en" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+			<EntityType Name="Attachment" m:HasStream="true" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID"/>
+					<PropertyRef Name="CreatedAt"/>
+				</Key>
+				<Property MaxLength="12" Name="ChangeRequestID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="FileName" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="18" Name="MimeType" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="CreatedBy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="CreatedAt" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Time Stamp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Link" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="Note" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID"/>
+				</Key>
+				<Property MaxLength="12" Name="ChangeRequestID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="CreatedBy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Text" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="CreatedAt" Nullable="false" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Time Stamp"
+					sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ChangeRequest" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID"/>
+				</Key>
+				<Property Name="Edition" Nullable="false" Type="MDG_MATERIAL_APPROVE_CR_SRV.Edition"/>
+				<Property MaxLength="12" Name="ChangeRequestID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Change Request" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="ChangeRequestDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (Long)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="Status" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Status"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="StatusDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="DataModel" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Data Model"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="Priority" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Priority"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="PriorityDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="Reason" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Reason"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ReasonDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="CreatedAt" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Time Stamp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ChangedAt" Precision="0" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Time Stamp"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="Duedate" Precision="8" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Due Date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="Action" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="USMD_ACTION"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="LastProcessedBy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="USMD_LAST_APPROVED" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="LastProcessedByDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="9" Name="MainEntity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Entity Type"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="MainEntityText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="12" Name="CreatedBy" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="User"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="CreatedByDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Complete name" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="10" Name="OTC" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Bus.Object Type"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ObjectKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="ObjectList" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="2" Name="NumberOfAttachments" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="NumberOfNotes" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<NavigationProperty FromRole="FromRole_ChangeRequestToAttachment" Name="Attachments"
+					Relationship="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequestToAttachment" ToRole="ToRole_ChangeRequestToAttachment"/>
+				<NavigationProperty FromRole="FromRole_ChangeRequestToNote" Name="Notes" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequestToNote"
+					ToRole="ToRole_ChangeRequestToNote"/>
+				<NavigationProperty FromRole="FromRole_CRToMARA" Name="MARA" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.CRToMARA" ToRole="ToRole_CRToMARA"/>
+			</EntityType>
+			<EntityType Name="ChangeData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID"/>
+					<PropertyRef Name="Entity"/>
+					<PropertyRef Name="Attribute"/>
+				</Key>
+				<Property MaxLength="12" Name="ChangeRequestID" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Change Request" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Entity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Entity Type"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="30" Name="Attribute" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Attribute"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="EntityAction" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="USMD_ENTITY_ACTION" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="EntityDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Description (medium)"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="NewValue" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="NEW_VALUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property Name="OldValue" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="OLD_VALUE"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="AttributeDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="ChangeKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="OldValueText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="NewValueText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="Context" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:sortable="false"
+					sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="Action" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="UsmdCrequest"/>
+					<PropertyRef Name="UsmdCrAction"/>
+				</Key>
+				<Property MaxLength="12" Name="UsmdCrequest" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="USMD_CREQUEST" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="2" Name="UsmdCrAction" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Action"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="60" Name="UsmdActDescripti" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="UsmdBtnTxt" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="UsmdBtnTooltip" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="3" Name="UsmdSequenceNr" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="MDG Step sequence" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="ObsoleteData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestId"/>
+					<PropertyRef Name="Entity"/>
+					<PropertyRef Name="EntityDesciption"/>
+				</Key>
+				<Property MaxLength="12" Name="ChangeRequestId" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="55" Name="Entity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Entity Name"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="EntityDesciption" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Entity Descr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="55" Name="ParentEntity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Entity Name" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="ParentEntityDescription" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Entity Descr" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="55" Name="ParentOfParentEntity" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Entity Name" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="100" Name="EntityCompositeKey" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="80" Name="ParentOfParentEntityDescription" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Entity Descr" sap:sortable="false" sap:updatable="false"/>
+			</EntityType>
+			<EntityType Name="MARA" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property Name="ERSDA" Precision="0" Type="Edm.DateTime" sap:label="Created On"/>
+				<Property MaxLength="12" Name="ERNAM" Type="Edm.String" sap:label="Created by"/>
+				<Property Name="LAEDA" Precision="0" Type="Edm.DateTime" sap:label="Last Change"/>
+				<Property MaxLength="12" Name="AENAM" Type="Edm.String" sap:label="Changed by"/>
+				<Property MaxLength="15" Name="VPSTA" Type="Edm.String" sap:label="Complete status"/>
+				<Property MaxLength="15" Name="PSTAT" Type="Edm.String" sap:label="Maint. status"/>
+				<Property MaxLength="1" Name="LVORM" Type="Edm.String" sap:label="DF client level"/>
+				<Property MaxLength="4" Name="MTART" Type="Edm.String" sap:label="Material Type"/>
+				<Property MaxLength="1" Name="MBRSH" Type="Edm.String" sap:label="Industry sector"/>
+				<Property MaxLength="9" Name="MATKL" Type="Edm.String" sap:label="Material Group"/>
+				<Property MaxLength="18" Name="BISMT" Type="Edm.String" sap:label="Old matl number"/>
+				<Property MaxLength="3" Name="MEINS" Type="Edm.String" sap:label="Base Unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="3" Name="BSTME" Type="Edm.String" sap:label="Order Unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="22" Name="ZEINR" Type="Edm.String" sap:label="Document"/>
+				<Property MaxLength="3" Name="ZEIAR" Type="Edm.String" sap:label="Document type"/>
+				<Property MaxLength="2" Name="ZEIVR" Type="Edm.String" sap:label="Doc. Version"/>
+				<Property MaxLength="4" Name="ZEIFO" Type="Edm.String" sap:label="Page format"/>
+				<Property MaxLength="6" Name="AESZN" Type="Edm.String" sap:label="Doc. change no."/>
+				<Property MaxLength="3" Name="BLATT" Type="Edm.String" sap:label="Page number"/>
+				<Property MaxLength="3" Name="BLANZ" Type="Edm.String" sap:label="No. of sheets"/>
+				<Property MaxLength="18" Name="FERTH" Type="Edm.String" sap:label="Prod./insp.memo"/>
+				<Property MaxLength="4" Name="FORMT" Type="Edm.String" sap:label="Page format"/>
+				<Property MaxLength="32" Name="GROES" Type="Edm.String" sap:label="Size/dimensions"/>
+				<Property MaxLength="48" Name="WRKST" Type="Edm.String" sap:label="Basic material"/>
+				<Property MaxLength="18" Name="NORMT" Type="Edm.String" sap:label="Ind. Std Desc."/>
+				<Property MaxLength="3" Name="LABOR" Type="Edm.String" sap:label="Lab/Office"/>
+				<Property MaxLength="4" Name="EKWSL" Type="Edm.String" sap:label="Purch.value key"/>
+				<Property Name="BRGEW" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Gross Weight"/>
+				<Property Name="NTGEW" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Net Weight"/>
+				<Property MaxLength="3" Name="GEWEI" Type="Edm.String" sap:label="Weight unit" sap:semantics="unit-of-measure"/>
+				<Property Name="VOLUM" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Volume"/>
+				<Property MaxLength="3" Name="VOLEH" Type="Edm.String" sap:label="Volume unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="2" Name="BEHVO" Type="Edm.String" sap:label="Container"/>
+				<Property MaxLength="2" Name="RAUBE" Type="Edm.String" sap:label="Stor.conditions"/>
+				<Property MaxLength="2" Name="TEMPB" Type="Edm.String" sap:label="Temperature"/>
+				<Property MaxLength="3" Name="DISST" Type="Edm.String" sap:label="Low-Level Code"/>
+				<Property MaxLength="4" Name="TRAGR" Type="Edm.String" sap:label="Trans. Group"/>
+				<Property MaxLength="18" Name="STOFF" Type="Edm.String" sap:label="Haz. matl no."/>
+				<Property MaxLength="2" Name="SPART" Type="Edm.String" sap:label="Division"/>
+				<Property MaxLength="10" Name="KUNNR" Type="Edm.String" sap:label="Competitor"/>
+				<Property MaxLength="13" Name="EANNR" Type="Edm.String" sap:label="EAN number"/>
+				<Property Name="WESCH" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="GR slips quantity"/>
+				<Property MaxLength="1" Name="BWVOR" Type="Edm.String" sap:label="Procure. rule"/>
+				<Property MaxLength="1" Name="BWSCL" Type="Edm.String" sap:label="Supply source"/>
+				<Property MaxLength="4" Name="SAISO" Type="Edm.String" sap:label="Season"/>
+				<Property MaxLength="2" Name="ETIAR" Type="Edm.String" sap:label="Label type"/>
+				<Property MaxLength="2" Name="ETIFO" Type="Edm.String" sap:label="Label form"/>
+				<Property MaxLength="1" Name="ENTAR" Type="Edm.String" sap:label="Field deact."/>
+				<Property MaxLength="18" Name="EAN11" Type="Edm.String" sap:label="EAN/UPC"/>
+				<Property MaxLength="2" Name="NUMTP" Type="Edm.String" sap:label="EAN Category"/>
+				<Property Name="LAENG" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Length"/>
+				<Property Name="BREIT" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Width"/>
+				<Property Name="HOEHE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Height"/>
+				<Property MaxLength="3" Name="MEABM" Type="Edm.String" sap:label="Unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="18" Name="PRDHA" Type="Edm.String" sap:label="Prod.hierarchy"/>
+				<Property MaxLength="1" Name="AEKLK" Type="Edm.String" sap:label="Net Change Cstg"/>
+				<Property MaxLength="1" Name="CADKZ" Type="Edm.String" sap:label="CAD Indicator"/>
+				<Property MaxLength="1" Name="QMPUR" Type="Edm.String" sap:label="QM procurement"/>
+				<Property Name="ERGEW" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Allowed pkg wt"/>
+				<Property MaxLength="3" Name="ERGEI" Type="Edm.String" sap:label="Unit of weight" sap:semantics="unit-of-measure"/>
+				<Property Name="ERVOL" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Allowed volume"/>
+				<Property MaxLength="3" Name="ERVOE" Type="Edm.String" sap:label="Volume unit" sap:semantics="unit-of-measure"/>
+				<Property Name="GEWTO" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Excess wt tolerance"/>
+				<Property Name="VOLTO" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Excess volume tol."/>
+				<Property MaxLength="1" Name="VABME" Type="Edm.String" sap:label="Var. Order Unit"/>
+				<Property MaxLength="1" Name="KZREV" Type="Edm.String" sap:label="Revision Level"/>
+				<Property MaxLength="1" Name="KZKFG" Type="Edm.String" sap:label="Configurable"/>
+				<Property MaxLength="1" Name="XCHPF" Type="Edm.String" sap:label="BatchManagement"/>
+				<Property MaxLength="4" Name="VHART" Type="Edm.String" sap:label="Packag.mat.type"/>
+				<Property Name="FUELG" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Maximum level"/>
+				<Property Name="STFAK" Type="Edm.Int16" sap:label="Stacking factor"/>
+				<Property MaxLength="4" Name="MAGRV" Type="Edm.String" sap:label="Matl Grp Pckmat"/>
+				<Property MaxLength="4" Name="BEGRU" Type="Edm.String" sap:label="AuthorizGroup"/>
+				<Property Name="DATAB" Precision="0" Type="Edm.DateTime" sap:label="Valid From"/>
+				<Property Name="LIQDT" Precision="0" Type="Edm.DateTime" sap:label="Valid to"/>
+				<Property MaxLength="4" Name="SAISJ" Type="Edm.String" sap:label="Season Year"/>
+				<Property MaxLength="2" Name="PLGTP" Type="Edm.String" sap:label="Price band cat."/>
+				<Property MaxLength="1" Name="MLGUT" Type="Edm.String" sap:label="W/ empties BOM"/>
+				<Property MaxLength="18" Name="EXTWG" Type="Edm.String" sap:label="Ext. Matl Group"/>
+				<Property MaxLength="18" Name="SATNR" Type="Edm.String" sap:label="Cross-plant CM"/>
+				<Property MaxLength="2" Name="ATTYP" Type="Edm.String" sap:label="Matl Category"/>
+				<Property MaxLength="1" Name="KZKUP" Type="Edm.String" sap:label="Co-product"/>
+				<Property MaxLength="1" Name="KZNFM" Type="Edm.String" sap:label="Follow-up matl"/>
+				<Property MaxLength="18" Name="PMATA" Type="Edm.String" sap:label="Pr. Ref. Matl"/>
+				<Property MaxLength="2" Name="MSTAE" Type="Edm.String" sap:label="X-plant status"/>
+				<Property MaxLength="2" Name="MSTAV" Type="Edm.String" sap:label="X-DChain status"/>
+				<Property Name="MSTDE" Precision="0" Type="Edm.DateTime" sap:label="Valid from"/>
+				<Property Name="MSTDV" Precision="0" Type="Edm.DateTime" sap:label="Valid from"/>
+				<Property MaxLength="1" Name="TAKLV" Type="Edm.String" sap:label="Tax class."/>
+				<Property MaxLength="9" Name="RBNRM" Type="Edm.String" sap:label="Catalog profile"/>
+				<Property Name="MHDRZ" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Rem. Shelf Life"/>
+				<Property Name="MHDHB" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Tot. shelf life"/>
+				<Property Name="MHDLP" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Storage %"/>
+				<Property MaxLength="3" Name="INHME" Type="Edm.String" sap:label="Content unit" sap:semantics="unit-of-measure"/>
+				<Property Name="INHAL" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Net contents"/>
+				<Property Name="VPREH" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Comp.price unit"/>
+				<Property MaxLength="18" Name="ETIAG" Type="Edm.String" sap:label="Label.matl grpg"/>
+				<Property Name="INHBR" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Gross contents"/>
+				<Property MaxLength="1" Name="CMETH" Type="Edm.String" sap:label="Conv. Method"/>
+				<Property MaxLength="18" Name="CUOBF" Type="Edm.String" sap:label="Int. object no."/>
+				<Property MaxLength="1" Name="KZUMW" Type="Edm.String" sap:label="Envt. relevant"/>
+				<Property MaxLength="18" Name="KOSCH" Type="Edm.String" sap:label="Prod.allocation"/>
+				<Property MaxLength="1" Name="SPROF" Type="Edm.String" sap:label="Pricing profile"/>
+				<Property MaxLength="1" Name="NRFHG" Type="Edm.String" sap:label="Disc. in kind"/>
+				<Property MaxLength="40" Name="MFRPN" Type="Edm.String" sap:label="Mfr Part Number"/>
+				<Property MaxLength="10" Name="MFRNR" Type="Edm.String" sap:label="Manufacturer"/>
+				<Property MaxLength="18" Name="BMATN" Type="Edm.String" sap:label="Int. material no."/>
+				<Property MaxLength="4" Name="MPROF" Type="Edm.String" sap:label="Mfr Part Profile"/>
+				<Property MaxLength="1" Name="KZWSM" Type="Edm.String" sap:label="Units meas. use"/>
+				<Property MaxLength="2" Name="SAITY" Type="Edm.String" sap:label="Rollout"/>
+				<Property MaxLength="3" Name="PROFL" Type="Edm.String" sap:label="DGIndProfile"/>
+				<Property MaxLength="1" Name="IHIVI" Type="Edm.String" sap:label="Highly viscous"/>
+				<Property MaxLength="1" Name="ILOOS" Type="Edm.String" sap:label="In bulk/liquid"/>
+				<Property MaxLength="1" Name="SERLV" Type="Edm.String" sap:label="SerializLevel"/>
+				<Property MaxLength="1" Name="KZGVH" Type="Edm.String" sap:label="Closed"/>
+				<Property MaxLength="1" Name="XGCHP" Type="Edm.String" sap:label="Batch rec. req."/>
+				<Property MaxLength="1" Name="KZEFF" Type="Edm.String" sap:label="Assign.eff.vals"/>
+				<Property MaxLength="2" Name="COMPL" Type="Edm.String" sap:label="Comp. Level"/>
+				<Property MaxLength="1" Name="IPRKZ" Type="Edm.String" sap:label="Period Ind."/>
+				<Property MaxLength="1" Name="RDMHD" Type="Edm.String" sap:label="Rounding rule"/>
+				<Property MaxLength="1" Name="PRZUS" Type="Edm.String" sap:label="ProdComposition"/>
+				<Property MaxLength="4" Name="MTPOS_MARA" Type="Edm.String" sap:label="GenItemCatGroup"/>
+				<Property MaxLength="1" Name="BFLME" Type="Edm.String" sap:label="Log. variants"/>
+				<Property MaxLength="1" Name="MATFI" Type="Edm.String" sap:label="Material locked"/>
+				<Property MaxLength="1" Name="CMREL" Type="Edm.String" sap:label="CM Relevant"/>
+				<Property MaxLength="1" Name="BBTYP" Type="Edm.String" sap:label="Astmt List Type"/>
+				<Property MaxLength="1" Name="SLED_BBD" Type="Edm.String" sap:label="Expiratn Date"/>
+				<Property MaxLength="2" Name="GTIN_VARIANT" Type="Edm.String" sap:label="EAN Variant"/>
+				<Property MaxLength="18" Name="GENNR" Type="Edm.String" sap:label="GenericMaterial"/>
+				<Property MaxLength="18" Name="RMATP" Type="Edm.String" sap:label="Ref. mat. for pckg"/>
+				<Property MaxLength="1" Name="GDS_RELEVANT" Type="Edm.String" sap:label="GDS-Relevant"/>
+				<Property MaxLength="1" Name="WEORA" Type="Edm.String" sap:label="Origin Accept."/>
+				<Property MaxLength="4" Name="HUTYP_DFLT" Type="Edm.String" sap:label="Stand. HU Type"/>
+				<Property MaxLength="1" Name="PILFERABLE" Type="Edm.String" sap:label="Pilferable"/>
+				<Property MaxLength="2" Name="WHSTC" Type="Edm.String" sap:label="WH Stor. Cond."/>
+				<Property MaxLength="4" Name="WHMATGR" Type="Edm.String" sap:label="WH Mat.Grp"/>
+				<Property MaxLength="4" Name="HNDLCODE" Type="Edm.String" sap:label="Handling Ind."/>
+				<Property MaxLength="1" Name="HAZMAT" Type="Edm.String" sap:label="Haz. Sub."/>
+				<Property MaxLength="4" Name="HUTYP" Type="Edm.String" sap:label="HUTyp"/>
+				<Property MaxLength="1" Name="TARE_VAR" Type="Edm.String" sap:label="Variable TW"/>
+				<Property Name="MAXC" Precision="15" Scale="3" Type="Edm.Decimal" sap:label="Max. Capacity"/>
+				<Property Name="MAXC_TOL" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Overcapac. Tol."/>
+				<Property Name="MAXL" Precision="15" Scale="3" Type="Edm.Decimal" sap:label="Max.Length"/>
+				<Property Name="MAXB" Precision="15" Scale="3" Type="Edm.Decimal" sap:label="Max. Pack Width"/>
+				<Property Name="MAXH" Precision="15" Scale="3" Type="Edm.Decimal" sap:label="Max.Height"/>
+				<Property MaxLength="3" Name="MAXDIM_UOM" Type="Edm.String" sap:label="Unit of Measure" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="3" Name="HERKL" Type="Edm.String" sap:label="Ctry of origin"/>
+				<Property MaxLength="8" Name="MFRGR" Type="Edm.String" sap:label="Mat.freight grp"/>
+				<Property Name="QQTIME" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Quarant.Per."/>
+				<Property MaxLength="3" Name="QQTIMEUOM" Type="Edm.String" sap:label="Time Unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="4" Name="QGRP" Type="Edm.String" sap:label="Qual.Insp.Grp"/>
+				<Property MaxLength="4" Name="SERIAL" Type="Edm.String" sap:label="Serial No. Prf."/>
+				<Property MaxLength="30" Name="PS_SMARTFORM" Type="Edm.String" sap:label="Form Name"/>
+				<Property MaxLength="3" Name="LOGUNIT" Type="Edm.String" sap:label="Logistics UoM" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="1" Name="CWQREL" Type="Edm.String" sap:label="CW-Relevant"/>
+				<Property MaxLength="2" Name="CWQPROC" Type="Edm.String" sap:label="CW Profile"/>
+				<Property MaxLength="9" Name="CWQTOLGR" Type="Edm.String" sap:label="CW Tolerance Group"/>
+				<Property MaxLength="3" Name="ADPROF" Type="Edm.String" sap:label="Adjust. Profile"/>
+				<Property MaxLength="40" Name="IPMIPPRODUCT" Type="Edm.String" sap:label="Intel. Property"/>
+				<Property MaxLength="1" Name="ALLOW_PMAT_IGNO" Type="Edm.String" sap:label="Var. Price Allowed"/>
+				<Property MaxLength="6" Name="MEDIUM" Type="Edm.String" sap:label="Medium"/>
+				<Property MaxLength="18" Name="COMMODITY" Type="Edm.String" sap:label="Phys. Commodity"/>
+				<Property MaxLength="1" Name="ANIMAL_ORIGIN" Type="Edm.String" sap:label="Animal Origin"/>
+				<Property MaxLength="1" Name="TEXTILE_COMP_IND" Type="Edm.String" sap:label="TexCompActive"/>
+				<Property MaxLength="4" Name="SGT_CSGR" Type="Edm.String" sap:label="Seg. Structure"/>
+				<Property MaxLength="8" Name="SGT_COVSA" Type="Edm.String" sap:label="Seg. Strategy"/>
+				<Property MaxLength="1" Name="SGT_STAT" Type="Edm.String" sap:label="Seg. Status"/>
+				<Property MaxLength="1" Name="SGT_SCOPE" Type="Edm.String" sap:label="Seg. Scope"/>
+				<Property MaxLength="1" Name="SGT_REL" Type="Edm.String" sap:label="Seg. Relevant"/>
+				<Property MaxLength="9" Name="ANP" Type="Edm.String" sap:label="ANP Code"/>
+				<Property MaxLength="10" Name="FSH_MG_AT1" Type="Edm.String" sap:label="Fsh. Attribute1"/>
+				<Property MaxLength="10" Name="FSH_MG_AT2" Type="Edm.String" sap:label="Fsh. Attribute2"/>
+				<Property MaxLength="6" Name="FSH_MG_AT3" Type="Edm.String" sap:label="Fsh. Attribute3"/>
+				<Property MaxLength="1" Name="FSH_SEALV" Type="Edm.String" sap:label="Season Usage"/>
+				<Property MaxLength="1" Name="FSH_SEAIM" Type="Edm.String" sap:label="Season Act. IM"/>
+				<Property MaxLength="2" Name="FSH_SC_MID" Type="Edm.String" sap:label="Mat.Conv. ID"/>
+				<Property MaxLength="2" Name="PSM_CODE" Type="Edm.String" sap:label="PSM code"/>
+				<Property MaxLength="8" Name="ZBEV1ZLULEINH" Type="Edm.String" sap:label="Loading Units"/>
+				<Property MaxLength="3" Name="ZBEV1ZLULDEGRP" Type="Edm.String" sap:label="Loading Unit Group"/>
+				<Property MaxLength="1" Name="ZBEV1ZNESTRUCCAT" Type="Edm.String" sap:label="Struct.Category"/>
+				<Property MaxLength="4" Name="ZDSDZSL_TOLTYP" Type="Edm.String" sap:label="Tolerance Type"/>
+				<Property MaxLength="10" Name="ZDSDZSV_CNT_GRP" Type="Edm.String" sap:label="Counting Group"/>
+				<Property MaxLength="6" Name="ZDSDZVC_GROUP" Type="Edm.String" sap:label="DSD Grouping"/>
+				<Property MaxLength="1" Name="ZVSOZR_TILT_IND" Type="Edm.String" sap:label="Tilting Allowed"/>
+				<Property MaxLength="1" Name="ZVSOZR_STACK_IND" Type="Edm.String" sap:label="No Stacking"/>
+				<Property MaxLength="1" Name="ZVSOZR_BOT_IND" Type="Edm.String" sap:label="Bottom Layer"/>
+				<Property MaxLength="1" Name="ZVSOZR_TOP_IND" Type="Edm.String" sap:label="Top Layer"/>
+				<Property MaxLength="3" Name="ZVSOZR_STACK_NO" Type="Edm.String" sap:label="Stacking Factor"/>
+				<Property MaxLength="1" Name="ZVSOZR_PAL_IND" Type="Edm.String" sap:label="Load w/o PKM"/>
+				<Property Name="ZVSOZR_PAL_OVR_D" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Overhang Depth"/>
+				<Property Name="ZVSOZR_PAL_OVR_W" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Overhang Width"/>
+				<Property Name="ZVSOZR_PAL_B_HT" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Max. Stack Hght"/>
+				<Property Name="ZVSOZR_PAL_MIN_H" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Min. Stack.Hght"/>
+				<Property Name="ZVSOZR_TOL_B_HT" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="StackH Toleran."/>
+				<Property MaxLength="2" Name="ZVSOZR_NO_P_GVH" Type="Edm.String" sap:label="No. Mat / PKM"/>
+				<Property MaxLength="3" Name="ZVSOZR_QUAN_UNIT" Type="Edm.String" sap:label="UoM VSO" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="1" Name="ZVSOZR_KZGVH_IND" Type="Edm.String" sap:label="Closed PKM Req."/>
+				<Property MaxLength="10" Name="PACKCODE" Type="Edm.String" sap:label="Packaging Code"/>
+				<Property MaxLength="10" Name="DG_PACK_STATUS" Type="Edm.String" sap:label="DG Pckg. Status"/>
+				<Property MaxLength="1" Name="MCOND" Type="Edm.String" sap:label="Condition Mgmt"/>
+				<Property MaxLength="1" Name="RETDELC" Type="Edm.String" sap:label="Return Code"/>
+				<Property MaxLength="1" Name="LOGLEV_RETO" Type="Edm.String" sap:label="Return to Log.Level"/>
+				<Property MaxLength="9" Name="NSNID" Type="Edm.String" sap:label="NIIN"/>
+				<Property MaxLength="18" Name="IMATN" Type="Edm.String" sap:label="FFF class"/>
+				<Property MaxLength="18" Name="PICNUM" Type="Edm.String" sap:label="Chain no"/>
+				<Property MaxLength="2" Name="BSTAT" Type="Edm.String" sap:label="Creation Status"/>
+				<Property MaxLength="30" Name="COLOR_ATINN" Type="Edm.String" sap:label="Internal Char."/>
+				<Property MaxLength="30" Name="SIZE1_ATINN" Type="Edm.String" sap:label="Internal Char."/>
+				<Property MaxLength="30" Name="SIZE2_ATINN" Type="Edm.String" sap:label="Internal Char."/>
+				<Property MaxLength="18" Name="COLOR" Type="Edm.String" sap:label="Color"/>
+				<Property MaxLength="18" Name="SIZE1" Type="Edm.String" sap:label="Main Size"/>
+				<Property MaxLength="18" Name="SIZE2" Type="Edm.String" sap:label="Second Size"/>
+				<Property MaxLength="18" Name="FREE_CHAR" Type="Edm.String" sap:label="Char. value"/>
+				<Property MaxLength="16" Name="CARE_CODE" Type="Edm.String" sap:label="Care Code"/>
+				<Property MaxLength="4" Name="BRAND_ID" Type="Edm.String" sap:label="Brand"/>
+				<Property MaxLength="8" Name="FIBER_CODE1" Type="Edm.String" sap:label="Component 1"/>
+				<Property MaxLength="3" Name="FIBER_PART1" Type="Edm.String" sap:label="Perc. Share 1"/>
+				<Property MaxLength="8" Name="FIBER_CODE2" Type="Edm.String" sap:label="Component 2"/>
+				<Property MaxLength="3" Name="FIBER_PART2" Type="Edm.String" sap:label="Perc. Share 2"/>
+				<Property MaxLength="8" Name="FIBER_CODE3" Type="Edm.String" sap:label="Component 3"/>
+				<Property MaxLength="3" Name="FIBER_PART3" Type="Edm.String" sap:label="Perc. Share 3"/>
+				<Property MaxLength="8" Name="FIBER_CODE4" Type="Edm.String" sap:label="Component 4"/>
+				<Property MaxLength="3" Name="FIBER_PART4" Type="Edm.String" sap:label="Perc. Share 4"/>
+				<Property MaxLength="8" Name="FIBER_CODE5" Type="Edm.String" sap:label="Component 5"/>
+				<Property MaxLength="3" Name="FIBER_PART5" Type="Edm.String" sap:label="Perc. Share 5"/>
+				<Property MaxLength="4" Name="FASHGRD" Type="Edm.String" sap:label="Fashion Grade"/>
+				<Property MaxLength="1" Name="IS_MATNR_TMP" Type="Edm.String"/>
+				<Property MaxLength="12" Name="AENNR" Type="Edm.String" sap:label="Change Number"/>
+				<NavigationProperty FromRole="FromRole_MARA_MAKT" Name="MARA_MAKT" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MAKT"
+					ToRole="ToRole_MARA_MAKT"/>
+				<NavigationProperty FromRole="FromRole_MARA_MARC" Name="MARA_MARC" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MARC"
+					ToRole="ToRole_MARA_MARC"/>
+				<NavigationProperty FromRole="FromRole_MARA_MARM" Name="MARA_MARM" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MARM"
+					ToRole="ToRole_MARA_MARM"/>
+				<NavigationProperty FromRole="FromRole_MARA_MEAN" Name="MARA_MEAN" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MEAN"
+					ToRole="ToRole_MARA_MEAN"/>
+				<NavigationProperty FromRole="FromRole_MARA_NOTES" Name="MARA_NOTES" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_NOTES"
+					ToRole="ToRole_MARA_NOTES"/>
+				<NavigationProperty FromRole="FromRole_MARA_CLASSASGN" Name="MARA_CLASSASGN" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_CLASSASGN"
+					ToRole="ToRole_MARA_CLASSASGN"/>
+				<NavigationProperty FromRole="FromRole_MARA_VALUATION" Name="MARA_VALUATION" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARA_VALUATION"
+					ToRole="ToRole_MARA_VALUATION"/>
+				<NavigationProperty FromRole="FromRole_MARAToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARAToChanges"
+					ToRole="ToRole_MARAToChanges"/>
+			</EntityType>
+			<EntityType Name="MAKT" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="SPRAS"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="2" Name="SPRAS" Nullable="false" Type="Edm.String" sap:label="Language"/>
+				<Property MaxLength="40" Name="MAKTX" Type="Edm.String" sap:label="Description"/>
+				<Property MaxLength="40" Name="MAKTG" Type="Edm.String" sap:label="Description"/>
+				<NavigationProperty FromRole="FromRole_MAKTToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MAKTToChanges"
+					ToRole="ToRole_MAKTToChanges"/>
+			</EntityType>
+			<EntityType Name="MARC" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="WERKS"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="4" Name="WERKS" Nullable="false" Type="Edm.String" sap:label="Plant"/>
+				<Property MaxLength="15" Name="PSTAT" Type="Edm.String" sap:label="Maint. status"/>
+				<Property MaxLength="1" Name="LVORM" Type="Edm.String" sap:label="DF plant level"/>
+				<Property MaxLength="1" Name="BWTTY" Type="Edm.String" sap:label="Valuation Cat."/>
+				<Property MaxLength="1" Name="XCHAR" Type="Edm.String" sap:label="Batches"/>
+				<Property MaxLength="2" Name="MMSTA" Type="Edm.String" sap:label="P-S matl status"/>
+				<Property Name="MMSTD" Precision="0" Type="Edm.DateTime" sap:label="Valid from"/>
+				<Property MaxLength="1" Name="MAABC" Type="Edm.String" sap:label="ABC Indicator"/>
+				<Property MaxLength="1" Name="KZKRI" Type="Edm.String" sap:label="Critical Part"/>
+				<Property MaxLength="3" Name="EKGRP" Type="Edm.String" sap:label="Purch. Group"/>
+				<Property MaxLength="3" Name="AUSME" Type="Edm.String" sap:label="Unit of issue" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="4" Name="DISPR" Type="Edm.String" sap:label="MRP profile"/>
+				<Property MaxLength="2" Name="DISMM" Type="Edm.String" sap:label="MRP Type"/>
+				<Property MaxLength="3" Name="DISPO" Type="Edm.String" sap:label="MRP Controller"/>
+				<Property MaxLength="1" Name="KZDIE" Type="Edm.String" sap:label="MRPCtrllr=buyer"/>
+				<Property Name="PLIFZ" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Pl. Deliv. Time"/>
+				<Property Name="WEBAZ" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="GR Proc. Time"/>
+				<Property MaxLength="1" Name="PERKZ" Type="Edm.String" sap:label="Period Ind."/>
+				<Property Name="AUSSS" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Assembly scrap"/>
+				<Property MaxLength="2" Name="DISLS" Type="Edm.String" sap:label="Lot size"/>
+				<Property MaxLength="1" Name="BESKZ" Type="Edm.String" sap:label="Procurement"/>
+				<Property MaxLength="2" Name="SOBSL" Type="Edm.String" sap:label="SpecProcurement"/>
+				<Property Name="MINBE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Reorder Point"/>
+				<Property Name="EISBE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Safety Stock"/>
+				<Property Name="BSTMI" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Min. Lot Size"/>
+				<Property Name="BSTMA" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Max. Lot Size"/>
+				<Property Name="BSTFE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Fixed lot size"/>
+				<Property Name="BSTRF" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Rounding value"/>
+				<Property Name="MABST" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Max.stock level"/>
+				<Property Name="LOSFX" Precision="11" Scale="2" Type="Edm.Decimal" sap:label="Ordering costs"/>
+				<Property MaxLength="1" Name="SBDKZ" Type="Edm.String" sap:label="Indiv./coll."/>
+				<Property MaxLength="1" Name="LAGPR" Type="Edm.String" sap:label="Storage costs"/>
+				<Property MaxLength="1" Name="ALTSL" Type="Edm.String" sap:label="SelectionMethod"/>
+				<Property MaxLength="1" Name="KZAUS" Type="Edm.String" sap:label="Discontin. ind."/>
+				<Property Name="AUSDT" Precision="0" Type="Edm.DateTime" sap:label="Eff.-out date"/>
+				<Property MaxLength="18" Name="NFMAT" Type="Edm.String" sap:label="Follow-Up Matl"/>
+				<Property MaxLength="1" Name="KZBED" Type="Edm.String" sap:label="Reqmts grouping"/>
+				<Property MaxLength="1" Name="MISKZ" Type="Edm.String" sap:label="Mixed MRP"/>
+				<Property MaxLength="3" Name="FHORI" Type="Edm.String" sap:label="SchedMargin key"/>
+				<Property MaxLength="1" Name="PFREI" Type="Edm.String" sap:label="Autom. fix. pl. ords"/>
+				<Property MaxLength="1" Name="FFREI" Type="Edm.String" sap:label="Autom. release"/>
+				<Property MaxLength="1" Name="RGEKZ" Type="Edm.String" sap:label="Backflush"/>
+				<Property MaxLength="3" Name="FEVOR" Type="Edm.String" sap:label="Prodn Superv."/>
+				<Property Name="BEARZ" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Processing time"/>
+				<Property Name="RUEZT" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Setup time"/>
+				<Property Name="TRANZ" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Interoperation"/>
+				<Property Name="BASMG" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Base quantity"/>
+				<Property Name="DZEIT" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="InhseProdTime"/>
+				<Property Name="MAXLZ" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Max. Storage"/>
+				<Property MaxLength="3" Name="LZEIH" Type="Edm.String" sap:label="Time unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="1" Name="KZPRO" Type="Edm.String" sap:label="Withd.fm.pr.bin"/>
+				<Property MaxLength="1" Name="GPMKZ" Type="Edm.String" sap:label="Rough-Cut Plng"/>
+				<Property Name="UEETO" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Overdely tol."/>
+				<Property MaxLength="1" Name="UEETK" Type="Edm.String" sap:label="Unlimited"/>
+				<Property Name="UNETO" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Underdely tol."/>
+				<Property Name="WZEIT" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Total RL time"/>
+				<Property MaxLength="1" Name="ATPKZ" Type="Edm.String" sap:label="Replacemt part"/>
+				<Property Name="VZUSL" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Surcharge %"/>
+				<Property MaxLength="2" Name="HERBL" Type="Edm.String" sap:label="State of manufac"/>
+				<Property MaxLength="1" Name="INSMK" Type="Edm.String" sap:label="Post to insp. stk"/>
+				<Property Name="SPROZ" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Sample %"/>
+				<Property Name="QUAZT" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Quarantine"/>
+				<Property MaxLength="8" Name="SSQSS" Type="Edm.String" sap:label="QM Control Key"/>
+				<Property Name="MPDAU" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Mean insp. dur."/>
+				<Property MaxLength="1" Name="KZPPV" Type="Edm.String" sap:label="Insp. plan ind."/>
+				<Property MaxLength="1" Name="KZDKZ" Type="Edm.String" sap:label="Doc. required"/>
+				<Property Name="WSTGH" Precision="9" Scale="0" Type="Edm.Decimal" sap:label="Active subst."/>
+				<Property Name="PRFRQ" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Insp. interval"/>
+				<Property Name="NKMPR" Precision="0" Type="Edm.DateTime" sap:label="Next inspection"/>
+				<Property Name="UMLMC" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Stock in Trans."/>
+				<Property MaxLength="4" Name="LADGR" Type="Edm.String" sap:label="Loading Group"/>
+				<Property MaxLength="1" Name="XCHPF" Type="Edm.String" sap:label="BatchManagement"/>
+				<Property MaxLength="1" Name="USEQU" Type="Edm.String" sap:label="Quota arr.usage"/>
+				<Property Name="LGRAD" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Service level"/>
+				<Property MaxLength="1" Name="AUFTL" Type="Edm.String" sap:label="Splitting ind."/>
+				<Property MaxLength="2" Name="PLVAR" Type="Edm.String" sap:label="Plan Version"/>
+				<Property MaxLength="2" Name="OTYPE" Type="Edm.String" sap:label="Object Type"/>
+				<Property MaxLength="8" Name="OBJID" Type="Edm.String" sap:label="Object ID"/>
+				<Property MaxLength="2" Name="MTVFP" Type="Edm.String" sap:label="Avail. check"/>
+				<Property MaxLength="2" Name="PERIV" Type="Edm.String" sap:label="Fi.Year Variant"/>
+				<Property MaxLength="1" Name="KZKFK" Type="Edm.String" sap:label="Corr. factors"/>
+				<Property Name="VRVEZ" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Setup time"/>
+				<Property Name="VBAMG" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Base quantity"/>
+				<Property Name="VBEAZ" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Processing time"/>
+				<Property MaxLength="4" Name="LIZYK" Type="Edm.String"/>
+				<Property MaxLength="1" Name="BWSCL" Type="Edm.String" sap:label="Supply source"/>
+				<Property MaxLength="1" Name="KAUTB" Type="Edm.String" sap:label="Autom. PO"/>
+				<Property MaxLength="1" Name="KORDB" Type="Edm.String" sap:label="Source list"/>
+				<Property MaxLength="17" Name="STAWN" Type="Edm.String" sap:label="Comm./imp. code"/>
+				<Property MaxLength="3" Name="HERKL" Type="Edm.String" sap:label="Ctry of origin"/>
+				<Property MaxLength="3" Name="HERKR" Type="Edm.String" sap:label="Reg. of origin"/>
+				<Property MaxLength="3" Name="EXPME" Type="Edm.String" sap:label="Comm. code unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="4" Name="MTVER" Type="Edm.String" sap:label="Exp/imp group"/>
+				<Property MaxLength="10" Name="PRCTR" Type="Edm.String" sap:label="Profit Center"/>
+				<Property Name="TRAME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Stk in Transit"/>
+				<Property MaxLength="3" Name="MRPPP" Type="Edm.String" sap:label="Plng calendar"/>
+				<Property MaxLength="1" Name="SAUFT" Type="Edm.String" sap:label="Repetitive mfg"/>
+				<Property MaxLength="3" Name="FXHOR" Type="Edm.String" sap:label="Plng time fence"/>
+				<Property MaxLength="1" Name="VRMOD" Type="Edm.String" sap:label="Consmption mode"/>
+				<Property MaxLength="3" Name="VINT1" Type="Edm.String" sap:label="Bwd cons. per."/>
+				<Property MaxLength="3" Name="VINT2" Type="Edm.String" sap:label="Fwd cons.period"/>
+				<Property MaxLength="1" Name="VERKZ" Type="Edm.String" sap:label="Version"/>
+				<Property MaxLength="2" Name="STLAL" Type="Edm.String" sap:label="Alternative"/>
+				<Property MaxLength="1" Name="STLAN" Type="Edm.String" sap:label="Usage"/>
+				<Property MaxLength="8" Name="PLNNR" Type="Edm.String" sap:label="Group"/>
+				<Property MaxLength="2" Name="APLAL" Type="Edm.String" sap:label="Group Counter"/>
+				<Property Name="LOSGR" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Cstg Lot Size"/>
+				<Property MaxLength="2" Name="SOBSK" Type="Edm.String" sap:label="SpecProcType"/>
+				<Property MaxLength="3" Name="FRTME" Type="Edm.String" sap:label="Production unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="4" Name="LGPRO" Type="Edm.String" sap:label="Prod.stor.loc."/>
+				<Property MaxLength="4" Name="DISGR" Type="Edm.String" sap:label="MRP group"/>
+				<Property Name="KAUSF" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Component Scrap"/>
+				<Property MaxLength="4" Name="QZGTP" Type="Edm.String" sap:label="CertificateType"/>
+				<Property MaxLength="1" Name="QMATV" Type="Edm.String" sap:label="Insp. setup"/>
+				<Property Name="TAKZT" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Takt time"/>
+				<Property MaxLength="3" Name="RWPRO" Type="Edm.String" sap:label="Coverage prof."/>
+				<Property MaxLength="10" Name="COPAM" Type="Edm.String" sap:label="Field name"/>
+				<Property MaxLength="1" Name="ABCIN" Type="Edm.String" sap:label="CC phys. inv."/>
+				<Property MaxLength="6" Name="AWSLS" Type="Edm.String" sap:label="Variance key"/>
+				<Property MaxLength="4" Name="SERNP" Type="Edm.String" sap:label="SerialNoProfile"/>
+				<Property MaxLength="18" Name="CUOBJ" Type="Edm.String" sap:label="Int. object no."/>
+				<Property MaxLength="18" Name="STDPD" Type="Edm.String" sap:label="Confble matl"/>
+				<Property MaxLength="4" Name="SFEPR" Type="Edm.String" sap:label="REM profile"/>
+				<Property MaxLength="1" Name="XMCNG" Type="Edm.String" sap:label="Neg. stocks"/>
+				<Property MaxLength="4" Name="QSSYS" Type="Edm.String" sap:label="Target QM sys."/>
+				<Property MaxLength="3" Name="LFRHY" Type="Edm.String" sap:label="Planning cycle"/>
+				<Property MaxLength="4" Name="RDPRF" Type="Edm.String" sap:label="Rnding Profile"/>
+				<Property MaxLength="18" Name="VRBMT" Type="Edm.String" sap:label="Ref.matl: cons."/>
+				<Property MaxLength="4" Name="VRBWK" Type="Edm.String" sap:label="Ref.plant:cons."/>
+				<Property Name="VRBDT" Precision="0" Type="Edm.DateTime" sap:label="Date to"/>
+				<Property Name="VRBFK" Precision="5" Scale="2" Type="Edm.Decimal" sap:label="Multiplier"/>
+				<Property MaxLength="1" Name="AUTRU" Type="Edm.String" sap:label="Autom.reset"/>
+				<Property MaxLength="1" Name="PREFE" Type="Edm.String" sap:label="Preference"/>
+				<Property MaxLength="1" Name="PRENC" Type="Edm.String" sap:label="Exemption cert."/>
+				<Property MaxLength="8" Name="PRENO" Type="Edm.String" sap:label="Exempt.cert.no."/>
+				<Property Name="PREND" Precision="0" Type="Edm.DateTime" sap:label="Iss.date of crt"/>
+				<Property MaxLength="1" Name="PRENE" Type="Edm.String" sap:label="Vendor decl."/>
+				<Property Name="PRENG" Precision="0" Type="Edm.DateTime" sap:label="Vdr decl. date"/>
+				<Property MaxLength="1" Name="ITARK" Type="Edm.String" sap:label="Military goods"/>
+				<Property MaxLength="1" Name="SERVG" Type="Edm.String" sap:label="Service level"/>
+				<Property MaxLength="1" Name="KZKUP" Type="Edm.String" sap:label="Co-product"/>
+				<Property MaxLength="2" Name="STRGR" Type="Edm.String" sap:label="Strategy group"/>
+				<Property MaxLength="18" Name="CUOBV" Type="Edm.String" sap:label="Int. object no."/>
+				<Property MaxLength="4" Name="LGFSB" Type="Edm.String" sap:label="Stor. loc. EP"/>
+				<Property MaxLength="1" Name="SCHGT" Type="Edm.String" sap:label="Bulk Material"/>
+				<Property MaxLength="1" Name="CCFIX" Type="Edm.String" sap:label="CC ind. fixed"/>
+				<Property MaxLength="4" Name="EPRIO" Type="Edm.String" sap:label="Stock det. grp"/>
+				<Property MaxLength="6" Name="QMATA" Type="Edm.String" sap:label="QM mat. auth."/>
+				<Property Name="RESVP" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Adjustmt period"/>
+				<Property MaxLength="1" Name="PLNTY" Type="Edm.String" sap:label="Task List Type"/>
+				<Property MaxLength="3" Name="UOMGR" Type="Edm.String" sap:label="UoM Group"/>
+				<Property MaxLength="4" Name="UMRSL" Type="Edm.String" sap:label="Conv. Group"/>
+				<Property Name="ABFAC" Precision="3" Scale="1" Type="Edm.Decimal" sap:label="Air Buoy. Fact."/>
+				<Property MaxLength="6" Name="SFCPF" Type="Edm.String" sap:label="ProdProfile"/>
+				<Property MaxLength="1" Name="SHFLG" Type="Edm.String" sap:label="Safety time ind"/>
+				<Property MaxLength="2" Name="SHZET" Type="Edm.String" sap:label="Safety time"/>
+				<Property MaxLength="2" Name="MDACH" Type="Edm.String" sap:label="Action control"/>
+				<Property MaxLength="1" Name="KZECH" Type="Edm.String" sap:label="Enter batch"/>
+				<Property MaxLength="4" Name="MEGRU" Type="Edm.String" sap:label="UoM Group"/>
+				<Property MaxLength="8" Name="MFRGR" Type="Edm.String" sap:label="Mat.freight grp"/>
+				<Property Name="VKUMC" Precision="13" Scale="2" Type="Edm.Decimal" sap:label="Stk transfer SV"/>
+				<Property Name="VKTRW" Precision="13" Scale="2" Type="Edm.Decimal" sap:label="St.in trans./SP"/>
+				<Property MaxLength="1" Name="KZAGL" Type="Edm.String" sap:label="Smth prom. cons"/>
+				<Property MaxLength="4" Name="FVIDK" Type="Edm.String" sap:label="Prod. Version"/>
+				<Property MaxLength="1" Name="FXPRU" Type="Edm.String" sap:label="Fixed-Price Co-Prod."/>
+				<Property MaxLength="4" Name="LOGGR" Type="Edm.String" sap:label="Logistics group"/>
+				<Property MaxLength="3" Name="FPRFM" Type="Edm.String" sap:label="Dist.prof."/>
+				<Property Name="GLGMG" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Tied Empties"/>
+				<Property Name="VKGLG" Precision="13" Scale="2" Type="Edm.Decimal" sap:label="SlsVal.TiedEmpt"/>
+				<Property MaxLength="2" Name="INDUS" Type="Edm.String" sap:label="Mat. category"/>
+				<Property MaxLength="12" Name="MOWNR" Type="Edm.String" sap:label="EU prod.list no."/>
+				<Property MaxLength="6" Name="MOGRU" Type="Edm.String" sap:label="CAP prod. group"/>
+				<Property MaxLength="15" Name="CASNR" Type="Edm.String" sap:label="CAS no.(pharm.)"/>
+				<Property MaxLength="9" Name="GPNUM" Type="Edm.String" sap:label="PRODCOM no."/>
+				<Property MaxLength="16" Name="STEUC" Type="Edm.String" sap:label="Control code"/>
+				<Property MaxLength="1" Name="FABKZ" Type="Edm.String" sap:label="JIT Indicator"/>
+				<Property MaxLength="20" Name="MATGR" Type="Edm.String" sap:label="Mat. Grouping"/>
+				<Property MaxLength="10" Name="VSPVB" Type="Edm.String" sap:label="Proposed s.area"/>
+				<Property MaxLength="2" Name="DPLFS" Type="Edm.String" sap:label="Fair share rule"/>
+				<Property MaxLength="1" Name="DPLPU" Type="Edm.String" sap:label="Push distribution"/>
+				<Property Name="DPLHO" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Deploymnt hrzn"/>
+				<Property Name="MINLS" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Min. lot size"/>
+				<Property Name="MAXLS" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Max. lot size"/>
+				<Property Name="FIXLS" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Fix. lot size"/>
+				<Property Name="LTINC" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Lot size incr."/>
+				<Property MaxLength="2" Name="COMPL" Type="Edm.String"/>
+				<Property MaxLength="2" Name="CONVT" Type="Edm.String" sap:label="Conv. type"/>
+				<Property MaxLength="3" Name="SHPRO" Type="Edm.String" sap:label="ST per. profile"/>
+				<Property MaxLength="1" Name="AHDIS" Type="Edm.String" sap:label="MRP dep. reqmts"/>
+				<Property MaxLength="1" Name="DIBER" Type="Edm.String" sap:label="MRP area exists"/>
+				<Property MaxLength="1" Name="KZPSP" Type="Edm.String" sap:label="Cross-project"/>
+				<Property MaxLength="6" Name="OCMPF" Type="Edm.String" sap:label="Overall profile"/>
+				<Property MaxLength="1" Name="APOKZ" Type="Edm.String" sap:label="Relevant to APO"/>
+				<Property MaxLength="1" Name="MCRUE" Type="Edm.String"/>
+				<Property MaxLength="2" Name="LFMON" Type="Edm.String" sap:label="Current period"/>
+				<Property MaxLength="4" Name="LFGJA" Type="Edm.String" sap:label="Year cur.period"/>
+				<Property Name="EISLO" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Min SafetyStock"/>
+				<Property MaxLength="1" Name="NCOST" Type="Edm.String" sap:label="Do Not Cost"/>
+				<Property MaxLength="1" Name="ROTATION_DATE" Type="Edm.String" sap:label="Putaway/StkRmvl"/>
+				<Property MaxLength="1" Name="UCHKZ" Type="Edm.String" sap:label="OB Management"/>
+				<Property MaxLength="18" Name="UCMAT" Type="Edm.String" sap:label="OB ref. matrial"/>
+				<Property Name="BWESB" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Val. GR Blocked Stck"/>
+				<Property MaxLength="8" Name="SGT_COVS" Type="Edm.String" sap:label="Seg. Strategy"/>
+				<Property MaxLength="1" Name="SGT_STATC" Type="Edm.String" sap:label="Seg. Status MRP"/>
+				<Property MaxLength="1" Name="SGT_SCOPE" Type="Edm.String" sap:label="Seg. Scope"/>
+				<Property MaxLength="1" Name="SGT_MRPSI" Type="Edm.String" sap:label="Sort Stk Method"/>
+				<Property MaxLength="1" Name="SGT_PRCM" Type="Edm.String" sap:label="Cons. Prio."/>
+				<Property MaxLength="1" Name="SGT_CHINT" Type="Edm.String" sap:label="Discr.Batch No."/>
+				<Property MaxLength="1" Name="SGT_STK_PRT" Type="Edm.String" sap:label="Stk Prot."/>
+				<Property MaxLength="16" Name="SGT_DEFSC" Type="Edm.String" sap:label="Def. segment"/>
+				<Property MaxLength="1" Name="FSH_MG_ARUN_REQ" Type="Edm.String" sap:label="Order ARun"/>
+				<Property MaxLength="1" Name="FSH_SEAIM" Type="Edm.String" sap:label="Season Act. IM"/>
+				<Property MaxLength="18" Name="ZVSOZR_PKGRP" Type="Edm.String" sap:label="Packing Group"/>
+				<Property MaxLength="3" Name="ZVSOZR_LANE_NUM" Type="Edm.String" sap:label="Picking Line"/>
+				<Property MaxLength="18" Name="ZVSOZR_PAL_VEND" Type="Edm.String" sap:label="MatNo PKM VE"/>
+				<Property MaxLength="1" Name="ZVSOZR_FORK_DIR" Type="Edm.String" sap:label="Pick PKM Length"/>
+				<Property MaxLength="1" Name="IUID_RELEVANT" Type="Edm.String" sap:label="IUID-Relevant"/>
+				<Property MaxLength="10" Name="IUID_TYPE" Type="Edm.String" sap:label="IUID Type"/>
+				<Property MaxLength="1" Name="UID_IEA" Type="Edm.String" sap:label="Ext. Allocation"/>
+				<Property MaxLength="1" Name="CONS_PROCG" Type="Edm.String" sap:label="Consign.Control"/>
+				<Property Name="GI_PR_TIME" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="GI Proc.Time"/>
+				<Property MaxLength="1" Name="MULTIPLE_EKGRP" Type="Edm.String" sap:label="Across Purch.Group"/>
+				<Property MaxLength="2" Name="REF_SCHEMA" Type="Edm.String" sap:label="Deter. Schema"/>
+				<Property MaxLength="3" Name="MIN_TROC" Type="Edm.String" sap:label="Minimum Target Range"/>
+				<Property MaxLength="3" Name="MAX_TROC" Type="Edm.String" sap:label="Maximum Target Range"/>
+				<Property Name="TARGET_STOCK" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Target Stock"/>
+				<Property MaxLength="4" Name="MTART" Type="Edm.String" sap:label="Material Type"/>
+				<Property MaxLength="3" Name="LAND1" Type="Edm.String" sap:label="Country"/>
+				<NavigationProperty FromRole="FromRole_MARC_MARD" Name="MARC_MARD" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARC_MARD"
+					ToRole="ToRole_MARC_MARD"/>
+				<NavigationProperty FromRole="FromRole_MARCToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARCToChanges"
+					ToRole="ToRole_MARCToChanges"/>
+			</EntityType>
+			<EntityType Name="MARD" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="WERKS"/>
+					<PropertyRef Name="LGORT"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="4" Name="WERKS" Nullable="false" Type="Edm.String" sap:label="Plant"/>
+				<Property MaxLength="4" Name="LGORT" Nullable="false" Type="Edm.String" sap:label="Stor. Location"/>
+				<Property MaxLength="15" Name="PSTAT" Type="Edm.String" sap:label="Maint. status"/>
+				<Property MaxLength="1" Name="LVORM" Type="Edm.String" sap:label="DF stor.loc.lvl"/>
+				<Property MaxLength="4" Name="LFGJA" Type="Edm.String" sap:label="Year cur.period"/>
+				<Property MaxLength="2" Name="LFMON" Type="Edm.String" sap:label="Current period"/>
+				<Property MaxLength="1" Name="SPERR" Type="Edm.String" sap:label="Phys. Inv. Blk"/>
+				<Property Name="LABST" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Unrestricted"/>
+				<Property Name="UMLME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Stock in tfr"/>
+				<Property Name="INSME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="In Qual. Insp."/>
+				<Property Name="EINME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Restricted-Use"/>
+				<Property Name="SPEME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Blocked"/>
+				<Property Name="RETME" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Returns"/>
+				<Property Name="VMLAB" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Unrestr.-use"/>
+				<Property Name="VMUML" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="In transfer"/>
+				<Property Name="VMINS" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="In qual. insp."/>
+				<Property Name="VMEIN" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Restr.-use PP"/>
+				<Property Name="VMSPE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Blocked"/>
+				<Property Name="VMRET" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Returns"/>
+				<Property MaxLength="3" Name="KZILL" Type="Edm.String" sap:label="Warehouse stock"/>
+				<Property MaxLength="3" Name="KZILQ" Type="Edm.String" sap:label="QualInspStock"/>
+				<Property MaxLength="3" Name="KZILE" Type="Edm.String" sap:label="Restricted-use"/>
+				<Property MaxLength="3" Name="KZILS" Type="Edm.String" sap:label="Blocked stock"/>
+				<Property MaxLength="3" Name="KZVLL" Type="Edm.String" sap:label="Warehouse stock"/>
+				<Property MaxLength="3" Name="KZVLQ" Type="Edm.String" sap:label="QualInspStock"/>
+				<Property MaxLength="3" Name="KZVLE" Type="Edm.String" sap:label="Restricted use"/>
+				<Property MaxLength="3" Name="KZVLS" Type="Edm.String" sap:label="Blocked stock"/>
+				<Property MaxLength="1" Name="DISKZ" Type="Edm.String" sap:label="MRP ind."/>
+				<Property MaxLength="2" Name="LSOBS" Type="Edm.String" sap:label="Spec.proc.:SLoc"/>
+				<Property Name="LMINB" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Reorder point"/>
+				<Property Name="LBSTF" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Replenishmt qty"/>
+				<Property MaxLength="3" Name="HERKL" Type="Edm.String" sap:label="Ctry of origin"/>
+				<Property MaxLength="1" Name="EXPPG" Type="Edm.String" sap:label="Preference ind."/>
+				<Property MaxLength="2" Name="EXVER" Type="Edm.String" sap:label="Export ind."/>
+				<Property MaxLength="10" Name="LGPBE" Type="Edm.String" sap:label="Storage Bin"/>
+				<Property Name="KLABS" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Unrestr. Consgt"/>
+				<Property Name="KINSM" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Cnsgt in QInsp."/>
+				<Property Name="KEINM" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Restr. Consgt"/>
+				<Property Name="KSPEM" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Blocked Consgt"/>
+				<Property Name="DLINL" Precision="0" Type="Edm.DateTime" sap:label="Last Count Date"/>
+				<Property MaxLength="10" Name="PRCTL" Type="Edm.String" sap:label="Profit Center"/>
+				<Property Name="ERSDA" Precision="0" Type="Edm.DateTime" sap:label="Created On"/>
+				<Property Name="VKLAB" Precision="13" Scale="2" Type="Edm.Decimal" sap:label="SP stock value"/>
+				<Property Name="VKUML" Precision="13" Scale="2" Type="Edm.Decimal" sap:label="Stk transfer SV"/>
+				<Property MaxLength="3" Name="LWMKB" Type="Edm.String" sap:label="Picking area"/>
+				<Property Name="BSKRF" Type="Edm.Double" sap:label="Inven.cor.fact."/>
+				<Property MaxLength="1" Name="MDRUE" Type="Edm.String"/>
+				<Property MaxLength="4" Name="MDJIN" Type="Edm.String"/>
+				<NavigationProperty FromRole="FromRole_MARDToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARDToChanges"
+					ToRole="ToRole_MARDToChanges"/>
+			</EntityType>
+			<EntityType Name="MARM" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="MEINH"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="3" Name="MEINH" Nullable="false" Type="Edm.String" sap:label="AlternativeUnit" sap:semantics="unit-of-measure"/>
+				<Property Name="UMREZ" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Numerator"/>
+				<Property Name="UMREN" Precision="5" Scale="0" Type="Edm.Decimal" sap:label="Denominator"/>
+				<Property MaxLength="13" Name="EANNR" Type="Edm.String" sap:label="EAN number"/>
+				<Property MaxLength="18" Name="EAN11" Type="Edm.String" sap:label="EAN/UPC"/>
+				<Property MaxLength="2" Name="NUMTP" Type="Edm.String" sap:label="EAN Category"/>
+				<Property Name="LAENG" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Length"/>
+				<Property Name="BREIT" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Width"/>
+				<Property Name="HOEHE" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Height"/>
+				<Property MaxLength="3" Name="MEABM" Type="Edm.String" sap:label="Unit" sap:semantics="unit-of-measure"/>
+				<Property Name="VOLUM" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Volume"/>
+				<Property MaxLength="3" Name="VOLEH" Type="Edm.String" sap:label="Volume unit" sap:semantics="unit-of-measure"/>
+				<Property Name="BRGEW" Precision="13" Scale="3" Type="Edm.Decimal" sap:label="Gross Weight"/>
+				<Property MaxLength="3" Name="GEWEI" Type="Edm.String" sap:label="Weight unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="3" Name="MESUB" Type="Edm.String" sap:label="Lower-lev. unit" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="30" Name="ATINN" Type="Edm.String" sap:label="Internal char."/>
+				<Property MaxLength="2" Name="MESRT" Type="Edm.String" sap:label="UoM sort no."/>
+				<Property MaxLength="1" Name="XFHDW" Type="Edm.String" sap:label="Leading Un"/>
+				<Property MaxLength="1" Name="XBEWW" Type="Edm.String" sap:label="Valuated Un"/>
+				<Property MaxLength="1" Name="KZWSO" Type="Edm.String" sap:label="Units meas. use"/>
+				<Property MaxLength="3" Name="MSEHI" Type="Edm.String" sap:label="Unit of measmnt" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="1" Name="BFLME_MARM" Type="Edm.String" sap:label="Log. variants"/>
+				<Property MaxLength="2" Name="GTIN_VARIANT" Type="Edm.String" sap:label="EAN Variant"/>
+				<Property Name="NEST_FTR" Precision="3" Scale="0" Type="Edm.Decimal" sap:label="Rem.Vol.Nest"/>
+				<Property Name="MAX_STACK" Type="Edm.Byte" sap:label="Max. Stack Fact"/>
+				<Property Name="CAPAUSE" Precision="15" Scale="3" Type="Edm.Decimal" sap:label="Capac. Usage"/>
+				<Property MaxLength="1" Name="TY2TQ" Type="Edm.String" sap:label="UoM Category"/>
+				<NavigationProperty FromRole="FromRole_MARMToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MARMToChanges"
+					ToRole="ToRole_MARMToChanges"/>
+			</EntityType>
+			<EntityType Name="MEAN" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="MEINH"/>
+					<PropertyRef Name="EAN11"/>
+				</Key>
+				<Property MaxLength="3" Name="MANDT" Type="Edm.String" sap:label="Client"/>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="3" Name="MEINH" Nullable="false" Type="Edm.String" sap:label="Unit of Measure" sap:semantics="unit-of-measure"/>
+				<Property MaxLength="5" Name="LFNUM" Type="Edm.String" sap:label="Consecutive no."/>
+				<Property MaxLength="18" Name="EAN11" Nullable="false" Type="Edm.String" sap:label="EAN/UPC"/>
+				<Property MaxLength="2" Name="EANTP" Type="Edm.String" sap:label="EAN Category"/>
+				<Property MaxLength="1" Name="HPEAN" Type="Edm.String" sap:label="Main EAN"/>
+				<NavigationProperty FromRole="FromRole_MEANToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.MEANToChanges"
+					ToRole="ToRole_MEANToChanges"/>
+			</EntityType>
+			<EntityType Name="NOTES" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="LANGU"/>
+					<PropertyRef Name="TDID"/>
+				</Key>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="2" Name="LANGU" Nullable="false" Type="Edm.String" sap:label="Language"/>
+				<Property MaxLength="4" Name="TDID" Nullable="false" Type="Edm.String" sap:label="Text ID"/>
+				<Property Name="NOTE" Type="Edm.String"/>
+				<NavigationProperty FromRole="FromRole_NOTESToChanges" Name="ChangeData" Relationship="MDG_MATERIAL_APPROVE_CR_SRV.NOTESToChanges"
+					ToRole="ToRole_NOTESToChanges"/>
+			</EntityType>
+			<EntityType Name="CLASSASGN" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="CLASS_TYPE"/>
+					<PropertyRef Name="ECN"/>
+					<PropertyRef Name="CLASS_NAME"/>
+				</Key>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="3" Name="CLASS_TYPE" Nullable="false" Type="Edm.String" sap:label="Class Type"/>
+				<Property MaxLength="12" Name="ECN" Nullable="false" Type="Edm.String" sap:label="Change Number"/>
+				<Property MaxLength="18" Name="CLASS_NAME" Nullable="false" Type="Edm.String" sap:label="Class"/>
+				<Property MaxLength="40" Name="CLASS_DESCRIPTION" Type="Edm.String" sap:label="Description"/>
+				<Property Name="VALID_FROM" Precision="0" Type="Edm.DateTime" sap:label="Valid From"/>
+				<Property MaxLength="1" Name="STATUS" Type="Edm.String" sap:label="Status"/>
+			</EntityType>
+			<EntityType Name="VALUATION" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="MATNR"/>
+					<PropertyRef Name="CLASS_TYPE"/>
+					<PropertyRef Name="CHAR_NAME"/>
+					<PropertyRef Name="VAL_COUNTER"/>
+					<PropertyRef Name="INT_COUNTER_ECN"/>
+				</Key>
+				<Property MaxLength="18" Name="MATNR" Nullable="false" Type="Edm.String" sap:label="Material"/>
+				<Property MaxLength="3" Name="CLASS_TYPE" Nullable="false" Type="Edm.String" sap:label="Class Type"/>
+				<Property MaxLength="30" Name="CHAR_NAME" Nullable="false" Type="Edm.String" sap:label="Characteristic"/>
+				<Property MaxLength="30" Name="CHAR_DESC" Type="Edm.String" sap:label="Description"/>
+				<Property MaxLength="4" Name="VAL_COUNTER" Nullable="false" Type="Edm.String" sap:label="Int counter"/>
+				<Property Name="CHAR_VALUE" Type="Edm.String"/>
+				<Property MaxLength="4" Name="INT_COUNTER_ECN" Nullable="false" Type="Edm.String" sap:label="Int. counter"/>
+				<Property Name="VALID_FROM" Precision="0" Type="Edm.DateTime" sap:label="Valid From"/>
+			</EntityType>
+			<ComplexType Name="RejectionReason">
+				<Property MaxLength="2" Name="ReasonCode" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Reason for Rejection" sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="ReasonText" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<ComplexType Name="Message">
+				<Property MaxLength="220" Name="MsgTxt" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Message Text"
+					sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<ComplexType Name="Edition">
+				<Property MaxLength="6" Name="UsmdEdtnNumber" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Edition Number" sap:sortable="false" sap:updatable="false"/>
+				<Property Name="UsmdVdateFrom" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property Name="UsmdVdateTo" Precision="7" Type="Edm.DateTime" sap:creatable="false" sap:filterable="false" sap:label="Date" sap:sortable="false"
+					sap:updatable="false"/>
+				<Property MaxLength="10" Name="UsmdEdition" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false" sap:label="Edition"
+					sap:sortable="false" sap:updatable="false"/>
+				<Property MaxLength="40" Name="UsmdEdtnDesc" Nullable="false" Type="Edm.String" sap:creatable="false" sap:filterable="false"
+					sap:label="Description (medium)" sap:sortable="false" sap:updatable="false"/>
+			</ComplexType>
+			<Association Name="MAKTToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MAKTToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MAKT"/>
+				<End Multiplicity="*" Role="ToRole_MAKTToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="NOTESToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_NOTESToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.NOTES"/>
+				<End Multiplicity="*" Role="ToRole_NOTESToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="MARMToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARMToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARM"/>
+				<End Multiplicity="*" Role="ToRole_MARMToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="ChangeRequestToAttachment" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_ChangeRequestToAttachment" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest"/>
+				<End Multiplicity="*" Role="ToRole_ChangeRequestToAttachment" Type="MDG_MATERIAL_APPROVE_CR_SRV.Attachment"/>
+			</Association>
+			<Association Name="ChangeRequestToNote" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_ChangeRequestToNote" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest"/>
+				<End Multiplicity="*" Role="ToRole_ChangeRequestToNote" Type="MDG_MATERIAL_APPROVE_CR_SRV.Note"/>
+			</Association>
+			<Association Name="CRToMARA" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_CRToMARA" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest"/>
+				<End Multiplicity="1" Role="ToRole_CRToMARA" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+			</Association>
+			<Association Name="MARC_MARD" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARC_MARD" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARC"/>
+				<End Multiplicity="*" Role="ToRole_MARC_MARD" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARD"/>
+			</Association>
+			<Association Name="MARCToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARCToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARC"/>
+				<End Multiplicity="*" Role="ToRole_MARCToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="MARDToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARDToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARD"/>
+				<End Multiplicity="*" Role="ToRole_MARDToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="MEANToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MEANToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MEAN"/>
+				<End Multiplicity="*" Role="ToRole_MEANToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<Association Name="MARA_MAKT" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_MAKT" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_MAKT" Type="MDG_MATERIAL_APPROVE_CR_SRV.MAKT"/>
+			</Association>
+			<Association Name="MARA_MARC" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_MARC" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_MARC" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARC"/>
+			</Association>
+			<Association Name="MARA_MARM" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_MARM" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_MARM" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARM"/>
+			</Association>
+			<Association Name="MARA_MEAN" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_MEAN" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_MEAN" Type="MDG_MATERIAL_APPROVE_CR_SRV.MEAN"/>
+			</Association>
+			<Association Name="MARA_NOTES" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_NOTES" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_NOTES" Type="MDG_MATERIAL_APPROVE_CR_SRV.NOTES"/>
+			</Association>
+			<Association Name="MARA_CLASSASGN" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_CLASSASGN" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_CLASSASGN" Type="MDG_MATERIAL_APPROVE_CR_SRV.CLASSASGN"/>
+			</Association>
+			<Association Name="MARA_VALUATION" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARA_VALUATION" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARA_VALUATION" Type="MDG_MATERIAL_APPROVE_CR_SRV.VALUATION"/>
+			</Association>
+			<Association Name="MARAToChanges" sap:content-version="1">
+				<End Multiplicity="1" Role="FromRole_MARAToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.MARA"/>
+				<End Multiplicity="*" Role="ToRole_MARAToChanges" Type="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData"/>
+			</Association>
+			<EntityContainer Name="MDG_MATERIAL_APPROVE_CR_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest" Name="ChangeRequestCollection" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.ChangeData" Name="ChangeDataCollection" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.Action" Name="ActionCollection" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.ObsoleteData" Name="ObsoleteDataCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MARA" Name="MARACollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MAKT" Name="MAKTCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MARC" Name="MARCCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MARD" Name="MARDCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MARM" Name="MARMCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.MEAN" Name="MEANCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.NOTES" Name="NOTESCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.CLASSASGN" Name="CLASSASGNCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.VALUATION" Name="VALUATIONCollection" sap:content-version="1"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.Attachment" Name="AttachmentCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<EntitySet EntityType="MDG_MATERIAL_APPROVE_CR_SRV.Note" Name="NoteCollection" sap:addressable="false" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:pageable="false" sap:updatable="false"/>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_NOTES" Name="MARA_NOTES_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_NOTES"/>
+					<End EntitySet="NOTESCollection" Role="ToRole_MARA_NOTES"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.NOTESToChanges" Name="NOTESToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="NOTESCollection" Role="FromRole_NOTESToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_NOTESToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MAKT" Name="MARA_MAKT_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_MAKT"/>
+					<End EntitySet="MAKTCollection" Role="ToRole_MARA_MAKT"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequestToNote" Name="ChangeRequestToNoteSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToNote"/>
+					<End EntitySet="NoteCollection" Role="ToRole_ChangeRequestToNote"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.CRToMARA" Name="CRToMARA_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_CRToMARA"/>
+					<End EntitySet="MARACollection" Role="ToRole_CRToMARA"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_CLASSASGN" Name="MARA_CLASSASGN_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_CLASSASGN"/>
+					<End EntitySet="CLASSASGNCollection" Role="ToRole_MARA_CLASSASGN"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARAToChanges" Name="MARAToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARAToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MARAToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARDToChanges" Name="MARDToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARDCollection" Role="FromRole_MARDToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MARDToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARMToChanges" Name="MARMToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARMCollection" Role="FromRole_MARMToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MARMToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_VALUATION" Name="MARA_VALUATION_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_VALUATION"/>
+					<End EntitySet="VALUATIONCollection" Role="ToRole_MARA_VALUATION"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARC_MARD" Name="MARC_MARD_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARCCollection" Role="FromRole_MARC_MARD"/>
+					<End EntitySet="MARDCollection" Role="ToRole_MARC_MARD"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MEAN" Name="MARA_MEAN_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_MEAN"/>
+					<End EntitySet="MEANCollection" Role="ToRole_MARA_MEAN"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MARM" Name="MARA_MARM_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_MARM"/>
+					<End EntitySet="MARMCollection" Role="ToRole_MARA_MARM"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARCToChanges" Name="MARCToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARCCollection" Role="FromRole_MARCToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MARCToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MAKTToChanges" Name="MAKTToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MAKTCollection" Role="FromRole_MAKTToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MAKTToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MEANToChanges" Name="MEANToChanges_AssocSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MEANCollection" Role="FromRole_MEANToChanges"/>
+					<End EntitySet="ChangeDataCollection" Role="ToRole_MEANToChanges"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.MARA_MARC" Name="MARA_MARC_AssocSet" sap:content-version="1" sap:creatable="false"
+					sap:deletable="false" sap:updatable="false">
+					<End EntitySet="MARACollection" Role="FromRole_MARA_MARC"/>
+					<End EntitySet="MARCCollection" Role="ToRole_MARA_MARC"/>
+				</AssociationSet>
+				<AssociationSet Association="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequestToAttachment" Name="ChangeRequestToAttachmentSet" sap:content-version="1"
+					sap:creatable="false" sap:deletable="false" sap:updatable="false">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToAttachment"/>
+					<End EntitySet="AttachmentCollection" Role="ToRole_ChangeRequestToAttachment"/>
+				</AssociationSet>
+				<FunctionImport Name="GetRejectionReasons" ReturnType="Collection(MDG_MATERIAL_APPROVE_CR_SRV.RejectionReason)" m:HttpMethod="GET"
+					sap:action-for="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest">
+					<Parameter MaxLength="8" Mode="In" Name="ChangeRequestType" Type="Edm.String"/>
+				</FunctionImport>
+				<FunctionImport Name="PerformAction" ReturnType="MDG_MATERIAL_APPROVE_CR_SRV.Message" m:HttpMethod="POST"
+					sap:action-for="MDG_MATERIAL_APPROVE_CR_SRV.ChangeRequest">
+					<Parameter MaxLength="10" Mode="In" Name="LogicalAction" Type="Edm.String"/>
+					<Parameter MaxLength="80" Mode="In" Name="CreatedBy" Type="Edm.String"/>
+					<Parameter MaxLength="2" Mode="In" Name="ActionCode" Type="Edm.String"/>
+					<Parameter MaxLength="2" Mode="In" Name="RejectionReasonCode" Type="Edm.String"/>
+					<Parameter Mode="In" Name="Note" Type="Edm.String"/>
+					<Parameter MaxLength="2" Mode="In" Name="Model" Type="Edm.String"/>
+					<Parameter Mode="In" Name="ChangeRequestID" Type="Edm.String"/>
+					<Parameter Mode="In" Name="ChangedAt" Precision="0" Type="Edm.DateTime"/>
+					<Parameter Mode="In" Name="MainEntity" Type="Edm.String"/>
+					<Parameter Mode="In" Name="ObjectDescription" Type="Edm.String"/>
+				</FunctionImport>
+				<FunctionImport EntitySet="ActionCollection" Name="Decisions" ReturnType="Collection(MDG_MATERIAL_APPROVE_CR_SRV.Action)" m:HttpMethod="GET"
+					sap:action-for="MDG_MATERIAL_APPROVE_CR_SRV.Action">
+					<Parameter MaxLength="12" Mode="In" Name="Crequest" Type="Edm.String"/>
+				</FunctionImport>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

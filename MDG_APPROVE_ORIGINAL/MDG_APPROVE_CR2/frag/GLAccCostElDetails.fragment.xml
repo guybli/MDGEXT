@@ -1,0 +1,138 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!--This is the fragement which shows the data for Cost Element details in both Create and Change Scenario. At runtime, this fragment is loaded in Cost Element tab if 
+there is only a single Cost Element (in create scenario) in GLAccountCreate.js or this is loaded in GLAccountCostEl controller in case of multiple Cost Elements.
+In case of Change scenario, this is only loaded in GLAccountCostEl.controller.-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:form="sap.ui.layout.form" xmlns:ui="sap.ca.ui"
+	xmlns:l="sap.ui.layout">
+	<l:Grid defaultSpan="L12 M12 S12" width="auto">
+		<l:content> 
+			<form:SimpleForm id="glCEDetails"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+				
+				    <core:Title id="glDetCCGenTitle" text="{i18n>GL_DET_COST_EL}" />
+				     <Title  id="glDetCCGenData" text = "{i18n>GL_DET_GEN_DATA}">
+                      <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+                     </Title> 
+ 
+					<Label id="LBL_CELEM" text="{i18n>GL_COST_EL}" />
+					<Text id="TXT_CELEM" text="{parts: [{path:'/CELEM'}, {path:'/CELEM__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/CELEM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					<Label id="LBL_COAREA" text="{i18n>GL_COA}" />
+					<Text id="TXT_COAREA" text="{parts: [{path:'/COAREA'}, {path:'/COAREA__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" 
+					visible = "{path:'/COAREA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_TXTMI" text="{i18n>CC_MED_TEXT}"></Label>
+					<Text id="TXT_TXTMI" text="{/TXTMI}"
+					visible = "{path:'/TXTMI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					<Label id="LBL_CELEMCAT" text="{i18n>GL_DET_CE_CAT}" />
+					<Text id="TXT_CELEMCAT" text="{parts: [{path:'/CELEMCAT'}, {path:'/CELEMCAT__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}" 
+					visible = "{path:'/CELEMCAT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+				    <Label id="LBL_GL_DET_CLASSIFICATION" text="{i18n>GL_DET_CLASSFCTN}" />
+					<Text id="TXT_DET_CLASSIFICATION" text=""
+					/>
+					<Label id="LBL_FUNCCELEM" text="{i18n>CC_FAREA}" />
+					<Text id="TXT_FUNCCELEM" text="{parts: [{path:'/FUNCCELEM'}, {path:'/FUNCCELEM__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}" 
+					visible = "{path:'/FUNCCELEM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+						
+					<core:ExtensionPoint name="extglCEGenData"></core:ExtensionPoint>
+					
+                     <Label></Label>
+
+					 <Title  id="glDetDefAccAsst" text = "{i18n>GL_DET_DEF_ACC_ASST}">
+                      <layoutData>
+                         <l:GridData indent = "L1 M1 S0" span="L12 M12 S12" linebreakL= "true" linebreakM= "true" linebreakS= "true"/>
+                      </layoutData>
+                     </Title>
+					<Label id="LBL_CCTRCELEM" text="{i18n>GL_DET_CC}" />
+					<Text id="TXT_CCTRCELEM" text="{parts: [{path:'/CCTRCELEM'}, {path:'/CCTRCELEM__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.descriptionWithRemoveZeros'}"
+					visible = "{path:'/CCTRCELEM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+					/>
+					<Label id="LBL_CELEMORD" text="{i18n>GL_CE_ORDER}" />
+					<Text id="TXT_CELEMORD" text="{path :'/CELEMORD',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.removeLeadingZeros'}" 
+					visible = "{path:'/CELEMORD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"
+					/>
+                    
+                    <core:ExtensionPoint name="extglCEDefAccAsst"></core:ExtensionPoint>
+                    
+                    <core:ExtensionPoint name="extglCEDetails"></core:ExtensionPoint>
+
+					<core:Title id="glCostElInd" text="{i18n>GL_DET_CE_IND}"></core:Title>
+					 <Label></Label>
+
+					<Label id="LBL_CELEMINDQ" text="{i18n>GL_DET_RCRD_QTY}"></Label>
+					<Text id="TXT_CELEMINDQ"	text="{path :'/CELEMINDQ', 
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+					visible = "{path:'/CELEMINDQ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"/>
+					
+					<Label id="LBL_UOMCELEM" text="{i18n>GL_DET_UNIT_MEASURE}"></Label>
+					<Text id="TXT_UOMCELEM" text="{parts: [{path:'/UOMCELEM'}, {path:'/UOMCELEM__TXT'}], 
+					formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+					visible = "{path:'/UOMCELEM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+					
+					<core:ExtensionPoint name="extglCEIndicator"></core:ExtensionPoint>
+					
+				</form:content>
+			</form:SimpleForm>
+			
+		    <core:ExtensionPoint name="extglCEFormData"></core:ExtensionPoint>
+
+			<Table id="glCostElDescTab" mode="None" class="table_padding headerBold"
+				width="100%">
+				<headerToolbar>
+        			<Toolbar>
+        				<Title text="{i18n>GL_DET_TT_CE_DESC}" class="sapThemeFontSize"></Title>
+        			</Toolbar>
+        		</headerToolbar>
+				<columns>
+					<Column id="glcolDetLang">
+						<header>
+							<Label text="{i18n>GL_DET_LANGUAGE}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="glcolDetName" hAlign="Center">
+						<header>
+							<Label text="{i18n>GL_DET_NAME}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="glcolDetMedTxt" hAlign="Center">
+						<header>
+							<Label text="{i18n>GL_DET_MED_TEXT}">
+							</Label>
+						</header>
+					</Column>
+				<!-- Extends the column of a description table -->
+				<core:ExtensionPoint name="extglCostElDescTab" />
+				</columns>
+			</Table>
+
+
+			<List class="headerBold" id="glCostElAttach">
+				<headerToolbar>
+        			<Toolbar>
+        				<Title text="{i18n>GL_TT_CE_ATT}" class="sapThemeFontSize"></Title>
+        			</Toolbar>
+        		</headerToolbar>
+				<items>
+				</items>
+			</List>
+		</l:content>
+	</l:Grid>
+</core:FragmentDefinition>

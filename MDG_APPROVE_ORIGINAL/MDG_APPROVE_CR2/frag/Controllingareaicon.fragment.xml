@@ -1,0 +1,250 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<IconTabBar id="tabBar" expandable="false">
+		<items>
+			<IconTabFilter id="central" icon="sap-icon://factory"
+				text="{i18n>CENTRAL}">
+					<form:Form>
+						<form:formContainers>
+							<form:FormContainer>
+								<form:formElements>
+									<form:FormElement>
+										<form:label>
+											<Label text="{i18n>ID}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text
+												text="{path: 'detail&gt;/CrId', formatter: 'cross.fnd.approvecr_mdg.util.Formatter.cutLeadingZeros'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Type}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrType'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Text}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrText'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Status}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrStatus'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+
+								</form:formElements>
+
+							</form:FormContainer>
+
+
+						</form:formContainers>
+
+						<form:layout>
+							<form:ResponsiveLayout />
+						</form:layout>
+					</form:Form>
+
+				<layout:VerticalLayout id="CostCenter" width="100%">
+
+				</layout:VerticalLayout>
+
+				<layout:VerticalLayout id="ProfitCenter"
+					width="100%">
+
+				</layout:VerticalLayout>
+
+
+			</IconTabFilter>
+
+			<IconTabFilter id="financials" icon="sap-icon://account"
+				text="{i18n>FIN}">
+					<form:Form>
+						<form:formContainers>
+							<form:FormContainer>
+								<form:formElements>
+									<form:FormElement>
+										<form:label>
+											<Label text="{i18n>ID}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text
+												text="{path: 'detail&gt;/CrId', formatter: 'cross.fnd.approvecr_mdg.util.Formatter.cutLeadingZeros'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Type}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrType'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Text}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrText'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+									<form:FormElement>
+										<form:layoutData>
+											<layout:ResponsiveFlowLayoutData
+												linebreak="true" margin="false" />
+										</form:layoutData>
+										<form:label>
+											<Label text="{i18n>Status}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														minWidth="25" weight="1" />
+												</layoutData>
+											</Label>
+										</form:label>
+										<form:fields>
+											<Text text="{path: 'detail&gt;/CrStatus'}">
+												<layoutData>
+													<layout:ResponsiveFlowLayoutData
+														weight="5" />
+												</layoutData>
+											</Text>
+										</form:fields>
+									</form:FormElement>
+
+
+								</form:formElements>
+
+							</form:FormContainer>
+
+
+						</form:formContainers>
+
+						<form:layout>
+							<form:ResponsiveLayout />
+						</form:layout>
+					</form:Form>
+				<layout:VerticalLayout id="CompanyCode" width="100%">
+
+				</layout:VerticalLayout>
+
+			</IconTabFilter>
+			<!-- Extends the tab bar with additional tabs -->
+			<core:ExtensionPoint name="CustomerExtensionForAdditionalTabs" />
+		</items>
+	</IconTabBar>
+</core:FragmentDefinition>
+
+

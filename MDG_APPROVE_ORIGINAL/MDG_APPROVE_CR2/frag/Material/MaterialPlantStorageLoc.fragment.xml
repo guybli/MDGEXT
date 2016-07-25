@@ -1,0 +1,51 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+	<l:VerticalLayout id="matPlntStLocCreateDataLayout" width="100%">
+		<l:Grid defaultSpan="L12 M12 S12" width="auto">
+			<l:content>
+			<Title id="CreateStLocGenData" text="{i18n>Central}" titleStyle="H3" class="formTitleAlign"></Title>
+				<f:SimpleForm columnsL="1" columnsM="1" emptySpanL="1" emptySpanM="1" id="matPlntStLocForm" labelSpanL="4" labelSpanM="4"
+					layout="ResponsiveGridLayout" maxContainerCols="1" minWidth="1024">
+					<f:content>
+						<!--Storage Location General Data -->
+						<Label id="Lbl_LWMMARDST" text="{i18n>Picking_Area}"></Label>
+						<Text id="Txt_LWMMARDST"
+							text="{parts: [{path:'/LWMMARDST'}, {path:'/LWMMARDST__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LWMMARDST',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_LGPBE" text="{i18n>Storage_Bin}"></Label>
+						<Text id="Txt_LGPBE" text="{parts: [{path:'/LGPBE'}, {path:'/LGPBE__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LGPBE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<!-- Extension Point for Storage Locationâ€“General Data-->
+						<core:ExtensionPoint name="extCreateStLocGenData"></core:ExtensionPoint>
+						<Label></Label>
+						<!--Storage Location MRP -->
+						<Title id="CreateStLocMRP" text="{i18n>MRP}">
+							<layoutData>
+								<l:GridData indent="L1 M1 S0" linebreakL="true" linebreakM="true" linebreakS="true"/>
+							</layoutData>
+						</Title>
+						<Label id="Lbl_LSOMARDMR" text="{i18n>Special_Proc_type}"></Label>
+						<Text id="Txt_LSOMARDMR"
+							text="{parts: [{path:'/LSOMARDMR'}, {path:'/LSOMARDMR__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+							visible="{path:'/LSOMARDMR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_DISKZ" text="{i18n>Storage_Loc_MRPInd}"></Label>
+						<Text id="Txt_DISKZ" text="{parts: [{path:'/DISKZ'}, {path:'/DISKZ__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.description'}"
+							visible="{path:'/DISKZ__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+						<Label id="Lbl_LMINB" text="{i18n>Reorder_Point}"></Label>
+						<Text id="Txt_LMINB" text="{/LMINB}" visible="{path:'/LMINB',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<Label id="Lbl_LBSTF" text="{i18n>Replenishment_Qty}"></Label>
+						<Text id="Txt_LBSTF" text="{/LBSTF}" visible="{path:'/LBSTF',formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}"></Text>
+						<!-- Extension Point for Storage Location MRP-->
+						<core:ExtensionPoint name="extCreateStLocMRP"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+				<!-- Extension Point for Storage Location-->
+				<core:ExtensionPoint name="extmatPlntStLocCreateDataLayout"></core:ExtensionPoint>
+			</l:content>
+		</l:Grid>
+	</l:VerticalLayout>
+</core:FragmentDefinition>

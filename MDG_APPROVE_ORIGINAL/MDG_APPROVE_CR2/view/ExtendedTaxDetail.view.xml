@@ -1,0 +1,67 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View controllerName="fcg.mdg.approvecrv2.view.ExtendedTaxDetail"
+	xmlns="sap.m" xmlns:core="sap.ui.core" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:l="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:sap.ui.layout.form="sap.ui.layout.form">
+	<Page enableScrolling="true" navButtonPress="PressBack"
+		showHeader="true" showFooter="true" showNavButton="true" id="ExtendedTaxPage">
+		<content>
+			<ObjectHeader id="exTaxObjHeaderDet">
+				<attributes>
+					<ObjectAttribute id="erpCompCode" />
+					<ObjectAttribute id="erpCustTax" />
+					<ObjectAttribute id="bpdesc" />
+				</attributes>
+				<!-- Extension Point for Extended Withholding Tax Detail PageHeader -->
+				<core:ExtensionPoint name="extextwithldTaxDetailHeader" />
+			</ObjectHeader>
+
+
+			<l:Grid defaultSpan="L12 M12 S12" width="auto">
+				<l:content>
+					<form:SimpleForm id="SimpleFormExTax"
+						maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+						labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+						columnsL="1" editable="false" columnsM="1">
+						<form:content>
+							<!-- Extended With Holding Tax Type -->
+							<core:Title id="exwithldtax" text="{i18n>ExtendWthhldTaxTy}" />
+							<Label id="lblWITHT" text="{i18n>witholdhldtax}" />
+							<Text id="WITHT"
+								text="{parts : [{path:'/WITHT'},{path:'/WITHT__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/WITHT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblWT_WTSTCD" text="{i18n>withhldtaxnum}" />
+							<Text id="WT_WTSTCD"
+								text="{parts : [{path:'/WT_WTSTCD'},{path:'/WT_WTSTCD__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/WT_WTSTCD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblWT_AGTDF" text="{i18n>withhldtaxfrom}" />
+							<Text id="WT_AGTDF"
+								text="{path:'/WT_AGTDF',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/WT_AGTDF',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblWT_WITHCD" text="{i18n>withhldtaxcode}" />
+							<Text id="WT_WITHCD"
+								text="{parts : [{path:'/WT_WITHCD'},{path:'/WT_WITHCD__TXT'}],formatter:'fcg.mdg.approvecrv2.util.Formatter.description'}"
+								visible="{path:'/WT_WITHCD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblWT_AGENT" text="{i18n>withhldtaxagent}" />
+							<Text id="WT_AGENT"
+								text="{path:'/WT_AGENT',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/WT_AGENT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<Label id="lblWT_AGTDT" text="{i18n>withhldtaxuntil}" />
+							<Text id="WT_AGTDT"
+								text="{path:'/WT_AGTDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/WT_AGTDT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+							<!-- Extension Point for Extended Withholding Tax Type Details -->
+							<core:ExtensionPoint name="extextwithldTaxTypeDetails" />
+						</form:content>
+						<!-- Extension Point for Extended Withholding Tax Type Simple Form -->
+						<core:ExtensionPoint name="extextwithldTaxTypeSimpeformDetails" />
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

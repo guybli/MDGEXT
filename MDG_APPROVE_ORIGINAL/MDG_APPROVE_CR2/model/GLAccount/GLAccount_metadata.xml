@@ -1,0 +1,1234 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+	xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<script id="tinyhippos-injected" />
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm"
+			Namespace="MDG_GL_ACCOUNT" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="Attachment" m:HasStream="true"
+				sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+					<PropertyRef Name="CreatedAt" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="FileName" Type="Edm.String" Nullable="false"
+					MaxLength="60" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="MimeType" Type="Edm.String" Nullable="false"
+					MaxLength="18" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false"
+					Precision="0" sap:label="Time Stamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Link" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Note" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Text" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Nullable="false"
+					Precision="0" sap:label="Time Stamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="ChangeRequest" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+				</Key>
+				<Property Name="Edition" Type="MDG_GL_ACCOUNT.Edition"
+					Nullable="false" />
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="Change Request"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="ChangeRequestDesc" Type="Edm.String"
+					Nullable="false" MaxLength="60" sap:label="Description (Long)"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Status" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="StatusDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="DataModel" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Data Model" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Priority" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Priority" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="PriorityDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Reason" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Reason" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ReasonDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedAt" Type="Edm.DateTime" Precision="0"
+					sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="ChangedAt" Type="Edm.DateTime" Precision="0"
+					sap:label="Time Stamp" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Duedate" Type="Edm.DateTime" Precision="8"
+					sap:label="Due Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="Action" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="USMD_ACTION" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="LastProcessedBy" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="USMD_LAST_APPROVED"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="LastProcessedByDesc" Type="Edm.String"
+					Nullable="false" MaxLength="80" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="MainEntity" Type="Edm.String" Nullable="false"
+					MaxLength="9" sap:label="Entity Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="MainEntityText" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedBy" Type="Edm.String" Nullable="false"
+					MaxLength="12" sap:label="User" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="CreatedByDesc" Type="Edm.String" Nullable="false"
+					MaxLength="80" sap:label="Complete name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="OTC" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Bus.Object Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ObjectKey" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="ObjectList" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="NumberOfAttachments" Type="Edm.String"
+					Nullable="false" MaxLength="2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="NumberOfNotes" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<NavigationProperty Name="Attachments"
+					Relationship="MDG_GL_ACCOUNT.ChangeRequestToAttachment" FromRole="FromRole_ChangeRequestToAttachment"
+					ToRole="ToRole_ChangeRequestToAttachment" />
+				<NavigationProperty Name="Notes"
+					Relationship="MDG_GL_ACCOUNT.ChangeRequestToNote" FromRole="FromRole_ChangeRequestToNote"
+					ToRole="ToRole_ChangeRequestToNote" />
+				<NavigationProperty Name="ACCCCDET"
+					Relationship="MDG_GL_ACCOUNT.CRToACCCCDET" FromRole="FromRole_CRToACCCCDET"
+					ToRole="ToRole_CRToACCCCDET" />
+				<NavigationProperty Name="ACCOUNT"
+					Relationship="MDG_GL_ACCOUNT.CRToACCOUNT" FromRole="FromRole_CRToACCOUNT"
+					ToRole="ToRole_CRToACCOUNT" />
+				<NavigationProperty Name="CELEM"
+					Relationship="MDG_GL_ACCOUNT.CRToCELEM" FromRole="FromRole_CRToCELEM"
+					ToRole="ToRole_CRToCELEM" />
+			</EntityType>
+			<EntityType Name="ChangeData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestID" />
+					<PropertyRef Name="Entity" />
+					<PropertyRef Name="Attribute" />
+				</Key>
+				<Property Name="ChangeRequestID" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:label="Change Request"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Entity" Type="Edm.String" Nullable="false"
+					MaxLength="30" sap:label="Entity Type" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Attribute" Type="Edm.String" Nullable="false"
+					MaxLength="30" sap:label="Attribute" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="EntityAction" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="USMD_ENTITY_ACTION" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="EntityDesc" Type="Edm.String" Nullable="false"
+					sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="NewValue" Type="Edm.String" Nullable="false"
+					sap:label="NEW_VALUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="OldValue" Type="Edm.String" Nullable="false"
+					sap:label="OLD_VALUE" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="AttributeDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ChangeKey" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="OldValueText" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="NewValueText" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="Context" Type="Edm.String" Nullable="false"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="Action" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="UsmdCrequest" />
+					<PropertyRef Name="UsmdCrAction" />
+				</Key>
+				<Property Name="UsmdCrequest" Type="Edm.String" Nullable="false"
+					MaxLength="12" sap:label="USMD_CREQUEST" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdCrAction" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Action" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdActDescripti" Type="Edm.String"
+					Nullable="false" MaxLength="60" sap:label="Description"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="UsmdBtnTxt" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdBtnTooltip" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdSequenceNr" Type="Edm.String" Nullable="false"
+					MaxLength="3" sap:label="MDG Step sequence" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="ObsoleteData" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="ChangeRequestId" />
+					<PropertyRef Name="Entity" />
+					<PropertyRef Name="EntityDesciption" />
+				</Key>
+				<Property Name="ChangeRequestId" Type="Edm.String"
+					Nullable="false" MaxLength="12" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="Entity" Type="Edm.String" Nullable="false"
+					MaxLength="55" sap:label="Entity Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="EntityDesciption" Type="Edm.String"
+					Nullable="false" MaxLength="80" sap:label="Entity Descr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="ParentEntity" Type="Edm.String" Nullable="false"
+					MaxLength="55" sap:label="Entity Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ParentEntityDescription" Type="Edm.String"
+					Nullable="false" MaxLength="80" sap:label="Entity Descr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="ParentOfParentEntity" Type="Edm.String"
+					Nullable="false" MaxLength="55" sap:label="Entity Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+				<Property Name="EntityCompositeKey" Type="Edm.String"
+					Nullable="false" MaxLength="100" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ParentOfParentEntityDescription" Type="Edm.String"
+					Nullable="false" MaxLength="80" sap:label="Entity Descr"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false" />
+			</EntityType>
+			<EntityType Name="ACCCCDET" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="COA" />
+					<PropertyRef Name="ACCOUNT" />
+					<PropertyRef Name="COMPCODE" />
+				</Key>
+				<Property Name="COA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Chart of Accts" />
+				<Property Name="ACCOUNT" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Account" />
+				<Property Name="COMPCODE" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Company Code" />
+				<Property Name="ACCALTACC" Type="Edm.String" MaxLength="10"
+					sap:label="Altern. Account" />
+				<Property Name="ACCAUTHGP" Type="Edm.String" MaxLength="4"
+					sap:label="Authorization" />
+				<Property Name="ACCAUTPOS" Type="Edm.String" MaxLength="1"
+					sap:label="Auto. posting" />
+				<Property Name="ACCBALLC" Type="Edm.String" MaxLength="1"
+					sap:label="Balances in LC" />
+				<Property Name="ACCBKACC" Type="Edm.String" MaxLength="5"
+					sap:label="Account ID" />
+				<Property Name="ACCBUSAB" Type="Edm.String" MaxLength="2"
+					sap:label="Acctg clerk" />
+				<Property Name="ACCCASHFL" Type="Edm.String" MaxLength="1"
+					sap:label="Rel.cash flow" />
+				<Property Name="ACCCBLPOS" Type="Edm.String" MaxLength="1"
+					sap:label="Posting Block" />
+				<Property Name="ACCCDEL" Type="Edm.String" MaxLength="1"
+					sap:label="Deletion flag" />
+				<Property Name="ACCEXCHRD" Type="Edm.String" MaxLength="4"
+					sap:label="E/R Diff. Key" />
+				<Property Name="ACCFIPOS" Type="Edm.String" MaxLength="24"
+					sap:label="Commitment Item" />
+				<Property Name="ACCFSTGRP" Type="Edm.String" MaxLength="4"
+					sap:label="Fld Status Grp" />
+				<Property Name="ACCHOUSBK" Type="Edm.String" MaxLength="5"
+					sap:label="House Bank" />
+				<Property Name="ACCICFREQ" Type="Edm.String" MaxLength="2"
+					sap:label="Int.calc.freq." />
+				<Property Name="ACCICIND" Type="Edm.String" MaxLength="2"
+					sap:label="Interest indic." />
+				<Property Name="ACCINFKEY" Type="Edm.String" MaxLength="8"
+					sap:label="Inflat.Key" />
+				<Property Name="ACCLIDISP" Type="Edm.String" MaxLength="1"
+					sap:label="Line items" />
+				<Property Name="ACCOPNITM" Type="Edm.String" MaxLength="1"
+					sap:label="OI Management" />
+				<Property Name="ACCPLLEV" Type="Edm.String" MaxLength="2"
+					sap:label="Planning Level" />
+				<Property Name="ACCRECIND" Type="Edm.String" MaxLength="1"
+					sap:label="Reconcil.ID" />
+				<Property Name="ACCSRTKEY" Type="Edm.String" MaxLength="3"
+					sap:label="Sort key" />
+				<Property Name="ACCTAXCAT" Type="Edm.String" MaxLength="2"
+					sap:label="Tax category" />
+				<Property Name="ACCTOLGRP" Type="Edm.String" MaxLength="4"
+					sap:label="Tolerance Group" />
+				<Property Name="ACCTXCOPT" Type="Edm.String" MaxLength="1"
+					sap:label="Pstg w/o tax allowed" />
+				<Property Name="ACCVALGRP" Type="Edm.String" MaxLength="10"
+					sap:label="Valuation grp" />
+				<Property Name="ACCWMETH" Type="Edm.String" MaxLength="1"
+					sap:label="Account Extern." />
+				<Property Name="ACCXMITK" Type="Edm.String" MaxLength="1"
+					sap:label="Rec.Acct Rdy f.Input" />
+				<Property Name="ACCXNKON" Type="Edm.String" MaxLength="1"
+					sap:label="Supplement" />
+				<Property Name="CURRACC" Type="Edm.String" MaxLength="5"
+					sap:label="Acct currency" sap:semantics="currency-code" />
+				<Property Name="USMD_ENT_CHNG_AT" Type="Edm.Decimal"
+					Precision="15" Scale="0" sap:label="Changed On" />
+				<Property Name="USMD_ENT_CHNG_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Changed By" />
+				<Property Name="USMD_ENT_CRTD_AT" Type="Edm.Decimal"
+					Precision="15" Scale="0" sap:label="Created On" />
+				<Property Name="USMD_ENT_CRTD_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Created By" />
+				<NavigationProperty Name="ACCCCDET2AtthACCCCDETRel"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDET2AtthACCCCDETRel" FromRole="FromRole_ACCCCDET2AtthACCCCDETRel"
+					ToRole="ToRole_ACCCCDET2AtthACCCCDETRel" />
+				<NavigationProperty Name="CD_ACCAUTPOS"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCBALLC"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCCASHFL"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCCBLPOS"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCCDEL"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCEXCHRD"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCFSTGRP"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCICFREQ"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCLIDISP"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCOPNITM"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCRECIND"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCTXCOPT"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCWMETH"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCXMITK"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCXNKON"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_COA"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_COMPCODE"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToChanges" FromRole="FromRole_ACCCCDETToChanges"
+					ToRole="ToRole_ACCCCDETToChanges" />
+				<NavigationProperty Name="CD_CURRACC"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCTAXCAT"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCPLLEV"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_ACCICIND"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_UOMCELEM"
+					Relationship="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" FromRole="FromRole_ACCCCDETToCodeDesc"
+					ToRole="ToRole_ACCCCDETToCodeDesc" />
+			</EntityType>
+			<EntityType Name="AtthACCCCDET" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="USMD_ACREATED_AT" />
+					<PropertyRef Name="COA" />
+					<PropertyRef Name="ACCOUNT" />
+					<PropertyRef Name="COMPCODE" />
+				</Key>
+				<Property Name="USMD_ACREATED_AT" Type="Edm.DateTime"
+					Nullable="false" Precision="0" sap:label="Time Stamp" />
+				<Property Name="USMD_ACREATED_BY" Type="Edm.String"
+					MaxLength="12" sap:label="User" />
+				<Property Name="USMD_FILE_TYPE" Type="Edm.String"
+					MaxLength="128" sap:label="Mime Type" />
+				<Property Name="USMD_FILE_SIZE" Type="Edm.String"
+					MaxLength="15" sap:label="Length of file" />
+				<Property Name="USMD_TITLE" Type="Edm.String" MaxLength="60"
+					sap:label="Description (Long)" />
+				<Property Name="USMD_LANGUAGE" Type="Edm.String" MaxLength="2"
+					sap:label="Language" />
+				<Property Name="USMD_EXPLANATION" Type="Edm.String"
+					sap:label="Comment" />
+				<Property Name="USMD_LINK" Type="Edm.String" sap:label="Link" />
+				<Property Name="COA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Chart of Accts" />
+				<Property Name="ACCOUNT" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Account" />
+				<Property Name="COMPCODE" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Company Code" />
+				<NavigationProperty Name="CD_COA"
+					Relationship="MDG_GL_ACCOUNT.AtthACCCCDETToCodeDesc" FromRole="FromRole_AtthACCCCDETToCodeDesc"
+					ToRole="ToRole_AtthACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_COMPCODE"
+					Relationship="MDG_GL_ACCOUNT.AtthACCCCDETToCodeDesc" FromRole="FromRole_AtthACCCCDETToCodeDesc"
+					ToRole="ToRole_AtthACCCCDETToCodeDesc" />
+				<NavigationProperty Name="CD_USMD_LANGUAGE"
+					Relationship="MDG_GL_ACCOUNT.AtthACCCCDETToCodeDesc" FromRole="FromRole_AtthACCCCDETToCodeDesc"
+					ToRole="ToRole_AtthACCCCDETToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.AtthACCCCDETToChanges" FromRole="FromRole_AtthACCCCDETToChanges"
+					ToRole="ToRole_AtthACCCCDETToChanges" />
+			</EntityType>
+			<EntityType Name="ACCOUNT" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="COA" />
+					<PropertyRef Name="ACCOUNT" />
+				</Key>
+				<Property Name="COA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Chart of Accts" />
+				<Property Name="ACCOUNT" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Account" />
+				<Property Name="ACCBLCREA" Type="Edm.String" MaxLength="1"
+					sap:label="Creation block" />
+				<Property Name="ACCBLPLAN" Type="Edm.String" MaxLength="1"
+					sap:label="Planning block" />
+				<Property Name="ACCBLPOST" Type="Edm.String" MaxLength="1"
+					sap:label="Posting Block" />
+				<Property Name="ACCDEL" Type="Edm.String" MaxLength="1"
+					sap:label="Deletion flag" />
+				<Property Name="ACCGRPACC" Type="Edm.String" MaxLength="4"
+					sap:label="Account Group" />
+				<Property Name="ACCNEWACC" Type="Edm.String" MaxLength="10"
+					sap:label="New Account" />
+				<!-- <Property Name="ACCPLTYP" Type="Edm.String" MaxLength="2" sap:label="P&L 
+					Stmt A/c Ty" /> -->
+				<Property Name="ACCRESPP" Type="Edm.String" MaxLength="20"
+					sap:label="Person Responsible" />
+				<Property Name="ACCRESPU" Type="Edm.String" MaxLength="12"
+					sap:label="User Responsible" />
+				<Property Name="ACCTYP" Type="Edm.String" MaxLength="1"
+					sap:label="Account Type" />
+				<Property Name="COMPACC" Type="Edm.String" MaxLength="6"
+					sap:label="Company" />
+				<Property Name="FSIACC" Type="Edm.String" MaxLength="10"
+					sap:label="Group Account" />
+				<Property Name="FSIACCSTA" Type="Edm.String" MaxLength="10"
+					sap:label="Stat. Group Account" />
+				<Property Name="FUNCACC" Type="Edm.String" MaxLength="16"
+					sap:label="Functional Area" />
+				<Property Name="TXTLG" Type="Edm.String" MaxLength="60"
+					sap:label="Description (Long)" />
+				<Property Name="TXTSH" Type="Edm.String" MaxLength="20"
+					sap:label="Description (short)" />
+				<Property Name="USMD_ENT_CHNG_AT" Type="Edm.DateTime"
+					Precision="0" sap:label="Changed On" />
+				<Property Name="USMD_ENT_CHNG_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Changed By" />
+				<Property Name="USMD_ENT_CRTD_AT" Type="Edm.DateTime"
+					Precision="0" sap:label="Created On" />
+				<Property Name="USMD_ENT_CRTD_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Created By" />
+				<NavigationProperty Name="ACCOUNT2ACCCCDETRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2ACCCCDETRel" FromRole="FromRole_ACCOUNT2ACCCCDETRel"
+					ToRole="ToRole_ACCOUNT2ACCCCDETRel" />
+				<NavigationProperty Name="ACCOUNT2AtthACCOUNTRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2AtthACCOUNTRel" FromRole="FromRole_ACCOUNT2AtthACCOUNTRel"
+					ToRole="ToRole_ACCOUNT2AtthACCOUNTRel" />
+				<NavigationProperty Name="ACCOUNT2CELEMRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2CELEMRel" FromRole="FromRole_ACCOUNT2CELEMRel"
+					ToRole="ToRole_ACCOUNT2CELEMRel" />
+				<NavigationProperty Name="ACCOUNT2DTxtACCOUNTRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2DTxtACCOUNTRel" FromRole="FromRole_ACCOUNT2DTxtACCOUNTRel"
+					ToRole="ToRole_ACCOUNT2DTxtACCOUNTRel" />
+				<NavigationProperty Name="ACCOUNT2NEWACCOUNTRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2NEWACCOUNTRel" FromRole="FromRole_ACCOUNT2NEWACCOUNTRel"
+					ToRole="ToRole_ACCOUNT2NEWACCOUNTRel" />
+				<NavigationProperty Name="ACCOUNT2PLACCOUNTRel"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNT2PLACCOUNTRel" FromRole="FromRole_ACCOUNT2PLACCOUNTRel"
+					ToRole="ToRole_ACCOUNT2PLACCOUNTRel" />
+				<NavigationProperty Name="CD_ACCBLCREA"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCBLPLAN"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCBLPOST"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCDEL"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCTYP"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_COA"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToChanges" FromRole="FromRole_ACCOUNTToChanges"
+					ToRole="ToRole_ACCOUNTToChanges" />
+				<NavigationProperty Name="CD_ACCRESPU"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCNEWACC"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCPLTYP"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_USMD_ENT_CRTD_BY"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_ACCGRPACC"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_COMPACC"
+					Relationship="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" FromRole="FromRole_ACCOUNTToCodeDesc"
+					ToRole="ToRole_ACCOUNTToCodeDesc" />
+			</EntityType>
+			<EntityType Name="DTxtACCOUNT" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="COA" />
+					<PropertyRef Name="ACCOUNT" />
+					<PropertyRef Name="LANGU" />
+				</Key>
+				<Property Name="COA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Chart of Accts" />
+				<Property Name="ACCOUNT" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Account" />
+				<Property Name="LANGU" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Language" />
+				<Property Name="TXTLG" Type="Edm.String" MaxLength="60"
+					sap:label="Description (Long)" />
+				<Property Name="TXTSH" Type="Edm.String" MaxLength="20"
+					sap:label="Description (short)" />
+				<NavigationProperty Name="CD_COA"
+					Relationship="MDG_GL_ACCOUNT.DTxtACCOUNTToCodeDesc" FromRole="FromRole_DTxtACCOUNTToCodeDesc"
+					ToRole="ToRole_DTxtACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_LANGU"
+					Relationship="MDG_GL_ACCOUNT.DTxtACCOUNTToCodeDesc" FromRole="FromRole_DTxtACCOUNTToCodeDesc"
+					ToRole="ToRole_DTxtACCOUNTToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.DTxtACCOUNTToChanges" FromRole="FromRole_DTxtACCOUNTToChanges"
+					ToRole="ToRole_DTxtACCOUNTToChanges" />
+			</EntityType>
+			<EntityType Name="AtthACCOUNT" m:HasStream="true"
+				sap:content-version="1">
+				<Key>
+					<PropertyRef Name="USMD_ACREATED_AT" />
+					<PropertyRef Name="COA" />
+					<PropertyRef Name="ACCOUNT" />
+					<PropertyRef Name="USMD_CREQUEST" />
+				</Key>
+				<Property Name="USMD_ACREATED_AT" Type="Edm.DateTime"
+					Nullable="false" Precision="0" sap:label="Time Stamp" />
+				<Property Name="USMD_ACREATED_BY" Type="Edm.String"
+					MaxLength="12" sap:label="User" />
+				<Property Name="USMD_FILE_TYPE" Type="Edm.String"
+					MaxLength="128" sap:label="Mime Type" />
+				<Property Name="USMD_FILE_SIZE" Type="Edm.String"
+					MaxLength="15" sap:label="Length of file" />
+				<Property Name="USMD_TITLE" Type="Edm.String" MaxLength="60"
+					sap:label="Description (Long)" />
+				<Property Name="USMD_LANGUAGE" Type="Edm.String" MaxLength="2"
+					sap:label="Language" />
+				<Property Name="USMD_EXPLANATION" Type="Edm.String"
+					sap:label="Comment" />
+				<Property Name="USMD_LINK" Type="Edm.String" sap:label="Link" />
+				<Property Name="COA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="Chart of Accts" />
+				<Property Name="ACCOUNT" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Account" />
+				<Property Name="USMD_CREQUEST" Type="Edm.String" Nullable="false"
+					MaxLength="12" sap:label="Change Request" />
+				<NavigationProperty Name="CD_COA"
+					Relationship="MDG_GL_ACCOUNT.AtthACCOUNTToCodeDesc" FromRole="FromRole_AtthACCOUNTToCodeDesc"
+					ToRole="ToRole_AtthACCOUNTToCodeDesc" />
+				<NavigationProperty Name="CD_USMD_LANGUAGE"
+					Relationship="MDG_GL_ACCOUNT.AtthACCOUNTToCodeDesc" FromRole="FromRole_AtthACCOUNTToCodeDesc"
+					ToRole="ToRole_AtthACCOUNTToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.AtthACCOUNTToChanges" FromRole="FromRole_AtthACCOUNTToChanges"
+					ToRole="ToRole_AtthACCOUNTToChanges" />
+			</EntityType>
+			<EntityType Name="CELEM" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="COAREA" />
+					<PropertyRef Name="CELEM" />
+				</Key>
+				<Property Name="COAREA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="CO Area" />
+				<Property Name="CELEM" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Cost Element" />
+				<Property Name="CCTRCELEM" Type="Edm.String" MaxLength="10"
+					sap:label="Default Cost Center" />
+				<Property Name="CELEMCAT" Type="Edm.String" MaxLength="2"
+					sap:label="CElem category" />
+				<Property Name="CELEMINDQ" Type="Edm.String" MaxLength="1"
+					sap:label="Record Quantity" />
+				<Property Name="CELEMORD" Type="Edm.String" MaxLength="12"
+					sap:label="Dflt Order CostElem." />
+				<Property Name="FUNCCELEM" Type="Edm.String" MaxLength="16"
+					sap:label="Functional Area" />
+				<Property Name="TXTMI" Type="Edm.String" MaxLength="40"
+					sap:label="Description (medium)" />
+				<Property Name="TXTSH" Type="Edm.String" MaxLength="20"
+					sap:label="Description (short)" />
+				<Property Name="UOMCELEM" Type="Edm.String" MaxLength="3"
+					sap:label="Unit of Measure" sap:semantics="unit-of-measure" />
+				<Property Name="USMD_ENT_CHNG_AT" Type="Edm.Decimal"
+					Precision="15" Scale="0" sap:label="Changed On" />
+				<Property Name="USMD_ENT_CHNG_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Changed By" />
+				<Property Name="USMD_ENT_CRTD_AT" Type="Edm.Decimal"
+					Precision="15" Scale="0" sap:label="Created On" />
+				<Property Name="USMD_ENT_CRTD_BY" Type="Edm.String"
+					MaxLength="12" sap:label="Created By" />
+				<NavigationProperty Name="CELEM2AtthCELEMRel"
+					Relationship="MDG_GL_ACCOUNT.CELEM2AtthCELEMRel" FromRole="FromRole_CELEM2AtthCELEMRel"
+					ToRole="ToRole_CELEM2AtthCELEMRel" />
+				<NavigationProperty Name="CELEM2DTxtCELEMRel"
+					Relationship="MDG_GL_ACCOUNT.CELEM2DTxtCELEMRel" FromRole="FromRole_CELEM2DTxtCELEMRel"
+					ToRole="ToRole_CELEM2DTxtCELEMRel" />
+				<NavigationProperty Name="CD_CELEMCAT"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+				<NavigationProperty Name="CD_CELEMINDQ"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.CELEMToChanges" FromRole="FromRole_CELEMToChanges"
+					ToRole="ToRole_CELEMToChanges" />
+				<NavigationProperty Name="CD_COAREA"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+				<NavigationProperty Name="CD_CELEM"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+				<NavigationProperty Name="CD_CCTRCELEM"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+				<NavigationProperty Name="CD_UOMCELEM"
+					Relationship="MDG_GL_ACCOUNT.CELEMToCodeDesc" FromRole="FromRole_CELEMToCodeDesc"
+					ToRole="ToRole_CELEMToCodeDesc" />
+			</EntityType>
+			<EntityType Name="DTxtCELEM" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="COAREA" />
+					<PropertyRef Name="CELEM" />
+					<PropertyRef Name="LANGU" />
+				</Key>
+				<Property Name="COAREA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="CO Area" />
+				<Property Name="CELEM" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Cost Element" />
+				<Property Name="LANGU" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Language" />
+				<Property Name="TXTMI" Type="Edm.String" MaxLength="40"
+					sap:label="Description (medium)" />
+				<Property Name="TXTSH" Type="Edm.String" MaxLength="20"
+					sap:label="Description (short)" />
+				<NavigationProperty Name="CD_LANGU"
+					Relationship="MDG_GL_ACCOUNT.DTxtCELEMToCodeDesc" FromRole="FromRole_DTxtCELEMToCodeDesc"
+					ToRole="ToRole_DTxtCELEMToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.DTxtCELEMToChanges" FromRole="FromRole_DTxtCELEMToChanges"
+					ToRole="ToRole_DTxtCELEMToChanges" />
+				<NavigationProperty Name="CD_CELEM"
+					Relationship="MDG_GL_ACCOUNT.DTxtCELEMToCodeDesc" FromRole="FromRole_DTxtCELEMToCodeDesc"
+					ToRole="ToRole_DTxtCELEMToCodeDesc" />
+			</EntityType>
+			<EntityType Name="AtthCELEM" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="USMD_ACREATED_AT" />
+					<PropertyRef Name="COAREA" />
+					<PropertyRef Name="CELEM" />
+				</Key>
+				<Property Name="USMD_ACREATED_AT" Type="Edm.DateTime"
+					Nullable="false" Precision="0" sap:label="Time Stamp" />
+				<Property Name="USMD_ACREATED_BY" Type="Edm.String"
+					MaxLength="12" sap:label="User" />
+				<Property Name="USMD_FILE_TYPE" Type="Edm.String"
+					MaxLength="128" sap:label="Mime Type" />
+				<Property Name="USMD_FILE_SIZE" Type="Edm.String"
+					MaxLength="15" sap:label="Length of file" />
+				<Property Name="USMD_TITLE" Type="Edm.String" MaxLength="60"
+					sap:label="Description (Long)" />
+				<Property Name="USMD_LANGUAGE" Type="Edm.String" MaxLength="2"
+					sap:label="Language" />
+				<Property Name="USMD_EXPLANATION" Type="Edm.String"
+					sap:label="Comment" />
+				<Property Name="USMD_LINK" Type="Edm.String" sap:label="Link" />
+				<Property Name="COAREA" Type="Edm.String" Nullable="false"
+					MaxLength="4" sap:label="CO Area" />
+				<Property Name="CELEM" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Cost Element" />
+				<NavigationProperty Name="CD_USMD_LANGUAGE"
+					Relationship="MDG_GL_ACCOUNT.AtthCELEMToCodeDesc" FromRole="FromRole_AtthCELEMToCodeDesc"
+					ToRole="ToRole_AtthCELEMToCodeDesc" />
+				<NavigationProperty Name="ChangeData"
+					Relationship="MDG_GL_ACCOUNT.AtthCELEMToChanges" FromRole="FromRole_AtthCELEMToChanges"
+					ToRole="ToRole_AtthCELEMToChanges" />
+			</EntityType>
+			<EntityType Name="CodeDescription" sap:content-version="1">
+				<Key>
+					<PropertyRef Name="Code" />
+				</Key>
+				<Property Name="Code" Type="Edm.String" Nullable="false" />
+				<Property Name="Description" Type="Edm.String" />
+			</EntityType>
+			<ComplexType Name="RejectionReason">
+				<Property Name="ReasonCode" Type="Edm.String" Nullable="false"
+					MaxLength="2" sap:label="Reason for Rejection" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="ReasonText" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<ComplexType Name="Message">
+				<Property Name="MsgTxt" Type="Edm.String" Nullable="false"
+					MaxLength="220" sap:label="Message Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<ComplexType Name="Edition">
+				<Property Name="UsmdEdtnNumber" Type="Edm.String" Nullable="false"
+					MaxLength="6" sap:label="Edition Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdVdateFrom" Type="Edm.DateTime"
+					Precision="7" sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdVdateTo" Type="Edm.DateTime" Precision="7"
+					sap:label="Date" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdEdition" Type="Edm.String" Nullable="false"
+					MaxLength="10" sap:label="Edition" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+				<Property Name="UsmdEdtnDesc" Type="Edm.String" Nullable="false"
+					MaxLength="40" sap:label="Description (medium)" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false" />
+			</ComplexType>
+			<Association Name="DTxtACCOUNTToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.DTxtACCOUNT" Multiplicity="1"
+					Role="FromRole_DTxtACCOUNTToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_DTxtACCOUNTToCodeDesc" />
+			</Association>
+			<Association Name="DTxtACCOUNTToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.DTxtACCOUNT" Multiplicity="1"
+					Role="FromRole_DTxtACCOUNTToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_DTxtACCOUNTToChanges" />
+			</Association>
+			<Association Name="AtthACCCCDETToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthACCCCDET" Multiplicity="1"
+					Role="FromRole_AtthACCCCDETToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_AtthACCCCDETToCodeDesc" />
+			</Association>
+			<Association Name="AtthACCCCDETToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthACCCCDET" Multiplicity="1"
+					Role="FromRole_AtthACCCCDETToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_AtthACCCCDETToChanges" />
+			</Association>
+			<Association Name="AtthACCOUNTToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthACCOUNT" Multiplicity="1"
+					Role="FromRole_AtthACCOUNTToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_AtthACCOUNTToCodeDesc" />
+			</Association>
+			<Association Name="AtthACCOUNTToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthACCOUNT" Multiplicity="1"
+					Role="FromRole_AtthACCOUNTToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_AtthACCOUNTToChanges" />
+			</Association>
+			<Association Name="DTxtCELEMToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.DTxtCELEM" Multiplicity="1"
+					Role="FromRole_DTxtCELEMToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_DTxtCELEMToCodeDesc" />
+			</Association>
+			<Association Name="DTxtCELEMToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.DTxtCELEM" Multiplicity="1"
+					Role="FromRole_DTxtCELEMToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_DTxtCELEMToChanges" />
+			</Association>
+			<Association Name="ChangeRequestToAttachment"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ChangeRequest" Multiplicity="1"
+					Role="FromRole_ChangeRequestToAttachment" />
+				<End Type="MDG_GL_ACCOUNT.Attachment" Multiplicity="*"
+					Role="ToRole_ChangeRequestToAttachment" />
+			</Association>
+			<Association Name="ChangeRequestToNote"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ChangeRequest" Multiplicity="1"
+					Role="FromRole_ChangeRequestToNote" />
+				<End Type="MDG_GL_ACCOUNT.Note" Multiplicity="*"
+					Role="ToRole_ChangeRequestToNote" />
+			</Association>
+			<Association Name="CRToACCCCDET" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ChangeRequest" Multiplicity="1"
+					Role="FromRole_CRToACCCCDET" />
+				<End Type="MDG_GL_ACCOUNT.ACCCCDET" Multiplicity="1"
+					Role="ToRole_CRToACCCCDET" />
+			</Association>
+			<Association Name="CRToACCOUNT" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ChangeRequest" Multiplicity="1"
+					Role="FromRole_CRToACCOUNT" />
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="1"
+					Role="ToRole_CRToACCOUNT" />
+			</Association>
+			<Association Name="CRToCELEM" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ChangeRequest" Multiplicity="1"
+					Role="FromRole_CRToCELEM" />
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="1" Role="ToRole_CRToCELEM" />
+			</Association>
+			<Association Name="ACCOUNT2ACCCCDETRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2ACCCCDETRel" />
+				<End Type="MDG_GL_ACCOUNT.ACCCCDET" Multiplicity="*"
+					Role="ToRole_ACCOUNT2ACCCCDETRel" />
+			</Association>
+			<Association Name="ACCOUNT2AtthACCOUNTRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2AtthACCOUNTRel" />
+				<End Type="MDG_GL_ACCOUNT.AtthACCOUNT" Multiplicity="*"
+					Role="ToRole_ACCOUNT2AtthACCOUNTRel" />
+			</Association>
+			<Association Name="ACCOUNT2CELEMRel" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2CELEMRel" />
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="*"
+					Role="ToRole_ACCOUNT2CELEMRel" />
+			</Association>
+			<Association Name="ACCOUNT2DTxtACCOUNTRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2DTxtACCOUNTRel" />
+				<End Type="MDG_GL_ACCOUNT.DTxtACCOUNT" Multiplicity="*"
+					Role="ToRole_ACCOUNT2DTxtACCOUNTRel" />
+			</Association>
+			<Association />
+			<Association Name="ACCOUNT2NEWACCOUNTRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2NEWACCOUNTRel" />
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="ToRole_ACCOUNT2NEWACCOUNTRel" />
+			</Association>
+			<Association Name="ACCOUNT2PLACCOUNTRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="FromRole_ACCOUNT2PLACCOUNTRel" />
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="0..1"
+					Role="ToRole_ACCOUNT2PLACCOUNTRel" />
+			</Association>
+			<Association Name="ACCOUNTToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="1"
+					Role="FromRole_ACCOUNTToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_ACCOUNTToCodeDesc" />
+			</Association>
+			<Association Name="ACCOUNTToChanges" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCOUNT" Multiplicity="1"
+					Role="FromRole_ACCOUNTToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_ACCOUNTToChanges" />
+			</Association>
+			<Association Name="ACCCCDET2AtthACCCCDETRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCCCDET" Multiplicity="0..1"
+					Role="FromRole_ACCCCDET2AtthACCCCDETRel" />
+				<End Type="MDG_GL_ACCOUNT.AtthACCCCDET" Multiplicity="*"
+					Role="ToRole_ACCCCDET2AtthACCCCDETRel" />
+			</Association>
+			<Association Name="ACCCCDETToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCCCDET" Multiplicity="1"
+					Role="FromRole_ACCCCDETToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_ACCCCDETToCodeDesc" />
+			</Association>
+			<Association Name="ACCCCDETToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.ACCCCDET" Multiplicity="1"
+					Role="FromRole_ACCCCDETToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_ACCCCDETToChanges" />
+			</Association>
+			<Association Name="AtthCELEMToCodeDesc"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthCELEM" Multiplicity="1"
+					Role="FromRole_AtthCELEMToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_AtthCELEMToCodeDesc" />
+			</Association>
+			<Association Name="AtthCELEMToChanges"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.AtthCELEM" Multiplicity="1"
+					Role="FromRole_AtthCELEMToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_AtthCELEMToChanges" />
+			</Association>
+			<Association Name="CELEM2AtthCELEMRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="0..1"
+					Role="FromRole_CELEM2AtthCELEMRel" />
+				<End Type="MDG_GL_ACCOUNT.AtthCELEM" Multiplicity="*"
+					Role="ToRole_CELEM2AtthCELEMRel" />
+			</Association>
+			<Association Name="CELEM2DTxtCELEMRel"
+				sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="0..1"
+					Role="FromRole_CELEM2DTxtCELEMRel" />
+				<End Type="MDG_GL_ACCOUNT.DTxtCELEM" Multiplicity="*"
+					Role="ToRole_CELEM2DTxtCELEMRel" />
+			</Association>
+			<Association Name="CELEMToCodeDesc" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="1"
+					Role="FromRole_CELEMToCodeDesc" />
+				<End Type="MDG_GL_ACCOUNT.CodeDescription" Multiplicity="1"
+					Role="ToRole_CELEMToCodeDesc" />
+			</Association>
+			<Association Name="CELEMToChanges" sap:content-version="1">
+				<End Type="MDG_GL_ACCOUNT.CELEM" Multiplicity="1"
+					Role="FromRole_CELEMToChanges" />
+				<End Type="MDG_GL_ACCOUNT.ChangeData" Multiplicity="*"
+					Role="ToRole_CELEMToChanges" />
+			</Association>
+			<EntityContainer Name="MDG_GL_ACCOUNT_Entities"
+				m:IsDefaultEntityContainer="true" sap:supported-formats="atom json">
+				<EntitySet Name="ChangeRequestCollection" EntityType="MDG_GL_ACCOUNT.ChangeRequest"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="ChangeDataCollection" EntityType="MDG_GL_ACCOUNT.ChangeData"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="ActionCollection" EntityType="MDG_GL_ACCOUNT.Action"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:content-version="1" />
+				<EntitySet Name="ObsoleteDataCollection" EntityType="MDG_GL_ACCOUNT.ObsoleteData"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+				<EntitySet Name="ACCCCDETCollection" EntityType="MDG_GL_ACCOUNT.ACCCCDET"
+					sap:content-version="1" />
+				<EntitySet Name="AtthACCCCDETCollection" EntityType="MDG_GL_ACCOUNT.AtthACCCCDET"
+					sap:content-version="1" />
+				<EntitySet Name="ACCOUNTCollection" EntityType="MDG_GL_ACCOUNT.ACCOUNT"
+					sap:content-version="1" />
+				<EntitySet Name="DTxtACCOUNTCollection" EntityType="MDG_GL_ACCOUNT.DTxtACCOUNT"
+					sap:content-version="1" />
+				<EntitySet Name="AtthACCOUNTCollection" EntityType="MDG_GL_ACCOUNT.AtthACCOUNT"
+					sap:content-version="1" />
+				<EntitySet Name="CELEMCollection" EntityType="MDG_GL_ACCOUNT.CELEM"
+					sap:content-version="1" />
+				<EntitySet Name="DTxtCELEMCollection" EntityType="MDG_GL_ACCOUNT.DTxtCELEM"
+					sap:content-version="1" />
+				<EntitySet Name="AtthCELEMCollection" EntityType="MDG_GL_ACCOUNT.AtthCELEM"
+					sap:content-version="1" />
+				<EntitySet Name="CodeDescriptionCollection" EntityType="MDG_GL_ACCOUNT.CodeDescription"
+					sap:content-version="1" />
+				<EntitySet Name="AttachmentCollection" EntityType="MDG_GL_ACCOUNT.Attachment"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+				<EntitySet Name="NoteCollection" EntityType="MDG_GL_ACCOUNT.Note"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:pageable="false" sap:addressable="false" sap:content-version="1" />
+				<AssociationSet Name="AtthACCOUNTToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthACCOUNTToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthACCOUNTCollection" Role="FromRole_AtthACCOUNTToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_AtthACCOUNTToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="AtthCELEMToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthCELEMToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthCELEMCollection" Role="FromRole_AtthCELEMToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_AtthCELEMToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2NEWACCOUNTRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2NEWACCOUNTRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2NEWACCOUNTRel" />
+					<End EntitySet="ACCOUNTCollection" Role="ToRole_ACCOUNT2NEWACCOUNTRel" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2CELEMRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2CELEMRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2CELEMRel" />
+					<End EntitySet="CELEMCollection" Role="ToRole_ACCOUNT2CELEMRel" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2PLACCOUNTRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2PLACCOUNTRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2PLACCOUNTRel" />
+					<End EntitySet="ACCOUNTCollection" Role="ToRole_ACCOUNT2PLACCOUNTRel" />
+				</AssociationSet>
+				<AssociationSet Name="ChangeRequestToNoteSet"
+					Association="MDG_GL_ACCOUNT.ChangeRequestToNote" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToNote" />
+					<End EntitySet="NoteCollection" Role="ToRole_ChangeRequestToNote" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNTToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNTToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNTToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_ACCOUNTToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="ACCCCDETToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCCCDETToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCCCDETCollection" Role="FromRole_ACCCCDETToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_ACCCCDETToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2ACCCCDETRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2ACCCCDETRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2ACCCCDETRel" />
+					<End EntitySet="ACCCCDETCollection" Role="ToRole_ACCOUNT2ACCCCDETRel" />
+				</AssociationSet>
+				<AssociationSet Name="CRToACCOUNT_AssocSet"
+					Association="MDG_GL_ACCOUNT.CRToACCOUNT" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_CRToACCOUNT" />
+					<End EntitySet="ACCOUNTCollection" Role="ToRole_CRToACCOUNT" />
+				</AssociationSet>
+				<AssociationSet Name="ACCCCDETToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCCCDETToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCCCDETCollection" Role="FromRole_ACCCCDETToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_ACCCCDETToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="DTxtACCOUNTToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.DTxtACCOUNTToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="DTxtACCOUNTCollection" Role="FromRole_DTxtACCOUNTToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_DTxtACCOUNTToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="CELEMToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.CELEMToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="CELEMCollection" Role="FromRole_CELEMToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_CELEMToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="CELEM2AtthCELEMRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.CELEM2AtthCELEMRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="CELEMCollection" Role="FromRole_CELEM2AtthCELEMRel" />
+					<End EntitySet="AtthCELEMCollection" Role="ToRole_CELEM2AtthCELEMRel" />
+				</AssociationSet>
+				<AssociationSet Name="CELEMToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.CELEMToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="CELEMCollection" Role="FromRole_CELEMToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_CELEMToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2DTxtACCOUNTRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2DTxtACCOUNTRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2DTxtACCOUNTRel" />
+					<End EntitySet="DTxtACCOUNTCollection" Role="ToRole_ACCOUNT2DTxtACCOUNTRel" />
+				</AssociationSet>
+				<AssociationSet Name="ACCCCDET2AtthACCCCDETRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCCCDET2AtthACCCCDETRel"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1">
+					<End EntitySet="ACCCCDETCollection" Role="FromRole_ACCCCDET2AtthACCCCDETRel" />
+					<End EntitySet="AtthACCCCDETCollection" Role="ToRole_ACCCCDET2AtthACCCCDETRel" />
+				</AssociationSet>
+				<AssociationSet Name="CELEM2DTxtCELEMRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.CELEM2DTxtCELEMRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="CELEMCollection" Role="FromRole_CELEM2DTxtCELEMRel" />
+					<End EntitySet="DTxtCELEMCollection" Role="ToRole_CELEM2DTxtCELEMRel" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNT2AtthACCOUNTRel_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNT2AtthACCOUNTRel" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNT2AtthACCOUNTRel" />
+					<End EntitySet="AtthACCOUNTCollection" Role="ToRole_ACCOUNT2AtthACCOUNTRel" />
+				</AssociationSet>
+				<AssociationSet Name="AtthACCCCDETToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthACCCCDETToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthACCCCDETCollection" Role="FromRole_AtthACCCCDETToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_AtthACCCCDETToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="CRToACCCCDET_AssocSet"
+					Association="MDG_GL_ACCOUNT.CRToACCCCDET" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_CRToACCCCDET" />
+					<End EntitySet="ACCCCDETCollection" Role="ToRole_CRToACCCCDET" />
+				</AssociationSet>
+				<AssociationSet Name="AtthACCCCDETToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthACCCCDETToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthACCCCDETCollection" Role="FromRole_AtthACCCCDETToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_AtthACCCCDETToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="ACCOUNTToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.ACCOUNTToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ACCOUNTCollection" Role="FromRole_ACCOUNTToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_ACCOUNTToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="AtthACCOUNTToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthACCOUNTToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthACCOUNTCollection" Role="FromRole_AtthACCOUNTToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_AtthACCOUNTToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="AtthCELEMToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.AtthCELEMToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="AtthCELEMCollection" Role="FromRole_AtthCELEMToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_AtthCELEMToCodeDesc" />
+				</AssociationSet>
+				<AssociationSet Name="DTxtACCOUNTToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.DTxtACCOUNTToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="DTxtACCOUNTCollection" Role="FromRole_DTxtACCOUNTToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_DTxtACCOUNTToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="CRToCELEM_AssocSet"
+					Association="MDG_GL_ACCOUNT.CRToCELEM" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_CRToCELEM" />
+					<End EntitySet="CELEMCollection" Role="ToRole_CRToCELEM" />
+				</AssociationSet>
+				<AssociationSet Name="DTxtCELEMToChanges_AssocSet"
+					Association="MDG_GL_ACCOUNT.DTxtCELEMToChanges" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="DTxtCELEMCollection" Role="FromRole_DTxtCELEMToChanges" />
+					<End EntitySet="ChangeDataCollection" Role="ToRole_DTxtCELEMToChanges" />
+				</AssociationSet>
+				<AssociationSet Name="ChangeRequestToAttachmentSet"
+					Association="MDG_GL_ACCOUNT.ChangeRequestToAttachment"
+					sap:creatable="false" sap:updatable="false" sap:deletable="false"
+					sap:content-version="1">
+					<End EntitySet="ChangeRequestCollection" Role="FromRole_ChangeRequestToAttachment" />
+					<End EntitySet="AttachmentCollection" Role="ToRole_ChangeRequestToAttachment" />
+				</AssociationSet>
+				<AssociationSet Name="DTxtCELEMToCodeDesc_AssocSet"
+					Association="MDG_GL_ACCOUNT.DTxtCELEMToCodeDesc" sap:creatable="false"
+					sap:updatable="false" sap:deletable="false" sap:content-version="1">
+					<End EntitySet="DTxtCELEMCollection" Role="FromRole_DTxtCELEMToCodeDesc" />
+					<End EntitySet="CodeDescriptionCollection" Role="ToRole_DTxtCELEMToCodeDesc" />
+				</AssociationSet>
+				<FunctionImport Name="GetRejectionReasons"
+					ReturnType="Collection(MDG_GL_ACCOUNT.RejectionReason)"
+					m:HttpMethod="GET" sap:action-for="MDG_GL_ACCOUNT.ChangeRequest">
+					<Parameter Name="ChangeRequestType" Type="Edm.String"
+						Mode="In" MaxLength="8" />
+				</FunctionImport>
+				<FunctionImport Name="PerformAction" ReturnType="MDG_GL_ACCOUNT.Message"
+					m:HttpMethod="POST" sap:action-for="MDG_GL_ACCOUNT.ChangeRequest">
+					<Parameter Name="LogicalAction" Type="Edm.String" Mode="In"
+						MaxLength="10" />
+					<Parameter Name="CreatedBy" Type="Edm.String" Mode="In"
+						MaxLength="80" />
+					<Parameter Name="ActionCode" Type="Edm.String" Mode="In"
+						MaxLength="2" />
+					<Parameter Name="RejectionReasonCode" Type="Edm.String"
+						Mode="In" MaxLength="2" />
+					<Parameter Name="Note" Type="Edm.String" Mode="In" />
+					<Parameter Name="Model" Type="Edm.String" Mode="In"
+						MaxLength="2" />
+					<Parameter Name="ChangeRequestID" Type="Edm.String" Mode="In" />
+					<Parameter Name="ChangedAt" Type="Edm.DateTime" Mode="In"
+						Precision="0" />
+					<Parameter Name="MainEntity" Type="Edm.String" Mode="In" />
+					<Parameter Name="ObjectDescription" Type="Edm.String"
+						Mode="In" />
+				</FunctionImport>
+				<FunctionImport Name="Decisions"
+					ReturnType="Collection(MDG_GL_ACCOUNT.Action)" EntitySet="ActionCollection"
+					m:HttpMethod="GET" sap:action-for="MDG_GL_ACCOUNT.Action">
+					<Parameter Name="Crequest" Type="Edm.String" Mode="In"
+						MaxLength="12" />
+				</FunctionImport>
+			</EntityContainer>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -1,0 +1,53 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:f="sap.ui.layout.form" xmlns:l="sap.ui.layout" xmlns:ui="sap.ca.ui" xmlns="sap.m">
+				<f:SimpleForm columnsL="1" columnsLM="1" editable="false" emptySpanL="4" emptySpanM="4" id="matStorageTypeChangeForm" labelSpanL="5" labelSpanM="5"
+					layout="ResponsiveGridLayout" minWidth="1024">
+					<f:content>
+						<core:Title id="MatStoragetype" text="{i18n>Mat_Warehouse_StorageType}"></core:Title>
+						<Label id="LBL_LGTYP__TXT" size="300" text="{i18n>Mat_Warehouse_StorageType}"></Label>
+						<Text id="Txt_LGTYP__TXT" text="{parts: [{path:'/LGTYP'}, {path:'/LGTYP__TXT'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}" visible="{path:'/LGTYP',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+							</Text>
+						
+						
+						
+						
+						<Label id="LBL_LGPMLGTST" text="{i18n>Mat_Warehouse_Storage_Bin}"></Label>
+							<Text id="Txt_LGPMLGTST" text="{/LGPMLGTST}" visible="{path:'/LGPMLGTST',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						<Label id="LBL_KOBMLGTST" text="{i18n>Mat_Picking_Area}"></Label>
+							<Text id="Txt_KOBMLGTST" text="{/KOBMLGTST}" visible="{path:'/KOBMLGTST',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}">
+						</Text>
+						
+						
+							<Label id="LBL_LPMIN" size="300" text="{i18n>Mat_Min_Bin_Qty}"></Label>
+							<Text id="Txt_LPMIN" text="{/LPMIN}" visible="{path:'/LPMIN',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						<Label id="LBL_LPMAX" text="{i18n>Mat_Max_Bin_Qty}"></Label>
+							<Text id="Txt_LPMAX" text="{/LPMAX}" visible="{path:'/LPMAX',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						<Label id="LBL_MAMNG" text="{i18n>Mat_Control_Qty}"></Label>
+							<Text id="Txt_MAMNG" text="{/MAMNG}" visible="{path:'/MAMNG',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						
+							<Label id="LBL_NSMNG" text="{i18n>Mat_Replenish_Qty}"></Label>
+							<Text id="Txt_NSMNG" text="{/NSMNG}" visible="{path:'/NSMNG',
+					formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						<Label id="LBL_RDMNG" text="{i18n>Mat_Rounding_Qty}"></Label>
+							<Text id="Txt_RDMNG" text="{/RDMNG}" visible="{path:'/RDMNG',
+						formatter:'fcg.mdg.approvecrv2.util.Formatter.defaultValue'}">
+						</Text>
+						<core:ExtensionPoint name="extmatStorageTypeChange"></core:ExtensionPoint>
+					</f:content>
+				</f:SimpleForm>
+</core:FragmentDefinition>

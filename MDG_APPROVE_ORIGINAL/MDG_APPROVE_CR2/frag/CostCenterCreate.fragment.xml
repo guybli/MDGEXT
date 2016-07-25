@@ -1,0 +1,222 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:layout="sap.ui.layout" xmlns:form="sap.ui.layout.form"
+	xmlns:ui="sap.ca.ui">
+	<layout:VerticalLayout id="ccCreateLayout" width="100%">
+		<layout:content>
+			<form:SimpleForm id="ccCreateSimpleForm"
+				maxContainerCols="1" minWidth="1024" layout="ResponsiveGridLayout"
+				labelSpanL="4" labelSpanM="4" emptySpanL="1" emptySpanM="1"
+				columnsL="1" columnsM="1">
+				<form:content>
+					<!--  <core:Title id="CreateGenTitle" text="{i18n>CC_TIT_GEN}"></core:Title>-->
+					<Label id="LBL_CREATE_COAREA" text="{i18n>PC_COAREA}"></Label>
+					<Text id="ControllingArea" text="{parts: [{path:'/CCTR/CD_COAREA/Code'}, {path:'/CCTR/CD_COAREA/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/COAREA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTR" text="{i18n>CC_NAME}"></Label>
+					<Text id="CostCenterName" text="{parts: [{path:'/CCTR/CCTR'}, {path:'/CCTR/TXTSH'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_TXTMI" text="{i18n>CC_MED_TEXT}"></Label>
+					<Text id="CCMediumText" text="{/CCTR/TXTMI}"
+						visible="{path:'/CCTR/TXTMI',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRDEPT" text="{i18n>CC_DEPT}"></Label>
+					<Text id="Department" text="{/CCTR/CCTRDEPT}"
+						visible="{path:'/CCTR/CCTRDEPT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>						
+					<!-- <Label text="{i18n>CC_VAL_FRM}"></Label> <Text id="ValidFrom" text="{path:'/Edition/UsmdVdateFrom',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"></Text> 
+						<Label text="{i18n>CC_VAL_TO}"></Label> <Text id="ValidTo" text="{path:'/Edition/UsmdVdateTo',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"></Text> -->
+					<Label id="LBL_CREATE_CCTRCGY" text="{i18n>CC_CCCATEGRY}"></Label>
+					<Text id="CCCategory" text="{parts: [{path:'/CCTR/CD_CCTRCGY/Code'}, {path:'/CCTR/CD_CCTRCGY/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCTRCGY',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCODECCTR" text="{i18n>CC_CCODE}"></Label>
+					<Text id="CompanyCode" text="{parts: [{path:'/CCTR/CD_CCODECCTR/Code'}, {path:'/CCTR/CD_CCODECCTR/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCODECCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRBAREA" text="{i18n>CC_BAREA}"></Label>
+					<Text id="BusinessArea" text="{parts: [{path:'/CCTR/CD_CCTRBAREA/Code'}, {path:'/CCTR/CD_CCTRBAREA/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCTRBAREA',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_FUNCCCTR" text="{i18n>CC_FAREA}"></Label>
+					<Text id="FunctionalArea" text="{parts: [{path:'/CCTR/CD_FUNCCCTR/Code'}, {path:'/CCTR/CD_FUNCCCTR/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/FUNCCCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CURRCCTR" text="{i18n>Currency}"></Label>
+					<Text id="Currency" text="{parts: [{path:'/CCTR/CD_CURRCCTR/Code'}, {path:'/CCTR/CD_CURRCCTR/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CURRCCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_PCTRCCTR" text="{i18n>CC_PCTRCCTR}"></Label>
+					<Text id="ccProfitCenter" text="{parts: [{path:'/CCTR/CCTR2PCTRCCTRRel/PCTR'}, {path:'/CCTR/CCTR2PCTRCCTRRel/TXTSH'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/PCTRCCTR',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRCCTRN" text="{i18n>CC_CCTRCCTRN}"></Label>
+					<Text id="newCostCenter" text="{parts: [{path:'/CCTR/CCTR2NEWCCTRRel/CCTR'}, {path:'/CCTR/CCTR2NEWCCTRRel/TXTSH'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCTRCCTRN',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRRESPU" text="{i18n>CC_URESP}"></Label>
+					<Text id="UserResponsible" text="{parts: [{path:'/CCTR/CD_CCTRRESPU/Code'}, {path:'/CCTR/CD_CCTRRESPU/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CCTRRESPU',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRRESPP" text="{i18n>CC_PRESP}"></Label>
+					<Text id="PersonResponsible" text="{/CCTR/CCTRRESPP}"
+						visible="{path:'/CCTR/CCTRRESPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extends the General section of the form -->
+					<core:ExtensionPoint name="extccCreateGeneralFormSection" />
+
+					<core:Title id="CreateIndicatorsTitle" text="{i18n>CC_TIT_IND}"></core:Title>
+					<Label text="{i18n>CC_REC_QTY}"></Label>
+					<Text id="RecordQtyIndicator"
+						text="{path:'/CCTR/CCTRQTYRQ',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRQTYRQ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<Label text="{i18n>CC_ACT_PRI_COST}"></Label>
+					<Text id="ccActualPrimaryCostsIndicator"
+						text="{path:'/CCTR/CCTRLKAPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKAPP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_ACT_SEC_COST}"></Label>
+					<Text id="ccActualSecondaryCosts"
+						text="{path:'/CCTR/CCTRLKASC',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKASC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_PLN_PRI_COST}"></Label>
+					<Text id="ccPlanPrimaycostIndicator"
+						text="{path:'/CCTR/CCTRLKPPC',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKPPC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_PLN_SEC_COST}"></Label>
+					<Text id="ccPlanSecondaryCosts"
+						text="{path:'/CCTR/CCTRLKPSC',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKPSC',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_ACT_REV}"></Label>
+					<Text id="ActualRevenuesIndicator"
+						text="{path:'/CCTR/CCTRLKARP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKARP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_PLN_REV}"></Label>
+					<Text id="PlanRevenuesIndicator"
+						text="{path:'/CCTR/CCTRLKPRV',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKPRV',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label text="{i18n>CC_COMM_UPD}"></Label>
+					<Text id="CommitmentUpdateIndicator"
+						text="{path:'/CCTR/CCTRLKCUP',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+						visible="{path:'/CCTR/CCTRLKCUP',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extends the Indicators section of the form -->
+					<core:ExtensionPoint name="extccCreateIndFormSection" />
+
+					<core:Title id="CreateAddressTitle" text="{i18n>PC_TIT_ADDRESS}"></core:Title>
+					<Label id="LBL_CREATE_CC_ANRED" text="{i18n>PC_TITLE}"></Label>
+					<Text id="ccTitle" text="{/CCTR/CC_ANRED}"
+						visible="{path:'/CCTR/CC_ANRED',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_NAME1" text="{i18n>CC_NAME1}"></Label>
+					<Text id="ccName1" text="{/CCTR/CC_NAME1}"
+						visible="{path:'/CCTR/CC_NAME1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_NAME2" text="{i18n>CC_NAME2}"></Label>
+					<Text id="ccName2" text="{/CCTR/CC_NAME2}"
+						visible="{path:'/CCTR/CC_NAME2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_NAME3" text="{i18n>CC_NAME3}"></Label>
+					<Text id="ccName3" text="{/CCTR/CC_NAME3}"
+						visible="{path:'/CCTR/CC_NAME3',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_NAME4" text="{i18n>CC_NAME4}"></Label>
+					<Text id="ccName4" text="{/CCTR/CC_NAME4}"
+						visible="{path:'/CCTR/CC_NAME4',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_STRAS" text="{i18n>PC_STREET}"></Label>
+					<Text id="Street" text="{/CCTR/CC_STRAS}"
+						visible="{path:'/CCTR/CC_STRAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_PSTLZ" text="{i18n>CC_PCODE}"></Label>
+					<Text id="PostalCode" text="{/CCTR/CC_PSTLZ}"
+						visible="{path:'/CCTR/CC_PSTLZ',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_ORT01" text="{i18n>City}"></Label>
+					<Text id="City" text="{/CCTR/CC_ORT01}"
+						visible="{path:'/CCTR/CC_ORT01',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_ORT02" text="{i18n>CC_DISCTRICT}"></Label>
+					<Text id="District" text="{/CCTR/CC_ORT02}"
+						visible="{path:'/CCTR/CC_ORT02',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_LAND1" text="{i18n>CC_COUNTRY}"></Label>
+					<Text id="Country" text="{parts: [{path:'/CCTR/CD_CC_LAND1/Code'}, {path:'/CCTR/CD_CC_LAND1/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CC_LAND1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_REGION" text="{i18n>CC_REGION}"></Label>
+					<Text id="Region" text="{parts: [{path:'/CCTR/CD_CC_REGION/Code'}, {path:'/CCTR/CD_CC_REGION/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CC_REGION',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_PSTL2" text="{i18n>PC_PO_BOX_PCODE}"></Label>
+					<Text id="POBoxPostalCode" text="{/CCTR/CC_PSTL2}"
+						visible="{path:'/CCTR/CC_PSTL2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_PFACH" text="{i18n>CC_POBOX}"></Label>
+					<Text id="POBox" text="{/CCTR/CC_PFACH}"
+						visible="{path:'/CCTR/CC_PFACH',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CCTRTXJCD" text="{i18n>CC_TAXJUR}"></Label>
+					<Text id="TaxJurisdiction" text="{/CCTR/CCTRTXJCD}"
+						visible="{path:'/CCTR/CCTRTXJCD',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<!-- Extends the Address section of the form -->
+					<core:ExtensionPoint name="extccCreateAddresslFormSection" />
+
+					<core:Title id="CreateCommunicationTitle" text="{i18n>PC_TIT_COMM}"></core:Title>
+					<Label id="LBL_CREATE_CC_SPRAS" text="{i18n>Language}"></Label>
+					<Text id="Language" text="{parts: [{path:'/CCTR/CD_CC_SPRAS/Code'}, {path:'/CCTR/CD_CC_SPRAS/Description'}], formatter: 'fcg.mdg.approvecrv2.util.Formatter.getKeyDesc'}"
+						visible="{path:'/CCTR/CC_SPRAS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELF1" text="{i18n>CC_TEL1}"></Label>
+					<Text id="Telephone1" text="{/CCTR/CC_TELF1}"
+						visible="{path:'/CCTR/CC_TELF1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELF2" text="{i18n>CC_TEL2}"></Label>
+					<Text id="Telephone2" text="{/CCTR/CC_TELF2}"
+						visible="{path:'/CCTR/CC_TELF2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELFX" text="{i18n>CC_FAX}"></Label>
+					<Text id="FaxNumber" text="{/CCTR/CC_TELFX}"
+						visible="{path:'/CCTR/CC_TELFX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELTX" text="{i18n>PC_TELTEX_NUM}"></Label>
+					<Text id="TeletexNumber" text="{/CCTR/CC_TELTX}"
+						visible="{path:'/CCTR/CC_TELTX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELX1" text="{i18n>PC_TELEX_NUM}"></Label>
+					<Text id="TelexNumber" text="{/CCTR/CC_TELX1}"
+						visible="{path:'/CCTR/CC_TELX1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_TELBX" text="{i18n>PC_TELEBOX_NUM}"></Label>
+					<Text id="TeleboxNumber" text="{/CCTR/CC_TELBX}"
+						visible="{path:'/CCTR/CC_TELBX',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_DRNAM" text="{i18n>CC_PRNT_NAME}"></Label>
+					<Text id="PrinterName" text="{/CCTR/CC_DRNAM}"
+						visible="{path:'/CCTR/CC_DRNAM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+					<Label id="LBL_CREATE_CC_DATLT" text="{i18n>PC_DATALINE}"
+						labelFor="ccDataLine"></Label>
+					<Text id="ccDataLine" text="{/CCTR/CC_DATLT}"
+						visible="{path:'/CCTR/CC_DATLT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}"></Text>
+
+					<!-- Extends the Communication section of the form -->
+					<core:ExtensionPoint name="extccCreateCommlFormSection"></core:ExtensionPoint>
+					
+					<!-- <core:Title id="ccCreateAttachment" text="{i18n>CC_TIT_ATTACH}" 
+						/> <ui:FileUpload acceptRequestHeader="application/json" class="headerhide" 
+						id="ccCreateAttachFileUpload" items="/results" encodeUrl="/sap/bc/ui2/encode_file" 
+						fileName="filename" url="url" uploadedDate="uploaded" contributor="contributor" 
+						mimeType="mimeType" fileId="documentId" useMultipart="false" renameEnabled="false" 
+						showNoData="false" useEditControls="false" uploadEnabled="false" editMode="false" 
+						showAttachmentsLabelInEditMode="false"> </ui:FileUpload> -->
+				</form:content>
+			</form:SimpleForm>
+			
+			<!-- Extends the form with custom groups -->
+			<core:ExtensionPoint name="extccCreateFormCustomSection"></core:ExtensionPoint>
+
+			<Table id="CreateDescriptionTable" mode="{device>/listMode}"
+				class="table_padding headerBold" width="100%" headerText="{i18n>CC_DESC_TAB}">
+				<columns>
+					<Column id="colLang">
+						<header>
+							<Label text="{i18n>Language}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="colName" hAlign="Center">
+						<header>
+							<Label text="{i18n>CC_DESC_NAME}">
+							</Label>
+						</header>
+					</Column>
+					<Column id="colMedText" hAlign="Center">
+						<header>
+							<Label text="{i18n>CC_MED_TEXT}">
+							</Label>
+						</header>
+					</Column>
+				</columns>
+				<!-- Extends the column of a description table -->
+				<core:ExtensionPoint name="extccCreateDescriptionTable" />
+			</Table>
+
+			<List class="headerBold" id="ccCreateAttachFileUpload" headerText="{i18n>PC_TIT_ATTACH}">
+				<items>
+				</items>
+			</List>
+		</layout:content>
+	</layout:VerticalLayout>
+</core:FragmentDefinition>

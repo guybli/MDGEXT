@@ -1,0 +1,87 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<!-- Create a Form to display the Corresponding BP Organization Details selected 
+	in the Change and Create scenario -->
+
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m"
+	controllerName="fcg.mdg.approvecrv2.view.GeneralOrgDetail">
+	<Page id="generalOrgPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true">
+		<content>
+			<ObjectHeader id="orgDetailHeader">
+				<!-- Extension Point for BP Organization Detail header -->
+				<core:ExtensionPoint name="extorgDetailHeader" />
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<form:SimpleForm id="SimpleFormGeneralOrg"
+						columnsM="1" columnsL="1" emptySpanM="1" emptySpanL="1"
+						labelSpanM="4" labelSpanL="4" layout="ResponsiveGridLayout"
+						minWidth="1024" maxContainerCols="1">
+						<form:content>
+							<!-- General Details INFORMATIONS -->
+							<core:Title id="OGeneral" text="{i18n>General}" />
+							<Label id="lblOTITLE_KEY" text="{i18n>PC_TITLE}" />
+							<Text id="OTITLE_KEY" text="{path:'/TITLE_KEY__TXT'}"
+								visible="{path:'/TITLE_KEY__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblONAME1" text="{i18n>CC_NAME1}" />
+							<Text id="ONAME1" text="{/BP_OrganizationRel/NAME1}"
+								visible="{path:'/BP_OrganizationRel/NAME1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblONAME2" text="{i18n>CC_NAME2}" />
+							<Text id="ONAME2" text="{/BP_OrganizationRel/NAME2}"
+								visible="{path:'/BP_OrganizationRel/NAME2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOTITLELETTER" text="{i18n>Salutation}" />
+							<Text id="OTITLELETTER" text="{/TITLELETTER}"
+								visible="{path:'/TITLELETTER',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOSEARCHTERM1" text="{i18n>Searchterm1}" />
+							<Text id="OSEARCHTERM1" text="{/SEARCHTERM1}"
+								visible="{path:'/SEARCHTERM1',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOSEARCHTERM2" text="{i18n>Searchterm2}" />
+							<Text id="OSEARCHTERM2" text="{/SEARCHTERM2}"
+								visible="{path:'/SEARCHTERM2',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<!-- Extension Point for General in BP Organization Details Form in 
+								Change View -->
+							<core:ExtensionPoint name="extOGeneral" />
+
+							<!-- Organization Details INFORMATIONS -->
+							<core:Title id="OrganizationalData" text="{i18n>OrganizationalData}" />
+							<Label id="lblOLEGALORG" text="{i18n>LegalEntity}" />
+							<Text id="OLEGALORG" text="{path:'/BP_OrganizationRel/LEGALORG__TXT'}"
+								visible="{path:'/BP_OrganizationRel/LEGALORG',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOLEGALFORM" text="{i18n>LegalForm}" />
+							<Text id="OLEGALFORM" text="{path:'/BP_OrganizationRel/LEGALFORM__TXT'}"
+								visible="{path:'/BP_OrganizationRel/LEGALFORM',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOFOUNDATIONDATE" text="{i18n>DateFounded}" />
+							<Text id="OFOUNDATIONDATE"
+								text="{path:'/BP_OrganizationRel/FOUNDATIONDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/BP_OrganizationRel/FOUNDATIONDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOLIQUIDATIONDATE" text="{i18n>LiquidationDate}" />
+							<Text id="OLIQUIDATIONDATE"
+								text="{path:'/BP_OrganizationRel/LIQUIDATIONDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.Date'}"
+								visible="{path:'/BP_OrganizationRel/LIQUIDATIONDATE',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblOAUTHORIZATIONGROUP" text="{i18n>AuthorizationGroup}" />
+							<Text id="OAUTHORIZATIONGROUP" text="{path:'/AUTHORIZATIONGROUP__TXT'}"
+								visible="{path:'/AUTHORIZATIONGROUP__TXT',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<Label id="lblONATPERS" text="{i18n>NaturalPerson}" />
+							<Text id="ONATPERS"
+								text="{path:'/NATPERS',formatter:'fcg.mdg.approvecrv2.util.Formatter.checkBox'}"
+								visible="{path:'/NATPERS',formatter:'fcg.mdg.approvecrv2.util.Formatter.visibility'}" />
+							<!-- Extension Point for BP Organization Details for Organization 
+								Form in Change View -->
+							<core:ExtensionPoint name="extOrganizationalData" />
+
+						</form:content>
+						<!-- Extension Point for BP Organization Form in Change View -->
+						<core:ExtensionPoint name="extSimpleFormGeneralOrg" />
+					</form:SimpleForm>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

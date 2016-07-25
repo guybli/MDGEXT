@@ -1,0 +1,28 @@
+[
+  {
+    "COUNTRY": "DE",
+    "COUNTRYISO": "",
+    "STD_NO": "X",
+    "FAX": "2131224",
+    "EXTENSION": "12331",
+    "FAX_NO": "+49213122412331",
+    "SENDER_NO": "213122412331",
+    "FAX_GROUP": "",
+    "STD_RECIP": "",
+    "R_3_USER": "",
+    "HOME_FLAG": "",
+    "CONSNUMBER": "001",
+    "ERRORFLAG": "",
+    "FLG_NOUSE": "",
+    "VALID_FROM": "",
+    "VALID_TO": "",
+    "LANGU": "",
+    "LANGU_ISO": "",
+    "COMM_NOTES": "",
+    "VALIDFROMDATE": null,
+    "VALIDTODATE": null,
+    "BP_GUID": "+hY+EvesHtSHo5ScbdVMtw==",
+    "AD_ID": "0000035019",
+    "COMM_TYPE": "FAX"
+  }
+]

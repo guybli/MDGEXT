@@ -1,0 +1,82 @@
+[
+  {
+    "UsmdCrequest": "UsmdCrequest 1",
+    "UsmdCrAction": "UsmdCrAction 1",
+    "UsmdActDescripti": "UsmdActDescripti 1",
+    "UsmdBtnTxt": "UsmdBtnTxt 1",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 1",
+    "UsmdSequenceNr": "UsmdSequenceNr 1"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 2",
+    "UsmdCrAction": "UsmdCrAction 2",
+    "UsmdActDescripti": "UsmdActDescripti 2",
+    "UsmdBtnTxt": "UsmdBtnTxt 2",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 2",
+    "UsmdSequenceNr": "UsmdSequenceNr 2"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 3",
+    "UsmdCrAction": "UsmdCrAction 3",
+    "UsmdActDescripti": "UsmdActDescripti 3",
+    "UsmdBtnTxt": "UsmdBtnTxt 3",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 3",
+    "UsmdSequenceNr": "UsmdSequenceNr 3"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 4",
+    "UsmdCrAction": "UsmdCrAction 4",
+    "UsmdActDescripti": "UsmdActDescripti 4",
+    "UsmdBtnTxt": "UsmdBtnTxt 4",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 4",
+    "UsmdSequenceNr": "UsmdSequenceNr 4"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 5",
+    "UsmdCrAction": "UsmdCrAction 5",
+    "UsmdActDescripti": "UsmdActDescripti 5",
+    "UsmdBtnTxt": "UsmdBtnTxt 5",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 5",
+    "UsmdSequenceNr": "UsmdSequenceNr 5"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 6",
+    "UsmdCrAction": "UsmdCrAction 6",
+    "UsmdActDescripti": "UsmdActDescripti 6",
+    "UsmdBtnTxt": "UsmdBtnTxt 6",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 6",
+    "UsmdSequenceNr": "UsmdSequenceNr 6"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 7",
+    "UsmdCrAction": "UsmdCrAction 7",
+    "UsmdActDescripti": "UsmdActDescripti 7",
+    "UsmdBtnTxt": "UsmdBtnTxt 7",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 7",
+    "UsmdSequenceNr": "UsmdSequenceNr 7"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 8",
+    "UsmdCrAction": "UsmdCrAction 8",
+    "UsmdActDescripti": "UsmdActDescripti 8",
+    "UsmdBtnTxt": "UsmdBtnTxt 8",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 8",
+    "UsmdSequenceNr": "UsmdSequenceNr 8"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 9",
+    "UsmdCrAction": "UsmdCrAction 9",
+    "UsmdActDescripti": "UsmdActDescripti 9",
+    "UsmdBtnTxt": "UsmdBtnTxt 9",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 9",
+    "UsmdSequenceNr": "UsmdSequenceNr 9"
+  },
+  {
+    "UsmdCrequest": "UsmdCrequest 10",
+    "UsmdCrAction": "UsmdCrAction 10",
+    "UsmdActDescripti": "UsmdActDescripti 10",
+    "UsmdBtnTxt": "UsmdBtnTxt 10",
+    "UsmdBtnTooltip": "UsmdBtnTooltip 10",
+    "UsmdSequenceNr": "UsmdSequenceNr 10"
+  }
+]

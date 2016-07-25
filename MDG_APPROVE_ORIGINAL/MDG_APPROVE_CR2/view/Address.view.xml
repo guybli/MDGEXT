@@ -1,0 +1,257 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:View xmlns:sap.ui.layout.form="sap.ui.layout.form"
+	xmlns:form="sap.ui.layout.form" xmlns:l="sap.ui.layout"
+	xmlns:sap.ui.layout="sap.ui.layout" xmlns:sap.ui.core="sap.ui.core"
+	xmlns:core="sap.ui.core" xmlns="sap.m" controllerName="fcg.mdg.approvecrv2.view.Address">
+	<Page id="AddressPage" showNavButton="true" showFooter="false"
+		showHeader="true" navButtonPress="PressBack" enableScrolling="true"
+		onBack="onBackClick">
+		<content>
+			<ObjectHeader id="addrObjHeaderDet">
+				<attributes>
+					<ObjectAttribute id="addrAttrHeader" />
+					<!-- Extension Point for Header in Address Page -->
+					<core:ExtensionPoint name="extaddrAttrHeader" />
+				</attributes>
+			</ObjectHeader>
+			<l:Grid width="auto" defaultSpan="L12 M12 S12">
+				<l:content>
+					<l:VerticalLayout id="AddressVl" width="100%">
+						<l:content>
+							<!-- Simple Form with Address Layout Corresponding to the Country 
+								is loaded here from Library -->
+						</l:content>
+					</l:VerticalLayout>
+					<VBox>
+						<items>
+							<Table id="AddressUsages">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>AddressUsages}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>AddressType}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>StandardUsage}" />
+										</header>
+									</Column>
+									<!-- Extension Point for AddressUsages table -->
+									<core:ExtensionPoint name="extAddressUsages" />
+								</columns>
+							</Table>
+
+							<Table id="TelephoneNumbers">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>TelNumbers}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>Country}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Telephone}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Extension}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Standard}" />
+										</header>
+									</Column>
+									<!-- Extension Point for Telephone Numbers table -->
+									<core:ExtensionPoint name="extTelephoneNumbers" />
+								</columns>
+							</Table>
+
+							<Table id="MobileNumbers">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>MobileNumbers}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>Country}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>MobilePhone}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Standard}" />
+										</header>
+									</Column>
+								</columns>
+								<!-- Extension Point for Mobile Numbers table -->
+								<core:ExtensionPoint name="extMobileNumbers" />
+							</Table>
+
+							<Table id="FaxNumbers">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>FaxNumbers}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>Country}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Fax}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Extension}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Standard}" />
+										</header>
+									</Column>
+									<!-- Extension Point for Fax Numbers table -->
+									<core:ExtensionPoint name="extFaxNumbers" />
+								</columns>
+							</Table>
+
+							<Table id="EMailAddresses">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>EMailAddresses}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>EMailAddress}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Standard}" />
+										</header>
+									</Column>
+									<!-- Extension Point for E Mail Addresses table -->
+									<core:ExtensionPoint name="extEMailAddresses" />
+								</columns>
+							</Table>
+
+							<Table id="URL">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>WebSites}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>URL}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>Standard}" />
+										</header>
+									</Column>
+								</columns>
+								<!-- Extension Point for URL table -->
+								<core:ExtensionPoint name="extURL" />
+							</Table>
+
+							<Table id="IAV_O" width="100%" noDataText=" "
+								mode="{device>/listMode}" selectionChange="navtoIAVDetail">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>IAV}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>AddressVersion}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>PC_NAME}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>PC_TIT_ADDRESS}" />
+										</header>
+									</Column>
+									<!-- Extension Point for International Address Version for Organization 
+										table -->
+									<core:ExtensionPoint name="extIAV_O" />
+								</columns>
+							</Table>
+
+							<Table id="IAV_P" width="100%" noDataText=" "
+								mode="{device>/listMode}" selectionChange="navtoIAVDetail">
+								<headerToolbar>
+									<Toolbar>
+										<Title text="{i18n>IAV}" class="sapThemeFontSize"></Title>
+									</Toolbar>
+								</headerToolbar>
+								<columns>
+									<Column>
+										<header>
+											<Label text="{i18n>AddressVersion}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>FirstName}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>LastName}" />
+										</header>
+									</Column>
+									<Column>
+										<header>
+											<Label text="{i18n>PC_TIT_ADDRESS}" />
+										</header>
+									</Column>
+									<!-- Extension Point for International Address Version for Person 
+										table -->
+									<core:ExtensionPoint name="extIAV_P" />
+
+								</columns>
+							</Table>
+						</items>
+					</VBox>
+				</l:content>
+			</l:Grid>
+		</content>
+	</Page>
+</core:View>

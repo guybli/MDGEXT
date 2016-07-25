@@ -1,0 +1,84 @@
+<!--
+
+    Copyright (C) 2009-2014 SAP SE or an SAP affiliate company. All rights reserved
+
+-->
+<core:FragmentDefinition xmlns="sap.m"
+	xmlns:core="sap.ui.core" xmlns:ui="sap.ca.ui" xmlns:layout="sap.ui.layout"
+	xmlns:form="sap.ui.layout.form">
+	<IconTabBar id="costCenterTabBar" expandable="false" select="onSelect">
+		<items>
+			<IconTabFilter id="costCenterGenTab" icon="sap-icon://sales-order"
+				text="{i18n>General}" tooltip="{i18n>Central}" design="Horizontal">
+				<!-- To render data of create scenario, this layout is used -->
+				<layout:VerticalLayout id="ccCreateDataLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- To render data of general section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="ccGeneralDataLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- To render data of Indicators section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="ccIndLayout" width="100%"></layout:VerticalLayout>
+				<!-- To render data of address section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="ccAddressLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- To render data of communication section in change scenario, this 
+					layout is used -->
+				<layout:VerticalLayout id="ccCommLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- To render data of description section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="ccDescLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- To render data of attachment section in change scenario, this layout 
+					is used -->
+				<layout:VerticalLayout id="ccAttachmentLayout"
+					width="100%"></layout:VerticalLayout>
+				<!-- Extends the General section Tab -->
+				<core:ExtensionPoint name="extcostCenterGenTab" />
+			</IconTabFilter>
+
+			<!-- Tab for Change Request Notes -->
+			<IconTabFilter id="costCenterNotes" key="notes"
+				icon="sap-icon://notes" text="{i18n>Note}" tooltip="{i18n>Note}" design="Horizontal">
+				<List id="costCenterNote" showSeparators="Inner" items="{json>/Notes}">
+					<FeedListItem sender="{json>sender}" icon="{json>icon}"
+						iconDensityAware="false" senderActive="false" iconActive="false"
+						info="{json>info}" timestamp="{json>timestamp}" text="{json>text}" />
+				</List>
+				<!-- Extends the Note section Tab -->
+				<core:ExtensionPoint name="extcostCenterNotes" />
+			</IconTabFilter>
+
+			<!-- Tab for Change Request attachments -->
+			<IconTabFilter id="costCenterAttachments" icon="sap-icon://attachment"
+				text="{i18n>Attachment}" tooltip="{i18n>PC_TIT_ATTACH}" design="Horizontal">
+				<content>
+					<!-- <ui:FileUpload acceptRequestHeader="application/json" id="ccFileUpload" 
+						items="/dataitems" encodeUrl="/sap/bc/ui2/encode_file" fileName="filename" 
+						url="url" uploadedDate="uploaded" contributor="contributor" mimeType="mimeType" 
+						fileId="documentId" useMultipart="false" renameEnabled="false" showNoData="false" 
+						useEditControls="false" uploadEnabled="false" editMode="false" showAttachmentsLabelInEditMode="false"> 
+						</ui:FileUpload> -->
+						
+					<UploadCollection id="ccFileUpload"
+						maximumFilenameLength="35" multiple="true" items="{json>/dataitems}"
+						showSeparators="All" uploadEnabled="false">
+						<UploadCollectionItem contributor="{json>contributor}"
+							visibleDelete="fase" visibleEdit="false" documentId="documentId"
+							fileName="{json>filename}" mimeType="{json>mimeType}"
+							uploadedDate="{json>uploaded}" url="{json>url}" />
+					</UploadCollection>
+
+				</content>
+				<!-- Extends the Attachments section Tab -->
+				<core:ExtensionPoint name="extcostCenterAttachments" />
+			</IconTabFilter>
+			<!-- Extends the Icon Tab -->
+			<core:ExtensionPoint name="extcostCenterTabBar" />
+
+		</items>
+	</IconTabBar>
+</core:FragmentDefinition>
