@@ -1,0 +1,5 @@
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns:sap.ui.layout.form="sap.ui.layout.form" xmlns:form="sap.ui.layout.form"
+	xmlns:l="sap.ui.layout" xmlns:sap.ui.layout="sap.ui.layout" xmlns="sap.m">
+	<!-- This extension point can be used to add fields to attributes -->
+	<!--<ObjectAttribute xmlns="sap.m" id="addrAttrHeader_clone"/> -->
+</core:FragmentDefinition>
